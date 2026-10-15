@@ -26,6 +26,9 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       } else if (key === 'donate') {
         e.preventDefault();
         onNavigate('support');
+      } else if (key === 'departments') {
+        e.preventDefault();
+        onNavigate('departments');
       } else if (key === 'home') {
         e.preventDefault();
         onNavigate('home');

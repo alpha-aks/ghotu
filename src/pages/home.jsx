@@ -212,7 +212,16 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                 they support the preservation of Buddhist teachings and the smooth functioning of the institution.
               </p>
             </div>
-            <a href="#all-departments" className="gt-figma-btn">
+            <a 
+              href="#departments" 
+              className="gt-figma-btn"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate('departments');
+                }
+              }}
+            >
               VIEW DEPARTMENTS
             </a>
           </div>

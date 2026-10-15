@@ -1,0 +1,872 @@
+import React, { useState } from 'react';
+import Header from '../components/header';
+import Footer from '../components/footer';
+import { EndlessKnot } from '../components/MonasteryIcons';
+import heroBg from '../assets/departments-hero.jpg';
+import lungtaImg from '../assets/departments-lungta.png';
+import './departments.css';
+
+// Traditional Tibetan decorative corner motif
+function TibetanCornerMotif({ className = '' }) {
+  return (
+    <svg 
+      className={`gt-corner-motif ${className}`} 
+      viewBox="0 0 100 100" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <path 
+        d="M8 8 H60 C40 8, 30 18, 30 38 V92" 
+        stroke="#E5A93B" 
+        strokeWidth="3.5" 
+        strokeLinecap="round" 
+      />
+      <path 
+        d="M8 8 V60 C8 40, 18 30, 38 30 H92" 
+        stroke="#E5A93B" 
+        strokeWidth="3.5" 
+        strokeLinecap="round" 
+      />
+      <path 
+        d="M20 20 H48 C36 20, 30 26, 30 38 V80" 
+        stroke="#F4C778" 
+        strokeWidth="2" 
+      />
+      <circle cx="20" cy="20" r="4" fill="#E5A93B" />
+      <path 
+        d="M38 38 Q50 38 50 50 Q50 62 38 62 Q26 62 26 50 Z" 
+        stroke="#E5A93B" 
+        strokeWidth="2" 
+        fill="#FFF7E6" 
+      />
+    </svg>
+  );
+}
+
+export default function Departments({ onSwitchLanguage, onNavigate }) {
+  // Track which department sections are expanded
+  const [expandedDepts, setExpandedDepts] = useState({
+    admin: false,
+    education: false,
+    healthcare: false,
+    library: false,
+    kitchen: false,
+    media: false,
+    maintenance: false,
+  });
+
+  const toggleDept = (deptKey) => {
+    setExpandedDepts((prev) => ({
+      ...prev,
+      [deptKey]: !prev[deptKey],
+    }));
+  };
+
+  const scrollToDept = (id, e) => {
+    e.preventDefault();
+    const elem = document.getElementById(id);
+    if (elem) {
+      // Auto-expand when jumping directly to it
+      setExpandedDepts((prev) => ({
+        ...prev,
+        [id]: true,
+      }));
+      elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  return (
+    <div className="gt-dept-page">
+      <Header 
+        lang="en" 
+        active="departments" 
+        onSwitchLanguage={onSwitchLanguage} 
+        onNavigate={onNavigate} 
+      />
+
+      <main className="gt-dept-main-content">
+        {/* 1. HERO SECTION */}
+        <section 
+          className="gt-dept-hero"
+          style={{ backgroundImage: `url(${heroBg})` }}
+        >
+          <div className="gt-dept-hero-overlay" />
+          <div className="gt-dept-hero-content">
+            <h1 className="gt-dept-hero-title">
+              An Interconnected<br />Institution
+            </h1>
+            <p className="gt-dept-hero-desc">
+              The monastery's work is organised across several departments, each with a distinct responsibility. 
+              Together, they support monastic education and practice, preserve knowledge, care for the 
+              community, and maintain the day-to-day functioning of the institution.
+            </p>
+          </div>
+        </section>
+
+        {/* 2. DEPARTMENTS DIRECTORY & SIDEBAR */}
+        <section className="gt-dept-main-section">
+          <div className="container">
+            <div className="gt-dept-layout-grid">
+              {/* Left Column: Department Items */}
+              <div className="gt-dept-list-col">
+
+                {/* 01 - Administration */}
+                <article id="admin" className="gt-dept-item">
+                  <div className="gt-dept-divider-row">
+                    <EndlessKnot width={42} height={32} color="#92060F" />
+                    <div className="gt-dept-divider-line" />
+                  </div>
+                  <h2 className="gt-dept-item-title">01 — Administration</h2>
+                  <div className="gt-dept-item-body">
+                    <p>
+                      The Central (General) Administration of Gyuto Tantric Monastery is responsible for the general, 
+                      administrative, financial, and day-to-day affairs of the Monastery. The Administration oversees the 
+                      monastery's day-to-day operations, coordination, facilities, and general institutional affairs.
+                      {!expandedDepts.admin && (
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('admin')}
+                          aria-expanded={expandedDepts.admin}
+                        >
+                          ....Read more
+                        </button>
+                      )}
+                    </p>
+
+                    {expandedDepts.admin && (
+                      <div className="gt-dept-expanded-content">
+                        <h3 className="gt-dept-subheading">Governing Body</h3>
+                        <p>
+                          The Governing Body is the principal governing authority and provides overall direction and supervision 
+                          of the Monastery. It is responsible for major policy and administrative decisions and ensuring that the 
+                          objectives of the Society are fulfilled.
+                        </p>
+                        <ul className="gt-dept-list-bulleted">
+                          <li>Venerable Gankar Tulku (President)</li>
+                          <li>Ngakrampa Sonam Paljor (Secretary)</li>
+                          <li>Ngakrampa Phurbu Tsering (Treasurer)</li>
+                          <li>Ngakrampa Lobsang Phuntso (Member)</li>
+                          <li>Ngakrampa Dakpa Gyaltsen (Member)</li>
+                          <li>Geshe Ngakrampa Dakpa Genzen Gyana (Member)</li>
+                          <li>Geshe Ngakrampa Dhondup Tsering (Member)</li>
+                        </ul>
+
+                        <h3 className="gt-dept-subheading">Day-to-Day Administration</h3>
+                        <p>
+                          The day-to-day administration shall be headed by the Administrator, who shall work under the guidance 
+                          and supervision of the Governing Body. The Administrator shall be elected every three years and shall be 
+                          responsible for implementing the decisions of the Governing Body and overseeing the general, financial, 
+                          and administrative activities of the Monastery with the assistance of administrative and office staff.
+                        </p>
+                        <ul className="gt-dept-list-bulleted">
+                          <li>Ngakrampa Lobsang Dorjee (Administrator)</li>
+                          <li>Ngakrampa Lobsang Dargey (Administrator)</li>
+                          <li>Geshe Ngakrampa Jambey Tshering Bhutia (Administrator)</li>
+                          <li>Geshe Ngakrampa Ngawang Tsundue (Administrator)</li>
+                          <li>Geshe Ngakrampa Jamyang Chogyal (Administrator)</li>
+                          <li>Geshe Ngakrampa Gelek Gonpo (Administrator)</li>
+                          <li>Ven. Yeshi Gyaltsen (Administrator)</li>
+                          <li>Geshe Ngakrampa Paksam Gyaltso (Secretary)</li>
+                          <li>Mr. Thupten Dhargay (Accountant)</li>
+                        </ul>
+
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('admin')}
+                          style={{ marginTop: '14px' }}
+                        >
+                          Show less ↑
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </article>
+
+                {/* 02 - Education */}
+                <article id="education" className="gt-dept-item">
+                  <div className="gt-dept-divider-row">
+                    <EndlessKnot width={42} height={32} color="#92060F" />
+                    <div className="gt-dept-divider-line" />
+                  </div>
+                  <h2 className="gt-dept-item-title">02 — Education</h2>
+                  <div className="gt-dept-item-body">
+                    <p>
+                      Gyuto Tantric Monastery provides systematic monastic education combining basic education, Buddhist 
+                      philosophy, Tantric studies, ritual training, and monastic discipline. The educational programme aims to 
+                      preserve and promote Buddhist teachings and traditional practices while providing monks with 
+                      academic, spiritual, and practical training.
+                      {!expandedDepts.education && (
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('education')}
+                          aria-expanded={expandedDepts.education}
+                        >
+                          ....Read more
+                        </button>
+                      )}
+                    </p>
+
+                    {expandedDepts.education && (
+                      <div className="gt-dept-expanded-content">
+                        <p>
+                          The Monastery follows a structured 18-class education system, extending from primary education to 
+                          advanced Tantric studies. Certificates are awarded at different stages of education upon successful 
+                          completion of the prescribed examinations.
+                        </p>
+
+                        <h3 className="gt-dept-subheading">2.1 Basic Monastic Education</h3>
+                        <p>
+                          Basic education is provided from Class I to Class VIII, beginning with reading and writing. The curriculum 
+                          includes Tibetan and English languages, memorization of prayer texts, drawing and painting, Buddhist 
+                          philosophy, and epistemology. Students are awarded the Certificate of Class VIII upon successfully passing the examination.
+                        </p>
+                        <h4 className="gt-dept-subheading-lvl2">Teachers:</h4>
+                        <ul className="gt-dept-list-bulleted">
+                          <li>Geshe Tsering Dhondup — Buddhist Philosophy Teacher</li>
+                          <li>Geshe Jampa Tsering — Buddhist Philosophy Teacher</li>
+                          <li>Geshe Lobsang Gompo — Buddhist Philosophy Teacher</li>
+                          <li>Geshe Lobsang Gyaltsen — Buddhist Philosophy Teacher</li>
+                          <li>Geshe Thupten Tsultrim — Buddhist Philosophy Teacher</li>
+                          <li>Geshe Jampa Sonam — Tibetan Grammar Teacher</li>
+                          <li>Ngakrampa Tenzin Passang — Tibetan Teacher</li>
+                          <li>Geshe Tenzin Genden — Tibetan Teacher</li>
+                          <li>Ven. Tenzin Topchen — Drawing Teacher</li>
+                          <li>Mr. Tashi Dorjee — English Teacher</li>
+                          <li>Mr. Tsering Namgyal — Tibetan Teacher</li>
+                          <li>Mrs. Passang Dolma — English Teacher</li>
+                        </ul>
+
+                        <h3 className="gt-dept-subheading">2.2 Secondary and Higher Secondary Education</h3>
+                        <p>
+                          After completion of primary education, students continue their studies through Secondary Class IX and 
+                          Class X, followed by Higher Secondary Classes XI and XII. Students who pass the prescribed examinations 
+                          are awarded the Certificate of Class X and Certificate of Class XII, respectively.
+                        </p>
+
+                        <h3 className="gt-dept-subheading">2.3 Buddhist Philosophy, Sutra and Tantric Studies</h3>
+                        <p>
+                          Following higher secondary education, monks undertake advanced study of the major Buddhist scriptures and 
+                          philosophical subjects including Collected Topics, Mind and Awareness, Tenets, Prajnaparamita, Madhyamaka, 
+                          Ground and Path, Generation and Completion Stages, and Tantric commentary. Successful candidates earn the 
+                          B.A. (Zhunluk Rabjampa) certificate.
+                        </p>
+
+                        <h3 className="gt-dept-subheading">2.4 Traditional Tantric Education and Ritual Training</h3>
+                        <p>
+                          Gyuto Tantric Monastery provides specialized Tantric education and practical training in Guhyasamaja, 
+                          Chakrasamvara, and Vajrabhairava, including their generation and completion stages. The training includes 
+                          memorization of ritual texts, sadhana practices, ritual chanting, mandala and stupa measurements and drawings, 
+                          preparation of ritual offerings, and other traditional Tantric practices.
+                        </p>
+                        <ul className="gt-dept-list-bulleted">
+                          <li>First Year: Guhyasamaja</li>
+                          <li>Second Year: Chakrasamvara</li>
+                          <li>Third Year: Vajrabhairava</li>
+                          <li>Fourth & Fifth Years: Sadhana rituals of the Great Iron Mansion of Yamaraj, rituals for amendment and restoration, rituals of Mahakala Great Bāli, Sittapatra Great Bāli, and Burn-Offerings of the four activities.</li>
+                        </ul>
+
+                        <h3 className="gt-dept-subheading">2.5 Ngakram - Tantric Graduate</h3>
+                        <p>
+                          The Ngakram (Geshe Ngakrampa) programme represents the highest level of Tantric education at Gyuto 
+                          Tantric Monastery. Eligible monks undertake two years of advanced Ngakram Tantric studies. Those who 
+                          successfully complete the prescribed requirements are awarded the PhD (Geshe Ngakrampa) certificate.
+                        </p>
+
+                        <h3 className="gt-dept-subheading">2.6 Geshe Lharampa Tantric Studies</h3>
+                        <p>
+                          After admission, the Geshes study the ground and path of tantra as an introduction, followed by the General 
+                          Explanation of the Four Classes of Tantras, the Generation Stage, Five Stages of Completion, and the Great 
+                          Commentary on the root tantra. Meritorious Geshes who complete these examinations may serve first as Abbot 
+                          of the monastery, then as Sharpa Choeje, and ultimately ascend to the post of Ganden Throne-holder.
+                        </p>
+
+                        <h3 className="gt-dept-subheading">2.7 Grading and Certificates</h3>
+                        <ul className="gt-dept-list-bulleted">
+                          <li>Certificate of Class VIII: Upon passing Primary Class VIII examination.</li>
+                          <li>Certificate of Class X: Upon passing Secondary Class X examination.</li>
+                          <li>Certificate of Class XII: Upon passing Higher Secondary Class XII examination.</li>
+                          <li>B.A. (Zhunluk Rabjampa): Upon completion and examination of four-year Buddhist scriptures.</li>
+                          <li>PhD (Geshe Ngakrampa): Upon completion and examination of two-year Ngakram Tantric studies.</li>
+                        </ul>
+                        <p style={{ marginTop: '12px', fontWeight: '600' }}>
+                          Education Administrator: Geshe Ngakrampa Ngawang Tsundue
+                        </p>
+
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('education')}
+                          style={{ marginTop: '14px' }}
+                        >
+                          Show less ↑
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </article>
+
+                {/* 03 - Healthcare */}
+                <article id="healthcare" className="gt-dept-item">
+                  <div className="gt-dept-divider-row">
+                    <EndlessKnot width={42} height={32} color="#92060F" />
+                    <div className="gt-dept-divider-line" />
+                  </div>
+                  <h2 className="gt-dept-item-title">03 — Healthcare & Social Services</h2>
+                  <div className="gt-dept-item-body">
+                    <p>
+                      Gyuto Tantric Monastery maintains a clinic with a resident nurse to provide basic medical care to the 
+                      monks and staff, particularly the sick and elderly. The Monastery provides 100% reimbursement of medical 
+                      expenses for monks and staff suffering from serious illnesses and financial assistance for other medical treatments.
+                      {!expandedDepts.healthcare && (
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('healthcare')}
+                          aria-expanded={expandedDepts.healthcare}
+                        >
+                          ....Read more
+                        </button>
+                      )}
+                    </p>
+
+                    {expandedDepts.healthcare && (
+                      <div className="gt-dept-expanded-content">
+                        <h3 className="gt-dept-subheading">Staff & Management</h3>
+                        <ul className="gt-dept-list-bulleted">
+                          <li>Ms. Pema Tsamchoe (Nurse)</li>
+                          <li>Healthcare Administrator: Geshe Ngakrampa Ngawang Tsundue</li>
+                        </ul>
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('healthcare')}
+                          style={{ marginTop: '14px' }}
+                        >
+                          Show less ↑
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </article>
+
+                {/* 04 - Library & Archives */}
+                <article id="library" className="gt-dept-item">
+                  <div className="gt-dept-divider-row">
+                    <EndlessKnot width={42} height={32} color="#92060F" />
+                    <div className="gt-dept-divider-line" />
+                  </div>
+                  <h2 className="gt-dept-item-title">04 — Library & Archives</h2>
+                  <div className="gt-dept-item-body">
+                    <p>
+                      The Gyuto Monastery Library was established to preserve the teachings of the Buddha and provide facilities 
+                      for the study and research of Buddhism for both Tibetan and non-Tibetan students and scholars. The Library 
+                      collects and preserves Buddhist scriptures, rare Indian Buddhist texts, and publishes canonical treatises.
+                      {!expandedDepts.library && (
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('library')}
+                          aria-expanded={expandedDepts.library}
+                        >
+                          ....Read more
+                        </button>
+                      )}
+                    </p>
+
+                    {expandedDepts.library && (
+                      <div className="gt-dept-expanded-content">
+                        <p>
+                          It archives valuable teachings, digitizes texts for study, and publishes important Buddhist texts in 
+                          accordance with publication standards.
+                        </p>
+                        <h3 className="gt-dept-subheading">Staff</h3>
+                        <ul className="gt-dept-list-bulleted">
+                          <li>Geshe Ngakrampa Lobsang Lodup (Director)</li>
+                          <li>Mr. Tenzin Rabten (Editor)</li>
+                          <li>Geshe Jamgyal (Editorial Assistant)</li>
+                          <li>Geshe Ngawang Gyaltsen (Website Editor)</li>
+                          <li>Mr. Jigmey Gyatso (Supervisor)</li>
+                        </ul>
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('library')}
+                          style={{ marginTop: '14px' }}
+                        >
+                          Show less ↑
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </article>
+
+                {/* 05 - Community Kitchen */}
+                <article id="kitchen" className="gt-dept-item">
+                  <div className="gt-dept-divider-row">
+                    <EndlessKnot width={42} height={32} color="#92060F" />
+                    <div className="gt-dept-divider-line" />
+                  </div>
+                  <h2 className="gt-dept-item-title">05 — Community Kitchen</h2>
+                  <div className="gt-dept-item-body">
+                    <p>
+                      Gyuto Tantric Monastery operates a Community Kitchen to provide regular, 100% vegetarian meals and 
+                      refreshments using fresh vegetables and seasonal fruits. Special meals are arranged during religious ceremonies, 
+                      Dharma Sessions, and festivals.
+                      {!expandedDepts.kitchen && (
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('kitchen')}
+                          aria-expanded={expandedDepts.kitchen}
+                        >
+                          ....Read more
+                        </button>
+                      )}
+                    </p>
+
+                    {expandedDepts.kitchen && (
+                      <div className="gt-dept-expanded-content">
+                        <h3 className="gt-dept-subheading">Daily Meal Schedule</h3>
+                        <ul className="gt-dept-schedule-list">
+                          <li className="gt-dept-schedule-item">Breakfast: 5:00 AM</li>
+                          <li className="gt-dept-schedule-item">Morning Tea: 9:00 AM</li>
+                          <li className="gt-dept-schedule-item">Lunch: 12:00 PM</li>
+                          <li className="gt-dept-schedule-item">Afternoon Tea: 3:00 PM</li>
+                          <li className="gt-dept-schedule-item">Dinner: 5:00 PM</li>
+                        </ul>
+
+                        <h3 className="gt-dept-subheading">Kitchen Team</h3>
+                        <ul className="gt-dept-list-bulleted">
+                          <li>Ven. Yeshi Gyaltsen (Kitchen Administrator)</li>
+                          <li>Mr. Amar Sharma (Head Cook)</li>
+                          <li>Mr. Pravik Magar (Assistant Cook)</li>
+                          <li>Mr. Tsewang (Tea Attendant)</li>
+                          <li>Mr. Nobin Rai (Kitchen Assistant)</li>
+                          <li>Mr. Tamdin Wangchuk (Kitchen Assistant)</li>
+                          <li>Mr. Jangchup Jigme Tamang (Kitchen Assistant)</li>
+                          <li>Mr. Dawa Tamang (Kitchen Assistant)</li>
+                          <li>Mr. Ashok Hemram (Kitchen Assistant)</li>
+                          <li>Mr. Passang Norbu (Kitchen Assistant)</li>
+                          <li>Mrs. Gita Tamang (Cleaning Attendant)</li>
+                          <li>Mrs. Passang Dema (Cleaning Attendant)</li>
+                        </ul>
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('kitchen')}
+                          style={{ marginTop: '14px' }}
+                        >
+                          Show less ↑
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </article>
+
+                {/* 06 - Media, Photography & Communication */}
+                <article id="media" className="gt-dept-item">
+                  <div className="gt-dept-divider-row">
+                    <EndlessKnot width={42} height={32} color="#92060F" />
+                    <div className="gt-dept-divider-line" />
+                  </div>
+                  <h2 className="gt-dept-item-title">06 — Media, Photography & Communication Services</h2>
+                  <div className="gt-dept-item-body">
+                    <p>
+                      The Monastery maintains media and communication services for photography, documentation, website 
+                      management, social media platforms, and official public information dissemination.
+                      {!expandedDepts.media && (
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('media')}
+                          aria-expanded={expandedDepts.media}
+                        >
+                          ....Read more
+                        </button>
+                      )}
+                    </p>
+
+                    {expandedDepts.media && (
+                      <div className="gt-dept-expanded-content">
+                        <ul className="gt-dept-list-bulleted">
+                          <li>Ven. Tenzin Gyamtso (Media & Photography)</li>
+                          <li>Public Relations and Liaison Services Administrator: Ngakrampa Lobsang Dargey</li>
+                        </ul>
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('media')}
+                          style={{ marginTop: '14px' }}
+                        >
+                          Show less ↑
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </article>
+
+                {/* 07 - Maintenance & Cleaning */}
+                <article id="maintenance" className="gt-dept-item">
+                  <div className="gt-dept-divider-row">
+                    <EndlessKnot width={42} height={32} color="#92060F" />
+                    <div className="gt-dept-divider-line" />
+                  </div>
+                  <h2 className="gt-dept-item-title">07 — Monastery Maintenance & Cleaning Services</h2>
+                  <div className="gt-dept-item-body">
+                    <p>
+                      Staff members are responsible for maintaining cleanliness, general upkeep of the Monastery premises, 
+                      and carrying out basic plumbing and electrical maintenance work across monastic quarters and halls.
+                      {!expandedDepts.maintenance && (
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('maintenance')}
+                          aria-expanded={expandedDepts.maintenance}
+                        >
+                          ....Read more
+                        </button>
+                      )}
+                    </p>
+
+                    {expandedDepts.maintenance && (
+                      <div className="gt-dept-expanded-content">
+                        <ul className="gt-dept-list-bulleted">
+                          <li>Mr. Swaran Kumar (Maintenance)</li>
+                          <li>Mrs. Nancy (Housekeeping)</li>
+                          <li>Facilities and Infrastructure Administrator: Ngakrampa Lobsang Dorjee</li>
+                        </ul>
+                        <button 
+                          type="button" 
+                          className="gt-dept-readmore-btn"
+                          onClick={() => toggleDept('maintenance')}
+                          style={{ marginTop: '14px' }}
+                        >
+                          Show less ↑
+                        </button>
+                      </div>
+                    )}
+                  </div>
+                </article>
+
+              </div>
+
+              {/* Right Column: Sticky Navigation Card */}
+              <aside className="gt-dept-sidebar">
+                <div className="gt-dept-nav-card">
+                  <h3 className="gt-dept-nav-title">Departments</h3>
+                  <ul className="gt-dept-nav-links">
+                    <li className="gt-dept-nav-link-item">
+                      <a 
+                        href="#admin" 
+                        className="gt-dept-nav-anchor"
+                        onClick={(e) => scrollToDept('admin', e)}
+                      >
+                        <span className="gt-dept-nav-arrow">&gt;</span> Administration
+                      </a>
+                    </li>
+                    <li className="gt-dept-nav-link-item">
+                      <a 
+                        href="#education" 
+                        className="gt-dept-nav-anchor"
+                        onClick={(e) => scrollToDept('education', e)}
+                      >
+                        <span className="gt-dept-nav-arrow">&gt;</span> Education
+                      </a>
+                    </li>
+                    <li className="gt-dept-nav-link-item">
+                      <a 
+                        href="#healthcare" 
+                        className="gt-dept-nav-anchor"
+                        onClick={(e) => scrollToDept('healthcare', e)}
+                      >
+                        <span className="gt-dept-nav-arrow">&gt;</span> Healthcare
+                      </a>
+                    </li>
+                    <li className="gt-dept-nav-link-item">
+                      <a 
+                        href="#library" 
+                        className="gt-dept-nav-anchor"
+                        onClick={(e) => scrollToDept('library', e)}
+                      >
+                        <span className="gt-dept-nav-arrow">&gt;</span> Library &amp; Archives
+                      </a>
+                    </li>
+                    <li className="gt-dept-nav-link-item">
+                      <a 
+                        href="#kitchen" 
+                        className="gt-dept-nav-anchor"
+                        onClick={(e) => scrollToDept('kitchen', e)}
+                      >
+                        <span className="gt-dept-nav-arrow">&gt;</span> Community Kitchen
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </aside>
+            </div>
+          </div>
+        </section>
+
+        {/* 3. ONE MONASTERY, MANY RESPONSIBILITIES (ORGANIZATIONAL TREE) */}
+        <section className="gt-org-chart-section">
+          <div className="container">
+            <div className="gt-org-header">
+              <h2 className="gt-org-title">One Monastery, Many Responsibilities</h2>
+              <p className="gt-org-subtitle">
+                Education and spiritual practice form the core of monastic life. Administration, healthcare, the kitchen, 
+                and the library provide the infrastructure and support that allow that work to continue.
+              </p>
+            </div>
+
+            <div className="gt-org-diagram-wrapper">
+              <TibetanCornerMotif className="gt-corner-tl" />
+              <TibetanCornerMotif className="gt-corner-tr" />
+              <TibetanCornerMotif className="gt-corner-bl" />
+              <TibetanCornerMotif className="gt-corner-br" />
+
+              <div className="gt-tree-container">
+                {/* Root Node */}
+                <div className="gt-node-box gt-node-root">
+                  GYUTO MONASTERY
+                </div>
+
+                <div className="gt-tree-line-v" />
+                <div className="gt-tree-line-h-split" />
+
+                {/* Level 1 Branches */}
+                <div className="gt-tree-branches-row">
+                  {/* Branch Left: Monastic Life */}
+                  <div className="gt-tree-branch">
+                    <div className="gt-node-box gt-node-branch">
+                      MONASTIC LIFE
+                    </div>
+                    <div className="gt-tree-line-v" />
+                    
+                    <div className="gt-tree-subnodes-grid">
+                      <div className="gt-node-box gt-node-sub">
+                        EDUCATION
+                      </div>
+                      <div className="gt-node-box gt-node-sub">
+                        SPIRITUAL PRACTICE
+                      </div>
+                    </div>
+
+                    <div className="gt-tree-line-v" style={{ height: '24px' }} />
+                    <div className="gt-node-box gt-node-sub-single" style={{ marginTop: 0 }}>
+                      LIBRARY &amp; ARCHIVES
+                    </div>
+                  </div>
+
+                  {/* Branch Right: Community Life */}
+                  <div className="gt-tree-branch">
+                    <div className="gt-node-box gt-node-branch">
+                      COMMUNITY LIFE
+                    </div>
+                    <div className="gt-tree-line-v" />
+
+                    <div className="gt-node-box gt-node-sub-single" style={{ marginTop: 0 }}>
+                      HEALTHCARE
+                    </div>
+
+                    <div className="gt-tree-line-v" style={{ height: '24px' }} />
+                    <div className="gt-node-box gt-node-sub-single" style={{ marginTop: 0 }}>
+                      COMMUNITY KITCHEN
+                    </div>
+                  </div>
+                </div>
+
+                {/* Bottom Shared Administration Anchor */}
+                <div className="gt-tree-bottom-connector" />
+                <div className="gt-tree-bottom-join">
+                  <div className="gt-tree-line-v" style={{ height: '20px' }} />
+                  <div className="gt-node-box gt-node-admin">
+                    ADMINISTRATION
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 4. DEPARTMENTS ACROSS THE YEAR (TIMELINE) */}
+        <section className="gt-timeline-section">
+          <div className="container">
+            <div className="gt-timeline-header">
+              <h2 className="gt-timeline-title">Departments Across the Year</h2>
+              <p className="gt-timeline-subtitle">
+                The work of each department follows the monastery's annual rhythm of study, practice, ceremonies, 
+                examinations, retreats, and community activities.
+              </p>
+            </div>
+
+            <div className="gt-timeline-bar-wrapper">
+              <div className="gt-timeline-track" />
+              <div className="gt-timeline-nodes-grid">
+                {/* Node 1 */}
+                <div className="gt-timeline-node-item">
+                  <span className="gt-timeline-date-label">FEB – MAY</span>
+                  <div className="gt-timeline-circle" />
+                  <div className="gt-timeline-stalk" />
+                  <span className="gt-timeline-season">SUMMER</span>
+                  <span className="gt-timeline-activity">Retreat &amp; Practice</span>
+                </div>
+
+                {/* Node 2 */}
+                <div className="gt-timeline-node-item">
+                  <span className="gt-timeline-date-label">FEB – MAY</span>
+                  <div className="gt-timeline-circle" />
+                  <div className="gt-timeline-stalk" />
+                  <span className="gt-timeline-season">SPRING</span>
+                  <span className="gt-timeline-activity">Teaching &amp; Debate</span>
+                </div>
+
+                {/* Node 3 */}
+                <div className="gt-timeline-node-item">
+                  <span className="gt-timeline-date-label">FEB – MAY</span>
+                  <div className="gt-timeline-circle" />
+                  <div className="gt-timeline-stalk" />
+                  <span className="gt-timeline-season">AUTUMN</span>
+                  <span className="gt-timeline-activity">Examinations</span>
+                </div>
+
+                {/* Node 4 */}
+                <div className="gt-timeline-node-item">
+                  <span className="gt-timeline-date-label" style={{ visibility: 'hidden' }}>–</span>
+                  <div className="gt-timeline-circle" />
+                  <div className="gt-timeline-stalk" />
+                  <span className="gt-timeline-season">WINTER</span>
+                  <span className="gt-timeline-activity">Rituals &amp; Observances</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 5. QUESTIONS ABOUT A DEPARTMENT (BLUE BANNER) */}
+        <section className="gt-dept-cta-blue">
+          <div className="container">
+            <div className="gt-dept-cta-blue-inner">
+              <div className="gt-dept-cta-blue-text">
+                <h2 className="gt-dept-cta-blue-title">Questions about a department?</h2>
+                <p className="gt-dept-cta-blue-desc">
+                  For enquiries about the monastery's departments, activities, or services, please contact the monastery directly.
+                </p>
+                <button 
+                  type="button"
+                  className="gt-dept-cta-white-btn"
+                  onClick={() => onNavigate && onNavigate('contact')}
+                >
+                  CONTACT US
+                </button>
+              </div>
+              <div className="gt-dept-cta-blue-visual">
+                <img 
+                  src={lungtaImg} 
+                  alt="Tibetan Wind Horse (Lungta)" 
+                  className="gt-dept-lungta-img" 
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 6. UPCOMING EVENTS (GOLD BANNER) */}
+        <section className="gt-dept-events-gold">
+          <div className="container">
+            <div className="gt-dept-events-grid">
+              <div className="gt-dept-events-left">
+                <p className="gt-dept-events-sub">
+                  Explore the monastery's annual spiritual programme.
+                </p>
+                <h2 className="gt-dept-events-heading">
+                  Looking for teachings,<br />ceremonies or retreats?
+                </h2>
+                <button 
+                  type="button"
+                  className="gt-dept-calendar-btn"
+                  onClick={() => onNavigate && onNavigate('home')}
+                >
+                  VIEW CALENDAR
+                </button>
+              </div>
+
+              <div className="gt-dept-events-cards-wrap">
+                <span className="gt-dept-events-top-tag">UPCOMING EVENTS</span>
+                
+                <div className="gt-dept-event-card">
+                  <div className="gt-event-card-date">
+                    <span className="gt-event-month">FEB</span>
+                    <span className="gt-event-day">18th</span>
+                    <span className="gt-event-year">2026</span>
+                  </div>
+                  <div className="gt-event-card-divider" />
+                  <div className="gt-event-card-body">
+                    <h4>Tibetan New Year Celebration</h4>
+                    <p>Losar marks the beginning of the Tibetan calendar year....</p>
+                  </div>
+                </div>
+
+                <div className="gt-dept-event-card">
+                  <div className="gt-event-card-date">
+                    <span className="gt-event-month">FEB</span>
+                    <span className="gt-event-day">18th</span>
+                    <span className="gt-event-year">2026</span>
+                  </div>
+                  <div className="gt-event-card-divider" />
+                  <div className="gt-event-card-body">
+                    <h4>Tibetan New Year Celebration</h4>
+                    <p>Losar marks the beginning of the Tibetan calendar year....</p>
+                  </div>
+                </div>
+
+                <div className="gt-dept-event-card">
+                  <div className="gt-event-card-date">
+                    <span className="gt-event-month">FEB</span>
+                    <span className="gt-event-day">18th</span>
+                    <span className="gt-event-year">2026</span>
+                  </div>
+                  <div className="gt-event-card-divider" />
+                  <div className="gt-event-card-body">
+                    <h4>Tibetan New Year Celebration</h4>
+                    <p>Losar marks the beginning of the Tibetan calendar year....</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* 7. SUPPORT CALL TO ACTION SECTION */}
+        <section className="gt-dept-support-cta">
+          <div className="gt-dept-support-inner">
+            <div className="gt-dept-support-knot">
+              <EndlessKnot width={54} height={42} color="#92060F" />
+            </div>
+            <h2 className="gt-dept-support-title">Support the Continuity of the Tradition</h2>
+            <p className="gt-dept-support-desc">
+              Contributions help sustain monastic education, preserve sacred texts, maintain monastery facilities, 
+              and support the daily life of the monastic community. Your support enables the preservation of the 
+              Gelug tantric tradition for future generations.
+            </p>
+            <button 
+              type="button"
+              className="gt-dept-support-btn"
+              onClick={() => onNavigate && onNavigate('support')}
+            >
+              SUPPORT US
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <Footer lang="en" onNavigate={onNavigate} />
+    </div>
+  );
+}
+
+export { Departments };

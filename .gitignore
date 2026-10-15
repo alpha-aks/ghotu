@@ -25,6 +25,7 @@ faltu img/*
 Section 1.txt
 *.tmp
 *.bak
+public/images/[0-9a-f]*.jpg
 
 # Logs
 logs/

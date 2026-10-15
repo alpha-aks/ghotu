@@ -206,7 +206,16 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 དགོན་པའི་ཁུལ་སྐོར་རྣམས་ཉིན་རེའི་ལས་གཞི། སློབ་གཉེར། ཞིབ་དཔྱད། སྨན་དང་ཞབས་ཏོགས། ཞུགས་མི་ལ་ཞབས་ཞུ། ཆོས་གཞུང་ཉར་ཚགས་བཅས་རྒྱུན་འཛིན་བྱེད་བཞིན་ཡོད།
               </p>
             </div>
-            <a href="#all-departments" className="gt-figma-btn">
+            <a 
+              href="#departments" 
+              className="gt-figma-btn"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate('departments');
+                }
+              }}
+            >
               ཁུལ་སྐོར་ཡོངས་སུ་ལྟ།
             </a>
           </div>

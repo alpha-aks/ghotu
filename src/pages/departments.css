@@ -1,0 +1,978 @@
+/* ==========================================================================
+   Gyuto Tantric Monastery - Departments Page Styling
+   High-fidelity recreation matching Figma designs (Departments - Eng.jpg & Tib.jpg)
+   ========================================================================== */
+
+.gt-dept-page {
+  background-color: #FFFFFF;
+  color: #111111;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO BANNER
+   -------------------------------------------------------------------------- */
+.gt-dept-hero {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  background-size: cover;
+  background-position: center 35%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.gt-dept-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(12, 18, 26, 0.65) 0%,
+    rgba(12, 18, 26, 0.78) 50%,
+    rgba(12, 18, 26, 0.88) 100%
+  );
+  z-index: 1;
+}
+
+.gt-dept-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 80px 24px;
+  color: #FFFFFF;
+}
+
+.gt-dept-hero-title {
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.5rem, 5vw, 4.2rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+.gt-dept-page.tibetan-page .gt-dept-hero-title {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+  line-height: 1.4;
+}
+
+.gt-dept-hero-desc {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', 'Inter', sans-serif);
+  font-size: clamp(1rem, 1.3vw, 1.15rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  max-width: 760px;
+  margin: 0 auto;
+  font-weight: 400;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-hero-desc {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.1rem;
+  line-height: 1.9;
+}
+
+/* --------------------------------------------------------------------------
+   2. MAIN CONTENT & SIDEBAR LAYOUT
+   -------------------------------------------------------------------------- */
+.gt-dept-main-section {
+  padding: 80px 0 100px 0;
+  background-color: #FFFFFF;
+}
+
+.gt-dept-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 60px;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .gt-dept-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Left Column: Department List */
+.gt-dept-list-col {
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.gt-dept-item {
+  scroll-margin-top: 100px;
+  transition: all 0.3s ease;
+}
+
+.gt-dept-divider-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.gt-dept-divider-knot {
+  flex-shrink: 0;
+}
+
+.gt-dept-divider-line {
+  flex: 1;
+  height: 1px;
+  background: #E0D8CE;
+}
+
+.gt-dept-item-title {
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.8rem, 2.5vw, 2.6rem);
+  font-weight: 500;
+  color: #111111;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-item-title {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: clamp(1.6rem, 2.3vw, 2.4rem);
+  line-height: 1.4;
+}
+
+.gt-dept-item-body {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', 'Inter', sans-serif);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #333333;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-item-body {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.gt-dept-readmore-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #92060F;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 6px;
+  transition: opacity 0.2s, transform 0.2s;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.gt-dept-readmore-btn:hover {
+  opacity: 0.85;
+  transform: translateX(2px);
+}
+
+/* Expanded Department Details */
+.gt-dept-expanded-content {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px dashed #E0D8CE;
+  animation: fadeIn 0.35s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.gt-dept-subheading {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #111111;
+  margin: 22px 0 10px 0;
+}
+
+.gt-dept-subheading-lvl2 {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #7B1824;
+  margin: 20px 0 8px 0;
+}
+
+.gt-dept-list-bulleted {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0 18px 0;
+}
+
+.gt-dept-list-bulleted li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 6px;
+  line-height: 1.65;
+  color: #333333;
+}
+
+.gt-dept-list-bulleted li::before {
+  content: "•";
+  position: absolute;
+  left: 4px;
+  color: #92060F;
+  font-weight: bold;
+}
+
+.gt-dept-schedule-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 14px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px;
+}
+
+.gt-dept-schedule-item {
+  background: #FAF6EF;
+  border-left: 3px solid #92060F;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+/* Right Column: Sticky Navigation Card */
+.gt-dept-sidebar {
+  position: sticky;
+  top: 90px;
+}
+
+.gt-dept-nav-card {
+  background-color: #FEF7E9;
+  border: 1px solid rgba(229, 169, 59, 0.25);
+  border-radius: 8px;
+  padding: 32px 28px;
+  box-shadow: 0 4px 18px rgba(12, 24, 41, 0.04);
+}
+
+.gt-dept-nav-title {
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.85rem;
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 24px;
+  letter-spacing: -0.01em;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-nav-title {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.7rem;
+}
+
+.gt-dept-nav-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.gt-dept-nav-link-item {
+  border-bottom: 1px solid #EFE4CF;
+}
+
+.gt-dept-nav-link-item:last-child {
+  border-bottom: none;
+}
+
+.gt-dept-nav-anchor {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 4px;
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.15rem;
+  color: #1A1A1A;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-nav-anchor {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.1rem;
+}
+
+.gt-dept-nav-anchor:hover,
+.gt-dept-nav-anchor.active {
+  color: #92060F;
+  transform: translateX(4px);
+}
+
+.gt-dept-nav-arrow {
+  color: #92060F;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.gt-dept-nav-anchor:hover .gt-dept-nav-arrow {
+  transform: translateX(2px);
+}
+
+/* --------------------------------------------------------------------------
+   3. ONE MONASTERY, MANY RESPONSIBILITIES (ORGANIZATIONAL CHART)
+   -------------------------------------------------------------------------- */
+.gt-org-chart-section {
+  padding: 90px 0 100px 0;
+  background-color: #FFFFFF;
+}
+
+.gt-org-header {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 50px auto;
+}
+
+.gt-org-title {
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.gt-dept-page.tibetan-page .gt-org-title {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+}
+
+.gt-org-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555555;
+}
+
+.gt-dept-page.tibetan-page .gt-org-subtitle {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.05rem;
+  line-height: 1.85;
+}
+
+.gt-org-diagram-wrapper {
+  position: relative;
+  background-color: #FFFDF9;
+  border: 1px solid #F1E7D5;
+  border-radius: 12px;
+  padding: 60px 40px;
+  box-shadow: 0 4px 24px rgba(12, 24, 41, 0.03);
+  overflow: hidden;
+}
+
+/* Decorative Gold Corner Motifs */
+.gt-corner-motif {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  pointer-events: none;
+  opacity: 0.85;
+}
+
+.gt-corner-tl { top: 12px; left: 12px; }
+.gt-corner-tr { top: 12px; right: 12px; transform: scaleX(-1); }
+.gt-corner-bl { bottom: 12px; left: 12px; transform: scaleY(-1); }
+.gt-corner-br { bottom: 12px; right: 12px; transform: scale(-1); }
+
+/* Flow Chart Tree */
+.gt-tree-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.gt-node-box {
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.gt-node-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.1);
+}
+
+.gt-node-root {
+  background-color: #92060F;
+  color: #FFFFFF;
+  padding: 14px 36px;
+  font-size: 1.05rem;
+  font-family: var(--font-serif, 'Cinzel', serif);
+}
+
+.gt-dept-page.tibetan-page .gt-node-root {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.15rem;
+}
+
+.gt-tree-line-v {
+  width: 2px;
+  height: 32px;
+  background: #A0968B;
+}
+
+.gt-tree-line-h-split {
+  position: relative;
+  width: 60%;
+  height: 2px;
+  background: #A0968B;
+  margin-bottom: 24px;
+}
+
+.gt-tree-line-h-split::before,
+.gt-tree-line-h-split::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 24px;
+  background: #A0968B;
+}
+
+.gt-tree-line-h-split::before { left: 0; }
+.gt-tree-line-h-split::after { right: 0; }
+
+.gt-tree-branches-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .gt-tree-branches-row {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.gt-tree-branch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gt-node-branch {
+  background-color: #F8CB76;
+  color: #111111;
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  width: 80%;
+  max-width: 240px;
+}
+
+.gt-tree-subnodes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.gt-node-sub {
+  background-color: #F8CB76;
+  color: #111111;
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gt-node-sub-single {
+  background-color: #F8CB76;
+  color: #111111;
+  padding: 12px 28px;
+  font-size: 0.88rem;
+  margin-top: 24px;
+  width: 80%;
+}
+
+.gt-tree-bottom-connector {
+  position: relative;
+  width: 60%;
+  height: 2px;
+  background: #A0968B;
+  margin: 36px auto 0 auto;
+}
+
+.gt-tree-bottom-connector::before,
+.gt-tree-bottom-connector::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 2px;
+  height: 32px;
+  background: #A0968B;
+}
+
+.gt-tree-bottom-connector::before { left: 0; }
+.gt-tree-bottom-connector::after { right: 0; }
+
+.gt-tree-bottom-join {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 32px;
+}
+
+.gt-node-admin {
+  background-color: #F8CB76;
+  color: #111111;
+  padding: 13px 40px;
+  font-size: 0.95rem;
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------------------------
+   4. DEPARTMENTS ACROSS THE YEAR (TIMELINE)
+   -------------------------------------------------------------------------- */
+.gt-timeline-section {
+  background-color: #FAF4E8;
+  padding: 90px 0 100px 0;
+}
+
+.gt-timeline-header {
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.gt-timeline-title {
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 500;
+  color: #111111;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.gt-dept-page.tibetan-page .gt-timeline-title {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.gt-timeline-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #555555;
+}
+
+.gt-timeline-bar-wrapper {
+  position: relative;
+  padding: 40px 0 20px 0;
+}
+
+/* Horizontal white bar */
+.gt-timeline-track {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  height: 48px;
+  background: #FFFFFF;
+  border-radius: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.gt-timeline-nodes-grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  .gt-timeline-nodes-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .gt-timeline-track {
+    display: none;
+  }
+}
+
+.gt-timeline-node-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gt-timeline-date-label {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #92060F;
+  letter-spacing: 0.04em;
+  margin-bottom: 12px;
+  height: 20px;
+}
+
+.gt-timeline-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #F8CB76;
+  border: 4px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 16px;
+  transition: transform 0.25s ease;
+}
+
+.gt-timeline-node-item:hover .gt-timeline-circle {
+  transform: scale(1.15);
+}
+
+.gt-timeline-stalk {
+  width: 1px;
+  height: 24px;
+  background: #C4B9AA;
+  margin-bottom: 12px;
+}
+
+.gt-timeline-season {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #92060F;
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.gt-timeline-activity {
+  font-size: 0.95rem;
+  color: #333333;
+}
+
+/* --------------------------------------------------------------------------
+   5. QUESTIONS ABOUT A DEPARTMENT (BLUE BANNER)
+   -------------------------------------------------------------------------- */
+.gt-dept-cta-blue {
+  background-color: #5B8CAE;
+  position: relative;
+  padding: 80px 0;
+  color: #FFFFFF;
+  overflow: hidden;
+}
+
+.gt-dept-cta-blue-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 800px) {
+  .gt-dept-cta-blue-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+.gt-dept-cta-blue-title {
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3.8vw, 3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-cta-blue-title {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+}
+
+.gt-dept-cta-blue-desc {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 28px;
+  max-width: 540px;
+}
+
+.gt-dept-cta-white-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  color: #92060F;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 13px 32px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.gt-dept-cta-white-btn:hover {
+  background-color: #FAF4E8;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+.gt-dept-cta-blue-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gt-dept-lungta-img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.15));
+}
+
+/* --------------------------------------------------------------------------
+   6. UPCOMING EVENTS (GOLD BANNER)
+   -------------------------------------------------------------------------- */
+.gt-dept-events-gold {
+  background-color: #FBC758;
+  padding: 90px 0;
+  color: #111111;
+}
+
+.gt-dept-events-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+}
+
+@media (max-width: 900px) {
+  .gt-dept-events-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.gt-dept-events-sub {
+  font-size: 1.05rem;
+  color: #333333;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.gt-dept-events-heading {
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3.5vw, 2.9rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111111;
+  margin-bottom: 28px;
+  letter-spacing: -0.01em;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-events-heading {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+}
+
+.gt-dept-calendar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #92060F;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  padding: 13px 32px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(146, 6, 15, 0.25);
+}
+
+.gt-dept-calendar-btn:hover {
+  background-color: #7B1824;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(146, 6, 15, 0.35);
+}
+
+.gt-dept-events-cards-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gt-dept-events-top-tag {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #111111;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.gt-dept-event-card {
+  background-color: #FFFFFF;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 18px 24px;
+  gap: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gt-dept-event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.gt-event-card-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 64px;
+  text-align: center;
+}
+
+.gt-event-month {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #555555;
+  letter-spacing: 0.05em;
+}
+
+.gt-event-day {
+  font-family: var(--font-serif, 'Cinzel', Georgia, serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #111111;
+  line-height: 1.1;
+}
+
+.gt-event-year {
+  font-size: 0.8rem;
+  color: #777777;
+  letter-spacing: 0.04em;
+}
+
+.gt-event-card-divider {
+  width: 1px;
+  height: 48px;
+  background-color: #E2D9CC;
+}
+
+.gt-event-card-body h4 {
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111111;
+  margin-bottom: 4px;
+}
+
+.gt-dept-page.tibetan-page .gt-event-card-body h4 {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.15rem;
+}
+
+.gt-event-card-body p {
+  font-size: 0.92rem;
+  color: #666666;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   7. SUPPORT CALL TO ACTION SECTION
+   -------------------------------------------------------------------------- */
+.gt-dept-support-cta {
+  background-color: #FFFFFF;
+  padding: 100px 0 110px 0;
+  text-align: center;
+}
+
+.gt-dept-support-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.gt-dept-support-knot {
+  margin-bottom: 24px;
+}
+
+.gt-dept-support-title {
+  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.1rem, 3.8vw, 3.2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111111;
+  margin-bottom: 20px;
+  letter-spacing: -0.01em;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-support-title {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: clamp(1.9rem, 3.4vw, 2.7rem);
+}
+
+.gt-dept-support-desc {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #444444;
+  margin-bottom: 32px;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-support-desc {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+
+.gt-dept-support-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #92060F;
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+  padding: 14px 36px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(146, 6, 15, 0.25);
+}
+
+.gt-dept-support-btn:hover {
+  background-color: #7B1824;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(146, 6, 15, 0.35);
+}
