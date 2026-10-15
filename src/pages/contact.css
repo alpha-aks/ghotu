@@ -1,0 +1,606 @@
+/* ==========================================================================
+   Gyuto Tantric Monastery - Contact Us & Support Us Styling
+   Matching Figma mockups with high-fidelity typography, colors, and layout
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Common Page Container & Base
+   -------------------------------------------------------------------------- */
+.gt-page-wrapper {
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  color: #111111;
+  font-family: var(--figma-font-sans, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+}
+
+.gt-main-content {
+  flex: 1 0 auto;
+}
+
+/* --------------------------------------------------------------------------
+   Contact Us Section (Figma: Contact us - Eng.png & Contact us Tib.jpg)
+   -------------------------------------------------------------------------- */
+.gt-contact-section {
+  padding: 80px 0 60px 0;
+  background: #FFFFFF;
+}
+
+.gt-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.gt-contact-title-col {
+  padding-top: 10px;
+}
+
+.gt-contact-page-title {
+  font-family: var(--figma-font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #111111;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.tibetan-page .gt-contact-page-title {
+  font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 48px;
+}
+
+.gt-contact-info-col {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #1A1A1A;
+}
+
+.tibetan-page .gt-contact-info-col {
+  font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+.gt-contact-block {
+  margin-bottom: 34px;
+}
+
+.gt-contact-block:last-child {
+  margin-bottom: 0;
+}
+
+.gt-contact-block p {
+  margin: 0 0 4px 0;
+}
+
+.gt-contact-highlight-title {
+  font-weight: 600;
+  font-size: 21px;
+  color: #111111;
+  margin-bottom: 8px !important;
+}
+
+.gt-contact-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.gt-contact-link:hover {
+  color: var(--figma-maroon, #92060F);
+  text-decoration: underline;
+}
+
+.gt-social-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gt-social-links-list li {
+  margin-bottom: 6px;
+}
+
+.gt-social-pill {
+  color: var(--figma-maroon, #92060F);
+  font-weight: 500;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.gt-social-pill:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+/* Wide Map View in Contact Us */
+.gt-contact-map-wrapper {
+  max-width: 1280px;
+  margin: 40px auto 100px auto;
+  padding: 0 40px;
+}
+
+.gt-contact-map-card {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #E5E3DF;
+}
+
+.gt-contact-map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gt-contact-map-card:hover .gt-contact-map-img {
+  transform: scale(1.005);
+}
+
+.gt-map-hover-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  color: var(--figma-maroon, #92060F);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 9999px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.gt-map-hover-badge:hover {
+  background: var(--figma-maroon, #92060F);
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Support Us Section (Figma: Support us - Eng.png & Support us Tib.jpg)
+   -------------------------------------------------------------------------- */
+.gt-support-section {
+  padding: 80px 0 70px 0;
+  background: #FFFFFF;
+}
+
+.gt-support-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.95fr;
+  gap: 70px;
+  align-items: start;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.gt-support-pledge-col {
+  padding-right: 20px;
+}
+
+.gt-support-title {
+  font-family: var(--figma-font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 58px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #111111;
+  margin: 0 0 32px 0;
+  letter-spacing: -0.02em;
+}
+
+.gt-support-pledge-text {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #2D2D2D;
+}
+
+.gt-support-pledge-text p {
+  margin-bottom: 22px;
+}
+
+.tibetan-page .gt-support-pledge-text {
+  font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 18.5px;
+  line-height: 2.1;
+  color: #1A1A1A;
+}
+
+.gt-support-signature {
+  margin-top: 32px;
+  font-weight: 500;
+  color: #111111;
+}
+
+/* Interactive Donation Card */
+.gt-donation-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 10px 0 0 0;
+}
+
+.gt-donation-field-label {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #222222;
+  margin-bottom: 12px;
+  letter-spacing: 0.01em;
+}
+
+/* Frequency Pills */
+.gt-frequency-pill-group {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.gt-freq-btn {
+  padding: 12px 28px;
+  border-radius: 9999px;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gt-freq-btn.active {
+  background: var(--figma-maroon, #92060F);
+  color: #FFFFFF;
+}
+
+.gt-freq-btn.inactive {
+  background: #FDF2DC;
+  color: var(--figma-maroon, #92060F);
+}
+
+.gt-freq-btn.inactive:hover {
+  background: #fae6c0;
+}
+
+/* Amount Pills */
+.gt-amount-pill-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.gt-amount-btn {
+  padding: 10px 24px;
+  border-radius: 9999px;
+  font-size: 15px;
+  font-weight: 700;
+  background: #FDF2DC;
+  color: var(--figma-maroon, #92060F);
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gt-amount-btn:hover {
+  background: #fae6c0;
+}
+
+.gt-amount-btn.active {
+  background: var(--figma-maroon, #92060F);
+  color: #FFFFFF;
+  border-color: var(--figma-maroon, #92060F);
+}
+
+.gt-custom-amount-wrap {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.gt-custom-amount-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 1.5px solid var(--figma-maroon, #92060F);
+  border-radius: 6px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+/* Transaction Fee Checkbox */
+.gt-fee-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin: 24px 0 28px 0;
+  cursor: pointer;
+  user-select: none;
+}
+
+.gt-custom-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid #999999;
+  border-radius: 3px;
+  margin-top: 2px;
+  cursor: pointer;
+  display: inline-grid;
+  place-content: center;
+  background: #FFFFFF;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.gt-custom-checkbox:checked {
+  background: var(--figma-maroon, #92060F);
+  border-color: var(--figma-maroon, #92060F);
+}
+
+.gt-custom-checkbox:checked::before {
+  content: "";
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(-45deg) translate(1px, -1px);
+}
+
+.gt-fee-label-text {
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333333;
+}
+
+/* Name Input */
+.gt-name-field-wrap {
+  margin-bottom: 28px;
+}
+
+.gt-name-input {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 15.5px;
+  border: 1.5px solid #C4C4C4;
+  border-radius: 4px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.gt-name-input:focus {
+  border-color: var(--figma-maroon, #92060F);
+}
+
+/* Donate Now Submit Button */
+.gt-donate-submit-btn {
+  width: 100%;
+  background: var(--figma-maroon, #92060F);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  padding: 16px 24px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(146, 6, 15, 0.2);
+}
+
+.gt-donate-submit-btn:hover {
+  background: #7A050D;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(146, 6, 15, 0.3);
+}
+
+.gt-donate-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Donation Success Notification */
+.gt-donation-success-banner {
+  margin-top: 20px;
+  padding: 16px 20px;
+  background: #E8F5E9;
+  border: 1.5px solid #4CAF50;
+  border-radius: 6px;
+  color: #1B5E20;
+  font-size: 15px;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* --------------------------------------------------------------------------
+   Before You Attend Section (Figma Gold Section: #FFD781)
+   -------------------------------------------------------------------------- */
+.gt-attend-gold-section {
+  background-color: var(--figma-gold-accent, #FFD781);
+  padding: 70px 0;
+  margin-top: 40px;
+}
+
+.gt-attend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.gt-attend-text-col {
+  padding-right: 20px;
+}
+
+.gt-attend-title {
+  font-family: var(--figma-font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 46px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0 0 24px 0;
+  letter-spacing: -0.01em;
+}
+
+.gt-attend-body {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #222222;
+}
+
+.gt-attend-body p {
+  margin-bottom: 20px;
+}
+
+.gt-attend-contact-btn {
+  display: inline-block;
+  background: var(--figma-maroon, #92060F);
+  color: #FFFFFF;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 32px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gt-attend-contact-btn:hover {
+  background: #7A050D;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+.gt-attend-map-col {
+  display: flex;
+  justify-content: center;
+}
+
+.gt-attend-map-card {
+  width: 100%;
+  max-width: 580px;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  background: #E5E3DF;
+}
+
+.gt-attend-map-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gt-attend-map-card:hover .gt-attend-map-img {
+  transform: scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive Breakpoints
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .gt-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .gt-contact-section {
+    padding: 50px 0 40px 0;
+  }
+
+  .gt-contact-page-title {
+    font-size: 42px;
+  }
+
+  .gt-contact-map-wrapper {
+    margin: 20px auto 60px auto;
+    padding: 0 20px;
+  }
+
+  .gt-support-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 0 24px;
+  }
+
+  .gt-support-pledge-col {
+    padding-right: 0;
+  }
+
+  .gt-support-title {
+    font-size: 42px;
+  }
+
+  .gt-attend-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 24px;
+  }
+
+  .gt-attend-text-col {
+    padding-right: 0;
+  }
+
+  .gt-attend-title {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .gt-contact-page-title,
+  .gt-support-title {
+    font-size: 34px;
+  }
+
+  .gt-frequency-pill-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .gt-freq-btn {
+    text-align: center;
+  }
+
+  .gt-amount-pill-group {
+    gap: 8px;
+  }
+
+  .gt-amount-btn {
+    flex: 1 1 28%;
+    text-align: center;
+    padding: 10px 14px;
+  }
+}

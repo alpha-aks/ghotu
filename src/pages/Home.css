@@ -1,0 +1,1696 @@
+/* ==========================================================================
+   GYUTO TANTRIC MONASTERY - FIGMA SPECIFICATION CSS
+   Exact match from Section 1.txt Figma inspect styles
+   ========================================================================== */
+
+:root {
+  --figma-header-bg: #FBC758;
+  --figma-maroon: #92060F;
+  --figma-maroon-dark: #74050c;
+  --figma-gold-accent: #FFD781;
+  --figma-cream-card: #FFFAF1;
+  --figma-blue-dharma: #6B9EBD;
+  --figma-navy-footer: #062039;
+  --figma-text-dark: #2D2A28;
+  --figma-text-black: #0D1A00;
+  --figma-text-gold-light: #FDF1D7;
+  --figma-divider-line: #8F8A84;
+  --figma-divider-motif: #D9C18C;
+  --figma-font-serif: 'Cormorant Garamond', Georgia, serif;
+  --figma-font-sans: 'Source Sans 3', sans-serif;
+  --figma-font-tibetan: 'Noto Serif Tibetan', serif;
+}
+
+/* Reset and page canvas */
+.gyuto-page {
+  font-family: var(--figma-font-sans);
+  color: var(--figma-text-dark);
+  background-color: #FFFFFF;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+.gyuto-page.tibetan-text {
+  font-family: var(--figma-font-tibetan), serif;
+}
+
+.gyuto-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* ==========================================================================
+   1. TOP HEADER (Frame 2147236870: #FBC758, height: 234px, padding: 0 30px 0 108px)
+   ========================================================================== */
+.gt-top-header {
+  background: var(--figma-header-bg);
+  height: 234px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  border-bottom: none;
+}
+
+.gt-top-header-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px 0 80px;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.gt-brand-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  text-decoration: none;
+}
+
+.gt-emblem-seal {
+  width: 140px;
+  height: 140px;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.gt-emblem-seal:hover {
+  transform: scale(1.03);
+}
+
+.gt-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gt-tibetan-title {
+  font-family: var(--figma-font-tibetan);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 44px;
+  line-height: 52px;
+  color: var(--figma-maroon);
+}
+
+.gt-english-title {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 64px;
+  letter-spacing: -0.02em;
+  color: var(--figma-maroon);
+}
+
+/* Language switch widget from Figma (139px x 44px, background #FFFAF1, radius 6px) */
+.gt-lang-switcher-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 6px;
+  gap: 2px;
+  width: 139px;
+  height: 44px;
+  background: var(--figma-cream-card);
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.gt-lang-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  flex: 1;
+  height: 32px;
+  transition: all 0.2s ease;
+}
+
+.gt-lang-btn.active {
+  background: var(--figma-maroon);
+}
+
+.gt-lang-btn.inactive {
+  background: transparent;
+}
+
+.gt-lang-text-en {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 12px;
+  text-transform: uppercase;
+}
+
+.gt-lang-btn.active .gt-lang-text-en {
+  color: var(--figma-text-gold-light);
+}
+
+.gt-lang-btn.inactive .gt-lang-text-en {
+  color: var(--figma-maroon);
+}
+
+.gt-lang-text-tb {
+  font-family: var(--figma-font-tibetan);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.gt-lang-btn.active .gt-lang-text-tb {
+  color: var(--figma-text-gold-light);
+}
+
+.gt-lang-btn.inactive .gt-lang-text-tb {
+  color: var(--figma-maroon);
+}
+
+/* ==========================================================================
+   2. MAROON NAVIGATION BAR (Frame 2147236831: #92060F, height: 64px)
+   ========================================================================== */
+.gt-navbar {
+  background: var(--figma-maroon);
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.gt-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+.gt-nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  height: 44px;
+}
+
+.gt-nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.gt-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  gap: 8px;
+  height: 44px;
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--figma-text-gold-light);
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.tibetan-text .gt-nav-link {
+  font-family: var(--figma-font-tibetan);
+  font-size: 17px;
+}
+
+.gt-nav-link:hover {
+  background: rgba(255, 215, 129, 0.15);
+  color: #FFFFFF;
+}
+
+/* Active tab style from Figma (background: #FFD781; color: #92060F;) */
+.gt-nav-link.active {
+  background: var(--figma-gold-accent);
+  color: var(--figma-maroon);
+  font-weight: 700;
+}
+
+.gt-mobile-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: #FFFFFF;
+  padding: 10px;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+/* ==========================================================================
+   3. HERO SECTION (_DSC4276 1: width: 1440px; height: 800px;)
+   ========================================================================== */
+.gt-hero-section {
+  position: relative;
+  width: 100%;
+  background: #211c1d;
+}
+
+.gt-hero-image-wrap {
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+  position: relative;
+}
+
+.gt-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 36%;
+  display: block;
+}
+
+/* 4 STATS FEATURE BAR (Frame 625795: #FFFAF1, padding: 48px 154px, gap: 61px) */
+.gt-hero-stats-bar {
+  background: var(--figma-cream-card);
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.gt-stats-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 48px 100px;
+  gap: 40px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gt-stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 18px;
+  width: 230px;
+  box-sizing: border-box;
+}
+
+.gt-stat-icon {
+  width: 60px;
+  height: 60px;
+  color: var(--figma-navy-footer);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.gt-stat-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.gt-stat-label {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--figma-text-dark);
+}
+
+.tibetan-text .gt-stat-label {
+  font-family: var(--figma-font-tibetan);
+  font-size: 18px;
+}
+
+.gt-stat-value {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 34px;
+  color: var(--figma-text-dark);
+}
+
+.tibetan-text .gt-stat-value {
+  font-family: var(--figma-font-tibetan);
+  font-size: 22px;
+}
+
+/* ==========================================================================
+   4. A LIVING MONASTIC INSTITUTION (Frame 625771: #FFD781, padding: 60px 346px 80px)
+   ========================================================================== */
+.gt-living-section {
+  background: var(--figma-gold-accent);
+  padding: 60px 40px 80px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gt-living-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.gt-conch-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+.gt-living-title {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 56px;
+  text-align: center;
+  color: #000000;
+  margin: 0;
+}
+
+.tibetan-text .gt-living-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 40px;
+  line-height: 60px;
+  font-weight: 500;
+}
+
+.gt-living-text {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: center;
+  color: var(--figma-text-black);
+  margin: 0;
+}
+
+.tibetan-text .gt-living-text {
+  font-family: var(--figma-font-tibetan);
+  font-size: 20px;
+  line-height: 36px;
+  font-weight: 400;
+}
+
+/* BUTTONS from Figma (Frame 625764: background: #92060F; border-radius: 5px; padding: 15px 20px;) */
+.gt-figma-btn {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 24px;
+  gap: 10px;
+  background: var(--figma-maroon);
+  border-radius: 5px;
+  border: none;
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: var(--figma-text-gold-light) !important;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(146, 6, 15, 0.25);
+}
+
+.tibetan-text .gt-figma-btn {
+  font-family: var(--figma-font-tibetan);
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.gt-figma-btn:hover {
+  background: var(--figma-maroon-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(146, 6, 15, 0.35);
+}
+
+.gt-figma-btn-light {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 24px;
+  gap: 10px;
+  background: var(--figma-text-gold-light);
+  border-radius: 5px;
+  border: none;
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: var(--figma-maroon) !important;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gt-figma-btn-light:hover {
+  background: #FFFFFF;
+  transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   5. FROM THE MONASTERY (NEWS / UPDATES / VIDEO)
+   Figma: Frame 2147236727: padding: 80px; gap: 72px; width: 1440px;
+   ========================================================================== */
+/* ==========================================================================
+   5. FROM THE MONASTERY (NOTICES / TABS / ANNOUNCEMENT / UPDATE)
+   Exact match from user screenshot and Figma Frame 2147236727 / Frame 2147236728
+   ========================================================================== */
+/* ==========================================================================
+   5. FROM THE MONASTERY (NOTICES / TABS / ANNOUNCEMENT / UPDATE)
+   Exact match from user screenshot and Figma Frame 2147236727 / Frame 2147236825
+   ========================================================================== */
+.gt-notices-section {
+  background: #FFFFFF;
+  padding: 80px 80px 75px 80px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* TOP BAR CONTAINER */
+.gt-notices-top-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  position: relative;
+  min-height: 44px;
+}
+
+/* Continuous hairline across the top bar: starts at left 0, stops 28px before the right vajra */
+.gt-notices-top-hairline {
+  position: absolute;
+  left: 0;
+  right: 100px; /* leaves 28px gap before the 72px vajra */
+  bottom: 0;
+  height: 1px;
+  background: #8F8A84;
+  opacity: 0.65;
+  z-index: 1;
+}
+
+/* Tabs group sits flush on top of the bottom baseline */
+.gt-notices-tabs-group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 0px;
+  margin-left: 20px; /* Line extends slightly to the left of UPDATE in screenshot */
+  position: relative;
+  z-index: 2;
+}
+
+.gt-notice-tab-btn {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  background: transparent;
+  color: var(--figma-maroon);
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 42px;
+  box-sizing: border-box;
+}
+
+.tibetan-text .gt-notice-tab-btn {
+  font-family: var(--figma-font-tibetan);
+  font-size: 17px;
+  height: 44px;
+}
+
+.gt-notice-tab-btn:hover {
+  opacity: 0.85;
+}
+
+/* Active tab: solid maroon background, white text, flush on the hairline */
+.gt-notice-tab-btn.active {
+  background: var(--figma-maroon);
+  color: #FFFFFF !important;
+  border-radius: 0;
+  padding: 10px 26px;
+}
+
+/* Top Vajra container: vertically centered with the 1px bottom hairline */
+.gt-notices-top-vajra-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -11.5px; /* centers the 24px vajra on the 1px baseline */
+  flex-shrink: 0;
+}
+
+/* CENTER ANNOUNCEMENT VIEW (Exact match to screenshot) */
+.gt-notices-announcement-view {
+  padding: 68px 20px 64px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gt-notices-announcement-title {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  color: var(--figma-text-dark);
+  text-align: center;
+  margin: 0 0 16px 0;
+}
+
+.tibetan-text .gt-notices-announcement-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 34px;
+  line-height: 52px;
+}
+
+.gt-notices-announcement-text {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--figma-text-dark);
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.tibetan-text .gt-notices-announcement-text {
+  font-family: var(--figma-font-tibetan);
+  font-size: 19px;
+  line-height: 34px;
+}
+
+/* BOTTOM BAR CONTAINER (Vajra on left, breathing gap, hairline to the right) */
+.gt-notices-bottom-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  height: 28px;
+}
+
+.gt-notices-bottom-vajra-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-right: 28px; /* Breathing gap matching screenshot */
+}
+
+.gt-notices-bottom-hairline {
+  flex: 1;
+  height: 1px;
+  background: #8F8A84;
+  opacity: 0.65;
+}
+
+/* Updates State View (when UPDATE tab is selected) */
+.gt-notices-update-view {
+  padding: 50px 0 40px 0;
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  align-items: center;
+  gap: 56px;
+}
+
+.gt-news-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.gt-news-left h3 {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 40px;
+  line-height: 48px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-news-left h3 {
+  font-family: var(--figma-font-tibetan);
+  font-size: 34px;
+}
+
+.gt-news-left p {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--figma-text-black);
+  margin: 0;
+}
+
+.tibetan-text .gt-news-left p {
+  font-family: var(--figma-font-tibetan);
+  font-size: 19px;
+  line-height: 32px;
+}
+
+.gt-news-video-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #D9D9D9;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.gt-news-video-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gt-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.6) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 18px;
+  color: #FFFFFF;
+}
+
+.gt-play-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: var(--figma-maroon);
+  border: 2px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  margin-bottom: 8px;
+  transition: transform 0.2s ease;
+}
+
+.gt-news-video-card:hover .gt-play-btn {
+  transform: scale(1.1);
+}
+
+.gt-video-caption {
+  font-size: 16px;
+  font-weight: 600;
+  color: #FFFFFF;
+}
+
+
+.gt-announcement-inner p {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: var(--figma-text-black);
+  margin: 0;
+}
+
+.tibetan-text .gt-announcement-inner p {
+  font-family: var(--figma-font-tibetan);
+  font-size: 19px;
+  line-height: 32px;
+}
+
+/* ==========================================================================
+   7. SERVING EVERY ASPECT OF MONASTIC LIFE (DEPARTMENTS)
+   Figma: Frame 625783: padding: 112px 80px; gap: 88px;
+   ========================================================================== */
+.gt-departments-sec {
+  background: #FFFFFF;
+  padding: 100px 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+}
+
+.gt-dept-header-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 60px;
+  width: 100%;
+}
+
+.gt-dept-header-left {
+  max-width: 840px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.gt-dept-header-left h3 {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 54px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-dept-header-left h3 {
+  font-family: var(--figma-font-tibetan);
+  font-size: 38px;
+  line-height: 58px;
+}
+
+.gt-dept-header-left p {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 30px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-dept-header-left p {
+  font-family: var(--figma-font-tibetan);
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.gt-dept-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+}
+
+.gt-dept-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  background: #FFFFFF;
+}
+
+.gt-dept-img-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #EAE6DF;
+}
+
+.gt-dept-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gt-dept-card:hover .gt-dept-img {
+  transform: scale(1.04);
+}
+
+.gt-dept-card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: 100%;
+}
+
+.gt-dept-card-title {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 34px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-dept-card-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 24px;
+  line-height: 38px;
+}
+
+.gt-dept-card-text {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-dept-card-text {
+  font-family: var(--figma-font-tibetan);
+  font-size: 19px;
+  line-height: 32px;
+}
+
+.gt-dept-card-link {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 24px;
+  color: var(--figma-maroon);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+
+.tibetan-text .gt-dept-card-link {
+  font-family: var(--figma-font-tibetan);
+}
+
+.gt-dept-card-link:hover {
+  gap: 16px;
+}
+
+.gt-dept-arrow-line {
+  width: 32px;
+  height: 0px;
+  border-top: 1.5px solid var(--figma-maroon);
+  display: inline-block;
+}
+
+/* ==========================================================================
+   8. SPIRITUAL PROGRAMMES THROUGHOUT THE YEAR (EVENTS)
+   Figma: Frame 625808: background: #FFD781; padding: 112px 80px; gap: 162px;
+   ========================================================================== */
+.gt-programmes-sec {
+  background: var(--figma-gold-accent);
+  padding: 100px 80px;
+  display: flex;
+  align-items: center;
+}
+
+.gt-prog-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 80px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.gt-prog-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+}
+
+.gt-prog-left h3 {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 54px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-prog-left h3 {
+  font-family: var(--figma-font-tibetan);
+  font-size: 38px;
+  line-height: 58px;
+}
+
+.gt-prog-left p {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 30px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-prog-left p {
+  font-family: var(--figma-font-tibetan);
+  font-size: 20px;
+  line-height: 36px;
+}
+
+.gt-prog-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.gt-prog-right-title {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 24px;
+  color: var(--figma-text-dark);
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.gt-events-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+/* Event Card in Figma (Frame 625802: background #FFFAF1, border 0.5px solid #68645F, radius 2px, padding 24px 40px) */
+.gt-event-card {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 36px;
+  gap: 24px;
+  background: var(--figma-cream-card);
+  border: 0.5px solid #68645F;
+  border-radius: 2px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gt-event-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.gt-event-date-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 77px;
+  flex-shrink: 0;
+}
+
+.gt-event-month {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 28px;
+  color: #A8833D;
+}
+
+.tibetan-text .gt-event-month {
+  font-family: var(--figma-font-tibetan);
+  font-size: 20px;
+}
+
+.gt-event-day {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 28px;
+  color: var(--figma-text-dark);
+}
+
+.tibetan-text .gt-event-day {
+  font-family: var(--figma-font-tibetan);
+  font-size: 20px;
+}
+
+.gt-event-year {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--figma-text-dark);
+}
+
+.gt-event-divider-vert {
+  width: 1px;
+  height: 68px;
+  background: var(--figma-divider-line);
+  flex-shrink: 0;
+}
+
+.gt-event-info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gt-event-name {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 30px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-event-name {
+  font-family: var(--figma-font-tibetan);
+  font-size: 22px;
+  line-height: 36px;
+}
+
+.gt-event-desc {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-event-desc {
+  font-family: var(--figma-font-tibetan);
+  font-size: 18px;
+  line-height: 30px;
+}
+
+/* ==========================================================================
+   9. PRESERVING BUDDHIST KNOWLEDGE (BLUE DHARMA LIBRARY SECTION)
+   Figma: Frame 625809: background: #6B9EBD; padding: 112px 138px 136px 642px;
+   ========================================================================== */
+.gt-library-sec {
+  background: var(--figma-blue-dharma);
+  color: var(--figma-text-gold-light);
+  padding: 100px 80px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gt-library-inner {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  align-items: center;
+  gap: 60px;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.gt-library-watermark-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gt-library-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.gt-library-content h3 {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 52px;
+  color: var(--figma-text-gold-light);
+  margin: 0;
+}
+
+.tibetan-text .gt-library-content h3 {
+  font-family: var(--figma-font-tibetan);
+  font-size: 34px;
+  line-height: 54px;
+}
+
+.gt-library-content p {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 32px;
+  color: var(--figma-text-gold-light);
+  margin: 0;
+}
+
+.tibetan-text .gt-library-content p {
+  font-family: var(--figma-font-tibetan);
+  font-size: 20px;
+  line-height: 36px;
+}
+
+/* ==========================================================================
+   10. SUPPORT THE CONTINUITY OF THE TRADITION
+   Figma: Frame 625810: background: #FFFFFF; padding: 80px 346px;
+   ========================================================================== */
+.gt-support-sec {
+  background: #FFFFFF;
+  padding: 90px 40px;
+  text-align: center;
+}
+
+.gt-support-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+}
+
+.gt-support-knot {
+  width: 102px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gt-support-inner h3 {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 52px;
+  color: var(--figma-text-dark);
+  text-align: center;
+  margin: 0;
+}
+
+.tibetan-text .gt-support-inner h3 {
+  font-family: var(--figma-font-tibetan);
+  font-size: 34px;
+  line-height: 54px;
+}
+
+.gt-support-inner p {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 32px;
+  color: var(--figma-text-dark);
+  text-align: center;
+  margin: 0;
+}
+
+.tibetan-text .gt-support-inner p {
+  font-family: var(--figma-font-tibetan);
+  font-size: 20px;
+  line-height: 36px;
+}
+
+/* ==========================================================================
+   11. GET IN TOUCH (GOLDEN SECTION WITH MAP)
+   Figma: Frame 625811: background: #FFD781; padding: 60px 80px; gap: 174px;
+   ========================================================================== */
+.gt-contact-sec {
+  background: var(--figma-gold-accent);
+  padding: 80px 80px;
+}
+
+.gt-contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.25fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.gt-contact-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.gt-contact-left h3 {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 42px;
+  line-height: 52px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.tibetan-text .gt-contact-left h3 {
+  font-family: var(--figma-font-tibetan);
+  font-size: 34px;
+  line-height: 52px;
+}
+
+.gt-contact-desc {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 30px;
+  color: var(--figma-text-dark);
+  margin: 0;
+}
+
+.gt-visitor-etiquette {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--figma-text-dark);
+  background: rgba(255, 255, 255, 0.45);
+  padding: 16px 20px;
+  border-radius: 4px;
+  border-left: 3px solid var(--figma-maroon);
+}
+
+.tibetan-text .gt-visitor-etiquette {
+  font-family: var(--figma-font-tibetan);
+  font-size: 19px;
+  line-height: 34px;
+}
+
+.gt-map-card {
+  background: #FFFFFF;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.gt-map-img-wrap {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.gt-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.gt-map-link-overlay {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  padding: 6px 12px;
+  color: var(--figma-maroon);
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.gt-map-link-overlay:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   12. FOOTER (Figma: #062039; color: #FDF1D7;)
+   ========================================================================== */
+.gt-footer {
+  background: var(--figma-navy-footer);
+  color: var(--figma-text-gold-light);
+  padding: 80px 80px 40px 80px;
+}
+
+.gt-footer-top-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1.2fr;
+  gap: 60px;
+  margin-bottom: 48px;
+}
+
+.gt-footer-brand-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.gt-footer-emblem {
+  width: 100px;
+  height: 100px;
+  flex-shrink: 0;
+}
+
+.gt-footer-brand-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gt-footer-brand-body h4 {
+  font-family: var(--figma-font-serif);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 28px;
+  line-height: 36px;
+  color: var(--figma-text-gold-light);
+  margin: 0;
+}
+
+.tibetan-text .gt-footer-brand-body h4 {
+  font-family: var(--figma-font-tibetan);
+  font-size: 26px;
+}
+
+.gt-footer-brand-body p {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--figma-text-gold-light);
+  margin: 0;
+}
+
+.tibetan-text .gt-footer-brand-body p {
+  font-family: var(--figma-font-tibetan);
+  font-size: 18px;
+  line-height: 32px;
+}
+
+.gt-footer-support-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--figma-text-gold-light);
+  font-size: 17px;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 6px;
+}
+
+.gt-footer-support-link:hover {
+  text-decoration: underline;
+}
+
+.gt-footer-col h5 {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: var(--figma-text-gold-light);
+  margin: 0 0 18px 0;
+  border-bottom: 1px solid rgba(253, 241, 215, 0.2);
+  padding-bottom: 8px;
+}
+
+.tibetan-text .gt-footer-col h5 {
+  font-family: var(--figma-font-tibetan);
+}
+
+.gt-footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gt-footer-links a {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 26px;
+  color: var(--figma-text-gold-light);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.tibetan-text .gt-footer-links a {
+  font-family: var(--figma-font-tibetan);
+}
+
+.gt-footer-links a:hover {
+  opacity: 0.8;
+  text-decoration: underline;
+}
+
+.gt-footer-contact-info {
+  font-family: var(--figma-font-sans);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--figma-text-gold-light);
+}
+
+.tibetan-text .gt-footer-contact-info {
+  font-family: var(--figma-font-tibetan);
+}
+
+.gt-footer-contact-info p {
+  margin: 0 0 8px 0;
+}
+
+.gt-footer-contact-info a {
+  color: var(--figma-text-gold-light);
+  text-decoration: none;
+}
+
+.gt-footer-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--figma-font-sans);
+  font-size: 16px;
+  color: var(--figma-text-gold-light);
+  opacity: 0.9;
+  padding-top: 24px;
+}
+
+.tibetan-text .gt-footer-bottom {
+  font-family: var(--figma-font-tibetan);
+}
+
+.gt-footer-bottom a {
+  color: var(--figma-text-gold-light);
+  text-decoration: none;
+}
+
+.gt-footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .gt-top-header {
+    height: auto;
+    padding: 24px 0;
+  }
+  .gt-top-header-inner {
+    padding: 0 24px;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .gt-tibetan-title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .gt-english-title {
+    font-size: 38px;
+    line-height: 48px;
+  }
+  .gt-stats-grid {
+    padding: 36px 24px;
+    flex-wrap: wrap;
+    gap: 32px;
+  }
+  .gt-news-section,
+  .gt-departments-sec,
+  .gt-programmes-sec,
+  .gt-library-sec,
+  .gt-contact-sec,
+  .gt-footer {
+    padding: 60px 24px;
+  }
+  .gt-dept-cards-grid {
+    grid-template-columns: 1fr;
+  }
+  .gt-prog-grid,
+  .gt-library-inner,
+  .gt-contact-grid,
+  .gt-footer-top-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gt-top-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gt-emblem-seal {
+    width: 80px;
+    height: 80px;
+  }
+  .gt-tibetan-title {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  .gt-english-title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .gt-mobile-toggle {
+    display: block;
+  }
+  .gt-nav-list {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    gap: 0;
+    padding: 10px 0;
+  }
+  .gt-nav-list.mobile-open {
+    display: flex;
+  }
+  .gt-nav-link {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 12px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  .gt-hero-image-wrap {
+    height: 400px;
+  }
+  .gt-stats-grid {
+    flex-direction: column;
+  }
+  .gt-news-content-grid {
+    grid-template-columns: 1fr;
+  }
+  .gt-dept-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gt-event-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gt-event-divider-vert {
+    width: 100%;
+    height: 1px;
+  }
+  .gt-footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+  .gt-notices-section {
+    padding: 50px 20px 45px 20px;
+  }
+  .gt-notices-announcement-view {
+    padding: 44px 10px 40px 10px;
+  }
+  .gt-notices-announcement-title {
+    font-size: 30px;
+    line-height: 38px;
+  }
+  .gt-notices-announcement-text {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .gt-notices-top-hairline {
+    right: 82px;
+  }
+  .gt-notices-tabs-group {
+    margin-left: 0;
+  }
+  .gt-notice-tab-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+  .gt-notice-tab-btn.active {
+    padding: 8px 18px;
+  }
+  .gt-notices-bottom-vajra-wrap {
+    margin-right: 16px;
+  }
+  .gt-notices-update-view {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding: 36px 0 20px 0;
+  }
+}
