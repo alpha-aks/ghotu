@@ -1,0 +1,1205 @@
+/* ==========================================================================
+   Gyuto Tantric Monastery - Programmes & Events Page Styling
+   High-fidelity recreation of Figma mockups:
+   Programmes - Eng.png & Programmes - Tib.jpg
+   ========================================================================== */
+
+:root {
+  --figma-font-serif: 'Cormorant Garamond', Georgia, serif;
+  --figma-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --figma-font-tibetan: 'Noto Serif Tibetan', serif;
+  --figma-maroon: #92060F;
+  --figma-maroon-hover: #7A050D;
+  --figma-gold-accent: #FFD781;
+  --figma-gold-warm: #F7BD56;
+  --figma-cream-bg: #FDF1D7;
+  --figma-cream-card: #FAF1DC;
+  --figma-blue-cal: #2778A7;
+  --figma-blue-cal-hover: #1E638B;
+  --figma-blue-selected: #D5E5EE;
+  --figma-charcoal: #1E2022;
+}
+
+.gt-programmes-page {
+  background-color: #FFFFFF;
+  color: #111111;
+  font-family: var(--figma-font-sans);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.gt-programmes-page.tibetan-text {
+  font-family: var(--figma-font-tibetan), var(--figma-font-sans);
+}
+
+/* --------------------------------------------------------------------------
+   GLOBAL CONTAINER (Figma 1440px canvas with 80px side margins)
+   -------------------------------------------------------------------------- */
+.gt-programmes-page .gyuto-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .gt-programmes-page .gyuto-container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gt-programmes-page .gyuto-container {
+    padding: 0 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO BANNER
+   -------------------------------------------------------------------------- */
+.gt-programmes-hero {
+  position: relative;
+  height: 440px;
+  background-image: linear-gradient(rgba(14, 8, 5, 0.62), rgba(14, 8, 5, 0.76)), url('/images/programmes/hero-bg.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.gt-programmes-hero-content {
+  max-width: 880px;
+  color: #FFFFFF;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.gt-programmes-hero-title {
+  font-family: var(--figma-font-serif);
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.8px;
+  margin: 0 0 20px 0;
+  color: #FFFFFF;
+}
+
+.tibetan-text .gt-programmes-hero-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 40px;
+  line-height: 1.45;
+}
+
+.gt-programmes-hero-sub {
+  font-family: var(--figma-font-sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 auto;
+  max-width: 820px;
+}
+
+.tibetan-text .gt-programmes-hero-sub {
+  font-family: var(--figma-font-tibetan);
+  font-size: 16.5px;
+  line-height: 1.85;
+}
+
+/* --------------------------------------------------------------------------
+   2. ANNUAL CALENDAR SECTION
+   -------------------------------------------------------------------------- */
+.gt-calendar-section {
+  background-color: #FFFFFF;
+  padding: 84px 0 92px 0;
+}
+
+.gt-calendar-header-group {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 46px auto;
+}
+
+.gt-calendar-section-title {
+  font-family: var(--figma-font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  color: #1F2421;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+}
+
+.tibetan-text .gt-calendar-section-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 36px;
+  line-height: 1.4;
+}
+
+.gt-calendar-section-sub {
+  font-family: var(--figma-font-sans);
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0 auto;
+}
+
+.tibetan-text .gt-calendar-section-sub {
+  font-family: var(--figma-font-tibetan);
+  font-size: 15.5px;
+  line-height: 1.8;
+}
+
+/* Calendar Card / Shell */
+.gt-calendar-shell {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.gt-cal-month-title {
+  font-family: var(--figma-font-serif);
+  font-size: 28px;
+  font-weight: 500;
+  color: #2778A7;
+  margin: 0 0 16px 4px;
+  letter-spacing: 0.3px;
+}
+
+.tibetan-text .gt-cal-month-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 24px;
+}
+
+/* Nav Bar (Blue controls & Center date display) */
+.gt-cal-nav-bar {
+  display: flex;
+  align-items: stretch;
+  height: 42px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 0 1px 4px rgba(39, 120, 167, 0.12);
+}
+
+.gt-cal-nav-btn {
+  background-color: var(--figma-blue-cal);
+  color: #FFFFFF;
+  border: none;
+  padding: 0 24px;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  white-space: nowrap;
+}
+
+.gt-cal-nav-btn:hover {
+  background-color: var(--figma-blue-cal-hover);
+}
+
+.gt-cal-nav-btn:active {
+  transform: scale(0.98);
+}
+
+.gt-cal-center-box {
+  flex: 1;
+  background-color: #FFFFFF;
+  border-top: 1px solid var(--figma-blue-cal);
+  border-bottom: 1px solid var(--figma-blue-cal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--figma-font-sans);
+  font-size: 15px;
+  font-weight: 600;
+  color: #2778A7;
+  letter-spacing: 0.5px;
+  padding: 0 16px;
+}
+
+.tibetan-text .gt-cal-center-box {
+  font-family: var(--figma-font-tibetan);
+  font-size: 14.5px;
+}
+
+/* Quick Jump & Controls Strip */
+.gt-cal-quick-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  font-size: 13px;
+  color: #666;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gt-cal-legend {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 12.5px;
+}
+
+.gt-cal-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gt-legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  border: 1px solid #CCC;
+}
+
+.gt-legend-color.selected {
+  background-color: var(--figma-blue-selected);
+  border-color: #A9C5D7;
+}
+
+.gt-legend-color.event {
+  background-color: #92060F;
+  border-color: #7A050D;
+  border-radius: 50%;
+}
+
+.gt-cal-reset-btn {
+  background: none;
+  border: 1px solid #D0D0D0;
+  border-radius: 3px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: #444;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.gt-cal-reset-btn:hover {
+  background-color: #F5F5F5;
+  border-color: #AAA;
+}
+
+/* The Calendar Grid */
+.gt-cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border-top: 1px solid #D6D6D6;
+  border-left: 1px solid #D6D6D6;
+  background-color: #FFFFFF;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+/* Day of week headers */
+.gt-cal-header-cell {
+  background-color: #FFFFFF;
+  border-right: 1px solid #D6D6D6;
+  border-bottom: 1px solid #D6D6D6;
+  padding: 12px 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #2D3134;
+  text-align: left;
+}
+
+.tibetan-text .gt-cal-header-cell {
+  font-family: var(--figma-font-tibetan);
+  font-size: 13px;
+  padding: 10px 12px;
+}
+
+/* Day Cells */
+.gt-cal-cell {
+  position: relative;
+  min-height: 86px;
+  border-right: 1px solid #E4E4E4;
+  border-bottom: 1px solid #E4E4E4;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: background-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.gt-cal-cell:hover {
+  background-color: #F1F7FA;
+}
+
+/* Adjacent month days: warm light cream/sand background as in mockup */
+.gt-cal-cell.other-month {
+  background-color: #FAF4E8;
+  color: #8C867E;
+}
+
+.gt-cal-cell.other-month:hover {
+  background-color: #F4ECE0;
+}
+
+/* Selected Date Highlight (exact pale blue fill from mockup) */
+.gt-cal-cell.selected-day {
+  background-color: var(--figma-blue-selected) !important;
+  color: #0E354C !important;
+  box-shadow: inset 0 0 0 2px #2778A7;
+}
+
+.gt-cal-cell-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gt-cal-day-number {
+  font-family: var(--figma-font-sans);
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1;
+  color: inherit;
+}
+
+.gt-cal-cell.selected-day .gt-cal-day-number {
+  color: #0F3B56;
+}
+
+/* Event badges & indicators inside cell */
+.gt-cal-event-indicator {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.gt-cal-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--figma-maroon);
+}
+
+.gt-cal-dot.special {
+  background-color: #D48806;
+}
+
+.gt-cal-cell-events {
+  margin-top: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.gt-cal-micro-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 5px;
+  border-radius: 3px;
+  background-color: rgba(146, 6, 15, 0.09);
+  color: #92060F;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+
+.gt-cal-cell.selected-day .gt-cal-micro-tag {
+  background-color: rgba(39, 120, 167, 0.2);
+  color: #164866;
+}
+
+/* Selected Day Interactive Details Card */
+.gt-cal-selected-info-card {
+  margin-top: 28px;
+  background: #FFFFFF;
+  border: 1.5px solid #2778A7;
+  border-radius: 6px;
+  padding: 24px 28px;
+  box-shadow: 0 6px 20px rgba(39, 120, 167, 0.09);
+  animation: slideDown 0.3s ease-out;
+}
+
+.gt-cal-selected-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #E8ECEF;
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.gt-cal-selected-date-text {
+  font-family: var(--figma-font-serif);
+  font-size: 24px;
+  font-weight: 600;
+  color: #2778A7;
+}
+
+.gt-cal-tibetan-lunar-badge {
+  font-size: 12.5px;
+  font-weight: 600;
+  padding: 4px 12px;
+  background: #FFF3D6;
+  border: 1px solid #E3C174;
+  color: #8C5B00;
+  border-radius: 20px;
+}
+
+.gt-cal-day-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.gt-cal-event-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 12px;
+  border-radius: 4px;
+  background-color: #F8FBFC;
+  border-left: 3px solid #2778A7;
+}
+
+.gt-cal-event-time {
+  font-size: 13px;
+  font-weight: 700;
+  color: #2778A7;
+  min-width: 90px;
+}
+
+.gt-cal-event-body h4 {
+  font-family: var(--figma-font-serif);
+  font-size: 19px;
+  font-weight: 600;
+  color: #1F2421;
+  margin: 0 0 4px 0;
+}
+
+.gt-cal-event-body p {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #4A4A4A;
+  margin: 0;
+}
+
+.gt-cal-no-events {
+  color: #666;
+  font-style: italic;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. UPCOMING PROGRAMMES SECTION (Figma Cream: #FDF1D7 with Dharmachakra)
+   -------------------------------------------------------------------------- */
+.gt-programmes-upcoming-section {
+  position: relative;
+  background-color: var(--figma-cream-bg);
+  padding: 90px 0 100px 0;
+  overflow: hidden;
+}
+
+/* Dharmachakra Watermark behind cards */
+.gt-upcoming-watermark-wrap {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.45;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .gt-upcoming-watermark-wrap {
+    opacity: 0.25;
+    right: -140px;
+  }
+}
+
+.gt-upcoming-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+}
+
+.gt-upcoming-header-group {
+  margin-bottom: 40px;
+}
+
+.gt-upcoming-title {
+  font-family: var(--figma-font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  color: #1F2421;
+  margin: 0 0 12px 0;
+  letter-spacing: 0.5px;
+}
+
+.tibetan-text .gt-upcoming-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 36px;
+}
+
+.gt-upcoming-sub {
+  font-family: var(--figma-font-sans);
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+.tibetan-text .gt-upcoming-sub {
+  font-family: var(--figma-font-tibetan);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Cards Stack */
+.gt-upcoming-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.gt-programme-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E5C583;
+  border-radius: 4px;
+  display: flex;
+  align-items: stretch;
+  box-shadow: 0 3px 12px rgba(184, 137, 56, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+}
+
+.gt-programme-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(184, 137, 56, 0.16);
+  border-color: #D4B26F;
+}
+
+/* Date Box (Left Column) */
+.gt-pcard-date-col {
+  width: 110px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid #EBD5AC;
+  padding: 22px 12px;
+  background: #FFFDF9;
+}
+
+.gt-pdate-month {
+  font-family: var(--figma-font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #A07830;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.tibetan-text .gt-pdate-month {
+  font-family: var(--figma-font-tibetan);
+  font-size: 14px;
+}
+
+.gt-pdate-day {
+  font-family: var(--figma-font-serif);
+  font-size: 32px;
+  font-weight: 700;
+  color: #1F2421;
+  line-height: 1.1;
+  margin: 2px 0 4px 0;
+}
+
+.tibetan-text .gt-pdate-day {
+  font-family: var(--figma-font-tibetan);
+  font-size: 24px;
+}
+
+.gt-pdate-year {
+  font-family: var(--figma-font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 2.5px;
+  color: #6C665D;
+}
+
+.tibetan-text .gt-pdate-year {
+  letter-spacing: 1px;
+}
+
+/* Card Content (Right Column) */
+.gt-pcard-body-col {
+  padding: 26px 30px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.gt-pcard-title {
+  font-family: var(--figma-font-serif);
+  font-size: 22px;
+  font-weight: 600;
+  color: #1F2421;
+  margin: 0 0 10px 0;
+  letter-spacing: 0.3px;
+}
+
+.tibetan-text .gt-pcard-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 20px;
+  line-height: 1.4;
+}
+
+.gt-pcard-desc {
+  font-family: var(--figma-font-sans);
+  font-size: 14.5px;
+  line-height: 1.65;
+  color: #4A4A4A;
+  margin: 0 0 16px 0;
+}
+
+.tibetan-text .gt-pcard-desc {
+  font-family: var(--figma-font-tibetan);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.gt-pcard-learn-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: var(--figma-font-sans);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--figma-maroon);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  transition: color 0.2s ease, gap 0.2s ease;
+}
+
+.gt-pcard-learn-btn:hover {
+  color: var(--figma-maroon-hover);
+  gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   4. DEPARTMENTS ACROSS THE YEAR SECTION
+   -------------------------------------------------------------------------- */
+.gt-departments-rhythm-section {
+  background-color: #FFFFFF;
+  padding: 86px 0 94px 0;
+}
+
+.gt-rhythm-header-group {
+  max-width: 820px;
+  margin-bottom: 54px;
+}
+
+.gt-rhythm-title {
+  font-family: var(--figma-font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  color: #1F2421;
+  margin: 0 0 14px 0;
+  letter-spacing: 0.5px;
+}
+
+.tibetan-text .gt-rhythm-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 36px;
+}
+
+.gt-rhythm-sub {
+  font-family: var(--figma-font-sans);
+  font-size: 15.5px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0;
+}
+
+.tibetan-text .gt-rhythm-sub {
+  font-family: var(--figma-font-tibetan);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* 4 Milestone Horizontal Flow */
+.gt-rhythm-track-wrap {
+  position: relative;
+  margin-top: 40px;
+  padding: 0 20px;
+}
+
+/* Subtle connecting horizontal line */
+.gt-rhythm-connecting-line {
+  position: absolute;
+  top: 56px;
+  left: 60px;
+  right: 60px;
+  height: 2px;
+  background: #EED7B5;
+  z-index: 1;
+}
+
+.gt-rhythm-nodes-grid {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.gt-rhythm-node {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gt-rhythm-date-label {
+  font-family: var(--figma-font-sans);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--figma-maroon);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.tibetan-text .gt-rhythm-date-label {
+  font-family: var(--figma-font-tibetan);
+  font-size: 13.5px;
+}
+
+.gt-rhythm-circle-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gt-rhythm-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #F7BD56;
+  border: 3px solid #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+.gt-rhythm-node:hover .gt-rhythm-circle {
+  transform: scale(1.12);
+  background-color: #EBAA38;
+}
+
+/* Small downward stem / line under circle */
+.gt-rhythm-stem {
+  width: 1px;
+  height: 18px;
+  background-color: #CDB797;
+  margin-left: 24px;
+}
+
+.gt-rhythm-meta-block {
+  margin-top: 4px;
+}
+
+.gt-rhythm-season-name {
+  font-family: var(--figma-font-sans);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--figma-maroon);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  margin: 0 0 4px 0;
+}
+
+.tibetan-text .gt-rhythm-season-name {
+  font-family: var(--figma-font-tibetan);
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+
+.gt-rhythm-activity-title {
+  font-family: var(--figma-font-sans);
+  font-size: 14px;
+  color: #333333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.tibetan-text .gt-rhythm-activity-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   5. BEFORE YOU ATTEND SECTION (Warm Golden: #F7BD56)
+   -------------------------------------------------------------------------- */
+.gt-before-attend-section {
+  background-color: var(--figma-gold-warm);
+  padding: 86px 0;
+}
+
+.gt-attend-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.gt-attend-text-col {
+  padding-right: 16px;
+}
+
+.gt-attend-title {
+  font-family: var(--figma-font-serif);
+  font-size: 42px;
+  font-weight: 500;
+  color: #1A1A1A;
+  margin: 0 0 24px 0;
+  letter-spacing: 0.4px;
+}
+
+.tibetan-text .gt-attend-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 38px;
+}
+
+.gt-attend-para {
+  font-family: var(--figma-font-sans);
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #2D2418;
+  margin: 0 0 18px 0;
+}
+
+.tibetan-text .gt-attend-para {
+  font-family: var(--figma-font-tibetan);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.gt-attend-contact-btn {
+  display: inline-block;
+  background-color: var(--figma-maroon);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  padding: 14px 34px;
+  font-family: var(--figma-font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+}
+
+.gt-attend-contact-btn:hover {
+  background-color: var(--figma-maroon-hover);
+  transform: translateY(-1px);
+}
+
+.gt-attend-map-col {
+  display: flex;
+  justify-content: center;
+}
+
+.gt-attend-map-card {
+  width: 100%;
+  max-width: 580px;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.gt-attend-map-img {
+  width: 100%;
+  height: 310px;
+  object-fit: cover;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   6. SUPPORT THE CONTINUITY OF THE TRADITION
+   -------------------------------------------------------------------------- */
+.gt-support-tradition-section {
+  background-color: #FFFFFF;
+  padding: 86px 0 94px 0;
+  text-align: center;
+}
+
+.gt-support-knot-icon {
+  margin: 0 auto 20px auto;
+  display: inline-block;
+  animation: subtleFloat 3s ease-in-out infinite;
+}
+
+.gt-support-tradition-title {
+  font-family: var(--figma-font-serif);
+  font-size: 40px;
+  font-weight: 400;
+  color: #1F2421;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+}
+
+.tibetan-text .gt-support-tradition-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 34px;
+  line-height: 1.4;
+}
+
+.gt-support-tradition-sub {
+  font-family: var(--figma-font-sans);
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #555555;
+  max-width: 780px;
+  margin: 0 auto 34px auto;
+}
+
+.tibetan-text .gt-support-tradition-sub {
+  font-family: var(--figma-font-tibetan);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+.gt-support-us-btn {
+  display: inline-block;
+  background-color: var(--figma-maroon);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 2px;
+  padding: 15px 44px;
+  font-family: var(--figma-font-sans);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  text-decoration: none;
+}
+
+.gt-support-us-btn:hover {
+  background-color: var(--figma-maroon-hover);
+  transform: translateY(-1px);
+}
+
+/* --------------------------------------------------------------------------
+   PROGRAMME MODAL DIALOG
+   -------------------------------------------------------------------------- */
+.gt-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+  backdrop-filter: blur(3px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.gt-modal-card {
+  background-color: #FFFFFF;
+  max-width: 680px;
+  width: 100%;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  animation: scaleUp 0.25s ease-out;
+  border-top: 6px solid var(--figma-maroon);
+}
+
+.gt-modal-header {
+  padding: 24px 28px;
+  border-bottom: 1px solid #EBEBEB;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.gt-modal-title {
+  font-family: var(--figma-font-serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: #1F2421;
+  margin: 0 0 6px 0;
+}
+
+.gt-modal-date-tag {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--figma-maroon);
+}
+
+.gt-modal-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #888;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px;
+}
+
+.gt-modal-close-btn:hover {
+  color: #111;
+}
+
+.gt-modal-body {
+  padding: 24px 28px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.gt-modal-detail-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 16px;
+  font-size: 14.5px;
+}
+
+.gt-modal-label {
+  font-weight: 700;
+  color: #333;
+  min-width: 110px;
+}
+
+.gt-modal-footer {
+  padding: 18px 28px;
+  background-color: #F9F9F9;
+  border-top: 1px solid #EBEBEB;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   ANIMATIONS & RESPONSIVE RULES
+   -------------------------------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subtleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@media (max-width: 900px) {
+  .gt-attend-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .gt-rhythm-connecting-line {
+    display: none;
+  }
+
+  .gt-rhythm-nodes-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .gt-cal-cell {
+    min-height: 70px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gt-programmes-hero-title {
+    font-size: 34px;
+  }
+
+  .gt-calendar-section-title,
+  .gt-upcoming-title,
+  .gt-rhythm-title,
+  .gt-attend-title,
+  .gt-support-tradition-title {
+    font-size: 30px;
+  }
+
+  .gt-programme-card {
+    flex-direction: column;
+  }
+
+  .gt-pcard-date-col {
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+    border-right: none;
+    border-bottom: 1px solid #EBD5AC;
+    padding: 12px 20px;
+  }
+
+  .gt-pdate-day {
+    font-size: 24px;
+  }
+
+  .gt-pcard-body-col {
+    padding: 20px;
+  }
+
+  .gt-rhythm-nodes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gt-cal-nav-bar {
+    height: auto;
+    flex-direction: column;
+  }
+
+  .gt-cal-center-box {
+    padding: 8px 0;
+  }
+
+  .gt-cal-cell {
+    min-height: 52px;
+    padding: 4px;
+  }
+
+  .gt-cal-day-number {
+    font-size: 12px;
+  }
+}

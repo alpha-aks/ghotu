@@ -9,10 +9,12 @@ import Departments from './pages/departments';
 import DepartmentsTb from './pages/departmentstb';
 import About from './pages/about';
 import AboutTb from './pages/abouttb';
+import Programmes from './pages/programmes';
+import ProgrammesTb from './pages/programmestb';
 
 export default function App() {
   const [currentLang, setCurrentLang] = useState('en'); // 'en' | 'tb'
-  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'about' | 'contact' | 'support' | 'departments'
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'about' | 'programmes' | 'contact' | 'support' | 'departments'
 
   // Hash based routing synchronization
   useEffect(() => {
@@ -20,6 +22,8 @@ export default function App() {
       const hash = window.location.hash.toLowerCase();
       if (hash === '#about') {
         setCurrentPage('about');
+      } else if (hash === '#programmes' || hash === '#programs') {
+        setCurrentPage('programmes');
       } else if (hash === '#contact') {
         setCurrentPage('contact');
       } else if (hash === '#donate' || hash === '#support') {
@@ -47,6 +51,8 @@ export default function App() {
     setCurrentPage(page);
     if (page === 'about') {
       window.location.hash = '#about';
+    } else if (page === 'programmes') {
+      window.location.hash = '#programmes';
     } else if (page === 'contact') {
       window.location.hash = '#contact';
     } else if (page === 'support') {
@@ -66,6 +72,12 @@ export default function App() {
           <About onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
         ) : (
           <AboutTb onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
+        )
+      ) : currentPage === 'programmes' ? (
+        currentLang === 'en' ? (
+          <Programmes onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
+        ) : (
+          <ProgrammesTb onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
         )
       ) : currentPage === 'contact' ? (
         currentLang === 'en' ? (

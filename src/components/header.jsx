@@ -6,7 +6,16 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const isTibetan = lang === 'tb';
 
-  const navItems = [
+  const navItems = isTibetan ? [
+    { key: 'home', href: '#home', label: 'HOME', active: active === 'home' },
+    { key: 'news', href: '#news', label: 'NEWS', active: active === 'news' },
+    { key: 'departments', href: '#departments', label: 'སྡེ་ཚན་ཁག', active: active === 'departments' },
+    { key: 'programmes', href: '#programmes', label: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།', active: active === 'programmes' },
+    { key: 'about', href: '#about', label: 'About', active: active === 'about' },
+    { key: 'gallery', href: '#gallery', label: 'ང༌ཚོའི་སྐོར།', active: active === 'gallery' },
+    { key: 'contact', href: '#contact', label: 'CONTACT', active: active === 'contact' },
+    { key: 'donate', href: '#donate', label: 'SUPPORT US', active: active === 'donate' || active === 'support' }
+  ] : [
     { key: 'home', href: '#home', label: 'HOME', active: active === 'home' },
     { key: 'news', href: '#news', label: 'NEWS', active: active === 'news' },
     { key: 'departments', href: '#departments', label: 'DEPARTMENTS', active: active === 'departments' },
@@ -29,6 +38,9 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       } else if (key === 'departments') {
         e.preventDefault();
         onNavigate('departments');
+      } else if (key === 'programmes') {
+        e.preventDefault();
+        onNavigate('programmes');
       } else if (key === 'about') {
         e.preventDefault();
         onNavigate('about');
