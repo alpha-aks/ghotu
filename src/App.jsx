@@ -7,16 +7,20 @@ import Support from './pages/support';
 import SupportTb from './pages/supporttb';
 import Departments from './pages/departments';
 import DepartmentsTb from './pages/departmentstb';
+import About from './pages/about';
+import AboutTb from './pages/abouttb';
 
 export default function App() {
   const [currentLang, setCurrentLang] = useState('en'); // 'en' | 'tb'
-  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'contact' | 'support' | 'departments'
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'about' | 'contact' | 'support' | 'departments'
 
   // Hash based routing synchronization
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.toLowerCase();
-      if (hash === '#contact') {
+      if (hash === '#about') {
+        setCurrentPage('about');
+      } else if (hash === '#contact') {
         setCurrentPage('contact');
       } else if (hash === '#donate' || hash === '#support') {
         setCurrentPage('support');
@@ -41,7 +45,9 @@ export default function App() {
 
   const navigateTo = (page) => {
     setCurrentPage(page);
-    if (page === 'contact') {
+    if (page === 'about') {
+      window.location.hash = '#about';
+    } else if (page === 'contact') {
       window.location.hash = '#contact';
     } else if (page === 'support') {
       window.location.hash = '#donate';
@@ -55,7 +61,13 @@ export default function App() {
 
   return (
     <div className="app-container">
-      {currentPage === 'contact' ? (
+      {currentPage === 'about' ? (
+        currentLang === 'en' ? (
+          <About onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
+        ) : (
+          <AboutTb onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
+        )
+      ) : currentPage === 'contact' ? (
         currentLang === 'en' ? (
           <Contact onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
         ) : (

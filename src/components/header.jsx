@@ -29,6 +29,9 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       } else if (key === 'departments') {
         e.preventDefault();
         onNavigate('departments');
+      } else if (key === 'about') {
+        e.preventDefault();
+        onNavigate('about');
       } else if (key === 'home') {
         e.preventDefault();
         onNavigate('home');

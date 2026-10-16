@@ -1,0 +1,952 @@
+/* ==========================================================================
+   Gyuto Tantric Monastery - About Page Styling
+   High-fidelity recreation of Figma mockups: About - Eng.png & About - Tib.jpg
+   ========================================================================== */
+
+:root {
+  --figma-font-serif: 'Cormorant Garamond', Georgia, serif;
+  --figma-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --figma-font-tibetan: 'Noto Serif Tibetan', serif;
+  --figma-maroon: #92060F;
+  --figma-maroon-hover: #7A050D;
+  --figma-gold-accent: #FFD781;
+  --figma-cream-bg: #FDF1D7;
+  --figma-slate-blue: #6B9EBD;
+}
+
+.gt-about-page {
+  background-color: #FFFFFF;
+  color: #111111;
+  font-family: var(--figma-font-sans);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* --------------------------------------------------------------------------
+   GLOBAL CONTAINER (Figma 1440px canvas with 80px side margins)
+   -------------------------------------------------------------------------- */
+.gt-about-page .gyuto-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .gt-about-page .gyuto-container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gt-about-page .gyuto-container {
+    padding: 0 20px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   1. HERO BANNER
+   -------------------------------------------------------------------------- */
+.gt-about-hero {
+  position: relative;
+  height: 460px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.72)), url('/images/about/hero-bg.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 24px;
+}
+
+.gt-about-hero-content {
+  max-width: 960px;
+  color: #FFFFFF;
+  animation: fadeIn 0.8s ease-out;
+}
+
+.gt-about-hero-title {
+  font-family: var(--figma-font-serif);
+  font-size: 56px;
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.tibetan-about-page .gt-about-hero-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 48px;
+  line-height: 1.35;
+}
+
+.gt-about-hero-sub {
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  color: #FDF1D7;
+  margin: 0;
+  opacity: 0.95;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+}
+
+.tibetan-about-page .gt-about-hero-sub {
+  font-family: var(--figma-font-tibetan);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   2. OUR LEGACY SECTION (Figma Cream: #FDF1D7)
+   -------------------------------------------------------------------------- */
+.gt-legacy-section {
+  padding: 95px 0 95px 0;
+  background-color: var(--figma-cream-bg, #FDF1D7);
+}
+
+.gt-legacy-header {
+  margin-bottom: 55px;
+}
+
+.gt-legacy-conch-icon {
+  margin-bottom: 16px;
+  display: inline-block;
+  color: var(--figma-maroon, #92060F);
+}
+
+.gt-legacy-title {
+  font-family: var(--figma-font-serif);
+  font-size: 52px;
+  font-weight: 500;
+  line-height: 1.15;
+  color: #111111;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.tibetan-about-page .gt-legacy-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 44px;
+}
+
+.gt-legacy-story-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+}
+
+.gt-legacy-story-row {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.gt-legacy-story-row.reversed {
+  grid-template-columns: 1.1fr 1fr;
+}
+
+.gt-legacy-text-box {
+  font-size: 17.5px;
+  line-height: 1.85;
+  color: #272022;
+}
+
+.tibetan-about-page .gt-legacy-text-box {
+  font-family: var(--figma-font-tibetan);
+  font-size: 18px;
+  line-height: 2.1;
+}
+
+.gt-legacy-img-box {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.09);
+  background: #EAE3D2;
+}
+
+.gt-legacy-img {
+  width: 100%;
+  height: 380px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.gt-legacy-img-box:hover .gt-legacy-img {
+  transform: scale(1.025);
+}
+
+/* --------------------------------------------------------------------------
+   3. INSTITUTIONAL LEADERSHIP SECTION (Figma Gold: #FFD781)
+   -------------------------------------------------------------------------- */
+.gt-leadership-section {
+  background-color: var(--figma-gold-accent, #FFD781);
+  padding: 95px 0 105px 0;
+}
+
+.gt-leadership-head {
+  max-width: 980px;
+  margin-bottom: 60px;
+}
+
+.gt-leadership-title {
+  font-family: var(--figma-font-serif);
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
+.tibetan-about-page .gt-leadership-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 42px;
+}
+
+.gt-leadership-intro-text {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #272022;
+  margin: 0;
+}
+
+.tibetan-about-page .gt-leadership-intro-text {
+  font-family: var(--figma-font-tibetan);
+  font-size: 17.5px;
+  line-height: 2.0;
+}
+
+.gt-leaders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 75px;
+}
+
+.gt-leader-card {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 55px;
+  align-items: start;
+}
+
+.gt-leader-photo-wrap {
+  width: 100%;
+}
+
+.gt-leader-img-box {
+  width: 100%;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.14);
+  background: #EAE6DF;
+}
+
+.gt-leader-photo {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gt-leader-img-box:hover .gt-leader-photo {
+  transform: scale(1.025);
+}
+
+.gt-leader-name {
+  font-family: var(--figma-font-serif);
+  font-size: 34px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #111111;
+  margin: 18px 0 4px 0;
+}
+
+.tibetan-about-page .gt-leader-name {
+  font-family: var(--figma-font-tibetan);
+  font-size: 26px;
+}
+
+.gt-leader-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4A3A28;
+  margin: 0;
+}
+
+.tibetan-about-page .gt-leader-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 15px;
+}
+
+.gt-leader-bio-wrap {
+  font-size: 16px;
+  line-height: 1.8;
+  color: #272022;
+}
+
+.tibetan-about-page .gt-leader-bio-wrap {
+  font-family: var(--figma-font-tibetan);
+  font-size: 16.5px;
+  line-height: 2.0;
+}
+
+.gt-leader-bio-wrap p {
+  margin: 0 0 16px 0;
+}
+
+.gt-leader-bio-link {
+  color: var(--figma-maroon, #92060F);
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  display: inline-block;
+  margin-top: 6px;
+}
+
+.gt-leader-bio-link:hover {
+  color: var(--figma-maroon-hover, #7A050D);
+}
+
+/* --------------------------------------------------------------------------
+   4. PAST ABBOTS SECTION (Figma Cream: #FDF1D7)
+   -------------------------------------------------------------------------- */
+.gt-past-abbots-section {
+  padding: 95px 0 105px 0;
+  background-color: var(--figma-cream-bg, #FDF1D7);
+}
+
+.gt-past-abbots-head {
+  max-width: 920px;
+  margin-bottom: 50px;
+}
+
+.gt-past-abbots-title {
+  font-family: var(--figma-font-serif);
+  font-size: 50px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0 0 18px 0;
+  letter-spacing: -0.01em;
+}
+
+.tibetan-about-page .gt-past-abbots-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 42px;
+}
+
+.gt-past-abbots-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #333333;
+  margin: 0;
+}
+
+.tibetan-about-page .gt-past-abbots-desc {
+  font-family: var(--figma-font-tibetan);
+  font-size: 17.5px;
+  line-height: 2.0;
+}
+
+/* Past Abbots 5-Column Grid */
+.gt-past-abbots-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 25px;
+  width: 100%;
+}
+
+.gt-past-abbot-card {
+  background: #FFFFFF;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.gt-past-abbot-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.gt-past-abbot-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 236 / 335;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.gt-past-abbot-card:hover .gt-past-abbot-img {
+  transform: scale(1.02);
+}
+
+/* --------------------------------------------------------------------------
+   5. DEPARTMENTS PREVIEW SECTION (Figma White: #FFFFFF)
+   -------------------------------------------------------------------------- */
+.gt-about-depts-section {
+  padding: 95px 0 105px 0;
+  background: #FFFFFF;
+}
+
+.gt-about-depts-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.gt-about-depts-text {
+  max-width: 820px;
+}
+
+.gt-about-depts-title {
+  font-family: var(--figma-font-serif);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+
+.tibetan-about-page .gt-about-depts-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 40px;
+}
+
+.gt-about-depts-desc {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #444444;
+  margin: 0;
+}
+
+.tibetan-about-page .gt-about-depts-desc {
+  font-family: var(--figma-font-tibetan);
+  font-size: 17px;
+  line-height: 2.0;
+}
+
+.gt-view-depts-btn {
+  background: var(--figma-maroon, #92060F);
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 8px rgba(146, 6, 15, 0.2);
+}
+
+.gt-view-depts-btn:hover {
+  background: var(--figma-maroon-hover, #7A050D);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(146, 6, 15, 0.3);
+}
+
+.gt-about-depts-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.gt-about-dept-card {
+  background: #FFFFFF;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid #ECECEC;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gt-about-dept-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.1);
+}
+
+.gt-about-dept-img-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #EDE8DE;
+}
+
+.gt-about-dept-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.gt-about-dept-card:hover .gt-about-dept-img {
+  transform: scale(1.05);
+}
+
+.gt-about-dept-body {
+  padding: 24px 22px 28px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.gt-about-dept-name {
+  font-family: var(--figma-font-serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: #111111;
+  margin: 0 0 12px 0;
+}
+
+.tibetan-about-page .gt-about-dept-name {
+  font-family: var(--figma-font-tibetan);
+  font-size: 22px;
+}
+
+.gt-about-dept-snippet {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.tibetan-about-page .gt-about-dept-snippet {
+  font-family: var(--figma-font-tibetan);
+  font-size: 15.5px;
+  line-height: 1.85;
+}
+
+.gt-about-dept-link {
+  color: var(--figma-maroon, #92060F);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.2s;
+}
+
+.gt-about-dept-link:hover {
+  gap: 10px;
+  color: var(--figma-maroon-hover, #7A050D);
+}
+
+/* --------------------------------------------------------------------------
+   6. SPIRITUAL PROGRAMMES SECTION (Figma Gold: #FFD781)
+   -------------------------------------------------------------------------- */
+.gt-about-progs-section {
+  background-color: var(--figma-gold-accent, #FFD781);
+  padding: 90px 0;
+}
+
+.gt-about-progs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.08fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.gt-about-progs-info-col {
+  padding-right: 20px;
+}
+
+.gt-about-progs-title {
+  font-family: var(--figma-font-serif);
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
+.tibetan-about-page .gt-about-progs-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 40px;
+}
+
+.gt-about-progs-body {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #272022;
+  margin: 0 0 28px 0;
+}
+
+.tibetan-about-page .gt-about-progs-body {
+  font-family: var(--figma-font-tibetan);
+  font-size: 17px;
+  line-height: 2.0;
+}
+
+.gt-view-calendar-btn {
+  background: var(--figma-maroon, #92060F);
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+.gt-view-calendar-btn:hover {
+  background: var(--figma-maroon-hover, #7A050D);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.25);
+}
+
+.gt-events-stack-col {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.gt-events-stack-col h4 {
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #4A3A28;
+  margin: 0 0 4px 0;
+}
+
+.gt-event-card-item {
+  background: #FFFAF1;
+  border-radius: 4px;
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease;
+}
+
+.gt-event-card-item:hover {
+  transform: translateX(4px);
+}
+
+.gt-event-date-badge {
+  text-align: center;
+  min-width: 68px;
+  padding-right: 18px;
+  border-right: 1.5px solid #EAE0CE;
+}
+
+.gt-event-date-month {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #665544;
+}
+
+.gt-event-date-day {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--figma-maroon, #92060F);
+  line-height: 1.1;
+}
+
+.gt-event-date-year {
+  font-size: 12px;
+  color: #776655;
+}
+
+.gt-event-card-details h5 {
+  font-size: 17px;
+  font-weight: 600;
+  color: #111111;
+  margin: 0 0 4px 0;
+}
+
+.tibetan-about-page .gt-event-card-details h5 {
+  font-family: var(--figma-font-tibetan);
+  font-size: 16.5px;
+}
+
+.gt-event-card-details p {
+  font-size: 14px;
+  color: #555555;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.tibetan-about-page .gt-event-card-details p {
+  font-family: var(--figma-font-tibetan);
+  font-size: 14.5px;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   7. LIBRARY / BUDDHIST KNOWLEDGE SECTION (Figma Slate Blue: #6B9EBD)
+   -------------------------------------------------------------------------- */
+.gt-library-section {
+  background-color: var(--figma-slate-blue, #6B9EBD);
+  padding: 95px 0;
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
+}
+
+.gt-library-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.gt-library-watermark-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--figma-gold-accent, #FFD781);
+  opacity: 0.85;
+}
+
+.gt-library-title {
+  font-family: var(--figma-font-serif);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #FFFFFF;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
+.tibetan-about-page .gt-library-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 40px;
+}
+
+.gt-library-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #FDF1D7;
+  margin: 0 0 32px 0;
+}
+
+.tibetan-about-page .gt-library-desc {
+  font-family: var(--figma-font-tibetan);
+  font-size: 17.5px;
+  line-height: 2.0;
+}
+
+.gt-visit-library-btn {
+  background: #FDF1D7;
+  color: #111111;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+.gt-visit-library-btn:hover {
+  background: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(0, 0, 0, 0.2);
+}
+
+/* --------------------------------------------------------------------------
+   8. SUPPORT TRADITION CALLOUT SECTION (Figma White: #FFFFFF)
+   -------------------------------------------------------------------------- */
+.gt-support-tradition-section {
+  padding: 100px 0 110px 0;
+  background: #FFFFFF;
+  text-align: center;
+}
+
+.gt-support-tradition-wrap {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.gt-support-knot-icon {
+  margin-bottom: 24px;
+  color: var(--figma-maroon, #92060F);
+  display: inline-block;
+}
+
+.gt-support-tradition-title {
+  font-family: var(--figma-font-serif);
+  font-size: 46px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0 0 20px 0;
+  letter-spacing: -0.01em;
+}
+
+.tibetan-about-page .gt-support-tradition-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 38px;
+}
+
+.gt-support-tradition-desc {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #444444;
+  margin: 0 0 34px 0;
+}
+
+.tibetan-about-page .gt-support-tradition-desc {
+  font-family: var(--figma-font-tibetan);
+  font-size: 17.5px;
+  line-height: 2.0;
+}
+
+.gt-support-tradition-btn {
+  background: var(--figma-maroon, #92060F);
+  color: #FFFFFF;
+  font-size: 14.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 34px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 12px rgba(146, 6, 15, 0.25);
+}
+
+.gt-support-tradition-btn:hover {
+  background: var(--figma-maroon-hover, #7A050D);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(146, 6, 15, 0.35);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .gt-legacy-story-row,
+  .gt-legacy-story-row.reversed {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .gt-legacy-img {
+    height: 320px;
+  }
+
+  .gt-leader-card {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .gt-leader-photo-wrap {
+    max-width: 380px;
+  }
+
+  .gt-about-depts-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gt-about-depts-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .gt-about-progs-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .gt-about-progs-info-col {
+    padding-right: 0;
+  }
+
+  .gt-library-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .gt-library-watermark-wrap {
+    order: -1;
+  }
+}
+
+@media (max-width: 768px) {
+  .gt-about-hero {
+    height: 360px;
+  }
+
+  .gt-about-hero-title {
+    font-size: 38px;
+  }
+
+  .gt-about-hero-sub {
+    font-size: 16.5px;
+  }
+
+  .gt-legacy-title,
+  .gt-leadership-title,
+  .gt-past-abbots-title,
+  .gt-about-depts-title,
+  .gt-about-progs-title,
+  .gt-library-title,
+  .gt-support-tradition-title {
+    font-size: 32px;
+  }
+
+  .gt-about-depts-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gt-past-abbots-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 580px) {
+  .gt-past-abbots-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+}
