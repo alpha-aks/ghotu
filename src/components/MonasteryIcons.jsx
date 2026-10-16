@@ -3,91 +3,36 @@ import React from 'react';
 // Sacred Gyuto Monastery Circular Emblem Seal (Figma Logo)
 export function GyutoEmblem({ size = 110, className = "gt-emblem-seal" }) {
   return (
-    <svg 
-      className={className} 
-      width={size} 
-      height={size} 
-      viewBox="0 0 100 100" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="Gyuto Tantric Monastery Seal"
-    >
-      {/* Outer Golden Rim */}
-      <circle cx="50" cy="50" r="48" fill="#92060F" stroke="#D9C18C" strokeWidth="3" />
-      <circle cx="50" cy="50" r="44" stroke="#D9C18C" strokeWidth="1" strokeDasharray="2 2" />
-      <circle cx="50" cy="50" r="41" stroke="#D9C18C" strokeWidth="1.2" />
-
-      {/* Decorative Radiating Subtle Rays */}
-      <circle cx="50" cy="50" r="38" stroke="rgba(217, 193, 140, 0.3)" strokeWidth="0.8" />
-
-      {/* Center Lotus Base */}
-      <path 
-        d="M32 68 C38 64, 44 65, 50 68 C56 65, 62 64, 68 68 C64 74, 36 74, 32 68 Z" 
-        fill="#D9C18C" 
-      />
-      <path 
-        d="M38 72 C44 70, 56 70, 62 72 C58 75, 42 75, 38 72 Z" 
-        fill="#C5A86B" 
-      />
-
-      {/* Dharmachakra (Wheel of Law) */}
-      <circle cx="50" cy="46" r="14" fill="#92060F" stroke="#D9C18C" strokeWidth="2.5" />
-      <circle cx="50" cy="46" r="5" fill="#D9C18C" />
-      <circle cx="50" cy="46" r="2" fill="#92060F" />
-
-      {/* 8 Spokes */}
-      <line x1="50" y1="32" x2="50" y2="60" stroke="#D9C18C" strokeWidth="2" />
-      <line x1="36" y1="46" x2="64" y2="46" stroke="#D9C18C" strokeWidth="2" />
-      <line x1="40" y1="36" x2="60" y2="56" stroke="#D9C18C" strokeWidth="1.8" />
-      <line x1="40" y1="56" x2="60" y2="36" stroke="#D9C18C" strokeWidth="1.8" />
-
-      {/* 8 Jewel Knobs */}
-      <circle cx="50" cy="30" r="2" fill="#D9C18C" />
-      <circle cx="50" cy="62" r="2" fill="#D9C18C" />
-      <circle cx="34" cy="46" r="2" fill="#D9C18C" />
-      <circle cx="66" cy="46" r="2" fill="#D9C18C" />
-      <circle cx="38" cy="34" r="1.8" fill="#D9C18C" />
-      <circle cx="62" cy="58" r="1.8" fill="#D9C18C" />
-      <circle cx="38" cy="58" r="1.8" fill="#D9C18C" />
-      <circle cx="62" cy="34" r="1.8" fill="#D9C18C" />
-
-      {/* Kneeling Deer (Left) */}
-      <path 
-        d="M24 64 C22 62, 22 58, 26 56 C29 55, 30 58, 32 62 C30 65, 26 65, 24 64 Z" 
-        fill="#D9C18C" 
-      />
-      <path d="M26 56 Q24 51 23 48" stroke="#D9C18C" strokeWidth="1.5" strokeLinecap="round" />
-
-      {/* Kneeling Deer (Right) */}
-      <path 
-        d="M76 64 C78 62, 78 58, 74 56 C71 55, 70 58, 68 62 C70 65, 74 65, 76 64 Z" 
-        fill="#D9C18C" 
-      />
-      <path d="M74 56 Q76 51 77 48" stroke="#D9C18C" strokeWidth="1.5" strokeLinecap="round" />
-
-      {/* Top Triple Flame */}
-      <circle cx="50" cy="22" r="2.5" fill="#D9C18C" />
-      <path d="M47 25 C47 20, 50 17, 50 17 C50 17, 53 20, 53 25 Z" fill="#D9C18C" />
-    </svg>
+    <img
+      src="/images/logo.jpg"
+      alt="Gyuto Tantric Monastery Seal"
+      width={size}
+      height={size}
+      className={className}
+      style={{
+        borderRadius: "50%",
+        objectFit: "cover",
+      }}
+    />
   );
 }
 
 // Sacred Tibetan Vajra (Dorje) - Exact match to user screenshot and Figma Layer_x0020_1
 export function TibetanVajra({ width = 72, height = 24, className = '' }) {
   return (
-    <img 
-      src="/images/tibetan-vajra.png" 
-      alt="Sacred Tibetan Dorje Vajra" 
+    <img
+      src="/images/tibetan-vajra.png"
+      alt="Sacred Tibetan Dorje Vajra"
       width={width}
       height={height}
       className={`gt-vajra-icon ${className}`}
-      style={{ 
-        width: `${width}px`, 
-        height: `${height}px`, 
-        objectFit: 'contain', 
-        display: 'inline-block', 
+      style={{
+        width: `${width}px`,
+        height: `${height}px`,
+        objectFit: 'contain',
+        display: 'inline-block',
         verticalAlign: 'middle',
-        flexShrink: 0 
+        flexShrink: 0
       }}
     />
   );
@@ -96,44 +41,44 @@ export function TibetanVajra({ width = 72, height = 24, className = '' }) {
 // Ashtamangala Right-Whorled White Conch (Dungkar)
 export function RightWhorlConch({ width = 48, height = 80 }) {
   return (
-    <svg 
-      width={width} 
-      height={height} 
-      viewBox="0 0 48 80" 
-      fill="none" 
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 48 80"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ display: 'block', margin: '0 auto' }}
     >
-      <path 
-        d="M24 4 C14 8, 8 20, 8 36 C8 52, 16 68, 24 76 C32 68, 40 52, 40 36 C40 20, 34 8, 24 4 Z" 
-        fill="#FFFFFF" 
-        stroke="#2D2A28" 
-        strokeWidth="2.5" 
+      <path
+        d="M24 4 C14 8, 8 20, 8 36 C8 52, 16 68, 24 76 C32 68, 40 52, 40 36 C40 20, 34 8, 24 4 Z"
+        fill="#FFFFFF"
+        stroke="#2D2A28"
+        strokeWidth="2.5"
       />
-      <path 
-        d="M24 4 C28 14, 30 26, 26 38 C22 48, 14 56, 18 68 C20 72, 23 75, 24 76" 
-        stroke="#2D2A28" 
-        strokeWidth="2" 
-        strokeLinecap="round" 
-        fill="none" 
+      <path
+        d="M24 4 C28 14, 30 26, 26 38 C22 48, 14 56, 18 68 C20 72, 23 75, 24 76"
+        stroke="#2D2A28"
+        strokeWidth="2"
+        strokeLinecap="round"
+        fill="none"
       />
-      <path 
-        d="M20 18 C28 22, 34 32, 32 44 C30 52, 24 58, 22 66" 
-        stroke="#2D2A28" 
-        strokeWidth="1.8" 
-        fill="none" 
+      <path
+        d="M20 18 C28 22, 34 32, 32 44 C30 52, 24 58, 22 66"
+        stroke="#2D2A28"
+        strokeWidth="1.8"
+        fill="none"
       />
-      <path 
-        d="M12 40 C6 44, 4 52, 6 60 C8 56, 10 50, 14 48" 
-        fill="#FFD5D5" 
-        stroke="#2D2A28" 
-        strokeWidth="1.2" 
+      <path
+        d="M12 40 C6 44, 4 52, 6 60 C8 56, 10 50, 14 48"
+        fill="#FFD5D5"
+        stroke="#2D2A28"
+        strokeWidth="1.2"
       />
-      <path 
-        d="M36 40 C42 44, 44 52, 42 60 C40 56, 38 50, 34 48" 
-        fill="#FFD5D5" 
-        stroke="#2D2A28" 
-        strokeWidth="1.2" 
+      <path
+        d="M36 40 C42 44, 44 52, 42 60 C40 56, 38 50, 34 48"
+        fill="#FFD5D5"
+        stroke="#2D2A28"
+        strokeWidth="1.2"
       />
     </svg>
   );
@@ -142,51 +87,51 @@ export function RightWhorlConch({ width = 48, height = 80 }) {
 // Tibetan Endless Knot (Shrivatsa - 1280px-Endlessknot.svg in Figma: 102px × 80px)
 export function EndlessKnot({ width = 102, height = 80, color = "#92060F" }) {
   return (
-    <svg 
-      width={width} 
-      height={height} 
-      viewBox="0 0 102 80" 
-      fill="none" 
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 102 80"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ display: 'inline-block', verticalAlign: 'middle' }}
     >
-      <path 
-        d="M51 6 L78 28 L66 38 L51 25 L36 38 L24 28 Z" 
-        stroke={color} 
-        strokeWidth="4" 
-        strokeLinejoin="round" 
+      <path
+        d="M51 6 L78 28 L66 38 L51 25 L36 38 L24 28 Z"
+        stroke={color}
+        strokeWidth="4"
+        strokeLinejoin="round"
         fill="none"
       />
-      <path 
-        d="M51 74 L24 52 L36 42 L51 55 L66 42 L78 52 Z" 
-        stroke={color} 
-        strokeWidth="4" 
-        strokeLinejoin="round" 
+      <path
+        d="M51 74 L24 52 L36 42 L51 55 L66 42 L78 52 Z"
+        stroke={color}
+        strokeWidth="4"
+        strokeLinejoin="round"
         fill="none"
       />
-      <path 
-        d="M24 28 L10 39 L26 52 L38 42 L26 31 Z" 
-        stroke={color} 
-        strokeWidth="4" 
-        strokeLinejoin="round" 
+      <path
+        d="M24 28 L10 39 L26 52 L38 42 L26 31 Z"
+        stroke={color}
+        strokeWidth="4"
+        strokeLinejoin="round"
         fill="none"
       />
-      <path 
-        d="M78 28 L92 39 L76 52 L64 42 L76 31 Z" 
-        stroke={color} 
-        strokeWidth="4" 
-        strokeLinejoin="round" 
+      <path
+        d="M78 28 L92 39 L76 52 L64 42 L76 31 Z"
+        stroke={color}
+        strokeWidth="4"
+        strokeLinejoin="round"
         fill="none"
       />
-      <rect 
-        x="40" 
-        y="28" 
-        width="22" 
-        height="22" 
-        transform="rotate(45 51 39)" 
-        stroke={color} 
-        strokeWidth="4" 
-        fill="none" 
+      <rect
+        x="40"
+        y="28"
+        width="22"
+        height="22"
+        transform="rotate(45 51 39)"
+        stroke={color}
+        strokeWidth="4"
+        fill="none"
       />
     </svg>
   );
@@ -195,11 +140,11 @@ export function EndlessKnot({ width = 102, height = 80, color = "#92060F" }) {
 // Dharma Wheel Watermark for Library Section (1280px-Dharma_Cakra.svg in Figma: 622px x 484px)
 export function DharmachakraWatermark({ width = 580, height = 450 }) {
   return (
-    <svg 
-      width={width} 
-      height={height} 
-      viewBox="0 0 622 484" 
-      fill="none" 
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 622 484"
+      fill="none"
       xmlns="http://www.w3.org/2000/svg"
       style={{ opacity: 0.55, pointerEvents: 'none' }}
     >
@@ -220,25 +165,25 @@ export function DharmachakraWatermark({ width = 580, height = 450 }) {
       ))}
 
       {/* Lotus Pedestal Base */}
-      <path 
-        d="M180 390 C240 370, 380 370, 442 390 C410 440, 212 440, 180 390 Z" 
-        stroke="#FDF1D7" 
-        strokeWidth="4" 
-        strokeOpacity="0.75" 
-        fill="#FDF1D7" 
-        fillOpacity="0.08" 
+      <path
+        d="M180 390 C240 370, 380 370, 442 390 C410 440, 212 440, 180 390 Z"
+        stroke="#FDF1D7"
+        strokeWidth="4"
+        strokeOpacity="0.75"
+        fill="#FDF1D7"
+        fillOpacity="0.08"
       />
-      <path 
-        d="M210 405 C260 390, 360 390, 412 405" 
-        stroke="#FDF1D7" 
-        strokeWidth="3" 
-        strokeOpacity="0.6" 
+      <path
+        d="M210 405 C260 390, 360 390, 412 405"
+        stroke="#FDF1D7"
+        strokeWidth="3"
+        strokeOpacity="0.6"
       />
-      <path 
-        d="M245 425 C280 415, 340 415, 375 425" 
-        stroke="#FDF1D7" 
-        strokeWidth="3" 
-        strokeOpacity="0.5" 
+      <path
+        d="M245 425 C280 415, 340 415, 375 425"
+        stroke="#FDF1D7"
+        strokeWidth="3"
+        strokeOpacity="0.5"
       />
     </svg>
   );
@@ -247,12 +192,12 @@ export function DharmachakraWatermark({ width = 580, height = 450 }) {
 // Sacred Tibetan Divider Motif (Center Vajra with horizontal hairlines)
 export function TibetanDividerMotif({ inverted = false, className = '' }) {
   return (
-    <div 
-      className={`gt-divider-bar ${className}`} 
-      style={{ 
-        display: 'flex', 
-        alignItems: 'center', 
-        width: '100%', 
+    <div
+      className={`gt-divider-bar ${className}`}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        width: '100%',
         margin: '28px 0',
         opacity: inverted ? 0.8 : 1
       }}

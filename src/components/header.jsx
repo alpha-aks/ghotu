@@ -35,7 +35,11 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       } else if (key === 'donate') {
         e.preventDefault();
         onNavigate('support');
-      } else if (key === 'departments') {
+      } else if (key === 'news') {
+        e.preventDefault();
+        onNavigate('news');
+      }
+      else if (key === 'departments') {
         e.preventDefault();
         onNavigate('departments');
       } else if (key === 'programmes') {
@@ -56,8 +60,8 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       {/* 1. TOP HEADER (Figma: #FBC758, height: 234px, padding: 0 30px 0 108px) */}
       <header className="gt-top-header">
         <div className="gyuto-container gt-top-header-inner">
-          <a 
-            href="#home" 
+          <a
+            href="#home"
             className="gt-brand-group"
             onClick={(e) => {
               if (onNavigate) {
@@ -75,7 +79,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
 
           {/* Exact Language switch widget from Figma */}
           <div className="gt-lang-switcher-box">
-            <button 
+            <button
               className={`gt-lang-btn ${!isTibetan ? 'active' : 'inactive'}`}
               onClick={() => onSwitchLanguage && onSwitchLanguage('en')}
               title={isTibetan ? 'Switch to English' : 'English Language'}
@@ -83,7 +87,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
             >
               <span className="gt-lang-text-en">english</span>
             </button>
-            <button 
+            <button
               className={`gt-lang-btn ${isTibetan ? 'active' : 'inactive'}`}
               onClick={() => onSwitchLanguage && onSwitchLanguage('tb')}
               title={isTibetan ? 'བོད་ཡིག' : 'བོད་ཡིག་ལ་བརྗེ་བ།'}
@@ -98,7 +102,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       {/* 2. MAROON NAVIGATION BAR (Figma: #92060F, height: 64px) */}
       <nav className="gt-navbar">
         <div className="gyuto-container gt-nav-container">
-          <button 
+          <button
             className="gt-mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation"
@@ -110,8 +114,8 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
           <ul className={`gt-nav-list ${mobileMenuOpen ? 'mobile-open' : ''}`}>
             {navItems.map((item) => (
               <li key={item.key} className="gt-nav-item">
-                <a 
-                  href={item.href} 
+                <a
+                  href={item.href}
                   className={`gt-nav-link ${item.active ? 'active' : ''}`}
                   onClick={(e) => handleNavClick(item.key, item.href, e)}
                 >

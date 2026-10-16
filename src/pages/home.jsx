@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import './Home.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import { 
+import {
   RightWhorlConch,
-  EndlessKnot, 
+  EndlessKnot,
   TibetanVajra,
-  DharmachakraWatermark 
+  DharmachakraWatermark
 } from '../components/MonasteryIcons';
-import { 
-  Landmark, 
-  Users, 
-  GraduationCap, 
-  MapPin, 
-  Play, 
+import {
+  Landmark,
+  Users,
+  GraduationCap,
+  MapPin,
+  Play,
   ExternalLink
 } from 'lucide-react';
 
@@ -25,11 +25,11 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
       {/* ====================================================================
           1. HEADER & NAVIGATION BAR (Extracted Component)
           ==================================================================== */}
-      <Header 
-        lang="en" 
-        active="home" 
-        onSwitchLanguage={onSwitchLanguage} 
-        onNavigate={onNavigate} 
+      <Header
+        lang="en"
+        active="home"
+        onSwitchLanguage={onSwitchLanguage}
+        onNavigate={onNavigate}
       />
 
       {/* ====================================================================
@@ -37,9 +37,9 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
           ==================================================================== */}
       <section id="home" className="gt-hero-section">
         <div className="gt-hero-image-wrap">
-          <img 
-            src="/images/hero-monks.jpg" 
-            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains" 
+          <img
+            src="/images/hero-monks.jpg"
+            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains"
             className="gt-hero-img"
           />
         </div>
@@ -103,9 +103,9 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             </div>
             <h2 className="gt-living-title">A Living Monastic Institution</h2>
             <p className="gt-living-text">
-              Founded in 1474, Gyuto Tantric Monastery has preserved one of the principal tantric traditions 
-              of the Gelug school of Tibetan Buddhism. Following its re-establishment in India, 
-              the monastery continues to cultivate learning, spiritual practice, cultural preservation, 
+              Founded in 1474, Gyuto Tantric Monastery has preserved one of the principal tantric traditions
+              of the Gelug school of Tibetan Buddhism. Following its re-establishment in India,
+              the monastery continues to cultivate learning, spiritual practice, cultural preservation,
               and service to society.
             </p>
             <a href="#history" className="gt-figma-btn">
@@ -126,14 +126,14 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             <div className="gt-notices-top-hairline" />
 
             <div className="gt-notices-tabs-group">
-              <button 
+              <button
                 className={`gt-notice-tab-btn ${activeNoticeTab === 'update' ? 'active' : ''}`}
                 onClick={() => setActiveNoticeTab('update')}
                 type="button"
               >
                 UPDATE
               </button>
-              <button 
+              <button
                 className={`gt-notice-tab-btn ${activeNoticeTab === 'announcement' ? 'active' : ''}`}
                 onClick={() => setActiveNoticeTab('announcement')}
                 type="button"
@@ -160,7 +160,7 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
               <div className="gt-news-left">
                 <h3>From the Monastery</h3>
                 <p>
-                  Stay informed about recent developments, community activities, important notices, 
+                  Stay informed about recent developments, community activities, important notices,
                   publications, and other updates from Gyuto Tantric Monastery.
                 </p>
                 <a href="#all-news" className="gt-figma-btn">
@@ -170,9 +170,9 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
 
               <div className="gt-news-right">
                 <div className="gt-news-video-card">
-                  <img 
-                    src="/images/chant-preview.jpg" 
-                    alt="Sacred Tantric Chants assembly in monastery hall" 
+                  <img
+                    src="/images/chant-preview.jpg"
+                    alt="Sacred Tantric Chants assembly in monastery hall"
                     className="gt-news-video-img"
                   />
                   <div className="gt-video-overlay">
@@ -207,13 +207,13 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             <div className="gt-dept-header-left">
               <h3>Serving Every Aspect of Monastic Life</h3>
               <p>
-                Each department contributes to the daily life of the monastery — from education 
-                and administration to healthcare, maintenance, and community service — together 
+                Each department contributes to the daily life of the monastery — from education
+                and administration to healthcare, maintenance, and community service — together
                 they support the preservation of Buddhist teachings and the smooth functioning of the institution.
               </p>
             </div>
-            <a 
-              href="#departments" 
+            <a
+              href="#departments"
               className="gt-figma-btn"
               onClick={(e) => {
                 if (onNavigate) {
@@ -230,17 +230,17 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             {/* Card 1: General Administration */}
             <div className="gt-dept-card">
               <div className="gt-dept-img-wrap">
-                <img 
-                  src="/images/admin-desk.jpg" 
-                  alt="General Administration" 
+                <img
+                  src="/images/admin-desk.jpg"
+                  alt="General Administration"
                   className="gt-dept-img"
                 />
               </div>
               <div className="gt-dept-card-body">
                 <h4 className="gt-dept-card-title">General Administration</h4>
                 <p className="gt-dept-card-text">
-                  Overseeing the administration and daily operations of the monastery, 
-                  responsible for governance, communications, finance, and the day-to-day 
+                  Overseeing the administration and daily operations of the monastery,
+                  responsible for governance, communications, finance, and the day-to-day
                   affairs of the monastery.
                 </p>
                 <a href="#admin-dept" className="gt-dept-card-link">
@@ -252,17 +252,17 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             {/* Card 2: Education */}
             <div className="gt-dept-card">
               <div className="gt-dept-img-wrap">
-                <img 
-                  src="/images/monks-education.jpg" 
-                  alt="Monastic Education" 
+                <img
+                  src="/images/monks-education.jpg"
+                  alt="Monastic Education"
                   className="gt-dept-img"
                 />
               </div>
               <div className="gt-dept-card-body">
                 <h4 className="gt-dept-card-title">Education</h4>
                 <p className="gt-dept-card-text">
-                  Dedicated to higher Buddhist education and monastic studies, education 
-                  programs in philosophy, debate, rituals, tantric studies, and continuing 
+                  Dedicated to higher Buddhist education and monastic studies, education
+                  programs in philosophy, debate, rituals, tantric studies, and continuing
                   education for all monk levels.
                 </p>
                 <a href="#education-dept" className="gt-dept-card-link">
@@ -274,16 +274,16 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             {/* Card 3: Healthcare & Social Services */}
             <div className="gt-dept-card">
               <div className="gt-dept-img-wrap">
-                <img 
-                  src="/images/healthcare.jpg" 
-                  alt="Healthcare and Social Services" 
+                <img
+                  src="/images/healthcare.jpg"
+                  alt="Healthcare and Social Services"
                   className="gt-dept-img"
                 />
               </div>
               <div className="gt-dept-card-body">
                 <h4 className="gt-dept-card-title">Healthcare & Social Services</h4>
                 <p className="gt-dept-card-text">
-                  Gyuto Tantric Monastery continues to provide for health and well-being, 
+                  Gyuto Tantric Monastery continues to provide for health and well-being,
                   supporting medical care and community outreach, providing clinics and wellness support.
                 </p>
                 <a href="#health-dept" className="gt-dept-card-link">
@@ -305,8 +305,8 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             <div className="gt-prog-left">
               <h3>Spiritual Programmes throughout the Year</h3>
               <p>
-                Following the Tantric traditions and calendar, the monastery conducts 
-                regular teachings, retreats, ceremonies, prayers for peace, and seasonal festivals 
+                Following the Tantric traditions and calendar, the monastery conducts
+                regular teachings, retreats, ceremonies, prayers for peace, and seasonal festivals
                 throughout the year. Programmes are open to monks, practitioners, and visitors where applicable.
               </p>
               <a href="#calendar" className="gt-figma-btn">
@@ -381,9 +381,9 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             <div className="gt-library-content">
               <h3>Preserving Buddhist Knowledge</h3>
               <p>
-                The monastery’s library safeguards rare Tibetan manuscripts, tantric texts, 
-                and philosophy commentaries while supporting cataloging, research, and digitization 
-                for future generations. The collection includes canonical texts, ritual manuals, 
+                The monastery’s library safeguards rare Tibetan manuscripts, tantric texts,
+                and philosophy commentaries while supporting cataloging, research, and digitization
+                for future generations. The collection includes canonical texts, ritual manuals,
                 and works by great monastic masters.
               </p>
               <a href="#library" className="gt-figma-btn-light">
@@ -405,8 +405,8 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             </div>
             <h3>Support the Continuity of the Tradition</h3>
             <p>
-              Contributions help sustain monastic education, preserve sacred texts, maintain 
-              monastery facilities, and support the livelihood of the monastic community. 
+              Contributions help sustain monastic education, preserve sacred texts, maintain
+              monastery facilities, and support the livelihood of the monastic community.
               Your support ensures the preservation of this living Tantric tradition for future generations.
             </p>
             <a href="#support-now" className="gt-figma-btn">
@@ -428,8 +428,8 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                 Visitors are welcome to the monastery and enjoy a peaceful sanctuary for reflection, prayer, and study.
               </p>
               <div className="gt-visitor-etiquette">
-                If you are visiting, please maintain silence within the monastery grounds and dress modestly 
-                in accordance with daily practices without interruption. Please also observe all posted 
+                If you are visiting, please maintain silence within the monastery grounds and dress modestly
+                in accordance with daily practices without interruption. Please also observe all posted
                 guidelines and refrain from entering areas reserved for monastic practice.
               </div>
               <a href="#contact-form" className="gt-figma-btn">
@@ -440,16 +440,16 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             <div className="gt-contact-right">
               <div className="gt-map-card">
                 <div className="gt-map-img-wrap">
-                  <img 
-                    src="/images/dharamsala-map.jpg" 
-                    alt="Map of Sidhbari and Dharamsala location for Gyuto Monastery" 
+                  <img
+                    src="/images/dharamsala-map.jpg"
+                    alt="Map of Sidhbari and Dharamsala location for Gyuto Monastery"
                     className="gt-map-img"
                   />
                 </div>
-                <a 
-                  href="https://maps.google.com/?q=Gyuto+Tantric+Monastery+Sidhbari+Dharamsala" 
-                  target="_blank" 
-                  rel="noopener noreferrer" 
+                <a
+                  href="https://maps.google.com/?q=Gyuto+Tantric+Monastery+Sidhbari+Dharamsala"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="gt-map-link-overlay"
                 >
                   <MapPin size={16} /> Open in Google Maps <ExternalLink size={14} />

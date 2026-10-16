@@ -11,16 +11,20 @@ import About from './pages/about';
 import AboutTb from './pages/abouttb';
 import Programmes from './pages/programmes';
 import ProgrammesTb from './pages/programmestb';
+import News from './pages/news';
+import NewsTb from './pages/newstb';
 
 export default function App() {
   const [currentLang, setCurrentLang] = useState('en'); // 'en' | 'tb'
-  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'about' | 'programmes' | 'contact' | 'support' | 'departments'
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'about' | 'programmes' | 'contact' | 'support' | 'departments' | 'news'
 
   // Hash based routing synchronization
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.toLowerCase();
-      if (hash === '#about') {
+      if (hash === '#news' || hash === '#updates') {
+        setCurrentPage('news');
+      } else if (hash === '#about') {
         setCurrentPage('about');
       } else if (hash === '#programmes' || hash === '#programs') {
         setCurrentPage('programmes');
@@ -49,7 +53,9 @@ export default function App() {
 
   const navigateTo = (page) => {
     setCurrentPage(page);
-    if (page === 'about') {
+    if (page === 'news' || page === 'updates') {
+      window.location.hash = '#news';
+    } else if (page === 'about') {
       window.location.hash = '#about';
     } else if (page === 'programmes') {
       window.location.hash = '#programmes';
@@ -67,7 +73,13 @@ export default function App() {
 
   return (
     <div className="app-container">
-      {currentPage === 'about' ? (
+      {currentPage === 'news' || currentPage === 'updates' ? (
+        currentLang === 'en' ? (
+          <News onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
+        ) : (
+          <NewsTb onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
+        )
+      ) : currentPage === 'about' ? (
         currentLang === 'en' ? (
           <About onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
         ) : (

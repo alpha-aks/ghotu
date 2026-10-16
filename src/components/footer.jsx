@@ -41,6 +41,9 @@ export default function Footer({ lang = 'en', onNavigate }) {
             <h5>{isTibetan ? 'ལ་ལྟ།' : 'EXPLORE'}</h5>
             <ul className="gt-footer-links">
               <li>
+                <a href="#news" onClick={(e) => handleLinkClick('news', e)}>{isTibetan ? 'གསར་འགྱུར།' : 'Updates & News'}</a>
+              </li>
+              <li>
                 <a href="#about" onClick={(e) => handleLinkClick('about', e)}>{isTibetan ? 'ང་ཚོའི་སྐོར།' : 'About us'}</a>
               </li>
               <li>
