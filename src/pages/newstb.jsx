@@ -172,18 +172,23 @@ export default function NewsTb({ onSwitchLanguage, onNavigate }) {
           </div>
         </section>
 
-        {/* 4. BEFORE YOU ATTEND SECTION */}
+        {/* ====================================================================
+            4. BEFORE YOU ATTEND SECTION (Figma Frame 625811: #FFD781)
+            ==================================================================== */}
         <section className="gt-before-attend-section">
           <div className="gyuto-container">
             <div className="gt-attend-grid">
+              {/* Left Column: Text & Button */}
               <div className="gt-attend-text-col">
-                <h2 className="gt-attend-title">མ་ཕེབས་གོང་གི་གནས་ཚུལ།</h2>
-                <p className="gt-attend-para">
-                  མཛད་རིམ་ཁ་ཤས་ནི་དགེ་འདུན་པ་རྣམས་ཁོ་ནའི་ཆེད་དུ་ཡིན་པ་དང་། གཞན་རྣམས་ཉམས་ལེན་པ་དང་ཕྱོགས་མཐའི་སྐུ་མགྲོན་རྣམས་ལ་སྒོ་འཕར་ཕྱེ་ཡོད།
-                </p>
-                <p className="gt-attend-para">
-                  མཛད་སྒོར་མ་ཕེབས་གོང་མཛད་རིམ་སོ་སོའི་གནས་ཚུལ་ལ་ཞིབ་རྟོག་གནང་རོགས། དུས་ཚོད་དང་། བརྙན་པར་ལེན་ཕྱོགས། ཞུགས་སྟངས་སོགས་མི་འདྲ་བ་ཡོད།
-                </p>
+                <div className="gt-attend-text-block">
+                  <h2 className="gt-attend-title">མ་ཕེབས་གོང་གི་གནས་ཚུལ།</h2>
+                  <p className="gt-attend-para">
+                    མཛད་རིམ་ཁ་ཤས་ནི་དགེ་འདུན་པ་རྣམས་ཁོ་ནའི་ཆེད་དུ་ཡིན་པ་དང་། གཞན་རྣམས་ཉམས་ལེན་པ་དང་ཕྱོགས་མཐའི་སྐུ་མགྲོན་རྣམས་ལ་སྒོ་འཕར་ཕྱེ་ཡོད།
+                  </p>
+                  <p className="gt-attend-para">
+                    མཛད་སྒོར་མ་ཕེབས་གོང་མཛད་རིམ་སོ་སོའི་གནས་ཚུལ་ལ་ཞིབ་རྟོག་གནང་རོགས། དུས་ཚོད་དང་། བརྙན་པར་ལེན་ཕྱོགས། ཞུགས་སྟངས་སོགས་མི་འདྲ་བ་ཡོད།
+                  </p>
+                </div>
                 <button
                   type="button"
                   className="gt-attend-contact-btn"
@@ -193,6 +198,7 @@ export default function NewsTb({ onSwitchLanguage, onNavigate }) {
                 </button>
               </div>
 
+              {/* Right Column: Google Maps Card of Gyuto Tantric Monastery (Figma Frame 625811) */}
               <div className="gt-attend-map-col">
                 <div className="gt-attend-map-card">
                   <a 
@@ -202,7 +208,7 @@ export default function NewsTb({ onSwitchLanguage, onNavigate }) {
                     title="Google Maps ནང་རྒྱུད་སྟོད་གྲྭ་ཚང་གཟིགས།"
                   >
                     <img 
-                      src="/images/dharamsala-map.jpg" 
+                      src="/images/contact-map.jpg" 
                       alt="Google Map ནང་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་གནས་ཡུལ།" 
                       className="gt-attend-map-img" 
                     />

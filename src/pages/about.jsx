@@ -14,15 +14,18 @@ import './about.css';
  */
 export const ABOUT_DUMMY_IMAGES = {
   heroBg: '/images/about/hero-bg.jpg',
-  legacyTemple: '/images/about/legacy-temple.jpg',
-  legacyMountain: '/images/about/legacy-mountain.jpg',
   legacyComplex: '/images/about/legacy-complex.jpg',
+  legacyMountain: '/images/about/legacy-mountain.jpg',
+  legacyYerpa: '/images/about/legacy-yerpa.jpg',
+  legacyTemple: '/images/about/legacy-temple.jpg',
+  legacyRamoche: '/images/about/legacy-ramoche.jpg',
   abbotKhangser: '/images/about/abbot-khangser.jpg',
   abbotYangten: '/images/about/abbot-yangten.jpg',
   pastAbbotsGrid: '/images/about/past-abbots-grid.jpg',
   deptAdmin: '/images/about/dept-admin.jpg',
   deptEdu: '/images/about/dept-edu.jpg',
-  deptHealthcare: '/images/about/dept-health.jpg'
+  deptHealthcare: '/images/about/dept-health.jpg',
+  dharmachakraWatermark: '/images/about/dharmachakra-watermark.png'
 };
 
 /**
@@ -64,43 +67,36 @@ export default function About({ onSwitchLanguage, onNavigate }) {
           </div>
         </section>
 
-        {/* 3. Our Legacy Section (Figma Cream: #FDF1D7) */}
+        {/* 3. Our Legacy Section (Figma Frame 2147236735: #FDF1D7) */}
         <section className="gt-legacy-section">
           <div className="gyuto-container">
-            <div className="gt-legacy-header">
-              <span className="gt-legacy-conch-icon">
-                <RightWhorlConch size={42} />
-              </span>
-              <h2 className="gt-legacy-title">Our Legacy</h2>
-            </div>
-
             <div className="gt-legacy-story-grid">
-              {/* Story 1 */}
+              {/* Row 1 (Frame 2147236732): Conch + Title + Text on Left, Complex Image on Right */}
               <div className="gt-legacy-story-row">
-                <div className="gt-legacy-text-box">
-                  <p>
-                    Founded in Tibet in 1474, Gyuto Monastery has preserved one of the
-                    principal tantric traditions of the Gelug school for more than five centuries.
-                    The monastery's name, derived from the region of its original location, reflects
-                    its deep historical roots in Tibetan Buddhist culture. Following the
-                    reestablishment of the monastery in Dharamshala, India, in 1959, the community
-                    continues to engage in rigorous scholarly study, contemplative practice, and
-                    service to practitioners and visitors from around the world.
-                  </p>
+                <div className="gt-legacy-text-col">
+                  <div className="gt-legacy-conch-wrap">
+                    <RightWhorlConch width={48} height={80} />
+                  </div>
+                  <div className="gt-legacy-text-content">
+                    <h2 className="gt-legacy-title">Our Legacy</h2>
+                    <p className="gt-legacy-para">
+                      Founded in Tibet in 1474, Gyuto Monastery has preserved one of the principal tantric traditions of the Gelug school for more than five centuries. The monastery's name, derived from the region of its original location, reflects its deep historical roots in Tibetan Buddhist culture. Following the reestablishment of the monastery in Dharamshala, India, in 1959, the community continues to engage in rigorous scholarly study, contemplative practice, and service to practitioners and visitors from around the world.
+                    </p>
+                  </div>
                 </div>
-                <div className="gt-legacy-img-box">
+                <div className="gt-legacy-img-col">
                   <img
-                    src={ABOUT_DUMMY_IMAGES.legacyTemple}
-                    alt="Gyuto Monastery Temple Hall"
+                    src={ABOUT_DUMMY_IMAGES.legacyComplex}
+                    alt="Gyuto Monastery Complex"
                     className="gt-legacy-img"
                     loading="lazy"
                   />
                 </div>
               </div>
 
-              {/* Story 2 (Reversed) */}
+              {/* Row 2 (Frame 2147236733): Mountain Image on Left, Mission Text on Right */}
               <div className="gt-legacy-story-row reversed">
-                <div className="gt-legacy-img-box">
+                <div className="gt-legacy-img-col">
                   <img
                     src={ABOUT_DUMMY_IMAGES.legacyMountain}
                     alt="Gyuto Monastery nestled against the Himalayas"
@@ -108,35 +104,24 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                     loading="lazy"
                   />
                 </div>
-                <div className="gt-legacy-text-box">
-                  <p>
-                    The monastery's mission is to maintain the integrity of the Gelug tantric
-                    teachings through education, meditation, ritual practice, and cultural preservation.
-                    Today, approximately 250–300 monks live and study at the monastery, following a
-                    rigorous multi-year curriculum that spans Buddhist philosophy, logic, epistemology,
-                    and advanced tantric practices. The community is recognized by the Central Tibetan
-                    Administration as a center of learning and spiritual practice, and it remains an
-                    active participant in the broader Tibetan Buddhist community.
+                <div className="gt-legacy-text-col gt-legacy-text-col-center">
+                  <p className="gt-legacy-para">
+                    The monastery's mission is to maintain the integrity of the Gelug tantric teachings through education, meditation, ritual practice, and cultural preservation. Today, approximately 250–300 monks live and study at the monastery, following a rigorous multi-year curriculum that spans Buddhist philosophy, logic, epistemology, and advanced tantric practices. The community is recognized by the Central Tibetan Administration as a center of learning and spiritual practice, and it remains an active participant in the broader Tibetan Buddhist community.
                   </p>
                 </div>
               </div>
 
-              {/* Story 3 */}
+              {/* Row 3 (Frame 2147236734): Reestablishment Text on Left, Yerpa Image on Right */}
               <div className="gt-legacy-story-row">
-                <div className="gt-legacy-text-box">
-                  <p>
-                    The reestablishment of Gyuto Monastery in India represents a significant
-                    achievement in the preservation of Tibetan Buddhist heritage. In the face of
-                    historical challenges, the monastic community has successfully maintained the
-                    scholarly standards and spiritual practices that define the Gelug tantric tradition.
-                    Through education, research, and active engagement with the broader world, Gyuto
-                    Monastery remains a vital center for the transmission of authentic Tibetan Buddhist teachings.
+                <div className="gt-legacy-text-col gt-legacy-text-col-center">
+                  <p className="gt-legacy-para">
+                    The reestablishment of Gyuto Monastery in India represents a significant achievement in the preservation of Tibetan Buddhist heritage. In the face of historical challenges, the monastic community has successfully maintained the scholarly standards and spiritual practices that define the Gelug tantric tradition. The monastery continues to attract monks from diverse backgrounds, creating a community united by their commitment to Buddhist learning and practice. Through education, research, and active engagement with the broader world, Gyuto Monastery remains a vital center for the transmission of authentic Tibetan Buddhist teachings.
                   </p>
                 </div>
-                <div className="gt-legacy-img-box">
+                <div className="gt-legacy-img-col">
                   <img
-                    src={ABOUT_DUMMY_IMAGES.legacyComplex}
-                    alt="Gyuto Monastery Complex in Dharamshala"
+                    src={ABOUT_DUMMY_IMAGES.legacyYerpa}
+                    alt="Temples of Drak Yerpa"
                     className="gt-legacy-img"
                     loading="lazy"
                   />
@@ -449,14 +434,19 @@ export default function About({ onSwitchLanguage, onNavigate }) {
           </div>
         </section>
 
-        {/* 8. Preserving Buddhist Knowledge (Library - Figma Slate Blue: #6B9EBD) */}
+        {/* 8. Preserving Buddhist Knowledge (Library - Figma Slate Blue: #6B9EBD - Frame 625809) */}
         <section className="gt-library-section">
-          <div className="gyuto-container">
-            <div className="gt-library-grid">
-              <div className="gt-library-watermark-wrap">
-                <DharmachakraWatermark size={240} />
-              </div>
-              <div className="gt-library-content">
+          <div className="gt-library-container">
+            <div className="gt-library-texture-wrap" aria-hidden="true">
+              <img
+                src={ABOUT_DUMMY_IMAGES.dharmachakraWatermark}
+                alt=""
+                className="gt-library-texture-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="gt-library-content-col">
+              <div className="gt-library-text-block">
                 <h2 className="gt-library-title">Preserving Buddhist Knowledge</h2>
                 <p className="gt-library-desc">
                   The monastery's library safeguards rare Tibetan manuscripts, Buddhist commentaries,
@@ -464,14 +454,14 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                   digitisation for future generations. The collection includes foundational texts,
                   scholastic commentaries, and tantric practices essential to Gelug study.
                 </p>
-                <button
-                  type="button"
-                  className="gt-visit-library-btn"
-                  onClick={() => handleNav('departments')}
-                >
-                  VISIT THE LIBRARY
-                </button>
               </div>
+              <button
+                type="button"
+                className="gt-visit-library-btn"
+                onClick={() => handleNav('departments')}
+              >
+                VISIT THE LIBRARY
+              </button>
             </div>
           </div>
         </section>

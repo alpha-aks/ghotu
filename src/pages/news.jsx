@@ -175,20 +175,22 @@ export default function News({ onSwitchLanguage, onNavigate }) {
         </section>
 
         {/* ====================================================================
-            4. BEFORE YOU ATTEND SECTION (Figma Gold: #FBC758)
+            4. BEFORE YOU ATTEND SECTION (Figma Frame 625811: #FFD781)
             ==================================================================== */}
         <section className="gt-before-attend-section">
           <div className="gyuto-container">
             <div className="gt-attend-grid">
-              {/* Left Column: Text & Button */}
+              {/* Left Column: Text & Button (Figma Frame 625782) */}
               <div className="gt-attend-text-col">
-                <h2 className="gt-attend-title">Before You Attend</h2>
-                <p className="gt-attend-para">
-                  Some programmes are intended exclusively for the monastic community, while others may be open to practitioners, visitors, or the wider public.
-                </p>
-                <p className="gt-attend-para">
-                  Please check the individual programme details before attending. Access, timings, photography, participation, and visitor requirements may vary between events.
-                </p>
+                <div className="gt-attend-text-block">
+                  <h2 className="gt-attend-title">Before You Attend</h2>
+                  <p className="gt-attend-para">
+                    Some programmes are intended exclusively for the monastic community, while others may be open to practitioners, visitors, or the wider public.
+                  </p>
+                  <p className="gt-attend-para">
+                    Please check the individual programme details before attending. Access, timings, photography, participation, and visitor requirements may vary between events.
+                  </p>
+                </div>
                 <button
                   type="button"
                   className="gt-attend-contact-btn"
@@ -198,7 +200,7 @@ export default function News({ onSwitchLanguage, onNavigate }) {
                 </button>
               </div>
 
-              {/* Right Column: Google Maps Card of Gyuto Tantric Monastery */}
+              {/* Right Column: Google Maps Card of Gyuto Tantric Monastery (Figma Frame 625811 / node 1:1729) */}
               <div className="gt-attend-map-col">
                 <div className="gt-attend-map-card">
                   <a 
@@ -208,7 +210,7 @@ export default function News({ onSwitchLanguage, onNavigate }) {
                     title="Open Gyuto Tantric Monastery in Google Maps"
                   >
                     <img 
-                      src="/images/dharamsala-map.jpg" 
+                      src="/images/contact-map.jpg" 
                       alt="Google Map showing Gyuto Tantric Monastery in Sidhbari, Dharamshala" 
                       className="gt-attend-map-img" 
                     />

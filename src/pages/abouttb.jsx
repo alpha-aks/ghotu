@@ -33,76 +33,66 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
           <div className="gt-about-hero-content">
             <h1 className="gt-about-hero-title">དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་སྐོར།</h1>
             <p className="gt-about-hero-sub">
-              དགེ་ལུགས་སྔགས་ཀྱི་གཞུང་དང་སྒྲུབ་བརྒྱུད་ཀྱི་གནས།
+              དགེ་ལུགས་སྔགས་ཀྱི་རིག་གནས་དང་སྒོམ་སྒྲུབ་ཀྱི་ལྟེ་གནས།
             </p>
           </div>
         </section>
 
-        {/* 3. Our Legacy Section (Figma Cream: #FDF1D7) */}
+        {/* 3. Our Legacy Section (Figma Frame 2147236736: #FDF1D7) */}
         <section className="gt-legacy-section">
           <div className="gyuto-container">
-            <div className="gt-legacy-header">
-              <span className="gt-legacy-conch-icon">
-                <RightWhorlConch size={42} />
-              </span>
-              <h2 className="gt-legacy-title">ཐོག་མའི་འབྱུང་ཁུངས།</h2>
-            </div>
-
             <div className="gt-legacy-story-grid">
-              {/* Story 1 */}
+              {/* Row 1 (Frame 2147236732): Conch + Title + Text on Left, Complex Image on Right */}
               <div className="gt-legacy-story-row">
-                <div className="gt-legacy-text-box">
-                  <p>
-                    དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་ནི་ཕྱི་ལོ་༡༤༧༤ ལོར་བོད་དུ་བཙུགས་པ་ཡིན།
-                    དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་གཙོ་བོ་རྣམས་ལས་མང་པོ་ཞིག་བརྒྱུད་གི་ཡོད།
-                    ཕྱི་ལོ་༡༩༥༩ དུ་དྷ་རམ་ས་ལར་བསྐྱར་བཙུགས་བྱས་པ་ནས་བཟུང་།
-                    དགེ་འདུན་པ་ཚོས་དགེ་སློབ་ཀྱི་སློབ་གཉེར་བསྒྲུབས་དང་།
-                    རང་གི་སེམས་ཅན་ཀུན་ལ་ཕན་པའི་ལས་ཀ་ལ་གཞོལ་བཞིན་ཡོད།
-                  </p>
+                <div className="gt-legacy-text-col">
+                  <div className="gt-legacy-conch-wrap">
+                    <RightWhorlConch width={48} height={80} />
+                  </div>
+                  <div className="gt-legacy-text-content">
+                    <h2 className="gt-legacy-title">བྲག་ཡེར་པའི་རིག་གནས།</h2>
+                    <p className="gt-legacy-para">
+                      དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་ནི་སྤྱི་ལོ་༡༤༧༤ ལོར་བོད་དུ་བཙུགས་ཤིང་། དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་ལོ་ལྔ་བརྒྱ་ལས་མང་པོར་བསྲུང་གི་ཡིན། ལོ་༡༩༥༩ དུ་རྒྱ་གར་དྷར་མ་ཤ་ལར་སླར་གསར་དུ་བཙུགས་ནས་དེ་རིང་ཡང་རིག་པའི་སྦྱོང་བ། ཞི་གནས་བསྒོམ་སྦྱོར། དང་མི་སེར་ལ་ལེགས་སྐུ་གཏོང་བའི་ལས་ཀ་ལ་གཞོལ་བཞིན་ཡོད།
+                    </p>
+                  </div>
                 </div>
-                <div className="gt-legacy-img-box">
-                  <img
-                    src={ABOUT_DUMMY_IMAGES.legacyTemple}
-                    alt="Gyuto Monastery Temple Hall"
-                    className="gt-legacy-img"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-
-              {/* Story 2 (Reversed) */}
-              <div className="gt-legacy-story-row reversed">
-                <div className="gt-legacy-img-box">
-                  <img
-                    src={ABOUT_DUMMY_IMAGES.legacyMountain}
-                    alt="Gyuto Monastery nestled against the Himalayas"
-                    className="gt-legacy-img"
-                    loading="lazy"
-                  />
-                </div>
-                <div className="gt-legacy-text-box">
-                  <p>
-                    དགོན་པའི་དམིགས་ཡུལ་ནི་དགེ་ལུགས་སྔགས་ཀྱི་དམ་ཚིག་སྲུང་སྐྱོབ་བྱེད་པ་དང་།
-                    ཆོས་དང་རིག་གཞུང་ཉམས་པ་མེད་པར་སྤེལ་རྒྱུ་དེ་ཡིན། དེང་སང་དགེ་འདུན་པ་
-                    ༢༥༠-༣༠༠ ཙམ་གྱིས་དགེ་ལུགས་ཀྱི་ཆོས་དང་ལྟ་གྲུབ་མཚན་ཉིད་ཀྱི་སློབ་སྦྱོང་དང་།
-                    དཀྱིལ་འཁོར་གྱི་སྒྲུབ་ཐབས། བསྐྱེད་རྫོགས་ཀྱི་ཉམས་ལེན་བཅས་ལ་ཉིན་མཚན་ལྟོས་མེད་ཀྱིས་སྦྱངས་བརྩོན་བྱེད་བཞིན་ཡོད།
-                  </p>
-                </div>
-              </div>
-
-              {/* Story 3 */}
-              <div className="gt-legacy-story-row">
-                <div className="gt-legacy-text-box">
-                  <p>
-                    དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་རྒྱ་གར་དུ་བསྐྱར་བཙུགས་པ་ནི་བོད་བརྒྱུད་ཆོས་བརྒྱུད་སྲུང་སྐྱོབ་ལ་གོ་གནས་ཆེན་པོ་ལྡན།
-                    དེང་སང་གྱི་དུས་རབས་ནང་དགོན་པ་འདིས་དགེ་ལུགས་སྔགས་ཀྱི་བསླབ་བྱ་དང་།
-                    ལྟ་གྲུབ་ཀྱི་སྲོལ་རྒྱུན་སྲུང་སྐྱོབ་བྱེད་བཞིན་ཡོད། དམིགས་ཡང་སློབ་གཉེར་དང་ཉམས་ལེན་གྱི་ལམ་ནས་འཛམ་གླིང་ཡོངས་ལ་ཞི་བདེ་དང་བྱམས་པ་གསལ་སྤེལ་བྱེད་བཞིན་ཡོད།
-                  </p>
-                </div>
-                <div className="gt-legacy-img-box">
+                <div className="gt-legacy-img-col">
                   <img
                     src={ABOUT_DUMMY_IMAGES.legacyComplex}
-                    alt="Gyuto Monastery Complex in Dharamshala"
+                    alt="དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།"
+                    className="gt-legacy-img"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* Row 2 (Frame 2147236733): Mountain Image on Left, Mission Text on Right */}
+              <div className="gt-legacy-story-row reversed">
+                <div className="gt-legacy-img-col">
+                  <img
+                    src={ABOUT_DUMMY_IMAGES.legacyMountain}
+                    alt="ཧི་མ་ལ་ཡའི་རི་རྒྱུད་དུ་ཆགས་པའི་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།"
+                    className="gt-legacy-img"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="gt-legacy-text-col gt-legacy-text-col-center">
+                  <p className="gt-legacy-para">
+                    དགོན་པའི་གཞི་བབ་ནི་དགེ་ལུགས་སྔགས་ཀྱི་དགེ་རྒྱུད་སློབ་གཉེར། ཞི་གནས་བསྒོམ་སྦྱོར། ཆོས་སྐུད། དང་རིག་གཞུང་ཉར་ཚགས་ལ་བརྩེགས་ཏེ་བསྲུང་བའི་ལས་ཡིན། དེ་རིང་གུ་དགེ་སྦྱོང་༢༥༠-༣༠༠ ཀི་ཕྱིས་ཏེ་དགེ་ལུགས་ཞིང་ལ་རིག་པ། སྐུ་དགེ་མཚན་གཏོང་བའི་རིག་པ། དང་སྔགས་ཀྱི་རིག་པ་ལ་སྦྱང་བཞིན་ཡོད། དབུས་བོད་གཞུང་དགེ་རྐྱེན་ཁང་གིས་དགོན་པ་དེ་ཆོས་དང་རིག་གནས་ལ་གཙོ་བོའི་གཞི་རིམ་དུ་ངོ་སྐུར་བྱས་ཡོད།
+                  </p>
+                </div>
+              </div>
+
+              {/* Row 3 (Frame 2147236734): Reestablishment Text on Left, Yerpa Image on Right */}
+              <div className="gt-legacy-story-row">
+                <div className="gt-legacy-text-col gt-legacy-text-col-center">
+                  <p className="gt-legacy-para">
+                    དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་རྒྱ་གར་དུ་སླར་གསར་བཙུགས་པ་ནི་བོད་བརྒྱུད་ཆོས་གཞུང་སྲུང་སྐྱབ་ལ་གཙོ་བོའི་ལས་ཡིན། དུས་ཚོད་ཀྱི་དཀའ་ངལ་ལ་བརྟེན་ནས་དགོན་པ་དེ་དགེ་ལུགས་སྔགས་ཀྱི་དགེ་རྒྱུད་ཉར་ཚགས་བྱེད་བཞིན་ཡོད། དགོན་པར་རིག་གནས་འདོད་པའི་དགེ་སྦྱོང་མང་པོ་ཞུགས་ཡོད་ལ། ཆོས་དང་རིག་གནས་ལ་གཏན་ཐུབ་པའི་དགེ་སྦྱོང་དགོ་དེ་སྐུ་ཕོ་གཞོ་བཞིན་ཡོད།
+                  </p>
+                </div>
+                <div className="gt-legacy-img-col">
+                  <img
+                    src={ABOUT_DUMMY_IMAGES.legacyYerpa}
+                    alt="བྲག་ཡེར་པའི་ལྷ་ཁང་།"
                     className="gt-legacy-img"
                     loading="lazy"
                   />
@@ -413,27 +403,31 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
           </div>
         </section>
 
-        {/* 8. Preserving Buddhist Knowledge (Library - Figma Slate Blue: #6B9EBD) */}
+        {/* 8. Preserving Buddhist Knowledge (Library - Figma Slate Blue: #6B9EBD - Frame 625809) */}
         <section className="gt-library-section">
-          <div className="gyuto-container">
-            <div className="gt-library-grid">
-              <div className="gt-library-watermark-wrap">
-                <DharmachakraWatermark size={240} />
-              </div>
-              <div className="gt-library-content">
+          <div className="gt-library-container">
+            <div className="gt-library-texture-wrap" aria-hidden="true">
+              <img
+                src={ABOUT_DUMMY_IMAGES.dharmachakraWatermark}
+                alt=""
+                className="gt-library-texture-img"
+                loading="lazy"
+              />
+            </div>
+            <div className="gt-library-content-col">
+              <div className="gt-library-text-block">
                 <h2 className="gt-library-title">ཆོས་གཞུང་ཉར་ཚགས།</h2>
                 <p className="gt-library-desc">
-                  དགོན་པའི་དཔེ་མཛོད་ཁང་ནི་བོད་ཀྱི་གནའ་བོའི་དཔེ་རྙིང་དང་། ཆོས་གཞུང་དཔེ་དེབ་རྣམས་ཉར་ཚགས་དང་།
-                  མ་འོངས་པའི་མི་རབས་རྣམས་ལ་དཔེ་དེབ་དེ་དག་གློག་རྡུལ་ཅན་དུ་བསྒྱུར་བའི་ལས་དོན་གཉེར་བཞིན་ཡོད།
+                  དགོན་པའི་དེབ་མཛོད་དེ་སྔོན་གི་དེབ་དང་བསྟན་འགྱུར། ཆོས་ལུང་དང་དེབ་ལེབ་གསར་པ་བཅས་ཉར་ཚགས་བྱེད། དེབ་གླེང་སྒྲིགས། ཞིབ་དཔྱད། དང་གླེང་ཕུའི་ཆོས་ལུང་སྲུང་སྐྱབ་བྱེད་པ་ཡིན། དགེ་ལུགས་སློབ་གཉེར་ལ་མིའ་གནའི་དེབ་དང་། སྐུ་དགེ་མཚན་གཏོང་བའི་དེབ་ལེབ་སོགས་འདུས་ཡོད།
                 </p>
-                <button
-                  type="button"
-                  className="gt-visit-library-btn"
-                  onClick={() => handleNav('departments')}
-                >
-                  དེབ་མཛོད་ལྟ་རྒྱུ།
-                </button>
               </div>
+              <button
+                type="button"
+                className="gt-visit-library-btn"
+                onClick={() => handleNav('departments')}
+              >
+                དེབ་མཛོད་ལ་ལྟ།
+              </button>
             </div>
           </div>
         </section>

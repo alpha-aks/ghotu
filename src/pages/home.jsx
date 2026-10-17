@@ -399,33 +399,37 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
           9. PRESERVING BUDDHIST KNOWLEDGE (Figma: Frame 625809: #6B9EBD)
           ==================================================================== */}
       <section id="archive" className="gt-library-sec">
-        <div className="gyuto-container">
-          <div className="gt-library-inner">
-            <div className="gt-library-watermark-wrap">
-              <DharmachakraWatermark width={560} height={420} />
-            </div>
-
-            <div className="gt-library-content">
-              <h3>Preserving Buddhist Knowledge</h3>
-              <p>
-                The monastery’s library safeguards rare Tibetan manuscripts, tantric texts,
-                and philosophy commentaries while supporting cataloging, research, and digitization
-                for future generations. The collection includes canonical texts, ritual manuals,
-                and works by great monastic masters.
+        <div className="gt-library-container">
+          <div className="gt-library-texture-wrap" aria-hidden="true">
+            <img
+              src="/images/about/dharmachakra-watermark.png"
+              alt=""
+              className="gt-library-texture-img"
+              loading="lazy"
+            />
+          </div>
+          <div className="gt-library-content-col">
+            <div className="gt-library-text-block">
+              <h3 className="gt-library-title">Preserving Buddhist Knowledge</h3>
+              <p className="gt-library-desc">
+                The monastery's library safeguards rare Tibetan manuscripts, Buddhist commentaries,
+                and contemporary publications while supporting cataloguing, research, and
+                digitisation for future generations. The collection includes foundational texts,
+                scholastic commentaries, and tantric practices essential to Gelug study.
               </p>
-              <a 
-                href="/departments" 
-                className="gt-figma-btn-light"
-                onClick={(e) => {
-                  if (onNavigate) {
-                    e.preventDefault();
-                    onNavigate('departments');
-                  }
-                }}
-              >
-                VISIT THE LIBRARY
-              </a>
             </div>
+            <a 
+              href="/departments" 
+              className="gt-visit-library-btn"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate('departments');
+                }
+              }}
+            >
+              VISIT THE LIBRARY
+            </a>
           </div>
         </div>
       </section>

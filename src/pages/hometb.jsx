@@ -386,30 +386,34 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
           9. PRESERVING BUDDHIST KNOWLEDGE (Figma: Frame 625809: #6B9EBD)
           ==================================================================== */}
       <section id="archive" className="gt-library-sec">
-        <div className="gyuto-container">
-          <div className="gt-library-inner">
-            <div className="gt-library-watermark-wrap">
-              <DharmachakraWatermark width={560} height={420} />
-            </div>
-
-            <div className="gt-library-content">
-              <h3>ཆོས་གཞུང་ཉར་ཚགས།</h3>
-              <p>
+        <div className="gt-library-container">
+          <div className="gt-library-texture-wrap" aria-hidden="true">
+            <img
+              src="/images/about/dharmachakra-watermark.png"
+              alt=""
+              className="gt-library-texture-img"
+              loading="lazy"
+            />
+          </div>
+          <div className="gt-library-content-col">
+            <div className="gt-library-text-block">
+              <h3 className="gt-library-title">ཆོས་གཞུང་ཉར་ཚགས།</h3>
+              <p className="gt-library-desc">
                 དགོན་པའི་དེབ་མཛོད་དེ་སྔོན་གི་དེབ་དང་བསྟན་འགྱུར། ཆོས་ལུང་དང་དེབ་ལེབ་གསར་པ་བཅས་ཉར་ཚགས་བྱེད། དེབ་གླེང་སྒྲིགས། ཞིབ་དཔྱད། དང་གླེང་ཕུའི་ཆོས་ལུང་སྲུང་སྐྱབ་བྱེད་པ་ཡིན། དགེ་ལུགས་སློབ་གཉེར་ལ་མིའ་གནའི་དེབ་དང་། སྐུ་དགེ་མཚན་གཏོང་བའི་དེབ་ལེབ་སོགས་འདུས་ཡོད།
               </p>
-              <a 
-                href="/departments" 
-                className="gt-figma-btn-light"
-                onClick={(e) => {
-                  if (onNavigate) {
-                    e.preventDefault();
-                    onNavigate('departments');
-                  }
-                }}
-              >
-                དེབ་མཛོད་ལ་ལྟ།
-              </a>
             </div>
+            <a 
+              href="/departments" 
+              className="gt-visit-library-btn"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate('departments');
+                }
+              }}
+            >
+              དེབ་མཛོད་ལ་ལྟ།
+            </a>
           </div>
         </div>
       </section>
