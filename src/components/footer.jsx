@@ -26,7 +26,7 @@ export default function Footer({ lang = 'en', onNavigate }) {
                   : 'A living archive of Tibetan Buddhist tradition, profound scholarship, and compassionate action, situated in the foothills of the Himalayas.'}
               </p>
               <a 
-                href="#donate" 
+                href="/support" 
                 className="gt-footer-support-link"
                 onClick={(e) => handleLinkClick('support', e)}
               >
@@ -41,19 +41,19 @@ export default function Footer({ lang = 'en', onNavigate }) {
             <h5>{isTibetan ? 'ལ་ལྟ།' : 'EXPLORE'}</h5>
             <ul className="gt-footer-links">
               <li>
-                <a href="#news" onClick={(e) => handleLinkClick('news', e)}>{isTibetan ? 'གསར་འགྱུར།' : 'Updates & News'}</a>
+                <a href="/news" onClick={(e) => handleLinkClick('news', e)}>{isTibetan ? 'གསར་འགྱུར།' : 'Updates & News'}</a>
               </li>
               <li>
-                <a href="#about" onClick={(e) => handleLinkClick('about', e)}>{isTibetan ? 'ང་ཚོའི་སྐོར།' : 'About us'}</a>
+                <a href="/about" onClick={(e) => handleLinkClick('about', e)}>{isTibetan ? 'ང་ཚོའི་སྐོར།' : 'About us'}</a>
               </li>
               <li>
-                <a href="#programmes" onClick={(e) => handleLinkClick('programmes', e)}>{isTibetan ? 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།' : 'Spiritual Programmes'}</a>
+                <a href="/programmes" onClick={(e) => handleLinkClick('programmes', e)}>{isTibetan ? 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།' : 'Spiritual Programmes'}</a>
               </li>
               <li>
-                <a href="#departments" onClick={(e) => handleLinkClick('departments', e)}>{isTibetan ? 'སྡེ་ཚན་ཁག' : 'Departments'}</a>
+                <a href="/departments" onClick={(e) => handleLinkClick('departments', e)}>{isTibetan ? 'སྡེ་ཚན་ཁག' : 'Departments'}</a>
               </li>
               <li>
-                <a href="#gallery" onClick={(e) => handleLinkClick('home', e)}>{isTibetan ? 'སྐུ་པར།' : 'Gallery'}</a>
+                <a href="/#gallery" onClick={(e) => handleLinkClick('home', e)}>{isTibetan ? 'སྐུ་པར།' : 'Gallery'}</a>
               </li>
             </ul>
           </div>

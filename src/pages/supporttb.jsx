@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import supportMap from '../assets/support-map.png';
+const supportMap = '/images/contact-map.jpg';
 import './contact.css';
 
 export default function SupportTb({ onSwitchLanguage, onNavigate }) {

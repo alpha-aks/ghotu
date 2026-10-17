@@ -13,37 +13,54 @@ import Programmes from './pages/programmes';
 import ProgrammesTb from './pages/programmestb';
 import News from './pages/news';
 import NewsTb from './pages/newstb';
-
 export default function App() {
-  const [currentLang, setCurrentLang] = useState('en'); // 'en' | 'tb'
-  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'about' | 'programmes' | 'contact' | 'support' | 'departments' | 'news'
+  // Helper to determine active page from current window location (supports both pathname and legacy hash)
+  const getPageFromLocation = () => {
+    const pathname = window.location.pathname.toLowerCase().replace(/\/$/, '') || '/';
+    const hash = window.location.hash.toLowerCase();
 
-  // Hash based routing synchronization
+    // 1. Pathname checks
+    if (pathname === '/news' || pathname === '/updates') return 'news';
+    if (pathname === '/about') return 'about';
+    if (pathname === '/programmes' || pathname === '/programs') return 'programmes';
+    if (pathname === '/contact') return 'contact';
+    if (pathname === '/support' || pathname === '/donate') return 'support';
+    if (pathname === '/departments') return 'departments';
+
+    // 2. Hash fallback
+    if (hash === '#news' || hash === '#updates') return 'news';
+    if (hash === '#about') return 'about';
+    if (hash === '#programmes' || hash === '#programs') return 'programmes';
+    if (hash === '#contact') return 'contact';
+    if (hash === '#donate' || hash === '#support') return 'support';
+    if (hash === '#departments' || hash === '#all-departments') return 'departments';
+
+    return 'home';
+  };
+
+  const [currentLang, setCurrentLang] = useState('en'); // 'en' | 'tb'
+  const [currentPage, setCurrentPage] = useState(getPageFromLocation);
+
+  // Pathname and history based routing synchronization
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.toLowerCase();
-      if (hash === '#news' || hash === '#updates') {
-        setCurrentPage('news');
-      } else if (hash === '#about') {
-        setCurrentPage('about');
-      } else if (hash === '#programmes' || hash === '#programs') {
-        setCurrentPage('programmes');
-      } else if (hash === '#contact') {
-        setCurrentPage('contact');
-      } else if (hash === '#donate' || hash === '#support') {
-        setCurrentPage('support');
-      } else if (hash === '#departments' || hash === '#all-departments') {
-        setCurrentPage('departments');
-      } else if (hash === '#home' || hash === '' || hash === '#') {
-        setCurrentPage('home');
-      }
+    const handleLocationChange = () => {
+      setCurrentPage(getPageFromLocation());
     };
 
-    // Run on initial mount
-    handleHashChange();
+    window.addEventListener('popstate', handleLocationChange);
+    window.addEventListener('hashchange', handleLocationChange);
+    return () => {
+      window.removeEventListener('popstate', handleLocationChange);
+      window.removeEventListener('hashchange', handleLocationChange);
+    };
+  }, []);
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+  // Preload hero images in background for instant, smooth language transitions
+  useEffect(() => {
+    const enHero = new Image();
+    enHero.src = '/images/19adcb4acb3bef0a3901217f7a92b1c6f3106c52.jpg';
+    const tbHero = new Image();
+    tbHero.src = '/images/9b0c3dc0724924acf8d0aae961ddf640d258dbfc.jpg';
   }, []);
 
   const switchLanguage = (lang) => {
@@ -52,22 +69,27 @@ export default function App() {
   };
 
   const navigateTo = (page) => {
-    setCurrentPage(page);
+    let path = '/';
     if (page === 'news' || page === 'updates') {
-      window.location.hash = '#news';
+      path = '/news';
     } else if (page === 'about') {
-      window.location.hash = '#about';
-    } else if (page === 'programmes') {
-      window.location.hash = '#programmes';
+      path = '/about';
+    } else if (page === 'programmes' || page === 'programs') {
+      path = '/programmes';
     } else if (page === 'contact') {
-      window.location.hash = '#contact';
-    } else if (page === 'support') {
-      window.location.hash = '#donate';
+      path = '/contact';
+    } else if (page === 'support' || page === 'donate') {
+      path = '/support';
     } else if (page === 'departments') {
-      window.location.hash = '#departments';
+      path = '/departments';
     } else {
-      window.location.hash = '#home';
+      path = '/';
     }
+
+    if (window.location.pathname !== path) {
+      window.history.pushState({}, '', path);
+    }
+    setCurrentPage(page === 'donate' ? 'support' : page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 

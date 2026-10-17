@@ -7,23 +7,23 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
   const isTibetan = lang === 'tb';
 
   const navItems = isTibetan ? [
-    { key: 'home', href: '#home', label: 'HOME', active: active === 'home' },
-    { key: 'news', href: '#news', label: 'NEWS', active: active === 'news' },
-    { key: 'departments', href: '#departments', label: 'སྡེ་ཚན་ཁག', active: active === 'departments' },
-    { key: 'programmes', href: '#programmes', label: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།', active: active === 'programmes' },
-    { key: 'about', href: '#about', label: 'About', active: active === 'about' },
-    { key: 'gallery', href: '#gallery', label: 'ང༌ཚོའི་སྐོར།', active: active === 'gallery' },
-    { key: 'contact', href: '#contact', label: 'CONTACT', active: active === 'contact' },
-    { key: 'donate', href: '#donate', label: 'SUPPORT US', active: active === 'donate' || active === 'support' }
+    { key: 'home', href: '/', label: 'HOME', active: active === 'home' },
+    { key: 'news', href: '/news', label: 'NEWS', active: active === 'news' },
+    { key: 'departments', href: '/departments', label: 'སྡེ་ཚན་ཁག', active: active === 'departments' },
+    { key: 'programmes', href: '/programmes', label: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།', active: active === 'programmes' },
+    { key: 'about', href: '/about', label: 'About', active: active === 'about' },
+    { key: 'gallery', href: '/#gallery', label: 'ང༌ཚོའི་སྐོར།', active: active === 'gallery' },
+    { key: 'contact', href: '/contact', label: 'CONTACT', active: active === 'contact' },
+    { key: 'donate', href: '/support', label: 'SUPPORT US', active: active === 'donate' || active === 'support' }
   ] : [
-    { key: 'home', href: '#home', label: 'HOME', active: active === 'home' },
-    { key: 'news', href: '#news', label: 'NEWS', active: active === 'news' },
-    { key: 'departments', href: '#departments', label: 'DEPARTMENTS', active: active === 'departments' },
-    { key: 'programmes', href: '#programmes', label: 'PROGRAMMES', active: active === 'programmes' },
-    { key: 'about', href: '#about', label: 'ABOUT', active: active === 'about' },
-    { key: 'gallery', href: '#gallery', label: 'GALLERY', active: active === 'gallery' },
-    { key: 'contact', href: '#contact', label: 'CONTACT', active: active === 'contact' },
-    { key: 'donate', href: '#donate', label: 'SUPPORT US', active: active === 'donate' || active === 'support' }
+    { key: 'home', href: '/', label: 'HOME', active: active === 'home' },
+    { key: 'news', href: '/news', label: 'NEWS', active: active === 'news' },
+    { key: 'departments', href: '/departments', label: 'DEPARTMENTS', active: active === 'departments' },
+    { key: 'programmes', href: '/programmes', label: 'PROGRAMMES', active: active === 'programmes' },
+    { key: 'about', href: '/about', label: 'ABOUT', active: active === 'about' },
+    { key: 'gallery', href: '/#gallery', label: 'GALLERY', active: active === 'gallery' },
+    { key: 'contact', href: '/contact', label: 'CONTACT', active: active === 'contact' },
+    { key: 'donate', href: '/support', label: 'SUPPORT US', active: active === 'donate' || active === 'support' }
   ];
 
   const handleNavClick = (key, href, e) => {
@@ -61,7 +61,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       <header className="gt-top-header">
         <div className="gyuto-container gt-top-header-inner">
           <a
-            href="#home"
+            href="/"
             className="gt-brand-group"
             onClick={(e) => {
               if (onNavigate) {
@@ -77,21 +77,23 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
             </div>
           </a>
 
-          {/* Exact Language switch widget from Figma */}
-          <div className="gt-lang-switcher-box">
+          {/* Language switch toggle matching design */}
+          <div className="gt-lang-switcher-box" role="group" aria-label="Language selection">
             <button
               className={`gt-lang-btn ${!isTibetan ? 'active' : 'inactive'}`}
               onClick={() => onSwitchLanguage && onSwitchLanguage('en')}
-              title={isTibetan ? 'Switch to English' : 'English Language'}
+              title={isTibetan ? 'Switch to English' : 'English Language (Active)'}
               type="button"
+              aria-pressed={!isTibetan}
             >
-              <span className="gt-lang-text-en">english</span>
+              <span className="gt-lang-text-en">ENGLISH</span>
             </button>
             <button
               className={`gt-lang-btn ${isTibetan ? 'active' : 'inactive'}`}
               onClick={() => onSwitchLanguage && onSwitchLanguage('tb')}
-              title={isTibetan ? 'བོད་ཡིག' : 'བོད་ཡིག་ལ་བརྗེ་བ།'}
+              title={isTibetan ? 'བོད་ཡིག (འདེམས་ཟིན།)' : 'བོད་ཡིག་ལ་བརྗེ་བ།'}
               type="button"
+              aria-pressed={isTibetan}
             >
               <span className="gt-lang-text-tb">བོད་ཡིག</span>
             </button>

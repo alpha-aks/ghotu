@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import { EndlessKnot } from '../components/MonasteryIcons';
-import heroBg from '../assets/departments-hero.jpg';
+const heroBg = '/images/departments/hero-bg.jpg';
 import lungtaImg from '../assets/departments-lungta.png';
 import './departments.css';
 

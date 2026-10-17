@@ -38,9 +38,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
       <section id="home" className="gt-hero-section">
         <div className="gt-hero-image-wrap">
           <img 
-            src="/images/hero-monks.jpg" 
+            src="/images/9b0c3dc0724924acf8d0aae961ddf640d258dbfc.jpg" 
             alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains" 
-            className="gt-hero-img"
+            className="gt-hero-img gt-hero-tb"
           />
         </div>
 
@@ -105,7 +105,16 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             <p className="gt-living-text">
               ལོ་ལྔ་བརྒྱ་ལས་མང་པོར་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་དེ་སློབ་གཉེར་དང་སྒོམ་སྒྲུབ། ཆོས་སྐུད་རྒྱུན་པའི་གཞི་རིམ་ལ་བོད་བརྒྱུད་ཆོས་གཞུང་ཉར་ཚགས་བྱེད། དེ་རིང་ཡང་དགེ་སྦྱོང་ལ་སློབ་གཉེར་དང་རིག་གཞུང་ཉར་ཚགས། རྒྱ་ཕལ་གྱི་སྒོམ་རྒྱུགས་པ་དང་ཞུགས་མི་ལ་ཞབས་ཞུ་བྱེད་བཞིན་ཡོད།
             </p>
-            <a href="#history" className="gt-figma-btn">
+            <a 
+              href="/about" 
+              className="gt-figma-btn"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate('about');
+                }
+              }}
+            >
               དཔལ་ལྡན་རྒྱུད་སྟོད་སྐོར།
             </a>
           </div>
@@ -159,7 +168,16 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 <p>
                   དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཉེ་བའི་མཛད་སྒོ་དང་། ཆོས་ཕྱོགས་ཀྱི་བྱེད་སྒོ། སྡེ་ཚན་ཁག་གི་གནས་ཚུལ་གསར་པ་ཁག་ལ་རྒྱུས་ལོན་གནང་རོགས།
                 </p>
-                <a href="#all-news" className="gt-figma-btn">
+                <a 
+                  href="/news" 
+                  className="gt-figma-btn"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('news');
+                    }
+                  }}
+                >
                   ཚང་མ་གཟིགས།
                 </a>
               </div>
@@ -225,7 +243,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             <div className="gt-dept-card">
               <div className="gt-dept-img-wrap">
                 <img 
-                  src="/images/admin-desk.jpg" 
+                  src="/images/dept-admin.jpg" 
                   alt="General Administration" 
                   className="gt-dept-img"
                 />
@@ -245,7 +263,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             <div className="gt-dept-card">
               <div className="gt-dept-img-wrap">
                 <img 
-                  src="/images/monks-education.jpg" 
+                  src="/images/dept-education.jpg" 
                   alt="Monastic Education" 
                   className="gt-dept-img"
                 />
@@ -265,7 +283,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             <div className="gt-dept-card">
               <div className="gt-dept-img-wrap">
                 <img 
-                  src="/images/healthcare.jpg" 
+                  src="/images/dept-healthcare.jpg" 
                   alt="Healthcare and Social Services" 
                   className="gt-dept-img"
                 />
@@ -296,7 +314,16 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
               <p>
                 བོད་ཟླ་གི་དུས་བཞི་འོག་ནས་དགོན་པ་དེ་གདམས་ངག་དང་། བར་དུ་སྦྱོར་བ། ཆོས་སྐུད། ཤེས་རབ་སྐུར། ཆེ་ལོའི་སྒོམ་སྦྱོར་བཅས་རྒྱུན་འཆར་ཡོད། དགེ་སྦྱོང་དང་སྒོམ་རྒྱུགས་པ། ཞུགས་མི་ལ་རེ་རེ་བཞིན་ལ་ཞབས་ཞུ་གཏོང་བ་ཡིན།
               </p>
-              <a href="#calendar" className="gt-figma-btn">
+              <a 
+                href="/programmes" 
+                className="gt-figma-btn"
+                onClick={(e) => {
+                  if (onNavigate) {
+                    e.preventDefault();
+                    onNavigate('programmes');
+                  }
+                }}
+              >
                 ཉིན་ཁྱིམ་ལ་ལྟ
               </a>
             </div>
@@ -370,7 +397,16 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
               <p>
                 དགོན་པའི་དེབ་མཛོད་དེ་སྔོན་གི་དེབ་དང་བསྟན་འགྱུར། ཆོས་ལུང་དང་དེབ་ལེབ་གསར་པ་བཅས་ཉར་ཚགས་བྱེད། དེབ་གླེང་སྒྲིགས། ཞིབ་དཔྱད། དང་གླེང་ཕུའི་ཆོས་ལུང་སྲུང་སྐྱབ་བྱེད་པ་ཡིན། དགེ་ལུགས་སློབ་གཉེར་ལ་མིའ་གནའི་དེབ་དང་། སྐུ་དགེ་མཚན་གཏོང་བའི་དེབ་ལེབ་སོགས་འདུས་ཡོད།
               </p>
-              <a href="#library" className="gt-figma-btn-light">
+              <a 
+                href="/departments" 
+                className="gt-figma-btn-light"
+                onClick={(e) => {
+                  if (onNavigate) {
+                    e.preventDefault();
+                    onNavigate('departments');
+                  }
+                }}
+              >
                 དེབ་མཛོད་ལ་ལྟ།
               </a>
             </div>
@@ -391,7 +427,16 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             <p>
               སྦྱིན་སྲེག་གི་དངོས་ཡོད་དེ་དགེ་སྦྱོང་ལ་སློབ་གཉེར། དེབ་གཞུང་ཉར་ཚགས། དགོན་པའི་གནས་སྐུལ། དང་དགེ་སྦྱོང་རྣམས་ཀྱི་ཉིན་རེའི་སྤྱོ་ལངས་རྒྱུན་འཛིན་བྱེད་དེ། དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་ལོ་རབས་མ་འོངས་པར་ཉར་ཚགས་བྱེད་པ་ལ་ཞབས་ཞུ་རོགས་གླེང་གཏོང་བ་ཡིན།
             </p>
-            <a href="#support-now" className="gt-figma-btn">
+            <a 
+              href="/support" 
+              className="gt-figma-btn"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate('support');
+                }
+              }}
+            >
               དགོན་པ་ལ་རོགས་གླེང་གཏོང་བ།
             </a>
           </div>
@@ -412,7 +457,16 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
               <div className="gt-visitor-etiquette">
                 གལ་ཏེ་གྲྭ་ཚང་དུ་ཕེབས་པའི་སྐབས་སུ། གྲྭ་ཚང་གི་ས་ཁོངས་ནང་ཁ་རོག་གེར་བཞུགས་ནས། དགེ་འདུན་པ་རྣམས་ཀྱིས་ཉིན་རེའི་ཆོས་སྒྲུབ་དང་སྦྱོང་བ་ལ་བར་ཆད་མི་འབྱུང་བར་གཟབ་རོགས། ད་དུང་གྲྭ་ཚང་གི་ས་ཁོངས་ནང་བཀོད་པའི་ལམ་སྟོན་ཁག་ལ་གུས་བཀུར་གནང་རོགས་དང་། དགེ་འདུན་པའི་ཆོས་སྒྲུབ་དང་སྦྱོང་བའི་ཆེད་དུ་བཀག་འགོག་བྱས་པའི་ས་ཁུལ་ཁག་ཏུ་འཛུལ་ཞུགས་མ་གནང་རོགས།
               </div>
-              <a href="#contact-form" className="gt-figma-btn">
+              <a 
+                href="/contact" 
+                className="gt-figma-btn"
+                onClick={(e) => {
+                  if (onNavigate) {
+                    e.preventDefault();
+                    onNavigate('contact');
+                  }
+                }}
+              >
                 གླེང་སྟེགས།
               </a>
             </div>
@@ -421,7 +475,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
               <div className="gt-map-card">
                 <div className="gt-map-img-wrap">
                   <img 
-                    src="/images/dharamsala-map.jpg" 
+                    src="/images/contact-map.jpg" 
                     alt="Map of Sidhbari and Dharamsala location for Gyuto Monastery" 
                     className="gt-map-img"
                   />

@@ -38,9 +38,9 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
       <section id="home" className="gt-hero-section">
         <div className="gt-hero-image-wrap">
           <img
-            src="/images/hero-monks.jpg"
+            src="/images/19adcb4acb3bef0a3901217f7a92b1c6f3106c52.jpg"
             alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains"
-            className="gt-hero-img"
+            className="gt-hero-img gt-hero-en"
           />
         </div>
 
@@ -108,7 +108,16 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
               the monastery continues to cultivate learning, spiritual practice, cultural preservation,
               and service to society.
             </p>
-            <a href="#history" className="gt-figma-btn">
+            <a 
+              href="/about" 
+              className="gt-figma-btn"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate('about');
+                }
+              }}
+            >
               LEARN OUR HISTORY
             </a>
           </div>
@@ -163,7 +172,16 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                   Stay informed about recent developments, community activities, important notices,
                   publications, and other updates from Gyuto Tantric Monastery.
                 </p>
-                <a href="#all-news" className="gt-figma-btn">
+                <a 
+                  href="/news" 
+                  className="gt-figma-btn"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('news');
+                    }
+                  }}
+                >
                   VIEW ALL
                 </a>
               </div>
@@ -231,7 +249,7 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             <div className="gt-dept-card">
               <div className="gt-dept-img-wrap">
                 <img
-                  src="/images/admin-desk.jpg"
+                  src="/images/dept-admin.jpg"
                   alt="General Administration"
                   className="gt-dept-img"
                 />
@@ -253,7 +271,7 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             <div className="gt-dept-card">
               <div className="gt-dept-img-wrap">
                 <img
-                  src="/images/monks-education.jpg"
+                  src="/images/dept-education.jpg"
                   alt="Monastic Education"
                   className="gt-dept-img"
                 />
@@ -275,7 +293,7 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             <div className="gt-dept-card">
               <div className="gt-dept-img-wrap">
                 <img
-                  src="/images/healthcare.jpg"
+                  src="/images/dept-healthcare.jpg"
                   alt="Healthcare and Social Services"
                   className="gt-dept-img"
                 />
@@ -309,7 +327,16 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                 regular teachings, retreats, ceremonies, prayers for peace, and seasonal festivals
                 throughout the year. Programmes are open to monks, practitioners, and visitors where applicable.
               </p>
-              <a href="#calendar" className="gt-figma-btn">
+              <a 
+                href="/programmes" 
+                className="gt-figma-btn"
+                onClick={(e) => {
+                  if (onNavigate) {
+                    e.preventDefault();
+                    onNavigate('programmes');
+                  }
+                }}
+              >
                 VIEW CALENDAR
               </a>
             </div>
@@ -386,7 +413,16 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                 for future generations. The collection includes canonical texts, ritual manuals,
                 and works by great monastic masters.
               </p>
-              <a href="#library" className="gt-figma-btn-light">
+              <a 
+                href="/departments" 
+                className="gt-figma-btn-light"
+                onClick={(e) => {
+                  if (onNavigate) {
+                    e.preventDefault();
+                    onNavigate('departments');
+                  }
+                }}
+              >
                 VISIT THE LIBRARY
               </a>
             </div>
@@ -409,7 +445,16 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
               monastery facilities, and support the livelihood of the monastic community.
               Your support ensures the preservation of this living Tantric tradition for future generations.
             </p>
-            <a href="#support-now" className="gt-figma-btn">
+            <a 
+              href="/support" 
+              className="gt-figma-btn"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  onNavigate('support');
+                }
+              }}
+            >
               SUPPORT US
             </a>
           </div>
@@ -432,7 +477,16 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                 in accordance with daily practices without interruption. Please also observe all posted
                 guidelines and refrain from entering areas reserved for monastic practice.
               </div>
-              <a href="#contact-form" className="gt-figma-btn">
+              <a 
+                href="/contact" 
+                className="gt-figma-btn"
+                onClick={(e) => {
+                  if (onNavigate) {
+                    e.preventDefault();
+                    onNavigate('contact');
+                  }
+                }}
+              >
                 CONTACT US
               </a>
             </div>
@@ -441,7 +495,7 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
               <div className="gt-map-card">
                 <div className="gt-map-img-wrap">
                   <img
-                    src="/images/dharamsala-map.jpg"
+                    src="/images/contact-map.jpg"
                     alt="Map of Sidhbari and Dharamsala location for Gyuto Monastery"
                     className="gt-map-img"
                   />

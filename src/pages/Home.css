@@ -111,73 +111,87 @@
   color: var(--figma-maroon);
 }
 
-/* Language switch widget from Figma (139px x 44px, background #FFFAF1, radius 6px) */
+/* Language switch widget matching design image (Pill toggle with cream container, maroon active pill, white active text) */
 .gt-lang-switcher-box {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
-  padding: 6px;
-  gap: 2px;
-  width: 139px;
-  height: 44px;
-  background: var(--figma-cream-card);
-  border-radius: 6px;
+  padding: 4px;
+  gap: 4px;
+  background: #FFFDF6;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(146, 6, 15, 0.06);
   box-sizing: border-box;
+  height: 46px;
 }
 
 .gt-lang-btn {
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 8px;
-  border-radius: 6px;
+  padding: 0 18px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  flex: 1;
-  height: 32px;
-  transition: all 0.2s ease;
+  height: 38px;
+  min-width: 82px;
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  user-select: none;
 }
 
 .gt-lang-btn.active {
-  background: var(--figma-maroon);
+  background: #92060F;
+  box-shadow: 0 1px 4px rgba(146, 6, 15, 0.25);
 }
 
 .gt-lang-btn.inactive {
   background: transparent;
 }
 
+.gt-lang-btn.inactive:hover {
+  background: rgba(146, 6, 15, 0.06);
+}
+
 .gt-lang-text-en {
   font-family: var(--figma-font-sans);
   font-style: normal;
-  font-weight: 700;
-  font-size: 12px;
-  line-height: 12px;
+  font-weight: 800;
+  font-size: 13.5px;
+  line-height: 1;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
+  transition: color 0.2s ease;
 }
 
 .gt-lang-btn.active .gt-lang-text-en {
-  color: var(--figma-text-gold-light);
+  color: #FFFFFF;
 }
 
 .gt-lang-btn.inactive .gt-lang-text-en {
-  color: var(--figma-maroon);
+  color: #92060F;
 }
 
 .gt-lang-text-tb {
   font-family: var(--figma-font-tibetan);
   font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(1px);
+  transition: color 0.2s ease;
 }
 
 .gt-lang-btn.active .gt-lang-text-tb {
-  color: var(--figma-text-gold-light);
+  color: #FFFFFF;
 }
 
 .gt-lang-btn.inactive .gt-lang-text-tb {
-  color: var(--figma-maroon);
+  color: #92060F;
 }
 
 /* ==========================================================================
@@ -278,17 +292,37 @@
 
 .gt-hero-image-wrap {
   width: 100%;
-  height: 720px;
-  overflow: hidden;
+  height: auto;
   position: relative;
+  background: #1a1412;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .gt-hero-img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 36%;
+  height: auto;
+  max-width: 100%;
   display: block;
+  object-fit: contain;
+  aspect-ratio: 4096 / 2732;
+  animation: gtHeroFadeIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  will-change: opacity, transform, filter;
+  transition: transform 1.2s ease-out, opacity 0.8s ease-in-out;
+}
+
+@keyframes gtHeroFadeIn {
+  0% {
+    opacity: 0.1;
+    transform: scale(1.03);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
 }
 
 /* 4 STATS FEATURE BAR (Frame 625795: #FFFAF1, padding: 48px 154px, gap: 61px) */
@@ -1633,7 +1667,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   }
   .gt-hero-image-wrap {
-    height: 400px;
+    height: auto;
   }
   .gt-stats-grid {
     flex-direction: column;

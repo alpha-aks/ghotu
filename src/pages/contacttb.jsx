@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
-import contactMap from '../assets/contact-map.png';
+const contactMap = '/images/contact-map.jpg';
 import './contact.css';
 
 export default function ContactTb({ onSwitchLanguage, onNavigate }) {

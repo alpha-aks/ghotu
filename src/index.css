@@ -124,3 +124,86 @@ img {
   background: var(--color-maroon);
   color: #ffffff;
 }
+
+/* Global Language Switcher Button (matches pill design specification) */
+.gt-lang-switcher-box {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 4px;
+  gap: 4px;
+  background: #FFFDF6;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(146, 6, 15, 0.06);
+  box-sizing: border-box;
+  height: 46px;
+}
+
+.gt-lang-btn {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  height: 38px;
+  min-width: 82px;
+  background: transparent;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  box-sizing: border-box;
+  user-select: none;
+}
+
+.gt-lang-btn.active {
+  background: #92060F;
+  box-shadow: 0 1px 4px rgba(146, 6, 15, 0.25);
+}
+
+.gt-lang-btn.inactive {
+  background: transparent;
+}
+
+.gt-lang-btn.inactive:hover {
+  background: rgba(146, 6, 15, 0.06);
+}
+
+.gt-lang-text-en {
+  font-family: 'Source Sans 3', 'Plus Jakarta Sans', sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 13.5px;
+  line-height: 1;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.gt-lang-btn.active .gt-lang-text-en {
+  color: #FFFFFF;
+}
+
+.gt-lang-btn.inactive .gt-lang-text-en {
+  color: #92060F;
+}
+
+.gt-lang-text-tb {
+  font-family: 'Noto Serif Tibetan', serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1;
+  display: inline-block;
+  transform: translateY(1px);
+  transition: color 0.2s ease;
+}
+
+.gt-lang-btn.active .gt-lang-text-tb {
+  color: #FFFFFF;
+}
+
+.gt-lang-btn.inactive .gt-lang-text-tb {
+  color: #92060F;
+}
