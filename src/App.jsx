@@ -13,6 +13,9 @@ import Programmes from './pages/programmes';
 import ProgrammesTb from './pages/programmestb';
 import News from './pages/news';
 import NewsTb from './pages/newstb';
+import Gallery from './pages/gallery';
+import GalleryTb from './pages/gallerytb';
+
 export default function App() {
   // Helper to determine active page from current window location (supports both pathname and legacy hash)
   const getPageFromLocation = () => {
@@ -26,6 +29,7 @@ export default function App() {
     if (pathname === '/contact') return 'contact';
     if (pathname === '/support' || pathname === '/donate') return 'support';
     if (pathname === '/departments') return 'departments';
+    if (pathname === '/gallery' || pathname === '/photo-gallery') return 'gallery';
 
     // 2. Hash fallback
     if (hash === '#news' || hash === '#updates') return 'news';
@@ -34,6 +38,7 @@ export default function App() {
     if (hash === '#contact') return 'contact';
     if (hash === '#donate' || hash === '#support') return 'support';
     if (hash === '#departments' || hash === '#all-departments') return 'departments';
+    if (hash === '#gallery' || hash === '#photo-gallery') return 'gallery';
 
     return 'home';
   };
@@ -82,6 +87,8 @@ export default function App() {
       path = '/support';
     } else if (page === 'departments') {
       path = '/departments';
+    } else if (page === 'gallery' || page === 'photo-gallery') {
+      path = '/gallery';
     } else {
       path = '/';
     }
@@ -130,6 +137,12 @@ export default function App() {
           <Departments onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
         ) : (
           <DepartmentsTb onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
+        )
+      ) : currentPage === 'gallery' ? (
+        currentLang === 'en' ? (
+          <Gallery onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
+        ) : (
+          <GalleryTb onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
         )
       ) : (
         currentLang === 'en' ? (

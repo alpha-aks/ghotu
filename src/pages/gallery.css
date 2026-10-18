@@ -1,0 +1,887 @@
+/* ==========================================================================
+   GYUTO TANTRIC MONASTERY - GALLERY PAGE STYLES (Figma Node 1:1862)
+   Design System:
+   - Primary Crimson: #92060F
+   - Gold Accent: #FFD781 / #FAC758
+   - Dark Heading: #2D2A28
+   - Deep Navy Footer: #062039
+   - Body Font: 'Source Sans 3', sans-serif
+   - Headings Font: 'Cormorant Garamond', Georgia, serif
+   ========================================================================== */
+
+.gt-gallery-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  color: #2D2A28;
+  overflow-x: hidden;
+}
+
+.gt-gallery-main {
+  flex: 1 0 auto;
+  width: 100%;
+}
+
+/* ==========================================================================
+   1. MAIN GALLERY SECTION (Figma Frame 1:1862)
+   ========================================================================== */
+.gt-gallery-section {
+  width: 100%;
+  padding-top: 60px;
+  padding-bottom: 92px;
+  background-color: #FFFFFF;
+}
+
+.gt-gallery-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+/* Title & Header Area */
+.gt-gallery-header-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.gt-gallery-title-row {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.gt-gallery-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 72px;
+  color: #2D2A28;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.gt-gallery-subtitle {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  color: #55514E;
+  max-width: 800px;
+  margin: 0;
+}
+
+/* Tibetan title override */
+.tibetan-text .gt-gallery-title {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 54px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+
+.tibetan-text .gt-gallery-subtitle {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 18px;
+  line-height: 1.8;
+}
+
+/* Filter Tabs */
+.gt-gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  margin-top: 8px;
+  padding-bottom: 4px;
+}
+
+.gt-gallery-filter-btn {
+  background: #F8F6F0;
+  border: 1px solid #E6DEC9;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #4A4643;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tibetan-text .gt-gallery-filter-btn {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 15px;
+}
+
+.gt-gallery-filter-btn:hover {
+  background: #FFD781;
+  color: #92060F;
+  border-color: #FAC758;
+  transform: translateY(-1px);
+}
+
+.gt-gallery-filter-btn.active {
+  background: #92060F;
+  color: #FDF1D7;
+  border-color: #92060F;
+  box-shadow: 0 4px 12px rgba(146, 6, 15, 0.15);
+}
+
+.gt-gallery-filter-count {
+  font-size: 12px;
+  opacity: 0.8;
+  background: rgba(0, 0, 0, 0.08);
+  padding: 2px 6px;
+  border-radius: 10px;
+}
+
+.gt-gallery-filter-btn.active .gt-gallery-filter-count {
+  background: rgba(255, 255, 255, 0.2);
+  color: #FFF;
+}
+
+/* ==========================================================================
+   2. HERO / FEATURED PHOTO (Figma Rectangle 18598)
+   width: 1280px; height: 659px;
+   ========================================================================== */
+.gt-gallery-hero-card {
+  width: 100%;
+  height: 659px;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  background-color: #E2DDD5;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  cursor: pointer;
+  margin-bottom: 92px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.gt-gallery-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gt-gallery-hero-card:hover .gt-gallery-hero-img {
+  transform: scale(1.03);
+}
+
+.gt-gallery-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.2) 60%,
+    rgba(0, 0, 0, 0.75) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 40px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  transition: opacity 0.3s ease;
+}
+
+.gt-gallery-hero-badge {
+  align-self: flex-start;
+  background: #FFD781;
+  color: #92060F;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+
+.tibetan-text .gt-gallery-hero-badge {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 13px;
+  letter-spacing: normal;
+}
+
+.gt-gallery-hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 38px;
+  font-weight: 600;
+  line-height: 44px;
+  margin: 0 0 8px 0;
+  color: #FFFFFF;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+}
+
+.tibetan-text .gt-gallery-hero-title {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 32px;
+  line-height: 1.4;
+}
+
+.gt-gallery-hero-desc {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  max-width: 700px;
+}
+
+.tibetan-text .gt-gallery-hero-desc {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.gt-gallery-hero-action {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: all 0.3s ease;
+}
+
+.gt-gallery-hero-card:hover .gt-gallery-hero-action {
+  background: #FFD781;
+  color: #92060F;
+  border-color: #FAC758;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   3. PHOTO GRID (Figma 12 Rectangles, 3 columns x 4 rows)
+   Width: 1280px total
+   Columns: 415px | 18px gap | 414px | 18px gap | 415px
+   Row spacing: 92px
+   ========================================================================== */
+.gt-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 92px 18px;
+  width: 100%;
+}
+
+.gt-gallery-item-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.gt-gallery-item-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+  overflow: hidden;
+  background-color: #E2DDD5;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease;
+}
+
+.gt-gallery-item-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(146, 6, 15, 0.12);
+}
+
+.gt-gallery-item-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.gt-gallery-item-card:hover .gt-gallery-item-img {
+  transform: scale(1.06);
+}
+
+/* Overlay that appears on hover */
+.gt-gallery-item-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(146, 6, 15, 0.1) 0%,
+    rgba(146, 6, 15, 0.45) 50%,
+    rgba(6, 32, 57, 0.9) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+}
+
+.gt-gallery-item-card:hover .gt-gallery-item-overlay {
+  opacity: 1;
+}
+
+.gt-gallery-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gt-gallery-item-tag {
+  background: #FFD781;
+  color: #92060F;
+  font-family: 'Source Sans 3', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+
+.tibetan-text .gt-gallery-item-tag {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 11px;
+  letter-spacing: normal;
+}
+
+.gt-gallery-item-zoom-icon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.gt-gallery-item-card:hover .gt-gallery-item-zoom-icon {
+  transform: scale(1.08);
+  background: #FFD781;
+  color: #92060F;
+  border-color: #FAC758;
+}
+
+.gt-gallery-item-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.gt-gallery-item-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 26px;
+  color: #FFFFFF;
+  margin: 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.tibetan-text .gt-gallery-item-title {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 19px;
+  line-height: 1.4;
+}
+
+.gt-gallery-item-caption {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 14px;
+  line-height: 18px;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+}
+
+.tibetan-text .gt-gallery-item-caption {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 14px;
+}
+
+/* Card caption below image for high discoverability */
+.gt-gallery-caption-below {
+  margin-top: 14px;
+  padding: 0 4px;
+}
+
+.gt-gallery-caption-below-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #2D2A28;
+  margin: 0 0 4px 0;
+}
+
+.tibetan-text .gt-gallery-caption-below-title {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.gt-gallery-caption-below-category {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  color: #92060F;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.tibetan-text .gt-gallery-caption-below-category {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 13px;
+  letter-spacing: normal;
+}
+
+/* ==========================================================================
+   4. BEFORE YOU ATTEND SECTION (Figma Frame 625811: #FFD781)
+   Position: top 3504px, padding 60px 80px, gap 174px
+   ========================================================================== */
+.gt-attend-section {
+  width: 100%;
+  background-color: #FFD781;
+  padding: 60px 0;
+  box-sizing: border-box;
+}
+
+.gt-attend-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+.gt-attend-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 120px;
+}
+
+.gt-attend-text-col {
+  flex: 0 0 490px;
+  max-width: 490px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.gt-attend-text-block {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.gt-attend-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 60px;
+  color: #2D2A28;
+  margin: 0;
+}
+
+.tibetan-text .gt-attend-title {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 44px;
+  line-height: 1.3;
+}
+
+.gt-attend-desc {
+  font-family: 'Source Sans 3', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #2D2A28;
+  margin: 0;
+}
+
+.tibetan-text .gt-attend-desc {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.gt-attend-contact-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 28px;
+  background: #92060F;
+  color: #FDF1D7;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Source Sans 3', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(146, 6, 15, 0.2);
+}
+
+.tibetan-text .gt-attend-contact-btn {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 17px;
+  letter-spacing: normal;
+}
+
+.gt-attend-contact-btn:hover {
+  background: #77040B;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(146, 6, 15, 0.3);
+}
+
+.gt-attend-map-col {
+  flex: 1 1 auto;
+  max-width: 615px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.gt-attend-map-card {
+  width: 100%;
+  max-width: 615px;
+  height: 450px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  background: #FFFFFF;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gt-attend-map-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.16);
+}
+
+.gt-attend-map-card a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.gt-attend-map-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.gt-attend-map-card:hover .gt-attend-map-img {
+  transform: scale(1.02);
+}
+
+/* ==========================================================================
+   5. INTERACTIVE LIGHTBOX MODAL
+   ========================================================================== */
+.gt-lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: rgba(10, 8, 7, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: gtLightboxFadeIn 0.25s ease-out forwards;
+}
+
+@keyframes gtLightboxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.gt-lightbox-dialog {
+  position: relative;
+  max-width: 92vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gt-lightbox-img-wrap {
+  position: relative;
+  max-width: 1200px;
+  max-height: 75vh;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7);
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gt-lightbox-img {
+  max-width: 100%;
+  max-height: 75vh;
+  object-fit: contain;
+  display: block;
+  user-select: none;
+}
+
+.gt-lightbox-footer {
+  margin-top: 16px;
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  color: #FFFFFF;
+  padding: 0 10px;
+}
+
+.gt-lightbox-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.gt-lightbox-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 26px;
+  font-weight: 600;
+  margin: 0;
+  color: #FFD781;
+}
+
+.tibetan-text .gt-lightbox-title {
+  font-family: 'Noto Serif Tibetan', 'Jomolhari', serif;
+  font-size: 22px;
+}
+
+.gt-lightbox-caption {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+.gt-lightbox-counter {
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFD781;
+  background: rgba(255, 215, 129, 0.15);
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 215, 129, 0.3);
+  white-space: nowrap;
+}
+
+/* Lightbox Controls */
+.gt-lightbox-btn-close {
+  position: fixed;
+  top: 24px;
+  right: 28px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 100000;
+}
+
+.gt-lightbox-btn-close:hover {
+  background: #92060F;
+  border-color: #92060F;
+  transform: rotate(90deg);
+}
+
+.gt-lightbox-btn-nav {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  z-index: 100000;
+}
+
+.gt-lightbox-btn-nav:hover {
+  background: #FFD781;
+  color: #92060F;
+  border-color: #FAC758;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.gt-lightbox-btn-prev {
+  left: 28px;
+}
+
+.gt-lightbox-btn-next {
+  right: 28px;
+}
+
+/* ==========================================================================
+   6. RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .gt-gallery-container,
+  .gt-attend-container {
+    padding: 0 40px;
+  }
+
+  .gt-gallery-hero-card {
+    height: 500px;
+    margin-bottom: 60px;
+  }
+
+  .gt-gallery-grid {
+    gap: 60px 16px;
+  }
+
+  .gt-attend-grid {
+    gap: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .gt-gallery-title {
+    font-size: 48px;
+    line-height: 56px;
+  }
+
+  .gt-gallery-hero-card {
+    height: 420px;
+  }
+
+  .gt-gallery-hero-title {
+    font-size: 30px;
+    line-height: 36px;
+  }
+
+  .gt-gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 16px;
+  }
+
+  .gt-attend-grid {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+  }
+
+  .gt-attend-text-col,
+  .gt-attend-map-col,
+  .gt-attend-map-card {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .gt-attend-map-card {
+    height: 380px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gt-gallery-container,
+  .gt-attend-container {
+    padding: 0 20px;
+  }
+
+  .gt-gallery-section {
+    padding-top: 40px;
+    padding-bottom: 60px;
+  }
+
+  .gt-gallery-title {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  .tibetan-text .gt-gallery-title {
+    font-size: 34px;
+  }
+
+  .gt-gallery-hero-card {
+    height: 320px;
+    margin-bottom: 40px;
+  }
+
+  .gt-gallery-hero-overlay {
+    padding: 24px;
+  }
+
+  .gt-gallery-hero-title {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .gt-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .gt-attend-title {
+    font-size: 38px;
+    line-height: 44px;
+  }
+
+  .gt-attend-map-card {
+    height: 280px;
+  }
+
+  .gt-lightbox-btn-nav {
+    display: none; /* Swipe or close on mobile */
+  }
+
+  .gt-lightbox-footer {
+    flex-direction: column;
+    gap: 8px;
+  }
+}

@@ -1,0 +1,313 @@
+/* ==========================================================================
+   SUPPORT SECTION (Figma Frame 625810) - CLEAN RESPONSIVE PHONE STYLES
+   Solves text overflow/clipping on phones and maintains exact Figma layout.
+   ========================================================================== */
+
+/* 1. Base Section Container */
+.gt-support-tradition-section,
+.gt-support-sec {
+  padding: 80px 20px 136px;
+  background-color: #FFFFFF;
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.gt-support-tradition-section .gt-support-inner,
+.gt-support-sec .gt-support-inner {
+  max-width: 830px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  box-sizing: border-box;
+}
+
+/* 2. Endless Knot Motif */
+.gt-support-tradition-section .gt-support-knot,
+.gt-support-sec .gt-support-knot {
+  width: 102px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gt-support-tradition-section .gt-support-knot img,
+.gt-support-sec .gt-support-knot img {
+  width: 102px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+}
+
+/* 3. Text Block */
+.gt-support-tradition-section .gt-support-text-block,
+.gt-support-sec .gt-support-text-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%;
+  max-width: 830px;
+  box-sizing: border-box;
+}
+
+/* 4. Heading: "Support the Continuity of the Tradition" */
+.gt-support-tradition-section .gt-support-title,
+.gt-support-sec .gt-support-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 60px;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  max-width: 830px;
+  width: 100%;
+  white-space: normal !important;
+  text-wrap: balance;
+  word-break: normal;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+/* Tibetan Heading */
+.tibetan-text .gt-support-tradition-section .gt-support-title,
+.tibetan-text .gt-support-sec .gt-support-title,
+.tibetan-page .gt-support-tradition-section .gt-support-title,
+.tibetan-home-page .gt-support-sec .gt-support-title,
+.tibetan-about-page .gt-support-tradition-section .gt-support-title,
+.tibetan-updates-page .gt-support-tradition-section .gt-support-title {
+  font-family: 'Noto Serif Tibetan', 'Uchen', serif !important;
+  font-size: 44px;
+  line-height: 54px;
+  color: #2D2A28;
+  white-space: normal !important;
+  text-wrap: balance;
+  word-break: break-word;
+}
+
+/* 5. Paragraph Description */
+.gt-support-tradition-section .gt-support-desc,
+.gt-support-sec .gt-support-desc {
+  font-family: 'Source Sans 3', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #2D2A28;
+  text-align: center;
+  margin: 0;
+  max-width: 714px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Tibetan Description */
+.tibetan-text .gt-support-tradition-section .gt-support-desc,
+.tibetan-text .gt-support-sec .gt-support-desc,
+.tibetan-page .gt-support-tradition-section .gt-support-desc,
+.tibetan-home-page .gt-support-sec .gt-support-desc,
+.tibetan-about-page .gt-support-tradition-section .gt-support-desc,
+.tibetan-updates-page .gt-support-tradition-section .gt-support-desc {
+  font-family: 'Noto Serif Tibetan', 'Uchen', serif !important;
+  font-size: 17px;
+  line-height: 30px;
+}
+
+/* 6. Button: "SUPPORT US" */
+.gt-support-tradition-section .gt-support-btn,
+.gt-support-sec .gt-support-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 54px;
+  padding: 15px 20px;
+  background-color: #92060F;
+  color: #FDF1D7;
+  border-radius: 5px;
+  border: none;
+  font-family: 'Source Sans 3', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  box-shadow: 0 4px 14px rgba(146, 6, 15, 0.2);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gt-support-tradition-section .gt-support-btn:hover,
+.gt-support-sec .gt-support-btn:hover {
+  background-color: #77040B;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(146, 6, 15, 0.3);
+}
+
+.tibetan-text .gt-support-tradition-section .gt-support-btn,
+.tibetan-text .gt-support-sec .gt-support-btn {
+  font-family: 'Noto Serif Tibetan', 'Uchen', serif !important;
+  font-size: 17px;
+  width: auto;
+  min-width: 220px;
+  text-transform: none;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   PHONE / MOBILE OPTIMIZATION (< 768px and <= 480px)
+   ========================================================================== */
+@media (max-width: 768px) {
+  .gt-support-tradition-section,
+  .gt-support-sec {
+    padding: 50px 16px 60px !important;
+  }
+
+  .gt-support-tradition-section .gt-support-inner,
+  .gt-support-sec .gt-support-inner {
+    gap: 22px !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  .gt-support-tradition-section .gt-support-knot,
+  .gt-support-sec .gt-support-knot {
+    width: 80px !important;
+    height: 62px !important;
+  }
+
+  .gt-support-tradition-section .gt-support-knot img,
+  .gt-support-sec .gt-support-knot img {
+    width: 80px !important;
+    height: 62px !important;
+  }
+
+  .gt-support-tradition-section .gt-support-text-block,
+  .gt-support-sec .gt-support-text-block {
+    gap: 16px !important;
+  }
+
+  /* Optimized Title on Mobile */
+  .gt-support-tradition-section .gt-support-title,
+  .gt-support-sec .gt-support-title {
+    font-size: clamp(24px, 6.5vw, 36px) !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    padding: 0 8px !important;
+  }
+
+  .tibetan-text .gt-support-tradition-section .gt-support-title,
+  .tibetan-text .gt-support-sec .gt-support-title,
+  .tibetan-page .gt-support-tradition-section .gt-support-title,
+  .tibetan-home-page .gt-support-sec .gt-support-title,
+  .tibetan-about-page .gt-support-tradition-section .gt-support-title,
+  .tibetan-updates-page .gt-support-tradition-section .gt-support-title {
+    font-size: clamp(22px, 5.8vw, 32px) !important;
+    line-height: 1.45 !important;
+    white-space: normal !important;
+    text-wrap: balance !important;
+    word-break: break-word !important;
+  }
+
+  /* Optimized Description on Mobile */
+  .gt-support-tradition-section .gt-support-desc,
+  .gt-support-sec .gt-support-desc {
+    font-size: 15.5px !important;
+    line-height: 24px !important;
+    padding: 0 8px !important;
+    max-width: 100% !important;
+  }
+
+  .tibetan-text .gt-support-tradition-section .gt-support-desc,
+  .tibetan-text .gt-support-sec .gt-support-desc,
+  .tibetan-page .gt-support-tradition-section .gt-support-desc,
+  .tibetan-home-page .gt-support-sec .gt-support-desc,
+  .tibetan-about-page .gt-support-tradition-section .gt-support-desc,
+  .tibetan-updates-page .gt-support-tradition-section .gt-support-desc {
+    font-size: 15px !important;
+    line-height: 27px !important;
+    padding: 0 8px !important;
+  }
+
+  /* Full-width / touch-friendly Button on Mobile */
+  .gt-support-tradition-section .gt-support-btn,
+  .gt-support-sec .gt-support-btn {
+    width: 100% !important;
+    max-width: 260px !important;
+    height: 50px !important;
+    font-size: 16px !important;
+  }
+}
+
+/* Extra optimization for compact phone viewports (iPhone SE / Android <= 480px) */
+@media (max-width: 480px) {
+  .gt-support-tradition-section,
+  .gt-support-sec {
+    padding: 42px 14px 50px !important;
+  }
+
+  .gt-support-tradition-section .gt-support-knot,
+  .gt-support-sec .gt-support-knot {
+    width: 68px !important;
+    height: 53px !important;
+  }
+
+  .gt-support-tradition-section .gt-support-knot img,
+  .gt-support-sec .gt-support-knot img {
+    width: 68px !important;
+    height: 53px !important;
+  }
+
+  .gt-support-tradition-section .gt-support-text-block,
+  .gt-support-sec .gt-support-text-block {
+    gap: 14px !important;
+  }
+
+  .gt-support-tradition-section .gt-support-title,
+  .gt-support-sec .gt-support-title {
+    font-size: clamp(22px, 6.8vw, 28px) !important;
+    line-height: 1.22 !important;
+    padding: 0 4px !important;
+  }
+
+  .tibetan-text .gt-support-tradition-section .gt-support-title,
+  .tibetan-text .gt-support-sec .gt-support-title {
+    font-size: clamp(20px, 6vw, 25px) !important;
+    line-height: 1.4 !important;
+    padding: 0 4px !important;
+  }
+
+  .gt-support-tradition-section .gt-support-desc,
+  .gt-support-sec .gt-support-desc {
+    font-size: 14.5px !important;
+    line-height: 22px !important;
+    padding: 0 4px !important;
+  }
+
+  .tibetan-text .gt-support-tradition-section .gt-support-desc,
+  .tibetan-text .gt-support-sec .gt-support-desc {
+    font-size: 14px !important;
+    line-height: 24px !important;
+    padding: 0 4px !important;
+  }
+
+  .gt-support-tradition-section .gt-support-btn,
+  .gt-support-sec .gt-support-btn {
+    width: 100% !important;
+    max-width: 240px !important;
+    height: 48px !important;
+    font-size: 15px !important;
+  }
+}
