@@ -441,17 +441,19 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
         <div className="gyuto-container">
           <div className="gt-support-inner">
             <div className="gt-support-knot">
-              <EndlessKnot width={102} height={80} color="#92060F" />
+              <EndlessKnot width={102} height={80} />
             </div>
-            <h3>Support the Continuity of the Tradition</h3>
-            <p>
-              Contributions help sustain monastic education, preserve sacred texts, maintain
-              monastery facilities, and support the livelihood of the monastic community.
-              Your support ensures the preservation of this living Tantric tradition for future generations.
-            </p>
+            <div className="gt-support-text-block">
+              <h3 className="gt-support-title">Support the Continuity of the Tradition</h3>
+              <p className="gt-support-desc">
+                Contributions help sustain monastic education, preserve sacred texts, maintain
+                monastery facilities, and support the daily life of the monastic community.
+                Your support enables the preservation of the Gelug tantric tradition for future generations.
+              </p>
+            </div>
             <a 
               href="/support" 
-              className="gt-figma-btn"
+              className="gt-support-btn"
               onClick={(e) => {
                 if (onNavigate) {
                   e.preventDefault();

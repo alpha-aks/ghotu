@@ -64,56 +64,27 @@ export function RightWhorlConch({ width = 48, height = 80, className = "" }) {
   );
 }
 
-// Tibetan Endless Knot (Shrivatsa - 1280px-Endlessknot.svg in Figma: 102px × 80px)
-export function EndlessKnot({ width = 102, height = 80, color = "#92060F" }) {
+// Tibetan Endless Knot (Shrivatsa - 1280px-Endlessknot.svg 2 in Figma: 102px × 80px)
+export function EndlessKnot({ width = 102, height = 80, size, className = "", style = {} }) {
+  const w = size || width;
+  const h = size ? Math.round(size * (80 / 102)) : height;
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 102 80"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ display: 'inline-block', verticalAlign: 'middle' }}
-    >
-      <path
-        d="M51 6 L78 28 L66 38 L51 25 L36 38 L24 28 Z"
-        stroke={color}
-        strokeWidth="4"
-        strokeLinejoin="round"
-        fill="none"
-      />
-      <path
-        d="M51 74 L24 52 L36 42 L51 55 L66 42 L78 52 Z"
-        stroke={color}
-        strokeWidth="4"
-        strokeLinejoin="round"
-        fill="none"
-      />
-      <path
-        d="M24 28 L10 39 L26 52 L38 42 L26 31 Z"
-        stroke={color}
-        strokeWidth="4"
-        strokeLinejoin="round"
-        fill="none"
-      />
-      <path
-        d="M78 28 L92 39 L76 52 L64 42 L76 31 Z"
-        stroke={color}
-        strokeWidth="4"
-        strokeLinejoin="round"
-        fill="none"
-      />
-      <rect
-        x="40"
-        y="28"
-        width="22"
-        height="22"
-        transform="rotate(45 51 39)"
-        stroke={color}
-        strokeWidth="4"
-        fill="none"
-      />
-    </svg>
+    <img
+      src="/images/endless-knot.png"
+      alt="Tibetan Endless Knot"
+      width={w}
+      height={h}
+      className={className}
+      style={{
+        width: `${w}px`,
+        height: `${h}px`,
+        objectFit: 'contain',
+        display: 'inline-block',
+        verticalAlign: 'middle',
+        ...style
+      }}
+      loading="lazy"
+    />
   );
 }
 

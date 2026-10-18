@@ -425,15 +425,17 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
         <div className="gyuto-container">
           <div className="gt-support-inner">
             <div className="gt-support-knot">
-              <EndlessKnot width={102} height={80} color="#92060F" />
+              <EndlessKnot width={102} height={80} />
             </div>
-            <h3>བརྒྱུད་པའི་རྒྱུན་འཛིན་ལ་རོགས་གླེང་གཏོང་བ།</h3>
-            <p>
-              སྦྱིན་སྲེག་གི་དངོས་ཡོད་དེ་དགེ་སྦྱོང་ལ་སློབ་གཉེར། དེབ་གཞུང་ཉར་ཚགས། དགོན་པའི་གནས་སྐུལ། དང་དགེ་སྦྱོང་རྣམས་ཀྱི་ཉིན་རེའི་སྤྱོ་ལངས་རྒྱུན་འཛིན་བྱེད་དེ། དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་ལོ་རབས་མ་འོངས་པར་ཉར་ཚགས་བྱེད་པ་ལ་ཞབས་ཞུ་རོགས་གླེང་གཏོང་བ་ཡིན།
-            </p>
+            <div className="gt-support-text-block">
+              <h3 className="gt-support-title">བརྒྱུད་པའི་རྒྱུན་འཛིན་ལ་རོགས་གླེང་གཏོང་བ།</h3>
+              <p className="gt-support-desc">
+                སྦྱིན་སྲེག་གི་དངོས་ཡོད་དེ་དགེ་སྦྱོང་ལ་སློབ་གཉེར། དེབ་གཞུང་ཉར་ཚགས། དགོན་པའི་གནས་སྐུལ། དང་དགེ་སྦྱོང་རྣམས་ཀྱི་ཉིན་རེའི་སྤྱོ་ལངས་རྒྱུན་འཛིན་བྱེད་དེ། དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་ལོ་རབས་མ་འོངས་པར་ཉར་ཚགས་བྱེད་པ་ལ་ཞབས་ཞུ་རོགས་གླེང་གཏོང་བ་ཡིན།
+              </p>
+            </div>
             <a 
               href="/support" 
-              className="gt-figma-btn"
+              className="gt-support-btn"
               onClick={(e) => {
                 if (onNavigate) {
                   e.preventDefault();

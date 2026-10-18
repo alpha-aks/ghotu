@@ -432,24 +432,25 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
           </div>
         </section>
 
-        {/* 9. Support the Continuity of the Tradition (Figma White: #FFFFFF) */}
+        {/* 9. Support the Continuity of the Tradition (Figma White: #FFFFFF - Frame 625810) */}
         <section className="gt-support-tradition-section">
           <div className="gyuto-container">
-            <div className="gt-support-tradition-wrap">
-              <span className="gt-support-knot-icon">
-                <EndlessKnot size={48} />
-              </span>
-              <h2 className="gt-support-tradition-title">བརྒྱུད་པའི་རྒྱུན་འཛིན་ལ་རོགས་སྐྱོར་གནང་།</h2>
-              <p className="gt-support-tradition-desc">
-                ཁྱེད་ཀྱི་དགེ་བའི་ཞལ་འདེབས་ཀྱིས་དགེ་འདུན་པའི་སློབ་གཉེར་དང་། དཔེ་རྙིང་ཉར་ཚགས།
-                དགོན་པའི་མཐུན་རྐྱེན་བཅས་ལ་རྒྱབ་སྐྱོར་ཐོབ་ཀྱི་ཡོད།
-              </p>
+            <div className="gt-support-inner">
+              <div className="gt-support-knot">
+                <EndlessKnot width={102} height={80} />
+              </div>
+              <div className="gt-support-text-block">
+                <h2 className="gt-support-title">བརྒྱུད་པའི་རྒྱུན་འཛིན་ལ་རོགས་གླེང་གཏོང་བ།</h2>
+                <p className="gt-support-desc">
+                  སྦྱིན་སྲེག་གི་དངོས་ཡོད་དེ་དགེ་སྦྱོང་ལ་སློབ་གཉེར། དེབ་གཞུང་ཉར་ཚགས། དགོན་པའི་གནས་སྐུལ། དང་དགེ་སྦྱོང་རྣམས་ཀྱི་ཉིན་རེའི་སྤྱོ་ལངས་རྒྱུན་འཛིན་བྱེད་དེ། དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་ལོ་རབས་མ་འོངས་པར་ཉར་ཚགས་བྱེད་པ་ལ་ཞབས་ཞུ་རོགས་གླེང་གཏོང་བ་ཡིན།
+                </p>
+              </div>
               <button
                 type="button"
-                className="gt-support-tradition-btn"
+                className="gt-support-btn"
                 onClick={() => handleNav('support')}
               >
-                དགོན་པར་རོགས་སྐྱོར་གནང་།
+                དགོན་པ་ལ་རོགས་གླེང་གཏོང་བ།
               </button>
             </div>
           </div>
