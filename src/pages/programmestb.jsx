@@ -550,7 +550,7 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
                     title="Open Gyuto Tantric Monastery in Google Maps"
                   >
                     <img 
-                      src="/images/gyuto-maps-location-real.png" 
+                      src="/images/programmes/programmes-map.png" 
                       alt="Google Map showing Gyuto Tantric Monastery in Sidhbari, Dharamshala" 
                       className="gt-attend-map-img" 
                     />

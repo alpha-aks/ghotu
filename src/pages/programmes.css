@@ -62,7 +62,7 @@
 .gt-programmes-hero {
   position: relative;
   height: 440px;
-  background-image: linear-gradient(rgba(14, 8, 5, 0.62), rgba(14, 8, 5, 0.76)), url('/images/programmes/hero-bg.jpg');
+  background-image: linear-gradient(rgba(14, 8, 5, 0.62), rgba(14, 8, 5, 0.76)), url('/images/programmes/programmes-hero.jpg');
   background-size: cover;
   background-position: center 30%;
   display: flex;

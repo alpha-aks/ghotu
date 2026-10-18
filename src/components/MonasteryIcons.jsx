@@ -6,7 +6,7 @@ export function GyutoEmblem({ size = 190, width, height, className = "gt-emblem-
   const h = height || size;
   return (
     <img
-      src="/images/gyuto_logo_figma.png"
+      src="/images/gyuto-logo.png"
       alt="Gyuto Tantric Monastery Seal"
       width={w}
       height={h}

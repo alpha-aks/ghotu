@@ -4,7 +4,7 @@ import Footer from '../components/footer';
 import SupportSection from '../components/SupportSection';
 import DepartmentsAcrossYear from '../components/DepartmentsAcrossYear';
 import { EndlessKnot } from '../components/MonasteryIcons';
-const heroBg = '/images/departments/hero-bg.jpg';
+const heroBg = '/images/departments/departments-hero.jpg';
 import lungtaImg from '../assets/departments-lungta.png';
 import orgTableSvgTb from '../assets/departments-org-table-tb.svg';
 import './departments.css';

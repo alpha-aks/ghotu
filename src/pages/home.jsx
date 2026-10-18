@@ -56,7 +56,7 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
       <section id="home" className="gt-hero-section">
         <div className="gt-hero-image-wrap">
           <img
-            src="/images/19adcb4acb3bef0a3901217f7a92b1c6f3106c52.jpg"
+            src="/images/home-hero.jpg"
             alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains"
             className="gt-hero-img gt-hero-en"
           />

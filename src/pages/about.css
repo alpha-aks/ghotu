@@ -52,7 +52,7 @@
 .gt-about-hero {
   position: relative;
   height: 460px;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.72)), url('/images/about/hero-bg.jpg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.72)), url('/images/about/about-hero.jpg');
   background-size: cover;
   background-position: center 30%;
   display: flex;

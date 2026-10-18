@@ -58,9 +58,9 @@ export default function App() {
   // Preload hero images in background for instant, smooth language transitions
   useEffect(() => {
     const enHero = new Image();
-    enHero.src = '/images/19adcb4acb3bef0a3901217f7a92b1c6f3106c52.jpg';
+    enHero.src = '/images/home-hero.jpg';
     const tbHero = new Image();
-    tbHero.src = '/images/9b0c3dc0724924acf8d0aae961ddf640d258dbfc.jpg';
+    tbHero.src = '/images/home-hero-tb.jpg';
   }, []);
 
   const switchLanguage = (lang) => {

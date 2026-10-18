@@ -24,7 +24,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  background-image: linear-gradient(rgba(14, 8, 5, 0.42), rgba(14, 8, 5, 0.62)), url('/images/updates/hero-banner.jpg');
+  background-image: linear-gradient(rgba(14, 8, 5, 0.42), rgba(14, 8, 5, 0.62)), url('/images/news-hero.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

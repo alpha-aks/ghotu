@@ -14,7 +14,7 @@ import './about.css';
  * You can replace any of these URLs with your own monastic photos or uploaded assets in the future.
  */
 export const ABOUT_DUMMY_IMAGES = {
-  heroBg: '/images/about/hero-bg.jpg',
+  heroBg: '/images/about/about-hero.jpg',
   legacyComplex: '/images/about/legacy-complex.jpg',
   legacyMountain: '/images/about/legacy-mountain.jpg',
   legacyYerpa: '/images/about/legacy-yerpa.jpg',
