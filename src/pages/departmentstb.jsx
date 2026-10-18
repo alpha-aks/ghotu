@@ -1,48 +1,13 @@
 import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import SupportSection from '../components/SupportSection';
+import DepartmentsAcrossYear from '../components/DepartmentsAcrossYear';
 import { EndlessKnot } from '../components/MonasteryIcons';
 const heroBg = '/images/departments/hero-bg.jpg';
 import lungtaImg from '../assets/departments-lungta.png';
+import orgTableSvgTb from '../assets/departments-org-table-tb.svg';
 import './departments.css';
-
-// Traditional Tibetan decorative corner motif
-function TibetanCornerMotif({ className = '' }) {
-  return (
-    <svg 
-      className={`gt-corner-motif ${className}`} 
-      viewBox="0 0 100 100" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <path 
-        d="M8 8 H60 C40 8, 30 18, 30 38 V92" 
-        stroke="#E5A93B" 
-        strokeWidth="3.5" 
-        strokeLinecap="round" 
-      />
-      <path 
-        d="M8 8 V60 C8 40, 18 30, 38 30 H92" 
-        stroke="#E5A93B" 
-        strokeWidth="3.5" 
-        strokeLinecap="round" 
-      />
-      <path 
-        d="M20 20 H48 C36 20, 30 26, 30 38 V80" 
-        stroke="#F4C778" 
-        strokeWidth="2" 
-      />
-      <circle cx="20" cy="20" r="4" fill="#E5A93B" />
-      <path 
-        d="M38 38 Q50 38 50 50 Q50 62 38 62 Q26 62 26 50 Z" 
-        stroke="#E5A93B" 
-        strokeWidth="2" 
-        fill="#FFF7E6" 
-      />
-    </svg>
-  );
-}
 
 export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
   const [expandedDepts, setExpandedDepts] = useState({
@@ -390,128 +355,17 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
             </div>
 
             <div className="gt-org-diagram-wrapper">
-              <TibetanCornerMotif className="gt-corner-tl" />
-              <TibetanCornerMotif className="gt-corner-tr" />
-              <TibetanCornerMotif className="gt-corner-bl" />
-              <TibetanCornerMotif className="gt-corner-br" />
-
-              <div className="gt-tree-container">
-                {/* Root Node */}
-                <div className="gt-node-box gt-node-root">
-                  དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།
-                </div>
-
-                <div className="gt-tree-line-v" />
-                <div className="gt-tree-line-h-split" />
-
-                {/* Level 1 Branches */}
-                <div className="gt-tree-branches-row">
-                  {/* Branch Left */}
-                  <div className="gt-tree-branch">
-                    <div className="gt-node-box gt-node-branch">
-                      དགོན་པའི་སྐུ་ཞིང་།
-                    </div>
-                    <div className="gt-tree-line-v" />
-                    
-                    <div className="gt-tree-subnodes-grid">
-                      <div className="gt-node-box gt-node-sub">
-                        ཤེས་ཡོན།
-                      </div>
-                      <div className="gt-node-box gt-node-sub">
-                        གཞུང་གི་སྦྱོར་བ།
-                      </div>
-                    </div>
-
-                    <div className="gt-tree-line-v" style={{ height: '24px' }} />
-                    <div className="gt-node-box gt-node-sub-single" style={{ marginTop: 0 }}>
-                      དཔེ་མཛོད་དང་ཀློག་ཀློགས།
-                    </div>
-                  </div>
-
-                  {/* Branch Right */}
-                  <div className="gt-tree-branch">
-                    <div className="gt-node-box gt-node-branch">
-                      མི་སྡེའི་སྐུ་ཞིང་།
-                    </div>
-                    <div className="gt-tree-line-v" />
-
-                    <div className="gt-node-box gt-node-sub-single" style={{ marginTop: 0 }}>
-                      འཕྲོད་བསྟེན་ཞབས་ཞུ།
-                    </div>
-
-                    <div className="gt-tree-line-v" style={{ height: '24px' }} />
-                    <div className="gt-node-box gt-node-sub-single" style={{ marginTop: 0 }}>
-                      སྐུ་སྐྱོན་ཁང་།
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom Base */}
-                <div className="gt-tree-bottom-connector" />
-                <div className="gt-tree-bottom-join">
-                  <div className="gt-tree-line-v" style={{ height: '20px' }} />
-                  <div className="gt-node-box gt-node-admin">
-                    འཛིན་སྐྱོང་སྡེ་ཚན།
-                  </div>
-                </div>
-
-              </div>
+              <img 
+                src={orgTableSvgTb} 
+                alt="Gyuto Monastery Organizational Chart (Tibetan)" 
+                className="gt-org-table-img" 
+              />
             </div>
           </div>
         </section>
 
-        {/* 4. DEPARTMENTS ACROSS THE YEAR (TIMELINE) */}
-        <section className="gt-timeline-section">
-          <div className="container">
-            <div className="gt-timeline-header">
-              <h2 className="gt-timeline-title">ལོ་འཁོར་གྱི་ལས་རིམ།</h2>
-              <p className="gt-timeline-subtitle">
-                གྲྭ་ཚང་གི་སྡེ་ཚན་སོ་སོའི་ལས་དོན་རྣམས་ལོ་འཁོར་གྱི་སློབ་གཉེར། སྒོམ་སྒྲུབ། ཆོ་ག དཔྱད་ཞིབ། དབྱར་གནས་དང་མི་སྡེའི་ལས་དོན་སོགས་ཀྱི་དུས་རིམ་དང་མཐུན་ནས་གཉེར་བཞིན་ཡོད།
-              </p>
-            </div>
-
-            <div className="gt-timeline-bar-wrapper">
-              <div className="gt-timeline-track" />
-              <div className="gt-timeline-nodes-grid">
-                {/* Node 1 */}
-                <div className="gt-timeline-node-item">
-                  <span className="gt-timeline-date-label">ཕྱི་ཟླ་ ༢-༥</span>
-                  <div className="gt-timeline-circle" />
-                  <div className="gt-timeline-stalk" />
-                  <span className="gt-timeline-season">དབྱར་དུས།</span>
-                  <span className="gt-timeline-activity">སྦྱོང་བ་དང་སྒོམ་སྒྲུབ།</span>
-                </div>
-
-                {/* Node 2 */}
-                <div className="gt-timeline-node-item">
-                  <span className="gt-timeline-date-label">ཕྱི་ཟླ་ ༢-༥</span>
-                  <div className="gt-timeline-circle" />
-                  <div className="gt-timeline-stalk" />
-                  <span className="gt-timeline-season">དཔྱིད་དུས།</span>
-                  <span className="gt-timeline-activity">གཞུང་བཤད་དང་དཔྱད་རྩོད།</span>
-                </div>
-
-                {/* Node 3 */}
-                <div className="gt-timeline-node-item">
-                  <span className="gt-timeline-date-label">ཕྱི་ཟླ་ ༢-༥</span>
-                  <div className="gt-timeline-circle" />
-                  <div className="gt-timeline-stalk" />
-                  <span className="gt-timeline-season">སྟོན་དུས།</span>
-                  <span className="gt-timeline-activity">ཤེས་རབ་རྒྱུགས།</span>
-                </div>
-
-                {/* Node 4 */}
-                <div className="gt-timeline-node-item">
-                  <span className="gt-timeline-date-label" style={{ visibility: 'hidden' }}>–</span>
-                  <div className="gt-timeline-circle" />
-                  <div className="gt-timeline-stalk" />
-                  <span className="gt-timeline-season">དགུན་དུས།</span>
-                  <span className="gt-timeline-activity">ཆོས་སྐྱོང་དང་གཙོ་བོའི་ཆོ་ག</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        {/* 4. DEPARTMENTS ACROSS THE YEAR (TIMELINE) - Figma Frame 113 / 2147236787 */}
+        <DepartmentsAcrossYear lang="tb" />
 
         {/* 5. QUESTIONS ABOUT A DEPARTMENT (BLUE BANNER) */}
         <section className="gt-dept-cta-blue">
@@ -520,7 +374,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
               <div className="gt-dept-cta-blue-text">
                 <h2 className="gt-dept-cta-blue-title">ཁུལ་སྐོར་ལ་དྲི་བ་ཡོད་པ་ལམ།</h2>
                 <p className="gt-dept-cta-blue-desc">
-                  དགོན་པའི་ཁུལ་སྐོར། ལས་འགུལ། དང་ཞབས་ཏོགས་རུང་དྲི་བ་ཡོད་ན་དགོན་པར་གླེང་གཏོང་བ་གནང་།
+                  དགོན་པའི་ཁུལ་སྐོར། ལས་འགུལ། དང་ཞབས་ཏོགས་སྐོར་དུ་དྲི་བ་ཡོད་ན་དགོན་པར་གླེང་སྟེགས་གཏོང་བ་གནང་།
                 </p>
                 <button 
                   type="button"
@@ -607,25 +461,10 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
           </div>
         </section>
 
-        {/* 7. SUPPORT CALL TO ACTION SECTION */}
-        <section className="gt-dept-support-cta">
-          <div className="gt-dept-support-inner">
-            <div className="gt-dept-support-knot">
-              <EndlessKnot width={54} height={42} color="#92060F" />
-            </div>
-            <h2 className="gt-dept-support-title">བརྒྱུད་པའི་རྒྱུན་འཛིན་ལ་རོགས་སྐྱེད་གཏོང་བ།</h2>
-            <p className="gt-dept-support-desc">
-              སྦྱིན་ཤེས་གི་དངོས་ཡོད་དེ་དག་སྤྱོད་ལ་སློབ་གཉེར། དེབ་གཞུང་ཉར་ཚགས། དགོན་པའི་གནས་སྐྱལ། དང་དགེ་སློང་རྣམས་ཀྱི་ཉིན་རེའི་སྤྱོད་ལས་རྒྱུན་འཛིན་བྱེད་དོ། དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་མོ་རབས་མ་འོངས་པར་ཉར་ཚགས་བྱེད་པ་ལ་ཞབས་ཞུ་རོགས་སྐྱེད་གཏོང་བ་ཡིན།
-            </p>
-            <button 
-              type="button"
-              className="gt-dept-support-btn"
-              onClick={() => onNavigate && onNavigate('support')}
-            >
-              དགོན་པ་ལ་རོགས་སྐྱེད་གཏོང་བ།
-            </button>
-          </div>
-        </section>
+        {/* ====================================================================
+            7. SUPPORT THE CONTINUITY OF THE TRADITION (Universal Frame 625810)
+            ==================================================================== */}
+        <SupportSection lang="tb" onNavigate={onNavigate} />
       </main>
 
       <Footer lang="tb" onNavigate={onNavigate} />
@@ -633,4 +472,4 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
   );
 }
 
-export { DepartmentsTb };
+export { DepartmentsTb, DepartmentsAcrossYear };

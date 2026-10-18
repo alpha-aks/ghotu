@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { GyutoEmblem } from './MonasteryIcons';
 import { Menu, X } from 'lucide-react';
+import './header.css';
 
 export default function Header({ lang = 'en', active = 'home', onSwitchLanguage, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -55,11 +56,38 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
     }
   };
 
+  const renderLanguageSwitcher = (isMobile = false) => (
+    <div
+      className={`gt-lang-switcher-box ${isMobile ? 'gt-lang-switcher-mobile' : ''}`}
+      role="group"
+      aria-label="Language selection"
+    >
+      <button
+        className={`gt-lang-btn gt-lang-btn-en ${!isTibetan ? 'active' : 'inactive'}`}
+        onClick={() => onSwitchLanguage && onSwitchLanguage('en')}
+        title={isTibetan ? 'Switch to English' : 'English Language (Active)'}
+        type="button"
+        aria-pressed={!isTibetan}
+      >
+        <span className="gt-lang-text-en">ENGLISH</span>
+      </button>
+      <button
+        className={`gt-lang-btn gt-lang-btn-tb ${isTibetan ? 'active' : 'inactive'}`}
+        onClick={() => onSwitchLanguage && onSwitchLanguage('tb')}
+        title={isTibetan ? 'བོད་ཡིག (འདེམས་ཟིན།)' : 'བོད་ཡིག་ལ་བརྗེ་བ།'}
+        type="button"
+        aria-pressed={isTibetan}
+      >
+        <span className="gt-lang-text-tb">བོད་ཡིག</span>
+      </button>
+    </div>
+  );
+
   return (
     <>
-      {/* 1. TOP HEADER (Figma: #FBC758, height: 234px, padding: 0 30px 0 108px) */}
+      {/* 1. TOP HEADER (Frame 2147236869: #FAC758, height: 234px, padding: 0 30px 0 108px) */}
       <header className="gt-top-header">
-        <div className="gyuto-container gt-top-header-inner">
+        <div className="gt-top-header-inner">
           <a
             href="/"
             className="gt-brand-group"
@@ -70,33 +98,16 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
               }
             }}
           >
-            <GyutoEmblem size={120} />
+            <GyutoEmblem width={227} height={190} className="gt-header-logo" />
             <div className="gt-brand-text">
               <span className="gt-tibetan-title">དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།</span>
               <span className="gt-english-title">Gyuto Tantric Monastery</span>
             </div>
           </a>
 
-          {/* Language switch toggle matching design */}
-          <div className="gt-lang-switcher-box" role="group" aria-label="Language selection">
-            <button
-              className={`gt-lang-btn ${!isTibetan ? 'active' : 'inactive'}`}
-              onClick={() => onSwitchLanguage && onSwitchLanguage('en')}
-              title={isTibetan ? 'Switch to English' : 'English Language (Active)'}
-              type="button"
-              aria-pressed={!isTibetan}
-            >
-              <span className="gt-lang-text-en">ENGLISH</span>
-            </button>
-            <button
-              className={`gt-lang-btn ${isTibetan ? 'active' : 'inactive'}`}
-              onClick={() => onSwitchLanguage && onSwitchLanguage('tb')}
-              title={isTibetan ? 'བོད་ཡིག (འདེམས་ཟིན།)' : 'བོད་ཡིག་ལ་བརྗེ་བ།'}
-              type="button"
-              aria-pressed={isTibetan}
-            >
-              <span className="gt-lang-text-tb">བོད་ཡིག</span>
-            </button>
+          {/* Frame 2147236870: Right Column with Language Switch - Desktop only */}
+          <div className="gt-header-right-col gt-desktop-only">
+            {renderLanguageSwitcher(false)}
           </div>
         </div>
       </header>
@@ -104,13 +115,20 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       {/* 2. MAROON NAVIGATION BAR (Figma: #92060F, height: 64px) */}
       <nav className="gt-navbar">
         <div className="gyuto-container gt-nav-container">
+          {/* Mobile Language Switcher on LEFT */}
+          <div className="gt-mobile-lang-wrap">
+            {renderLanguageSwitcher(true)}
+          </div>
+
+          {/* Mobile Hamburger Menu Toggle on RIGHT */}
           <button
             className="gt-mobile-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle navigation"
             type="button"
+            aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={26} /> : <Menu size={26} />}
+            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
 
           <ul className={`gt-nav-list ${mobileMenuOpen ? 'mobile-open' : ''}`}>

@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import './Home.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import SupportSection from '../components/SupportSection';
 import { 
   RightWhorlConch,
   EndlessKnot, 
@@ -9,9 +10,6 @@ import {
   DharmachakraWatermark 
 } from '../components/MonasteryIcons';
 import { 
-  Landmark, 
-  Users, 
-  GraduationCap, 
   MapPin, 
   Play, 
   ExternalLink
@@ -19,6 +17,26 @@ import {
 
 export default function HomeTb({ onSwitchLanguage, onNavigate }) {
   const [activeNoticeTab, setActiveNoticeTab] = useState('announcement');
+  const [activeStatDot, setActiveStatDot] = useState(0);
+  const statsGridRef = useRef(null);
+
+  const handleStatsScroll = () => {
+    if (!statsGridRef.current) return;
+    const { scrollLeft, scrollWidth, clientWidth } = statsGridRef.current;
+    if (scrollWidth <= clientWidth + 10) return;
+    const itemWidth = scrollWidth / 4;
+    const index = Math.round(scrollLeft / itemWidth);
+    setActiveStatDot(Math.min(3, Math.max(0, index)));
+  };
+
+  const scrollToStat = (idx) => {
+    if (!statsGridRef.current) return;
+    const items = statsGridRef.current.querySelectorAll('.gt-stat-item');
+    if (items[idx]) {
+      items[idx].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+      setActiveStatDot(idx);
+    }
+  };
 
   return (
     <div className="gyuto-page tibetan-text">
@@ -46,48 +64,65 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
 
         {/* 4 Feature Badges Bar (Figma: Frame 625795: #FFFAF1) */}
         <div className="gt-hero-stats-bar">
-          <div className="gyuto-container">
-            <div className="gt-stats-grid">
-              <div className="gt-stat-item">
-                <div className="gt-stat-icon">
-                  <Landmark size={44} strokeWidth={1.6} />
-                </div>
-                <div className="gt-stat-texts">
-                  <span className="gt-stat-label">བཙུགས་ལོ</span>
-                  <span className="gt-stat-value">༡༤༧༤ (བོད)</span>
-                </div>
+          <div
+            className="gt-stats-grid"
+            ref={statsGridRef}
+            onScroll={handleStatsScroll}
+          >
+            <div className="gt-stat-item">
+              <div className="gt-stat-icon">
+                <img src="/images/stats/stupa.svg" alt="Founded" width={60} height={60} />
               </div>
-
-              <div className="gt-stat-item">
-                <div className="gt-stat-icon">
-                  <Users size={44} strokeWidth={1.6} />
-                </div>
-                <div className="gt-stat-texts">
-                  <span className="gt-stat-label">དགེ་འདུན་པ།</span>
-                  <span className="gt-stat-value">༥༠༠–༥༥༠</span>
-                </div>
-              </div>
-
-              <div className="gt-stat-item">
-                <div className="gt-stat-icon">
-                  <GraduationCap size={44} strokeWidth={1.6} />
-                </div>
-                <div className="gt-stat-texts">
-                  <span className="gt-stat-label">སྤྱི་ཚོགས།</span>
-                  <span className="gt-stat-value">དགེ་ལུགས་གདན་ས།</span>
-                </div>
-              </div>
-
-              <div className="gt-stat-item">
-                <div className="gt-stat-icon">
-                  <MapPin size={44} strokeWidth={1.6} />
-                </div>
-                <div className="gt-stat-texts">
-                  <span className="gt-stat-label">གནས་ཡུལ།</span>
-                  <span className="gt-stat-value">དྷར་མ་ཤ་ལ། ཧི་མ་ཅལ། རྒྱ་གར།</span>
-                </div>
+              <div className="gt-stat-texts">
+                <span className="gt-stat-label">བཙུགས་ལོ</span>
+                <span className="gt-stat-value">༡༤༧༤ (བོད)</span>
               </div>
             </div>
+
+            <div className="gt-stat-item">
+              <div className="gt-stat-icon">
+                <img src="/images/stats/monk.svg" alt="Community" width={47} height={60} />
+              </div>
+              <div className="gt-stat-texts">
+                <span className="gt-stat-label">པར་མཛོད།</span>
+                <span className="gt-stat-value">༢༥༠–༣༠༠</span>
+              </div>
+            </div>
+
+            <div className="gt-stat-item">
+              <div className="gt-stat-icon">
+                <img src="/images/stats/lotus_buddha.svg" alt="Tradition" width={60} height={60} />
+              </div>
+              <div className="gt-stat-texts">
+                <span className="gt-stat-label">སྤྱི་ཚོགས།</span>
+                <span className="gt-stat-value">དགེ་ལུགས་གདན་ས།</span>
+              </div>
+            </div>
+
+            <div className="gt-stat-item">
+              <div className="gt-stat-icon">
+                <img src="/images/stats/mountains.svg" alt="Location" width={103} height={55} />
+              </div>
+              <div className="gt-stat-texts">
+                <span className="gt-stat-label">གནས་ཡུལ།</span>
+                <span className="gt-stat-value">དྷར་མ་ཤ་ལ། ཧི་མ་ཅལ། རྒྱ་གར།</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile carousel dots (only visible on narrow screens where carousel mode activates) */}
+          <div className="gt-stats-dots-wrap" role="tablist" aria-label="Stats pagination">
+            {[0, 1, 2, 3].map((idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`gt-stats-dot ${activeStatDot === idx ? 'active' : ''}`}
+                onClick={() => scrollToStat(idx)}
+                aria-label={`Go to item ${idx + 1}`}
+                role="tab"
+                aria-selected={activeStatDot === idx}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -421,33 +456,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
       {/* ====================================================================
           10. SUPPORT THE CONTINUITY OF THE TRADITION (Figma: Frame 625810: #FFFFFF)
           ==================================================================== */}
-      <section id="donate" className="gt-support-sec">
-        <div className="gyuto-container">
-          <div className="gt-support-inner">
-            <div className="gt-support-knot">
-              <EndlessKnot width={102} height={80} />
-            </div>
-            <div className="gt-support-text-block">
-              <h3 className="gt-support-title">བརྒྱུད་པའི་རྒྱུན་འཛིན་ལ་རོགས་གླེང་གཏོང་བ།</h3>
-              <p className="gt-support-desc">
-                སྦྱིན་སྲེག་གི་དངོས་ཡོད་དེ་དགེ་སྦྱོང་ལ་སློབ་གཉེར། དེབ་གཞུང་ཉར་ཚགས། དགོན་པའི་གནས་སྐུལ། དང་དགེ་སྦྱོང་རྣམས་ཀྱི་ཉིན་རེའི་སྤྱོ་ལངས་རྒྱུན་འཛིན་བྱེད་དེ། དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་ལོ་རབས་མ་འོངས་པར་ཉར་ཚགས་བྱེད་པ་ལ་ཞབས་ཞུ་རོགས་གླེང་གཏོང་བ་ཡིན།
-              </p>
-            </div>
-            <a 
-              href="/support" 
-              className="gt-support-btn"
-              onClick={(e) => {
-                if (onNavigate) {
-                  e.preventDefault();
-                  onNavigate('support');
-                }
-              }}
-            >
-              དགོན་པ་ལ་རོགས་གླེང་གཏོང་བ།
-            </a>
-          </div>
-        </div>
-      </section>
+      <SupportSection lang="tb" onNavigate={onNavigate} />
 
       {/* ====================================================================
           11. GET IN TOUCH (Figma: Frame 625811: #FFD781)

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import SupportSection from '../components/SupportSection';
+import { DepartmentsAcrossYear } from './departments';
 import { 
   EndlessKnot, 
   DharmachakraWatermark,
@@ -103,13 +105,13 @@ export const MONASTERY_EVENTS_DATA = {
   ]
 };
 
-// 3 Highlighted upcoming programmes from Figma mockup
+// 3 Highlighted upcoming programmes from Figma mockup (Frame 2147236792)
 export const UPCOMING_PROGRAMMES = [
   {
-    id: 'losar-2026',
+    id: 'losar-2026-1',
     month: 'FEB',
     day: '18th',
-    year: '2 0 2 6',
+    year: '2026',
     dateKey: '2026-02-18',
     title: 'Tibetan New Year Celebration',
     desc: 'Losar marks the beginning of the Tibetan calendar year. The monastery hosts three days of ceremonies, rituals, and community observances celebrating Buddhist teachings and cultural renewal. Open to practitioners and visitors respectful of the sacred atmosphere.',
@@ -117,10 +119,10 @@ export const UPCOMING_PROGRAMMES = [
     venue: 'Monastery Courtyard & Main Prayer Hall'
   },
   {
-    id: 'spring-debate-2026',
+    id: 'losar-2026-2',
     month: 'FEB',
     day: '18th',
-    year: '2 0 2 6',
+    year: '2026',
     dateKey: '2026-02-18',
     title: 'Tibetan New Year Celebration',
     desc: 'Losar marks the beginning of the Tibetan calendar year. The monastery hosts three days of ceremonies, rituals, and community observances celebrating Buddhist teachings and cultural renewal. Open to practitioners and visitors respectful of the sacred atmosphere.',
@@ -128,10 +130,10 @@ export const UPCOMING_PROGRAMMES = [
     venue: 'Gyuto Debate Courtyard'
   },
   {
-    id: 'tantric-empowerment-2026',
+    id: 'losar-2026-3',
     month: 'FEB',
     day: '18th',
-    year: '2 0 2 6',
+    year: '2026',
     dateKey: '2026-02-18',
     title: 'Tibetan New Year Celebration',
     desc: 'Losar marks the beginning of the Tibetan calendar year. The monastery hosts three days of ceremonies, rituals, and community observances celebrating Buddhist teachings and cultural renewal. Open to practitioners and visitors respectful of the sacred atmosphere.',
@@ -470,12 +472,16 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
         </section>
 
         {/* ====================================================================
-            3. UPCOMING PROGRAMMES SECTION (Warm Cream with Dharmachakra Watermark)
+            3. UPCOMING PROGRAMMES SECTION (Figma Frame 2147236792: Warm Cream with Dharmachakra Watermark)
             ==================================================================== */}
         <section className="gt-programmes-upcoming-section">
           {/* Watermark Dharmachakra on the right side */}
           <div className="gt-upcoming-watermark-wrap" aria-hidden="true">
-            <DharmachakraWatermark width={580} height={520} />
+            <img
+              src="/images/programmes/dharma-cakra-gold.png"
+              alt=""
+              className="gt-upcoming-watermark-img"
+            />
           </div>
 
           <div className="gyuto-container">
@@ -498,6 +504,9 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                       <span className="gt-pdate-year">{item.year}</span>
                     </div>
 
+                    {/* Vertical Divider Line */}
+                    <div className="gt-pcard-divider" aria-hidden="true" />
+
                     {/* Right Column: Title, Description & Action */}
                     <div className="gt-pcard-body-col">
                       <h3 className="gt-pcard-title">{item.title}</h3>
@@ -515,11 +524,13 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                             description: item.desc,
                             guidelines: 'Please dress conservatively with covered shoulders and knees. Photography inside the inner prayer hall is restricted during active ceremonies.'
                           };
-                          setActiveModalEvent({ ...ev, dateStr: `${item.month} ${item.day}, ${item.year.replace(/\s+/g, '')}` });
+                          setActiveModalEvent({ ...ev, dateStr: `${item.month} ${item.day}, ${item.year}` });
                         }}
                       >
                         <span>LEARN MORE</span>
-                        <ArrowRight size={14} />
+                        <svg width="34" height="12" viewBox="0 0 34 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="gt-pcard-learn-arrow" aria-hidden="true">
+                          <path d="M0.761194 4.84419C0.340798 4.84419 0 5.18499 0 5.60538C0 6.02578 0.340798 6.36658 0.761194 6.36658V5.60538V4.84419ZM0.761194 5.60538V6.36658H33.2388V5.60538V4.84419H0.761194V5.60538ZM33.7771 6.14363C34.0743 5.84636 34.0743 5.3644 33.7771 5.06714L28.9328 0.222927C28.6356 -0.0743383 28.1536 -0.0743383 27.8564 0.222927C27.5591 0.520192 27.5591 1.00215 27.8564 1.29942L32.1623 5.60538L27.8564 9.91134C27.5591 10.2086 27.5591 10.6906 27.8564 10.9878C28.1536 11.2851 28.6356 11.2851 28.9328 10.9878L33.7771 6.14363Z" fill="currentColor"/>
+                        </svg>
                       </button>
                     </div>
                   </article>
@@ -530,39 +541,9 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
         </section>
 
         {/* ====================================================================
-            4. DEPARTMENTS ACROSS THE YEAR SECTION
+            4. DEPARTMENTS ACROSS THE YEAR SECTION (Figma Frame 113)
             ==================================================================== */}
-        <section className="gt-departments-rhythm-section">
-          <div className="gyuto-container">
-            <div className="gt-rhythm-header-group">
-              <h2 className="gt-rhythm-title">Departments Across the Year</h2>
-              <p className="gt-rhythm-sub">
-                The work of each department follows the monastery's annual rhythm of study, practice, ceremonies, examinations, retreats, and community activities.
-              </p>
-            </div>
-
-            {/* 4 Connected Milestone Nodes */}
-            <div className="gt-rhythm-track-wrap">
-              <div className="gt-rhythm-connecting-line" aria-hidden="true" />
-              
-              <div className="gt-rhythm-nodes-grid">
-                {SEASONAL_RHYTHM.map((node) => (
-                  <div key={node.id} className="gt-rhythm-node">
-                    <span className="gt-rhythm-date-label">{node.period}</span>
-                    <div className="gt-rhythm-circle-wrap">
-                      <div className="gt-rhythm-circle" title={node.season} />
-                      <div className="gt-rhythm-stem" />
-                    </div>
-                    <div className="gt-rhythm-meta-block">
-                      <h4 className="gt-rhythm-season-name">{node.season}</h4>
-                      <p className="gt-rhythm-activity-title">{node.activity}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <DepartmentsAcrossYear lang="en" className="gt-timeline-white" />
 
         {/* ====================================================================
             5. BEFORE YOU ATTEND SECTION (Warm Golden Background with Map)
@@ -598,7 +579,7 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                     title="Open Gyuto Tantric Monastery in Google Maps"
                   >
                     <img 
-                      src="/images/dharamsala-map.jpg" 
+                      src="/images/gyuto-maps-location-real.png" 
                       alt="Google Map showing Gyuto Tantric Monastery in Sidhbari, Dharamshala" 
                       className="gt-attend-map-img" 
                     />
@@ -610,28 +591,9 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
         </section>
 
         {/* ====================================================================
-            6. SUPPORT THE CONTINUITY OF THE TRADITION
+            6. SUPPORT THE CONTINUITY OF THE TRADITION (Universal Frame 625810)
             ==================================================================== */}
-        <section className="gt-support-tradition-section">
-          <div className="gyuto-container">
-            <div className="gt-support-knot-icon">
-              <EndlessKnot size={52} color="#92060F" />
-            </div>
-            <h2 className="gt-support-tradition-title">
-              Support the Continuity of the Tradition
-            </h2>
-            <p className="gt-support-tradition-sub">
-              Contributions help sustain monastic education, preserve sacred texts, maintain monastery facilities, and support the daily life of the monastic community. Your support enables the preservation of the Gelug tantric tradition for future generations.
-            </p>
-            <button
-              type="button"
-              className="gt-support-us-btn"
-              onClick={() => onNavigate && onNavigate('support')}
-            >
-              SUPPORT US
-            </button>
-          </div>
-        </section>
+        <SupportSection lang="en" onNavigate={onNavigate} />
       </main>
 
       {/* ====================================================================

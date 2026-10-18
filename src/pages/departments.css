@@ -372,12 +372,33 @@
 
 .gt-org-diagram-wrapper {
   position: relative;
-  background-color: #FFFDF9;
+  background-color: #FFFAF1;
   border: 1px solid #F1E7D5;
-  border-radius: 12px;
-  padding: 60px 40px;
+  border-radius: 8px;
+  padding: 0;
   box-shadow: 0 4px 24px rgba(12, 24, 41, 0.03);
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.gt-org-table-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: 1280px;
+}
+
+@media (max-width: 768px) {
+  .gt-org-table-img {
+    min-width: 650px;
+  }
 }
 
 /* Decorative Gold Corner Motifs */
@@ -550,138 +571,254 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. DEPARTMENTS ACROSS THE YEAR (TIMELINE)
+   4. DEPARTMENTS ACROSS THE YEAR (TIMELINE) - Figma Frame 113
    -------------------------------------------------------------------------- */
 .gt-timeline-section {
-  background-color: #FAF4E8;
-  padding: 90px 0 100px 0;
+  background-color: #FDF1D7;
+  padding: 80px 0 90px 0;
+  width: 100%;
 }
 
 .gt-timeline-header {
-  max-width: 800px;
-  margin-bottom: 60px;
+  max-width: 793px;
+  margin-bottom: 72px;
 }
 
 .gt-timeline-title {
-  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(2rem, 3.5vw, 2.8rem);
-  font-weight: 500;
-  color: #111111;
-  margin-bottom: 16px;
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', Georgia, serif);
+  font-size: clamp(2rem, 3.8vw, 3.25rem); /* 52px in Figma */
+  font-weight: 600;
+  line-height: 1.15; /* 60px in Figma */
+  color: #000000;
+  margin-bottom: 32px; /* 32px gap in Figma */
   letter-spacing: -0.01em;
 }
 
 .gt-dept-page.tibetan-page .gt-timeline-title {
   font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
-  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.625rem); /* 42px in Figma */
+  font-weight: 500;
+  line-height: 1.5; /* 64px in Figma */
+  color: #2D2A28;
 }
 
 .gt-timeline-subtitle {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #555555;
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-size: 1.125rem; /* 18px in Figma */
+  font-weight: 500;
+  line-height: 1.45; /* 26px in Figma */
+  color: #2D2A28;
+  max-width: 793px;
 }
 
-.gt-timeline-bar-wrapper {
+.gt-dept-page.tibetan-page .gt-timeline-subtitle {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.375rem; /* 22px in Figma */
+  font-weight: 400;
+  line-height: 1.72; /* 38px in Figma */
+  color: #2D2A28;
+}
+
+.gt-timeline-track-container {
+  max-width: 1226px;
+  margin: 0 auto;
   position: relative;
-  padding: 40px 0 20px 0;
 }
 
-/* Horizontal white bar */
-.gt-timeline-track {
-  position: absolute;
-  top: 60px;
-  left: 0;
-  right: 0;
-  height: 48px;
-  background: #FFFFFF;
-  border-radius: 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
-}
-
-.gt-timeline-nodes-grid {
+/* Continuous 58px Pill Bar */
+.gt-timeline-pill-track {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 58px;
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  border-radius: 29px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.gt-timeline-node-circle {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  border-radius: 50%;
+  background-color: #FFD780;
+  position: relative;
+  z-index: 3;
+}
+
+.gt-timeline-segment {
+  flex: 1;
+  height: 58px;
+  background-color: #FFFAF1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-size: 1.125rem; /* 18px in Figma */
+  font-weight: 600;
+  line-height: 24px;
+  color: #92060F;
+  letter-spacing: 0.04em;
+  margin-left: -29px;
+  margin-right: -29px;
+  padding: 0 32px;
+  z-index: 1;
+}
+
+.gt-dept-page.tibetan-page .gt-timeline-segment {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.125rem;
+}
+
+/* 4 Columns Aligned Under Circles */
+.gt-timeline-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0;
+  position: relative;
   z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .gt-timeline-nodes-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-  .gt-timeline-track {
-    display: none;
-  }
-}
-
-.gt-timeline-node-item {
+.gt-timeline-col {
+  width: 58px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
-}
-
-.gt-timeline-date-label {
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: #92060F;
-  letter-spacing: 0.04em;
-  margin-bottom: 12px;
-  height: 20px;
-}
-
-.gt-timeline-circle {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #F8CB76;
-  border: 4px solid #FFFFFF;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 16px;
-  transition: transform 0.25s ease;
-}
-
-.gt-timeline-node-item:hover .gt-timeline-circle {
-  transform: scale(1.15);
+  position: relative;
 }
 
 .gt-timeline-stalk {
   width: 1px;
-  height: 24px;
-  background: #C4B9AA;
-  margin-bottom: 12px;
+  height: 45px;
+  background-color: #8F8A84;
+  margin-bottom: 7px;
+}
+
+.gt-timeline-labels {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 220px;
+  gap: 2px;
 }
 
 .gt-timeline-season {
-  font-weight: 700;
-  font-size: 0.95rem;
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-size: 1.125rem; /* 18px in Figma */
+  font-weight: 600;
+  line-height: 24px;
   color: #92060F;
-  letter-spacing: 0.05em;
-  margin-bottom: 6px;
+}
+
+.gt-dept-page.tibetan-page .gt-timeline-season {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.125rem;
+  color: #92060F;
 }
 
 .gt-timeline-activity {
-  font-size: 0.95rem;
-  color: #333333;
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-size: 1.125rem; /* 18px in Figma */
+  font-weight: 500;
+  line-height: 26px;
+  color: #2D2A28;
+  white-space: nowrap;
+}
+
+.gt-dept-page.tibetan-page .gt-timeline-activity {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.125rem;
+  line-height: 26px;
+  color: #2D2A28;
+  white-space: nowrap;
+}
+
+/* Responsive (Tablets & Phones) */
+@media (max-width: 860px) {
+  .gt-timeline-pill-track,
+  .gt-timeline-columns {
+    display: none;
+  }
+
+  .gt-timeline-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    padding-left: 28px;
+  }
+
+  .gt-timeline-mobile-line {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    bottom: 15px;
+    width: 2px;
+    background: #FFD780;
+  }
+
+  .gt-timeline-mobile-card {
+    background: #FFFAF1;
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .gt-timeline-mobile-dot {
+    position: absolute;
+    left: -14px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #FFD780;
+    border: 3px solid #FDF1D7;
+  }
+
+  .gt-timeline-mobile-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #92060F;
+    margin-bottom: 4px;
+  }
+
+  .gt-timeline-mobile-season {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #92060F;
+    margin-bottom: 2px;
+  }
+
+  .gt-timeline-mobile-activity {
+    font-size: 0.95rem;
+    color: #2D2A28;
+  }
+}
+
+@media (min-width: 861px) {
+  .gt-timeline-mobile-list {
+    display: none;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   5. QUESTIONS ABOUT A DEPARTMENT (BLUE BANNER)
+   5. QUESTIONS ABOUT A DEPARTMENT (BLUE BANNER) - Figma Frame 2147236784
    -------------------------------------------------------------------------- */
 .gt-dept-cta-blue {
-  background-color: #5B8CAE;
+  background-color: #6B9EBD;
   position: relative;
   padding: 80px 0;
-  color: #FFFFFF;
+  color: #FFFAF1;
   overflow: hidden;
 }
 
 .gt-dept-cta-blue-inner {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1.25fr 0.75fr;
   align-items: center;
   gap: 40px;
   position: relative;
@@ -691,47 +828,76 @@
 @media (max-width: 800px) {
   .gt-dept-cta-blue-inner {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 }
 
+.gt-dept-cta-blue-text {
+  max-width: 528px;
+}
+
 .gt-dept-cta-blue-title {
-  font-family: var(--font-serif, 'Cinzel', 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(2rem, 3.8vw, 3rem);
-  font-weight: 500;
-  line-height: 1.2;
-  color: #FFFFFF;
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', Georgia, serif);
+  font-size: clamp(2rem, 3.8vw, 3.25rem); /* 52px in Figma */
+  font-weight: 600;
+  line-height: 1.15; /* 60px line height in Figma */
+  color: #FFFAF1;
   margin-bottom: 16px;
   letter-spacing: -0.01em;
 }
 
 .gt-dept-page.tibetan-page .gt-dept-cta-blue-title {
   font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
-  font-size: clamp(1.8rem, 3.2vw, 2.6rem);
+  font-size: clamp(1.8rem, 3.2vw, 2.625rem); /* 42px in Figma */
+  font-weight: 500;
+  line-height: 1.5; /* 64px line height in Figma */
+  color: #FDF1D7;
 }
 
 .gt-dept-cta-blue-desc {
-  font-size: 1.1rem;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.92);
-  margin-bottom: 28px;
-  max-width: 540px;
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-size: 1.125rem; /* 18px in Figma */
+  font-weight: 500;
+  line-height: 1.45; /* 26px line height in Figma */
+  color: #FFFAF1;
+  margin-bottom: 32px; /* 32px gap to button */
+  max-width: 528px;
+}
+
+.gt-dept-page.tibetan-page .gt-dept-cta-blue-desc {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.375rem; /* 22px in Figma */
+  font-weight: 400;
+  line-height: 1.72; /* 38px line height in Figma */
+  color: #FDF1D7;
 }
 
 .gt-dept-cta-white-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #FFFFFF;
+  background-color: #FFFAF1;
   color: #92060F;
-  font-weight: 700;
-  font-size: 0.95rem;
-  letter-spacing: 0.04em;
-  padding: 13px 32px;
-  border-radius: 4px;
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-weight: 600;
+  font-size: 1.125rem; /* 18px in Figma */
+  line-height: 24px;
+  letter-spacing: 0.01em;
+  padding: 15px 24px;
+  min-height: 54px;
+  min-width: 138px;
+  border-radius: 5px;
   border: none;
   cursor: pointer;
   transition: all 0.25s ease;
   box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
+}
+
+.gt-dept-page.tibetan-page .gt-dept-cta-white-btn {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.125rem; /* 18px */
+  font-weight: 500;
+  background-color: #FDF1D7;
 }
 
 .gt-dept-cta-white-btn:hover {
@@ -742,16 +908,23 @@
 
 .gt-dept-cta-blue-visual {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
 }
 
+@media (max-width: 800px) {
+  .gt-dept-cta-blue-visual {
+    justify-content: center;
+  }
+}
+
 .gt-dept-lungta-img {
-  max-width: 320px;
+  max-width: 403px; /* 403px in Figma */
   width: 100%;
   height: auto;
-  opacity: 0.9;
-  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.15));
+  display: block;
+  user-select: none;
+  pointer-events: none;
 }
 
 /* --------------------------------------------------------------------------

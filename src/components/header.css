@@ -1,0 +1,653 @@
+/* ==========================================================================
+   GYUTO TANTRIC MONASTERY - HEADER & TRANSLATION SWITCH (FIGMA SPEC)
+   Frame 2147236869 (Header) & Frame 2147236870 (Language Switcher)
+   ========================================================================== */
+
+/* 1. TOP HEADER (Frame 2147236869: #FAC758, height: 234px, padding: 22px 30px 22px 108px) */
+.gt-top-header {
+  background: #FAC758;
+  height: 234px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  width: 100%;
+  border-bottom: none;
+  box-sizing: border-box;
+}
+
+.gt-top-header-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 22px 30px 22px 108px;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  height: 234px;
+  box-sizing: border-box;
+}
+
+/* Frame 625839 (900px x 190px, gap: 56px) */
+.gt-brand-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 56px;
+  text-decoration: none;
+  cursor: pointer;
+  height: 190px;
+  box-sizing: border-box;
+}
+
+/* Gyuto Logo 2 (227px x 190px) */
+.gt-header-logo {
+  width: 227px;
+  height: 190px;
+  object-fit: contain;
+  flex-shrink: 0;
+  display: block;
+  transition: transform 0.25s ease;
+}
+
+.gt-header-logo:hover {
+  transform: scale(1.02);
+}
+
+.gt-emblem-seal {
+  width: 140px;
+  height: 117px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Frame 625838 (617px x 148px, gap: 12px) */
+.gt-brand-text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་། (56px / 64px, #92060F) */
+.gt-tibetan-title {
+  font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 56px;
+  line-height: 64px;
+  color: #92060F;
+  letter-spacing: 0;
+}
+
+/* Gyuto Tantric Monastery (Cormorant Garamond Bold 64px / 72px, -1.28px, #92060F) */
+.gt-english-title {
+  font-family: var(--figma-font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  line-height: 72px;
+  letter-spacing: -1.28px;
+  color: #92060F;
+}
+
+/* Frame 2147236870 (139px x 234px in Figma, positioned 22px from top, 30px from right) */
+.gt-header-right-col {
+  width: 139px;
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-end;
+  box-sizing: border-box;
+  flex-shrink: 0;
+}
+
+.gt-desktop-only {
+  display: flex;
+}
+
+.gt-mobile-lang-wrap {
+  display: none;
+}
+
+/* Language switch (Figma node 1:3537 / 1:3550: 139px x 44px, #FFFAF1, radius: 6px, padding: 6px, gap: 2px) */
+.gt-lang-switcher-box {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px !important;
+  gap: 2px !important;
+  background: #FFFAF1 !important;
+  border-radius: 6px !important;
+  width: 139px !important;
+  min-width: 139px !important;
+  max-width: 139px !important;
+  height: 44px !important;
+  min-height: 44px !important;
+  max-height: 44px !important;
+  box-sizing: border-box !important;
+  border: none !important;
+  box-shadow: none !important;
+  position: relative !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+.gt-lang-btn {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: center !important;
+  align-items: center !important;
+  border-radius: 6px !important;
+  border: none !important;
+  cursor: pointer !important;
+  height: 32px !important;
+  min-height: 32px !important;
+  max-height: 32px !important;
+  background: transparent !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+  box-sizing: border-box !important;
+  user-select: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  outline: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+  position: static !important;
+  overflow: hidden !important;
+}
+
+/* Frame 2147236827 (english, 63px x 32px) */
+.gt-lang-btn-en {
+  width: 63px !important;
+  min-width: 63px !important;
+  max-width: 63px !important;
+  flex: 0 0 63px !important;
+}
+
+/* Frame 2147236828 (tibetan, 62px x 32px) */
+.gt-lang-btn-tb {
+  width: 62px !important;
+  min-width: 62px !important;
+  max-width: 62px !important;
+  flex: 0 0 62px !important;
+}
+
+.gt-lang-btn.active {
+  background: #92060F !important;
+  box-shadow: none !important;
+}
+
+.gt-lang-btn.inactive {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.gt-lang-btn.inactive:hover {
+  background: rgba(146, 6, 15, 0.08) !important;
+}
+
+/* English text: Source Sans 3 Bold (700) 11px, UPPERCASE */
+.gt-lang-text-en {
+  font-family: 'Source Sans 3', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 11px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+  text-transform: uppercase !important;
+  display: block !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: none !important;
+}
+
+.gt-lang-btn.active .gt-lang-text-en {
+  color: #FDF1D7 !important; /* Exact Figma cream-gold */
+}
+
+.gt-lang-btn.inactive .gt-lang-text-en {
+  color: #92060F !important; /* Exact Figma maroon */
+}
+
+/* Tibetan text: Noto Serif Tibetan Medium (500) 13.5px */
+.gt-lang-text-tb {
+  font-family: 'Noto Serif Tibetan', serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+  font-size: 13.5px !important;
+  line-height: 1 !important;
+  letter-spacing: 0 !important;
+  display: block !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  transform: translateY(-0.5px) !important;
+}
+
+.gt-lang-btn.active .gt-lang-text-tb {
+  color: #FDF1D7 !important; /* Exact Figma cream-gold */
+}
+
+.gt-lang-btn.inactive .gt-lang-text-tb {
+  color: #92060F !important; /* Exact Figma maroon */
+}
+
+/* ==========================================================================
+   2. MAROON NAVIGATION BAR (Frame 2147236831: #92060F, height: 64px)
+   ========================================================================== */
+.gt-navbar {
+  background: #92060F;
+  height: 64px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.gt-nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.gt-nav-list {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  height: 44px;
+}
+
+.gt-nav-item {
+  display: flex;
+  align-items: center;
+}
+
+.gt-nav-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 14px;
+  gap: 8px;
+  height: 44px;
+  font-family: 'Source Sans 3', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #FDF1D7;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.tibetan-text .gt-nav-link {
+  font-family: 'Noto Serif Tibetan', serif;
+  font-size: 17px;
+}
+
+.gt-nav-link:hover {
+  background: rgba(255, 215, 129, 0.15);
+  color: #FFFFFF;
+}
+
+.gt-nav-link.active {
+  background: #FFD781;
+  color: #92060F;
+  font-weight: 700;
+}
+
+.gt-mobile-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #FDF1D7;
+  cursor: pointer;
+  padding: 8px;
+  margin-left: auto;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN FOR HEADER
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .gt-top-header {
+    height: auto;
+    padding: 20px 0;
+  }
+  .gt-top-header-inner {
+    padding: 0 24px;
+    flex-wrap: wrap;
+    gap: 20px;
+    height: auto;
+  }
+  .gt-brand-group {
+    gap: 28px;
+    height: auto;
+  }
+  .gt-header-logo {
+    width: 170px;
+    height: 142px;
+  }
+  .gt-tibetan-title {
+    font-size: 40px;
+    line-height: 48px;
+  }
+  .gt-english-title {
+    font-size: 46px;
+    line-height: 54px;
+  }
+  .gt-header-right-col {
+    padding: 0;
+    height: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Compact Two-Column Mobile Header Layout */
+  .gt-top-header {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 14px 16px !important;
+    background: #FAC758 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .gt-top-header-inner {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Side-by-side branding block: [ LOGO ] [ Tibetan + English Titles ] */
+  .gt-brand-group {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 14px !important;
+    width: 100% !important;
+    height: auto !important;
+    text-decoration: none !important;
+    cursor: pointer !important;
+  }
+
+  .gt-header-logo {
+    width: 76px !important;
+    min-width: 76px !important;
+    max-width: 76px !important;
+    height: auto !important;
+    max-height: 66px !important;
+    flex-shrink: 0 !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  .gt-brand-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+    gap: 4px !important;
+    min-width: 0 !important;
+    flex: 1 1 auto !important;
+  }
+
+  .gt-tibetan-title {
+    font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif) !important;
+    font-weight: 500 !important;
+    font-size: clamp(19px, 5vw, 23px) !important;
+    line-height: 1.25 !important;
+    color: #92060F !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+  .gt-english-title {
+    font-family: var(--figma-font-serif, 'Cormorant Garamond', Georgia, serif) !important;
+    font-weight: 700 !important;
+    font-size: clamp(15px, 4vw, 18px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.3px !important;
+    color: #92060F !important;
+    margin: 0 !important;
+    white-space: normal !important;
+    word-break: normal !important;
+  }
+
+  /* Hide Desktop Language Switcher in Header */
+  .gt-desktop-only,
+  .gt-header-right-col {
+    display: none !important;
+  }
+
+  /* Red Navigation Bar on Mobile */
+  .gt-navbar {
+    height: 56px !important;
+    min-height: 56px !important;
+    background: #92060F !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.18) !important;
+    padding: 0 !important;
+  }
+
+  .gt-nav-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    padding: 0 16px !important;
+    height: 100% !important;
+    box-sizing: border-box !important;
+    position: relative !important;
+  }
+
+  /* Mobile Language Switcher on Left of Red Nav Bar */
+  .gt-mobile-lang-wrap {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    flex-shrink: 0 !important;
+  }
+
+  .gt-lang-switcher-mobile {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 3px !important;
+    gap: 2px !important;
+    background: #FFFAF1 !important;
+    border-radius: 6px !important;
+    width: 132px !important;
+    min-width: 132px !important;
+    max-width: 132px !important;
+    height: 38px !important;
+    min-height: 38px !important;
+    max-height: 38px !important;
+    box-sizing: border-box !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-btn {
+    height: 32px !important;
+    min-height: 32px !important;
+    max-height: 32px !important;
+    border-radius: 4px !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-btn-en {
+    width: 61px !important;
+    min-width: 61px !important;
+    max-width: 61px !important;
+    flex: 0 0 61px !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-btn-tb {
+    width: 61px !important;
+    min-width: 61px !important;
+    max-width: 61px !important;
+    flex: 0 0 61px !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-text-en {
+    font-size: 10.5px !important;
+    letter-spacing: 0.02em !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-text-tb {
+    font-size: 13px !important;
+  }
+
+  /* Mobile Hamburger Menu on Right */
+  .gt-mobile-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: transparent !important;
+    border: none !important;
+    color: #FDF1D7 !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+  }
+
+  .gt-mobile-toggle:hover {
+    color: #FFD781 !important;
+  }
+
+  /* Dropdown Menu when toggled */
+  .gt-nav-list {
+    display: none !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: #92060F !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+    z-index: 1001 !important;
+    padding: 8px 0 !important;
+    margin: 0 !important;
+    height: auto !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+  }
+
+  .gt-nav-list.mobile-open {
+    display: flex !important;
+  }
+
+  .gt-nav-item {
+    width: 100% !important;
+  }
+
+  .gt-nav-link {
+    width: 100% !important;
+    justify-content: flex-start !important;
+    padding: 12px 20px !important;
+    font-size: 15px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+    height: auto !important;
+  }
+}
+
+/* Small phones (<= 360px viewport e.g. iPhone SE, 320px width) */
+@media (max-width: 360px) {
+  .gt-top-header {
+    padding: 12px 12px !important;
+  }
+
+  .gt-brand-group {
+    gap: 10px !important;
+  }
+
+  .gt-header-logo {
+    width: 66px !important;
+    min-width: 66px !important;
+    max-width: 66px !important;
+    max-height: 58px !important;
+  }
+
+  .gt-tibetan-title {
+    font-size: 18px !important;
+    line-height: 24px !important;
+  }
+
+  .gt-english-title {
+    font-size: 14.5px !important;
+    line-height: 19px !important;
+  }
+
+  .gt-nav-container {
+    padding: 0 12px !important;
+  }
+
+  .gt-lang-switcher-mobile {
+    width: 124px !important;
+    min-width: 124px !important;
+    max-width: 124px !important;
+    height: 36px !important;
+    min-height: 36px !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-btn {
+    height: 30px !important;
+    min-height: 30px !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-btn-en {
+    width: 57px !important;
+    min-width: 57px !important;
+    flex: 0 0 57px !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-btn-tb {
+    width: 57px !important;
+    min-width: 57px !important;
+    flex: 0 0 57px !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-text-en {
+    font-size: 10px !important;
+  }
+
+  .gt-lang-switcher-mobile .gt-lang-text-tb {
+    font-size: 12px !important;
+  }
+}

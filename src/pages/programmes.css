@@ -498,184 +498,234 @@
 }
 
 /* --------------------------------------------------------------------------
-   3. UPCOMING PROGRAMMES SECTION (Figma Cream: #FDF1D7 with Dharmachakra)
+   3. UPCOMING PROGRAMMES SECTION (Figma Frame 2147236792: #FDF1D7 with Dharmachakra)
    -------------------------------------------------------------------------- */
 .gt-programmes-upcoming-section {
   position: relative;
-  background-color: var(--figma-cream-bg);
-  padding: 90px 0 100px 0;
+  background-color: #FDF1D7;
+  padding: 80px 0;
   overflow: hidden;
+  width: 100%;
 }
 
-/* Dharmachakra Watermark behind cards */
+/* Dharmachakra Watermark behind cards on right half (Figma: 1013px x 1053px, left: 753px in 1440px canvas) */
 .gt-upcoming-watermark-wrap {
   position: absolute;
-  right: -60px;
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0.45;
+  left: calc(50% + 33px);
+  top: 4px;
+  width: 1013px;
+  height: 1053px;
   pointer-events: none;
   z-index: 1;
+  opacity: 0.22;
+  transition: opacity 0.3s ease;
+}
+
+.gt-upcoming-watermark-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left top;
+  display: block;
+}
+
+@media (max-width: 1440px) {
+  .gt-upcoming-watermark-wrap {
+    left: auto;
+    right: -240px;
+    opacity: 0.2;
+  }
 }
 
 @media (max-width: 1024px) {
   .gt-upcoming-watermark-wrap {
-    opacity: 0.25;
-    right: -140px;
+    right: -320px;
+    opacity: 0.16;
+  }
+}
+
+@media (max-width: 768px) {
+  .gt-upcoming-watermark-wrap {
+    display: none;
   }
 }
 
 .gt-upcoming-inner {
   position: relative;
   z-index: 2;
-  max-width: 860px;
+  width: 100%;
 }
 
 .gt-upcoming-header-group {
-  margin-bottom: 40px;
+  max-width: 793px;
+  margin-bottom: 72px;
 }
 
 .gt-upcoming-title {
-  font-family: var(--figma-font-serif);
-  font-size: 40px;
-  font-weight: 400;
-  color: #1F2421;
-  margin: 0 0 12px 0;
-  letter-spacing: 0.5px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  color: #000000;
+  margin: 0 0 32px 0;
+  letter-spacing: 0;
 }
 
 .tibetan-text .gt-upcoming-title {
-  font-family: var(--figma-font-tibetan);
-  font-size: 36px;
+  font-family: var(--font-tibetan, 'Sambhota', 'Jomolhari', serif);
+  font-size: 42px;
+  line-height: 1.35;
+  margin-bottom: 24px;
 }
 
 .gt-upcoming-sub {
-  font-family: var(--figma-font-sans);
-  font-size: 15.5px;
-  line-height: 1.65;
-  color: #555555;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #2D2A28;
   margin: 0;
 }
 
 .tibetan-text .gt-upcoming-sub {
-  font-family: var(--figma-font-tibetan);
-  font-size: 15px;
+  font-family: var(--font-tibetan, 'Sambhota', 'Jomolhari', serif);
+  font-size: 16px;
   line-height: 1.8;
 }
 
-/* Cards Stack */
+/* Cards Stack (Figma Frame 2147236791: 913px max-width, 24px gap) */
 .gt-upcoming-cards-stack {
   display: flex;
   flex-direction: column;
-  gap: 22px;
+  gap: 24px;
+  max-width: 913px;
+  width: 100%;
 }
 
 .gt-programme-card {
-  background-color: #FFFFFF;
-  border: 1px solid #E5C583;
+  background-color: #FFFAF1;
+  border: 1px solid #8F8A84;
   border-radius: 4px;
   display: flex;
-  align-items: stretch;
-  box-shadow: 0 3px 12px rgba(184, 137, 56, 0.08);
+  flex-direction: row;
+  align-items: center;
+  padding: 24px 40px;
+  gap: 24px;
+  box-sizing: border-box;
+  min-height: 222px;
+  box-shadow: none;
   transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  overflow: hidden;
 }
 
 .gt-programme-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(184, 137, 56, 0.16);
-  border-color: #D4B26F;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(143, 138, 132, 0.15);
+  border-color: #6C665D;
 }
 
-/* Date Box (Left Column) */
+/* Date Box (Left Column: 77px x 90px) */
 .gt-pcard-date-col {
-  width: 110px;
+  width: 77px;
+  height: 90px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  border-right: 1px solid #EBD5AC;
-  padding: 22px 12px;
-  background: #FFFDF9;
+  justify-content: space-between;
+  text-align: center;
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 
 .gt-pdate-month {
-  font-family: var(--figma-font-sans);
-  font-size: 13.5px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #A07830;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #A8833D;
   text-transform: uppercase;
-  margin-bottom: 2px;
+  margin: 0;
 }
 
 .tibetan-text .gt-pdate-month {
-  font-family: var(--figma-font-tibetan);
-  font-size: 14px;
+  font-family: var(--font-tibetan, 'Sambhota', 'Jomolhari', serif);
+  font-size: 18px;
 }
 
 .gt-pdate-day {
-  font-family: var(--figma-font-serif);
-  font-size: 32px;
-  font-weight: 700;
-  color: #1F2421;
-  line-height: 1.1;
-  margin: 2px 0 4px 0;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 40px;
+  font-weight: 500;
+  line-height: 40px;
+  color: #2D2A28;
+  margin: 0;
 }
 
 .tibetan-text .gt-pdate-day {
-  font-family: var(--figma-font-tibetan);
-  font-size: 24px;
+  font-size: 34px;
 }
 
 .gt-pdate-year {
-  font-family: var(--figma-font-sans);
-  font-size: 12px;
-  font-weight: 500;
-  letter-spacing: 2.5px;
-  color: #6C665D;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 3.6px;
+  color: #2D2A28;
+  margin: 0;
 }
 
 .tibetan-text .gt-pdate-year {
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
-/* Card Content (Right Column) */
+/* Vertical divider line: 1px x 172px, #8F8A84 */
+.gt-pcard-divider {
+  width: 1px;
+  height: 172px;
+  background-color: #8F8A84;
+  flex-shrink: 0;
+}
+
+/* Card Content (Right Column: max 700px, 16px gap) */
 .gt-pcard-body-col {
-  padding: 26px 30px;
+  padding: 0;
   flex: 1;
+  max-width: 700px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  gap: 16px;
 }
 
 .gt-pcard-title {
-  font-family: var(--figma-font-serif);
-  font-size: 22px;
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: 30px;
   font-weight: 600;
-  color: #1F2421;
-  margin: 0 0 10px 0;
-  letter-spacing: 0.3px;
+  line-height: 38px;
+  color: #2D2A28;
+  margin: 0;
 }
 
 .tibetan-text .gt-pcard-title {
-  font-family: var(--figma-font-tibetan);
-  font-size: 20px;
-  line-height: 1.4;
+  font-family: var(--font-tibetan, 'Sambhota', 'Jomolhari', serif);
+  font-size: 24px;
+  line-height: 1.45;
 }
 
 .gt-pcard-desc {
-  font-family: var(--figma-font-sans);
-  font-size: 14.5px;
-  line-height: 1.65;
-  color: #4A4A4A;
-  margin: 0 0 16px 0;
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #2D2A28;
+  margin: 0;
 }
 
 .tibetan-text .gt-pcard-desc {
-  font-family: var(--figma-font-tibetan);
-  font-size: 14px;
+  font-family: var(--font-tibetan, 'Sambhota', 'Jomolhari', serif);
+  font-size: 16px;
   line-height: 1.85;
 }
 
@@ -683,174 +733,332 @@
   background: none;
   border: none;
   padding: 0;
-  font-family: var(--figma-font-sans);
-  font-size: 12.5px;
-  font-weight: 700;
-  color: var(--figma-maroon);
-  letter-spacing: 1.2px;
+  font-family: var(--font-sans, 'Source Sans 3', system-ui, sans-serif);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 24px;
+  color: #92060F;
   text-transform: uppercase;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 16px;
   align-self: flex-start;
-  transition: color 0.2s ease, gap 0.2s ease;
+  transition: color 0.2s ease;
 }
 
 .gt-pcard-learn-btn:hover {
-  color: var(--figma-maroon-hover);
-  gap: 12px;
+  color: #6B040B;
+}
+
+.gt-pcard-learn-arrow {
+  flex-shrink: 0;
+  width: 34px;
+  height: 12px;
+  display: block;
+  transition: transform 0.2s ease;
+}
+
+.gt-pcard-learn-btn:hover .gt-pcard-learn-arrow {
+  transform: translateX(4px);
+}
+
+@media (max-width: 992px) {
+  .gt-upcoming-header-group {
+    margin-bottom: 48px;
+  }
+  .gt-upcoming-title {
+    font-size: 38px;
+    line-height: 46px;
+    margin-bottom: 20px;
+  }
+  .gt-programme-card {
+    padding: 24px;
+    gap: 20px;
+  }
+  .gt-pcard-divider {
+    height: 140px;
+  }
+  .gt-pcard-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .gt-pcard-desc {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .gt-programmes-upcoming-section {
+    padding: 60px 0;
+  }
+  .gt-upcoming-title {
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 16px;
+  }
+  .gt-programme-card {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 16px;
+  }
+  .gt-pcard-date-col {
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 12px;
+    align-items: baseline;
+  }
+  .gt-pcard-divider {
+    width: 100%;
+    height: 1px;
+  }
 }
 
 /* --------------------------------------------------------------------------
-   4. DEPARTMENTS ACROSS THE YEAR SECTION
+   4. DEPARTMENTS ACROSS THE YEAR (TIMELINE) - Figma Frame 113
    -------------------------------------------------------------------------- */
-.gt-departments-rhythm-section {
+.gt-timeline-section {
   background-color: #FFFFFF;
-  padding: 86px 0 94px 0;
+  padding: 80px 0 90px 0;
+  width: 100%;
 }
 
-.gt-rhythm-header-group {
-  max-width: 820px;
-  margin-bottom: 54px;
+.gt-programmes-page .gt-timeline-section,
+.gt-timeline-section.gt-timeline-white {
+  background-color: #FFFFFF !important;
 }
 
-.gt-rhythm-title {
-  font-family: var(--figma-font-serif);
-  font-size: 40px;
+.gt-timeline-header {
+  max-width: 793px;
+  margin-bottom: 72px;
+}
+
+.gt-timeline-title {
+  font-family: var(--font-serif, 'Cormorant Garamond', 'Cinzel', Georgia, serif);
+  font-size: clamp(2rem, 3.8vw, 3.25rem); /* 52px in Figma */
+  font-weight: 600;
+  line-height: 1.15; /* 60px in Figma */
+  color: #000000;
+  margin-bottom: 32px; /* 32px gap in Figma */
+  letter-spacing: -0.01em;
+}
+
+.gt-dept-page.tibetan-page .gt-timeline-title,
+.tibetan-page .gt-timeline-title,
+.tibetan-text .gt-timeline-title {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: clamp(1.8rem, 3.2vw, 2.625rem); /* 42px in Figma */
+  font-weight: 500;
+  line-height: 1.5; /* 64px in Figma */
+  color: #2D2A28;
+}
+
+.gt-timeline-subtitle {
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-size: 1.125rem; /* 18px in Figma */
+  font-weight: 500;
+  line-height: 1.45; /* 26px in Figma */
+  color: #2D2A28;
+  max-width: 793px;
+}
+
+.gt-dept-page.tibetan-page .gt-timeline-subtitle,
+.tibetan-page .gt-timeline-subtitle,
+.tibetan-text .gt-timeline-subtitle {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.375rem; /* 22px in Figma */
   font-weight: 400;
-  color: #1F2421;
-  margin: 0 0 14px 0;
-  letter-spacing: 0.5px;
+  line-height: 1.72; /* 38px in Figma */
+  color: #2D2A28;
 }
 
-.tibetan-text .gt-rhythm-title {
-  font-family: var(--figma-font-tibetan);
-  font-size: 36px;
-}
-
-.gt-rhythm-sub {
-  font-family: var(--figma-font-sans);
-  font-size: 15.5px;
-  line-height: 1.65;
-  color: #555555;
-  margin: 0;
-}
-
-.tibetan-text .gt-rhythm-sub {
-  font-family: var(--figma-font-tibetan);
-  font-size: 15px;
-  line-height: 1.8;
-}
-
-/* 4 Milestone Horizontal Flow */
-.gt-rhythm-track-wrap {
+.gt-timeline-track-container {
+  max-width: 1226px;
+  margin: 0 auto;
   position: relative;
-  margin-top: 40px;
-  padding: 0 20px;
 }
 
-/* Subtle connecting horizontal line */
-.gt-rhythm-connecting-line {
-  position: absolute;
-  top: 56px;
-  left: 60px;
-  right: 60px;
-  height: 2px;
-  background: #EED7B5;
+/* Continuous 58px Pill Bar */
+.gt-timeline-pill-track {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 58px;
+  position: relative;
+  border-radius: 29px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+}
+
+.gt-timeline-node-circle {
+  width: 58px;
+  height: 58px;
+  min-width: 58px;
+  border-radius: 50%;
+  background-color: #FFD780;
+  position: relative;
+  z-index: 3;
+}
+
+.gt-timeline-segment {
+  flex: 1;
+  height: 58px;
+  background-color: #FFFAF1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-size: 1.125rem; /* 18px in Figma */
+  font-weight: 600;
+  line-height: 24px;
+  color: #92060F;
+  letter-spacing: 0.04em;
+  margin-left: -29px;
+  margin-right: -29px;
+  padding: 0 32px;
   z-index: 1;
 }
 
-.gt-rhythm-nodes-grid {
+.gt-dept-page.tibetan-page .gt-timeline-segment,
+.tibetan-page .gt-timeline-segment,
+.tibetan-text .gt-timeline-segment {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.125rem;
+}
+
+/* 4 Columns Aligned Under Circles */
+.gt-timeline-columns {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 0;
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
 }
 
-.gt-rhythm-node {
+.gt-timeline-col {
+  width: 58px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-}
-
-.gt-rhythm-date-label {
-  font-family: var(--figma-font-sans);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--figma-maroon);
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-
-.tibetan-text .gt-rhythm-date-label {
-  font-family: var(--figma-font-tibetan);
-  font-size: 13.5px;
-}
-
-.gt-rhythm-circle-wrap {
+  align-items: center;
   position: relative;
+}
+
+.gt-timeline-stalk {
+  width: 1px;
+  height: 45px;
+  background-color: #8F8A84;
+  margin-bottom: 7px;
+}
+
+.gt-timeline-labels {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+  width: 220px;
+  gap: 2px;
 }
 
-.gt-rhythm-circle {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background-color: #F7BD56;
-  border: 3px solid #FFFFFF;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.25s ease, background-color 0.25s ease;
+.gt-timeline-season {
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-size: 1.125rem; /* 18px in Figma */
+  font-weight: 600;
+  line-height: 24px;
+  color: #92060F;
 }
 
-.gt-rhythm-node:hover .gt-rhythm-circle {
-  transform: scale(1.12);
-  background-color: #EBAA38;
+.gt-dept-page.tibetan-page .gt-timeline-season,
+.tibetan-page .gt-timeline-season,
+.tibetan-text .gt-timeline-season {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.125rem;
+  color: #92060F;
 }
 
-/* Small downward stem / line under circle */
-.gt-rhythm-stem {
-  width: 1px;
-  height: 18px;
-  background-color: #CDB797;
-  margin-left: 24px;
+.gt-timeline-activity {
+  font-family: var(--font-sans, 'Source Sans 3', sans-serif);
+  font-size: 1.125rem; /* 18px in Figma */
+  font-weight: 500;
+  line-height: 26px;
+  color: #2D2A28;
+  white-space: nowrap;
 }
 
-.gt-rhythm-meta-block {
-  margin-top: 4px;
+.gt-dept-page.tibetan-page .gt-timeline-activity,
+.tibetan-page .gt-timeline-activity,
+.tibetan-text .gt-timeline-activity {
+  font-family: var(--font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 1.125rem;
+  line-height: 26px;
+  color: #2D2A28;
+  white-space: nowrap;
 }
 
-.gt-rhythm-season-name {
-  font-family: var(--figma-font-sans);
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--figma-maroon);
-  letter-spacing: 1.2px;
-  text-transform: uppercase;
-  margin: 0 0 4px 0;
-}
+/* Responsive (Tablets & Phones) */
+@media (max-width: 860px) {
+  .gt-timeline-pill-track,
+  .gt-timeline-columns {
+    display: none;
+  }
 
-.tibetan-text .gt-rhythm-season-name {
-  font-family: var(--figma-font-tibetan);
-  font-size: 15px;
-  letter-spacing: 0.5px;
-}
+  .gt-timeline-mobile-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+    padding-left: 28px;
+  }
 
-.gt-rhythm-activity-title {
-  font-family: var(--figma-font-sans);
-  font-size: 14px;
-  color: #333333;
-  margin: 0;
-  line-height: 1.4;
-}
+  .gt-timeline-mobile-line {
+    position: absolute;
+    left: 20px;
+    top: 15px;
+    bottom: 15px;
+    width: 2px;
+    background: #FFD780;
+  }
 
-.tibetan-text .gt-rhythm-activity-title {
-  font-family: var(--figma-font-tibetan);
-  font-size: 14px;
+  .gt-timeline-mobile-card {
+    background: #FFFAF1;
+    border-radius: 8px;
+    padding: 16px 20px;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .gt-timeline-mobile-dot {
+    position: absolute;
+    left: -14px;
+    top: 20px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #FFD780;
+    border: 3px solid #FDF1D7;
+  }
+
+  .gt-timeline-mobile-date {
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #92060F;
+    margin-bottom: 4px;
+  }
+
+  .gt-timeline-mobile-season {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #92060F;
+    margin-bottom: 2px;
+  }
+
+  .gt-timeline-mobile-activity {
+    font-size: 0.95rem;
+    color: #2D2A28;
+  }
 }
 
 /* --------------------------------------------------------------------------

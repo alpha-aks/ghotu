@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import SupportSection from '../components/SupportSection';
+import { DepartmentsAcrossYear } from './departmentstb';
 import { 
   EndlessKnot, 
   DharmachakraWatermark,
@@ -444,8 +446,13 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
             3. UPCOMING PROGRAMMES SECTION (Tibetan)
             ==================================================================== */}
         <section className="gt-programmes-upcoming-section">
+          {/* Watermark Dharmachakra on the right side */}
           <div className="gt-upcoming-watermark-wrap" aria-hidden="true">
-            <DharmachakraWatermark width={580} height={520} />
+            <img
+              src="/images/programmes/dharma-cakra-gold.png"
+              alt=""
+              className="gt-upcoming-watermark-img"
+            />
           </div>
 
           <div className="gyuto-container">
@@ -468,6 +475,9 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
                       <span className="gt-pdate-year">{item.year}</span>
                     </div>
 
+                    {/* Vertical Divider Line */}
+                    <div className="gt-pcard-divider" aria-hidden="true" />
+
                     {/* Right Column: Title, Description & Action */}
                     <div className="gt-pcard-body-col">
                       <h3 className="gt-pcard-title">{item.title}</h3>
@@ -489,7 +499,9 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
                         }}
                       >
                         <span>LEARN MORE</span>
-                        <ArrowRight size={14} />
+                        <svg width="34" height="12" viewBox="0 0 34 12" fill="none" xmlns="http://www.w3.org/2000/svg" className="gt-pcard-learn-arrow" aria-hidden="true">
+                          <path d="M0.761194 4.84419C0.340798 4.84419 0 5.18499 0 5.60538C0 6.02578 0.340798 6.36658 0.761194 6.36658V5.60538V4.84419ZM0.761194 5.60538V6.36658H33.2388V5.60538V4.84419H0.761194V5.60538ZM33.7771 6.14363C34.0743 5.84636 34.0743 5.3644 33.7771 5.06714L28.9328 0.222927C28.6356 -0.0743383 28.1536 -0.0743383 27.8564 0.222927C27.5591 0.520192 27.5591 1.00215 27.8564 1.29942L32.1623 5.60538L27.8564 9.91134C27.5591 10.2086 27.5591 10.6906 27.8564 10.9878C28.1536 11.2851 28.6356 11.2851 28.9328 10.9878L33.7771 6.14363Z" fill="currentColor"/>
+                        </svg>
                       </button>
                     </div>
                   </article>
@@ -500,39 +512,9 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
         </section>
 
         {/* ====================================================================
-            4. DEPARTMENTS ACROSS THE YEAR SECTION (Tibetan)
+            4. DEPARTMENTS ACROSS THE YEAR SECTION (Figma Frame 113)
             ==================================================================== */}
-        <section className="gt-departments-rhythm-section">
-          <div className="gyuto-container">
-            <div className="gt-rhythm-header-group">
-              <h2 className="gt-rhythm-title">ལོ་འཁོར་གྱི་ལས་རིམ།</h2>
-              <p className="gt-rhythm-sub">
-                གྲྭ་ཚང་གི་སྡེ་ཚན་སོ་སོའི་ལས་དོན་རྣམས་ལོ་འཁོར་གྱི་སློབ་གཉེར་དང་། སྒྲུབ་པ། ཆོས་སྤྱོད། རྒྱུགས་གཞུང་། དྭངས་བཞུགས་དང་སྤྱི་ཚོགས་དོན་གཉེར་གྱི་དུས་མཚུངས་སུ་འགྲོ་བཞིན་ཡོད།
-              </p>
-            </div>
-
-            {/* 4 Connected Milestone Nodes */}
-            <div className="gt-rhythm-track-wrap">
-              <div className="gt-rhythm-connecting-line" aria-hidden="true" />
-              
-              <div className="gt-rhythm-nodes-grid">
-                {TIBETAN_SEASONAL_RHYTHM.map((node) => (
-                  <div key={node.id} className="gt-rhythm-node">
-                    <span className="gt-rhythm-date-label">{node.period}</span>
-                    <div className="gt-rhythm-circle-wrap">
-                      <div className="gt-rhythm-circle" title={node.season} />
-                      <div className="gt-rhythm-stem" />
-                    </div>
-                    <div className="gt-rhythm-meta-block">
-                      <h4 className="gt-rhythm-season-name">{node.season}</h4>
-                      <p className="gt-rhythm-activity-title">{node.activity}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
+        <DepartmentsAcrossYear lang="tb" className="gt-timeline-white" />
 
         {/* ====================================================================
             5. BEFORE YOU ATTEND SECTION (Tibetan)
@@ -568,7 +550,7 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
                     title="Open Gyuto Tantric Monastery in Google Maps"
                   >
                     <img 
-                      src="/images/dharamsala-map.jpg" 
+                      src="/images/gyuto-maps-location-real.png" 
                       alt="Google Map showing Gyuto Tantric Monastery in Sidhbari, Dharamshala" 
                       className="gt-attend-map-img" 
                     />
@@ -580,28 +562,9 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
         </section>
 
         {/* ====================================================================
-            6. SUPPORT THE CONTINUITY OF THE TRADITION (Tibetan)
+            6. SUPPORT THE CONTINUITY OF THE TRADITION (Universal Frame 625810)
             ==================================================================== */}
-        <section className="gt-support-tradition-section">
-          <div className="gyuto-container">
-            <div className="gt-support-knot-icon">
-              <EndlessKnot size={52} color="#92060F" />
-            </div>
-            <h2 className="gt-support-tradition-title">
-              བརྒྱུད་པའི་རྒྱུན་འཛིན་ལ་རོགས་སྐྱོར་གནང་བ།
-            </h2>
-            <p className="gt-support-tradition-sub">
-              སྦྱིན་བདག་གི་དགེ་བའི་དགེ་སྦྱོར་གྱིས་དགེ་འདུན་པའི་སློབ་གཉེར་དང་། གསུང་རབ་ཉར་ཚགས། དགོན་པའི་མཐུན་རྐྱེན་དང་། གྲྭ་ཚང་གི་ཉིན་རེའི་འཚོ་བར་རམ་འདེགས་གནང་གི་ཡོད། ཁྱེད་ཀྱི་རོགས་སྐྱོར་གྱིས་དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་འཛིན་སྐྱོང་སྤེལ་གསུམ་ལ་ཕན་ཐོགས་ཆེན་པོ་ཡོད།
-            </p>
-            <button
-              type="button"
-              className="gt-support-us-btn"
-              onClick={() => onNavigate && onNavigate('support')}
-            >
-              དགོན་པར་རོགས་སྐྱོར་གནང་བ།
-            </button>
-          </div>
-        </section>
+        <SupportSection lang="tb" onNavigate={onNavigate} />
       </main>
 
       {/* Modal Dialog */}

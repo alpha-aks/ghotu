@@ -1,6 +1,7 @@
 import React from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import SupportSection from '../components/SupportSection';
 import {
   RightWhorlConch,
   EndlessKnot,
@@ -467,30 +468,7 @@ export default function About({ onSwitchLanguage, onNavigate }) {
         </section>
 
         {/* 9. Support the Continuity of the Tradition (Figma White: #FFFFFF - Frame 625810) */}
-        <section className="gt-support-tradition-section">
-          <div className="gyuto-container">
-            <div className="gt-support-inner">
-              <div className="gt-support-knot">
-                <EndlessKnot width={102} height={80} />
-              </div>
-              <div className="gt-support-text-block">
-                <h2 className="gt-support-title">Support the Continuity of the Tradition</h2>
-                <p className="gt-support-desc">
-                  Contributions help sustain monastic education, preserve sacred texts, maintain
-                  monastery facilities, and support the daily life of the monastic community. Your
-                  support enables the preservation of the Gelug tantric tradition for future generations.
-                </p>
-              </div>
-              <button
-                type="button"
-                className="gt-support-btn"
-                onClick={() => handleNav('support')}
-              >
-                SUPPORT US
-              </button>
-            </div>
-          </div>
-        </section>
+        <SupportSection lang="en" onNavigate={handleNav} />
       </main>
 
       {/* 10. Footer */}

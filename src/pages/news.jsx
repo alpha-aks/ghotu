@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import SupportSection from '../components/SupportSection';
 import { TibetanVajra, EndlessKnot } from '../components/MonasteryIcons';
 import './news.css';
 
@@ -222,28 +223,9 @@ export default function News({ onSwitchLanguage, onNavigate }) {
         </section>
 
         {/* ====================================================================
-            5. SUPPORT THE CONTINUITY OF THE TRADITION
+            5. SUPPORT THE CONTINUITY OF THE TRADITION (Universal Frame 625810)
             ==================================================================== */}
-        <section className="gt-support-tradition-section">
-          <div className="gyuto-container">
-            <div className="gt-support-knot-icon">
-              <EndlessKnot size={52} color="#92060F" />
-            </div>
-            <h2 className="gt-support-tradition-title">
-              Support the Continuity of the Tradition
-            </h2>
-            <p className="gt-support-tradition-sub">
-              Contributions help sustain monastic education, preserve sacred texts, maintain monastery facilities, and support the daily life of the monastic community. Your support enables the preservation of the Gelug tantric tradition for future generations.
-            </p>
-            <button
-              type="button"
-              className="gt-support-us-btn"
-              onClick={() => onNavigate && onNavigate('support')}
-            >
-              SUPPORT US
-            </button>
-          </div>
-        </section>
+        <SupportSection lang="en" onNavigate={onNavigate} />
       </main>
 
       {/* Footer */}

@@ -1,17 +1,19 @@
 import React from 'react';
 
-// Sacred Gyuto Monastery Circular Emblem Seal (Figma Logo)
-export function GyutoEmblem({ size = 110, className = "gt-emblem-seal" }) {
+// Sacred Gyuto Monastery Circular Emblem Seal (Figma Logo: Gyuto Logo 2)
+export function GyutoEmblem({ size = 190, width, height, className = "gt-emblem-seal" }) {
+  const w = width || (height ? Math.round(height * 227 / 190) : Math.round(size * 227 / 190));
+  const h = height || size;
   return (
     <img
-      src="/images/logo.jpg"
+      src="/images/gyuto_logo_figma.png"
       alt="Gyuto Tantric Monastery Seal"
-      width={size}
-      height={size}
+      width={w}
+      height={h}
       className={className}
       style={{
-        borderRadius: "50%",
-        objectFit: "cover",
+        objectFit: "contain",
+        display: "block",
       }}
     />
   );

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import SupportSection from '../components/SupportSection';
 import { TibetanVajra, EndlessKnot } from '../components/MonasteryIcons';
 import './news.css';
 
@@ -219,27 +220,10 @@ export default function NewsTb({ onSwitchLanguage, onNavigate }) {
           </div>
         </section>
 
-        {/* 5. SUPPORT THE CONTINUITY OF THE TRADITION */}
-        <section className="gt-support-tradition-section">
-          <div className="gyuto-container">
-            <div className="gt-support-knot-icon">
-              <EndlessKnot size={52} color="#92060F" />
-            </div>
-            <h2 className="gt-support-tradition-title">
-              སྲོལ་རྒྱུན་རྒྱུན་མཐུད་ལ་རྒྱབ་སྐྱོར་གནང་རོགས།
-            </h2>
-            <p className="gt-support-tradition-sub">
-              ཁྱེད་ཀྱི་ཞལ་འདེབས་ཀྱིས་དགེ་འདུན་པའི་སློབ་གཉེར་དང་། གསུང་རབ་ཉར་ཚགས། གྲྭ་ཚང་གི་མཐུན་རྐྱེན་སྦྱོར་སྤྲོད་བཅས་ལ་རྒྱབ་སྐྱོར་ཆེན་པོ་ཐོབ་ཀྱི་ཡོད། འདིས་དགེ་ལུགས་གསང་ཆེན་རྒྱུད་སྡེའི་བསྟན་པ་འཛིན་སྐྱོང་སྤེལ་གསུམ་ལ་ཕན་ཐོགས་བླ་མེད་འབྱུང་ངོ་།
-            </p>
-            <button
-              type="button"
-              className="gt-support-us-btn"
-              onClick={() => onNavigate && onNavigate('support')}
-            >
-              ཞལ་འདེབས་འབུལ་བ།
-            </button>
-          </div>
-        </section>
+        {/* ====================================================================
+            5. SUPPORT THE CONTINUITY OF THE TRADITION (Universal Frame 625810)
+            ==================================================================== */}
+        <SupportSection lang="tb" onNavigate={onNavigate} />
       </main>
 
       {/* Footer */}
