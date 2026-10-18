@@ -25,8 +25,10 @@ faltu img/*
 scratch/
 Section 1.txt
 *.tmp
-*.bak
-public/images/[0-9a-f]*.jpg
+public/images/[0-9a-f][0-9a-f][0-9a-f]*.jpg
+!public/images/19adcb4acb3bef0a3901217f7a92b1c6f3106c52.jpg
+!public/images/9b0c3dc0724924acf8d0aae961ddf640d258dbfc.jpg
+!public/images/og-banner.jpg
 
 # Logs
 logs/

@@ -25,16 +25,16 @@ export default function ContactTb({ onSwitchLanguage, onNavigate }) {
             {/* Right Column: Address and Communication Details in Tibetan */}
             <div className="gt-contact-info-col">
               <div className="gt-contact-block">
-                <p className="gt-contact-highlight-title">གླེང་སྟེགས་ཀྱི་གཞི་རིས།</p>
-                <p>དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང༌།</p>
+                <p>གླེང་སྟེགས་ཀྱི་གཞི་རིས།</p>
+                <p>དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།</p>
                 <p>P.O. Sidhbari, 176215</p>
-                <p>དྷ་ར་མ་ཤ་ལ། ཀང་ར།</p>
-                <p>ཧི་མ་ཅལ་པ་དེཤ། རྒྱ་གར།</p>
+                <p>དྷར་མ་ཤ་ལ། ཀང་ར།</p>
+                <p>ཧི་མ་ཅལ་པ་དེས། རྒྱ་གར།</p>
               </div>
 
               <div className="gt-contact-block">
                 <p>
-                  གློག་འཕྲིན།{' '}
+                  གློག་སྡེབ།{' '}
                   <a href="mailto:info@gyutomonastery.org" className="gt-contact-link">
                     info@gyutomonastery.org
                   </a>
@@ -48,42 +48,40 @@ export default function ContactTb({ onSwitchLanguage, onNavigate }) {
               </div>
 
               <div className="gt-contact-block">
-                <p className="gt-contact-highlight-title">ང་ཚོ་ལ་ལྟ་བ།</p>
-                <ul className="gt-social-links-list">
-                  <li>
-                    Facebook:{' '}
-                    <a 
-                      href="https://facebook.com/GyutoMonastery" 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="gt-social-pill"
-                    >
-                      [link]
-                    </a>
-                  </li>
-                  <li>
-                    YouTube:{' '}
-                    <a 
-                      href="https://youtube.com/@GyutoMonastery" 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="gt-social-pill"
-                    >
-                      [link]
-                    </a>
-                  </li>
-                  <li>
-                    Instagram:{' '}
-                    <a 
-                      href="https://instagram.com/GyutoMonastery" 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="gt-social-pill"
-                    >
-                      [link]
-                    </a>
-                  </li>
-                </ul>
+                <p>ང་ཚོ་ལ་ལྟ་བ།</p>
+                <p>
+                  Facebook:{' '}
+                  <a 
+                    href="https://facebook.com/GyutoMonastery" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="gt-social-link"
+                  >
+                    [link]
+                  </a>
+                </p>
+                <p>
+                  YouTube:{' '}
+                  <a 
+                    href="https://youtube.com/@GyutoMonastery" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="gt-social-link"
+                  >
+                    [link]
+                  </a>
+                </p>
+                <p>
+                  Instagram:{' '}
+                  <a 
+                    href="https://instagram.com/GyutoMonastery" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="gt-social-link"
+                  >
+                    [link]
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -103,9 +101,6 @@ export default function ContactTb({ onSwitchLanguage, onNavigate }) {
                 alt="Gyuto Tantric Monastery Map Sidhbari" 
                 className="gt-contact-map-img" 
               />
-              <span className="gt-map-hover-badge">
-                📍 Google ས་ཁྲ་ནང་ཁ་ཕྱེ་བ།
-              </span>
             </a>
           </div>
         </section>

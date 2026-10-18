@@ -25,7 +25,7 @@ export default function Contact({ onSwitchLanguage, onNavigate }) {
             {/* Right Column: Address and Communication Details */}
             <div className="gt-contact-info-col">
               <div className="gt-contact-block">
-                <p className="gt-contact-highlight-title">Gyuto Tantric Monastery</p>
+                <p>Gyuto Tantric Monastery</p>
                 <p>P.O. Sidhbari, 176215</p>
                 <p>Dharamshala, Kangra</p>
                 <p>Himachal Pradesh, India</p>
@@ -47,42 +47,18 @@ export default function Contact({ onSwitchLanguage, onNavigate }) {
               </div>
 
               <div className="gt-contact-block">
-                <p className="gt-contact-highlight-title">Follow Us</p>
-                <ul className="gt-social-links-list">
-                  <li>
-                    Facebook:{' '}
-                    <a 
-                      href="https://facebook.com/GyutoMonastery" 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="gt-social-pill"
-                    >
-                      [link]
-                    </a>
-                  </li>
-                  <li>
-                    YouTube:{' '}
-                    <a 
-                      href="https://youtube.com/@GyutoMonastery" 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="gt-social-pill"
-                    >
-                      [link]
-                    </a>
-                  </li>
-                  <li>
-                    Instagram:{' '}
-                    <a 
-                      href="https://instagram.com/GyutoMonastery" 
-                      target="_blank" 
-                      rel="noreferrer" 
-                      className="gt-social-pill"
-                    >
-                      [link]
-                    </a>
-                  </li>
-                </ul>
+                <p>Follow Us</p>
+                <p>
+                  Facebook:{' '}
+                  <a 
+                    href="https://facebook.com/GyutoMonastery" 
+                    target="_blank" 
+                    rel="noreferrer" 
+                    className="gt-social-link"
+                  >
+                    [link]
+                  </a>
+                </p>
               </div>
             </div>
           </div>
@@ -102,9 +78,6 @@ export default function Contact({ onSwitchLanguage, onNavigate }) {
                 alt="Map location of Gyuto Tantric Monastery, Sidhbari, Dharamshala" 
                 className="gt-contact-map-img" 
               />
-              <span className="gt-map-hover-badge">
-                📍 Open in Google Maps
-              </span>
             </a>
           </div>
         </section>

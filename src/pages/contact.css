@@ -20,56 +20,64 @@
 }
 
 /* --------------------------------------------------------------------------
-   Contact Us Section (Figma: Contact us - Eng.png & Contact us Tib.jpg)
+   Contact Us Section (Figma: Frame 2147236848)
    -------------------------------------------------------------------------- */
 .gt-contact-section {
-  padding: 80px 0 60px 0;
+  padding: 110px 0 60px 0;
   background: #FFFFFF;
 }
 
 .gt-contact-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: start;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   max-width: 1280px;
   margin: 0 auto;
   padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .gt-contact-title-col {
-  padding-top: 10px;
+  flex-shrink: 0;
 }
 
 .gt-contact-page-title {
   font-family: var(--figma-font-serif, 'Cormorant Garamond', Georgia, serif);
-  font-size: 58px;
-  font-weight: 500;
-  line-height: 1.15;
-  color: #111111;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 60px;
+  color: #2D2A28;
   margin: 0;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 }
 
 .tibetan-page .gt-contact-page-title {
-  font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
-  font-size: 48px;
+  font-family: var(--figma-font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 52px;
+  line-height: 60px;
+  color: #2D2A28;
 }
 
 .gt-contact-info-col {
-  font-size: 19px;
-  line-height: 1.7;
-  color: #1A1A1A;
+  width: 100%;
+  max-width: 630px;
+  font-family: 'Source Sans 3', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.45;
+  color: #2D2A28;
 }
 
 .tibetan-page .gt-contact-info-col {
   font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
-  font-size: 19px;
-  line-height: 1.8;
+  font-size: 26px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: #2D2A28;
 }
 
 .gt-contact-block {
-  margin-bottom: 34px;
+  margin-bottom: 28px;
 }
 
 .gt-contact-block:last-child {
@@ -80,97 +88,52 @@
   margin: 0 0 4px 0;
 }
 
-.gt-contact-highlight-title {
-  font-weight: 600;
-  font-size: 21px;
-  color: #111111;
-  margin-bottom: 8px !important;
+.gt-contact-block p:last-child {
+  margin-bottom: 0;
 }
 
-.gt-contact-link {
-  color: inherit;
-  text-decoration: none;
+.gt-contact-link,
+.gt-social-link {
+  color: #2D2A28;
+  text-decoration: underline;
   transition: color 0.2s ease;
 }
 
-.gt-contact-link:hover {
+.gt-contact-link:hover,
+.gt-social-link:hover {
   color: var(--figma-maroon, #92060F);
-  text-decoration: underline;
 }
 
-.gt-social-links-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.gt-social-links-list li {
-  margin-bottom: 6px;
-}
-
-.gt-social-pill {
-  color: var(--figma-maroon, #92060F);
-  font-weight: 500;
-  text-decoration: none;
-  transition: opacity 0.2s;
-}
-
-.gt-social-pill:hover {
-  opacity: 0.8;
-  text-decoration: underline;
-}
-
-/* Wide Map View in Contact Us */
+/* Wide Map View in Contact Us (Figma node 1:2068) */
 .gt-contact-map-wrapper {
   max-width: 1280px;
   margin: 40px auto 100px auto;
   padding: 0 40px;
+  box-sizing: border-box;
 }
 
 .gt-contact-map-card {
   position: relative;
   width: 100%;
-  border-radius: 8px;
+  height: 450px;
+  border-radius: 0;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: none;
+  border: none;
   background: #E5E3DF;
 }
 
 .gt-contact-map-img {
   width: 100%;
-  height: auto;
+  height: 450px;
   display: block;
   object-fit: cover;
-  transition: transform 0.3s ease;
+  object-position: center;
+  transition: opacity 0.2s ease;
 }
 
 .gt-contact-map-card:hover .gt-contact-map-img {
-  transform: scale(1.005);
-}
-
-.gt-map-hover-badge {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(8px);
-  color: var(--figma-maroon, #92060F);
-  font-size: 14px;
-  font-weight: 600;
-  padding: 10px 18px;
-  border-radius: 9999px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.gt-map-hover-badge:hover {
-  background: var(--figma-maroon, #92060F);
-  color: #FFFFFF;
+  opacity: 0.95;
 }
 
 /* --------------------------------------------------------------------------
@@ -532,22 +495,37 @@
    -------------------------------------------------------------------------- */
 @media (max-width: 960px) {
   .gt-contact-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    flex-direction: column;
+    gap: 36px;
     padding: 0 24px;
   }
 
   .gt-contact-section {
-    padding: 50px 0 40px 0;
+    padding: 60px 0 40px 0;
   }
 
   .gt-contact-page-title {
     font-size: 42px;
+    line-height: 48px;
+  }
+
+  .gt-contact-info-col {
+    font-size: 20px;
+    max-width: 100%;
+  }
+
+  .tibetan-page .gt-contact-info-col {
+    font-size: 22px;
   }
 
   .gt-contact-map-wrapper {
     margin: 20px auto 60px auto;
-    padding: 0 20px;
+    padding: 0 24px;
+  }
+
+  .gt-contact-map-card,
+  .gt-contact-map-img {
+    height: 340px;
   }
 
   .gt-support-grid {
@@ -580,7 +558,37 @@
 }
 
 @media (max-width: 600px) {
-  .gt-contact-page-title,
+  .gt-contact-grid,
+  .gt-contact-map-wrapper {
+    padding: 0 20px;
+  }
+
+  .gt-contact-section {
+    padding: 40px 0 30px 0;
+  }
+
+  .gt-contact-page-title {
+    font-size: 34px;
+    line-height: 40px;
+  }
+
+  .gt-contact-info-col {
+    font-size: 18px;
+  }
+
+  .tibetan-page .gt-contact-info-col {
+    font-size: 20px;
+  }
+
+  .gt-contact-block {
+    margin-bottom: 20px;
+  }
+
+  .gt-contact-map-card,
+  .gt-contact-map-img {
+    height: 240px;
+  }
+
   .gt-support-title {
     font-size: 34px;
   }
