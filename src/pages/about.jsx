@@ -30,8 +30,8 @@ export const ABOUT_DUMMY_IMAGES = {
 };
 
 /**
- * 18 Individual Past Abbot Lineage Portraits
- * Each abbot has their own distinct image file in /images/about/abbots/abbot-X.jpg
+ * 19 Individual Past Abbot Lineage Portraits
+ * Ordered exactly as in Figma Frame 2147236864
  */
 export const PAST_ABBOTS = Array.from({ length: 19 }, (_, i) => ({
   id: i + 1,
