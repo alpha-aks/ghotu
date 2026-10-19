@@ -1853,3 +1853,199 @@
     height: 8px !important;
   }
 }
+
+/* ==========================================================================
+   MINIMAL TIBETAN SACRED MONASTIC ANIMATIONS (HERITAGE VIBE)
+   Subtle atmospheric motion: butterlamp flame glow, sacred breathing,
+   overtone chant resonance, and ancient manuscript watermark aura.
+   Zero layout or UI element alterations.
+   ========================================================================== */
+
+/* 1. Sacred Butterlamp (Karme) Warm Breathing Glow */
+@keyframes tibetanButterLampGlow {
+  0%, 100% {
+    filter: drop-shadow(0 0 3px rgba(217, 193, 140, 0.35)) drop-shadow(0 0 8px rgba(251, 199, 88, 0.15));
+    transform: translateY(0);
+  }
+  50% {
+    filter: drop-shadow(0 0 7px rgba(217, 193, 140, 0.7)) drop-shadow(0 0 14px rgba(251, 199, 88, 0.35));
+    transform: translateY(-1px);
+  }
+}
+
+.gt-vajra-icon {
+  animation: tibetanButterLampGlow 5.5s ease-in-out infinite;
+  transition: filter 0.4s ease, transform 0.4s ease;
+  will-change: filter, transform;
+}
+
+.gt-vajra-icon:hover {
+  filter: drop-shadow(0 0 10px rgba(251, 199, 88, 0.85)) drop-shadow(0 0 18px rgba(217, 193, 140, 0.55));
+  transform: scale(1.08);
+}
+
+/* 2. Sacred Ashtamangala Conch (Dungkar) Breath */
+@keyframes tibetanConchBreath {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+    filter: drop-shadow(0 2px 6px rgba(146, 6, 15, 0.08));
+  }
+  50% {
+    transform: translateY(-2px) scale(1.03);
+    filter: drop-shadow(0 6px 14px rgba(217, 193, 140, 0.45));
+  }
+}
+
+.gt-conch-badge svg {
+  animation: tibetanConchBreath 6.5s ease-in-out infinite;
+  transform-origin: center bottom;
+  transition: transform 0.4s ease, filter 0.4s ease;
+  will-change: transform, filter;
+}
+
+.gt-conch-badge:hover svg {
+  transform: translateY(-3px) scale(1.06);
+  filter: drop-shadow(0 8px 18px rgba(251, 199, 88, 0.6));
+}
+
+/* 3. 4 Sacred Stats Badges (Stupa, Monk, Lotus Buddha, Mountains) Serene Floating & Golden Aura */
+@keyframes tibetanStatFloat {
+  0%, 100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 2px 4px rgba(146, 6, 15, 0.04));
+  }
+  50% {
+    transform: translateY(-3px);
+    filter: drop-shadow(0 6px 12px rgba(217, 193, 140, 0.38));
+  }
+}
+
+.gt-stat-icon img {
+  animation: tibetanStatFloat 5s ease-in-out infinite;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), filter 0.45s ease;
+  will-change: transform, filter;
+}
+
+.gt-stat-item:nth-child(1) .gt-stat-icon img { animation-delay: 0s; }
+.gt-stat-item:nth-child(2) .gt-stat-icon img { animation-delay: 1.25s; }
+.gt-stat-item:nth-child(3) .gt-stat-icon img { animation-delay: 2.5s; }
+.gt-stat-item:nth-child(4) .gt-stat-icon img { animation-delay: 3.75s; }
+
+.gt-stat-item:hover .gt-stat-icon img {
+  transform: translateY(-5px) scale(1.06);
+  filter: drop-shadow(0 8px 16px rgba(251, 199, 88, 0.55));
+}
+
+/* 4. Tantric Chordal Chanting Overtone Resonance (Play Button on Chant Preview) */
+@keyframes tibetanChantResonance {
+  0% {
+    box-shadow: 0 0 0 0 rgba(251, 199, 88, 0.55), 0 0 0 0 rgba(146, 6, 15, 0.35);
+  }
+  60% {
+    box-shadow: 0 0 0 10px rgba(251, 199, 88, 0), 0 0 0 18px rgba(146, 6, 15, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(251, 199, 88, 0), 0 0 0 0 rgba(146, 6, 15, 0);
+  }
+}
+
+.gt-play-btn {
+  animation: tibetanChantResonance 3.6s cubic-bezier(0.25, 0.8, 0.25, 1) infinite;
+}
+
+/* 5. Ancient Manuscript Watermark Meditative Breathing (Library Section) */
+@keyframes tibetanWatermarkBreathe {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.018);
+  }
+}
+
+.gt-library-sec .gt-library-texture-img {
+  animation: tibetanWatermarkBreathe 12s ease-in-out infinite;
+  transform-origin: left bottom;
+  will-change: opacity, transform;
+}
+
+/* 6. Gold-Thread Hairline Shimmer (Illuminated Manuscript Divider Lines) */
+@keyframes tibetanHairlineShimmer {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.gt-notices-top-hairline,
+.gt-notices-bottom-hairline {
+  background: linear-gradient(90deg, #8F8A84 0%, #D9C18C 35%, #FFD781 50%, #D9C18C 65%, #8F8A84 100%);
+  background-size: 200% 100%;
+  animation: tibetanHairlineShimmer 12s ease-in-out infinite;
+}
+
+/* 7. Tibetan Brocade & Silk Frame Hover on Department Cards */
+.gt-dept-card {
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.4s ease;
+}
+
+.gt-dept-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 36px -8px rgba(146, 6, 15, 0.12), 0 0 0 1px rgba(217, 193, 140, 0.45);
+}
+
+.gt-dept-card .gt-dept-img {
+  transition: transform 0.75s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gt-dept-card:hover .gt-dept-img {
+  transform: scale(1.04);
+}
+
+/* 8. Sacred Event Cards Subtle Amber Shift */
+.gt-event-card {
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s ease;
+}
+
+.gt-event-card:hover {
+  transform: translateX(4px);
+  border-color: #D9C18C;
+  box-shadow: 0 8px 24px rgba(146, 6, 15, 0.08);
+}
+
+.gt-event-card:hover .gt-event-month {
+  color: var(--figma-maroon);
+  transition: color 0.3s ease;
+}
+
+/* 9. Monastic Action Button Hover Glow */
+.gt-figma-btn {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.gt-figma-btn:hover {
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 18px rgba(146, 6, 15, 0.28), inset 0 0 0 1px rgba(255, 215, 129, 0.35);
+}
+
+/* 10. Respect User Preference for Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .gt-vajra-icon,
+  .gt-conch-badge svg,
+  .gt-stat-icon img,
+  .gt-play-btn,
+  .gt-library-sec .gt-library-texture-img,
+  .gt-notices-top-hairline,
+  .gt-notices-bottom-hairline {
+    animation: none !important;
+    transition: none !important;
+  }
+}
