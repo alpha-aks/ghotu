@@ -138,9 +138,40 @@ const CATEGORIES = [
   { key: 'heritage', label: 'Tantric Arts & Heritage' }
 ];
 
+/**
+ * Reusable Image with Skeleton Loading & Smooth Reveal
+ */
+function ImageWithSkeleton({
+  src,
+  alt,
+  imgClassName = '',
+  isHero = false,
+  loading = 'lazy'
+}) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  return (
+    <div className={`gt-img-skeleton-box ${isHero ? 'is-hero' : ''} ${isLoaded ? 'is-loaded' : 'is-loading'}`}>
+      {!isLoaded && (
+        <div className="gt-skeleton-shimmer" aria-hidden="true">
+          <div className="gt-skeleton-glow" />
+        </div>
+      )}
+      <img
+        src={src}
+        alt={alt}
+        className={`${imgClassName} ${isLoaded ? 'gt-img-revealed' : 'gt-img-hidden'}`}
+        loading={loading}
+        onLoad={() => setIsLoaded(true)}
+      />
+    </div>
+  );
+}
+
 export default function Gallery({ onSwitchLanguage, onNavigate }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  const [lightboxLoading, setLightboxLoading] = useState(true);
 
   // All photos including hero for lightbox sequence
   const allPhotos = GALLERY_ITEMS;
@@ -154,7 +185,10 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
 
   const openLightbox = (id) => {
     const idx = allPhotos.findIndex(item => item.id === id);
-    if (idx !== -1) setLightboxIndex(idx);
+    if (idx !== -1) {
+      setLightboxLoading(true);
+      setLightboxIndex(idx);
+    }
   };
 
   const closeLightbox = () => {
@@ -163,11 +197,13 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
 
   const nextPhoto = useCallback(() => {
     if (lightboxIndex === null) return;
+    setLightboxLoading(true);
     setLightboxIndex((prev) => (prev + 1) % allPhotos.length);
   }, [lightboxIndex, allPhotos.length]);
 
   const prevPhoto = useCallback(() => {
     if (lightboxIndex === null) return;
+    setLightboxLoading(true);
     setLightboxIndex((prev) => (prev - 1 + allPhotos.length) % allPhotos.length);
   }, [lightboxIndex, allPhotos.length]);
 
@@ -197,6 +233,13 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
   }, [lightboxIndex]);
 
   const activePhoto = lightboxIndex !== null ? allPhotos[lightboxIndex] : null;
+
+  // Reset lightbox loading when active photo changes
+  useEffect(() => {
+    if (activePhoto) {
+      setLightboxLoading(true);
+    }
+  }, [activePhoto?.id]);
 
   return (
     <div className="gt-gallery-page">
@@ -255,10 +298,11 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') openLightbox(heroPhoto.id); }}
                 aria-label={`View photo: ${heroPhoto.title}`}
               >
-                <img
+                <ImageWithSkeleton
                   src={heroPhoto.src}
                   alt={heroPhoto.title}
-                  className="gt-gallery-hero-img"
+                  imgClassName="gt-gallery-hero-img"
+                  isHero={true}
                   loading="eager"
                 />
                 <div className="gt-gallery-hero-overlay">
@@ -274,8 +318,12 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
 
             {/* 12 Grid Photo Rectangles (3 columns x 4 rows) */}
             <div className="gt-gallery-grid">
-              {gridPhotos.map((item) => (
-                <div key={item.id} className="gt-gallery-item-wrap">
+              {gridPhotos.map((item, index) => (
+                <div
+                  key={item.id}
+                  className="gt-gallery-item-wrap"
+                  style={{ '--item-idx': index }}
+                >
                   <div
                     className="gt-gallery-item-card"
                     onClick={() => openLightbox(item.id)}
@@ -284,10 +332,10 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
                     onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') openLightbox(item.id); }}
                     aria-label={`Open photo: ${item.title}`}
                   >
-                    <img
+                    <ImageWithSkeleton
                       src={item.src}
                       alt={item.title}
-                      className="gt-gallery-item-img"
+                      imgClassName="gt-gallery-item-img"
                       loading="lazy"
                     />
                     <div className="gt-gallery-item-overlay">
@@ -419,10 +467,16 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
           {/* Lightbox Dialog Content */}
           <div className="gt-lightbox-dialog" onClick={(e) => e.stopPropagation()}>
             <div className="gt-lightbox-img-wrap">
+              {lightboxLoading && (
+                <div className="gt-lightbox-skeleton-loader" aria-hidden="true">
+                  <div className="gt-lightbox-spinner" />
+                </div>
+              )}
               <img
                 src={activePhoto.src}
                 alt={activePhoto.title}
-                className="gt-lightbox-img"
+                className={`gt-lightbox-img ${lightboxLoading ? 'gt-img-hidden' : 'gt-img-revealed'}`}
+                onLoad={() => setLightboxLoading(false)}
               />
             </div>
             <div className="gt-lightbox-footer">
