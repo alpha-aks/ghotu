@@ -13,7 +13,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
     { key: 'departments', href: '/departments', label: 'སྡེ་ཚན་ཁག', active: active === 'departments' },
     { key: 'programmes', href: '/programmes', label: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།', active: active === 'programmes' },
     { key: 'about', href: '/about', label: 'About', active: active === 'about' },
-    { key: 'gallery', href: '/#gallery', label: 'ང༌ཚོའི་སྐོར།', active: active === 'gallery' },
+    { key: 'gallery', href: '/gallery', label: 'པར་མཛོད།', active: active === 'gallery' },
     { key: 'contact', href: '/contact', label: 'CONTACT', active: active === 'contact' },
     { key: 'donate', href: '/support', label: 'SUPPORT US', active: active === 'donate' || active === 'support' }
   ] : [
@@ -22,7 +22,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
     { key: 'departments', href: '/departments', label: 'DEPARTMENTS', active: active === 'departments' },
     { key: 'programmes', href: '/programmes', label: 'PROGRAMMES', active: active === 'programmes' },
     { key: 'about', href: '/about', label: 'ABOUT', active: active === 'about' },
-    { key: 'gallery', href: '/#gallery', label: 'GALLERY', active: active === 'gallery' },
+    { key: 'gallery', href: '/gallery', label: 'GALLERY', active: active === 'gallery' },
     { key: 'contact', href: '/contact', label: 'CONTACT', active: active === 'contact' },
     { key: 'donate', href: '/support', label: 'SUPPORT US', active: active === 'donate' || active === 'support' }
   ];
@@ -49,6 +49,9 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       } else if (key === 'about') {
         e.preventDefault();
         onNavigate('about');
+      } else if (key === 'gallery') {
+        e.preventDefault();
+        onNavigate('gallery');
       } else if (key === 'home') {
         e.preventDefault();
         onNavigate('home');
