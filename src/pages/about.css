@@ -1043,20 +1043,23 @@
   .gt-legacy-story-row.reversed {
     flex-direction: column;
     align-items: stretch;
-    gap: 32px;
+    gap: 28px;
   }
 
-  .gt-legacy-text-col,
-  .gt-legacy-text-col-center {
-    flex: none;
-    max-width: 100%;
-  }
-
+  /* Show image first, then info/text below on mobile */
   .gt-legacy-img-col {
+    order: 1;
     flex: none;
     max-width: 100%;
     height: auto;
     aspect-ratio: 627 / 430;
+  }
+
+  .gt-legacy-text-col,
+  .gt-legacy-text-col-center {
+    order: 2;
+    flex: none;
+    max-width: 100%;
   }
 
   .gt-legacy-title {
@@ -1131,6 +1134,33 @@
   .gt-library-title,
   .gt-support-tradition-title {
     font-size: 32px;
+  }
+
+  .gt-legacy-story-grid {
+    gap: 48px;
+  }
+
+  .gt-legacy-story-row,
+  .gt-legacy-story-row.reversed {
+    gap: 20px;
+  }
+
+  .gt-legacy-text-col {
+    gap: 16px;
+  }
+
+  .gt-legacy-text-content {
+    gap: 16px;
+  }
+
+  .gt-legacy-para {
+    font-size: 15.5px;
+    line-height: 25px;
+  }
+
+  .tibetan-about-page .gt-legacy-para {
+    font-size: 16px;
+    line-height: 28px;
   }
 
   .gt-about-depts-cards-grid {
