@@ -3,7 +3,6 @@ import './Home.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import SupportSection from '../components/SupportSection';
-import HeroParallax from '../components/HeroParallax';
 import { 
   RightWhorlConch,
   EndlessKnot, 
@@ -56,9 +55,10 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
           ==================================================================== */}
       <section id="home" className="gt-hero-section">
         <div className="gt-hero-image-wrap">
-          <HeroParallax
-            lang="tb"
-            alt="རྒྱུད་སྟོད་གྲྭ་ཚང་གི་དགེ་འདུན་པ་རྣམས་དང་ཧི་མ་ལ་ཡའི་རི་བོ།"
+          <img 
+            src="/images/home-hero-tb.jpg" 
+            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains" 
+            className="gt-hero-img gt-hero-tb"
           />
         </div>
 
