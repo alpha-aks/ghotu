@@ -1725,6 +1725,8 @@
     flex-direction: column;
     gap: 12px;
     text-align: center;
+  }
+
   .gt-notices-section {
     padding: 44px 16px 40px 16px !important;
     width: 100% !important;
