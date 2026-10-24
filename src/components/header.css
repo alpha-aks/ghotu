@@ -325,6 +325,28 @@
   margin-left: auto;
 }
 
+.gt-hamburger-box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.gt-hamburger-line {
+  display: block;
+  width: 100%;
+  height: 2.2px;
+  background-color: #FDF1D7;
+  border-radius: 2px;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.22s ease,
+              background-color 0.25s ease;
+  transform-origin: center;
+}
+
 /* ==========================================================================
    RESPONSIVE DESIGN FOR HEADER
    ========================================================================== */
@@ -537,22 +559,34 @@
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 40px !important;
-    height: 40px !important;
+    width: 44px !important;
+    height: 44px !important;
     padding: 0 !important;
     margin: 0 !important;
     background: transparent !important;
     border: none !important;
-    color: #FDF1D7 !important;
     cursor: pointer !important;
     flex-shrink: 0 !important;
+    outline: none !important;
   }
 
-  .gt-mobile-toggle:hover {
-    color: #FFD781 !important;
+  /* Hamburger to 'X' Morphing Animation */
+  .gt-mobile-toggle.is-active .gt-line-1 {
+    transform: translateY(7.9px) rotate(45deg);
+    background-color: #FFD781;
   }
 
-  /* Dropdown Menu when toggled */
+  .gt-mobile-toggle.is-active .gt-line-2 {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  .gt-mobile-toggle.is-active .gt-line-3 {
+    transform: translateY(-7.9px) rotate(-45deg);
+    background-color: #FFD781;
+  }
+
+  /* Dropdown Menu when toggled with smooth slide-down */
   .gt-nav-list {
     display: none !important;
     flex-direction: column !important;
@@ -561,16 +595,55 @@
     left: 0 !important;
     width: 100% !important;
     background: #92060F !important;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35) !important;
     z-index: 1001 !important;
-    padding: 8px 0 !important;
+    padding: 8px 0 16px 0 !important;
     margin: 0 !important;
     height: auto !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border-top: 1px solid rgba(255, 215, 129, 0.25) !important;
+    box-sizing: border-box !important;
   }
 
   .gt-nav-list.mobile-open {
     display: flex !important;
+    animation: gtMobileMenuSlideDown 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+  }
+
+  @keyframes gtMobileMenuSlideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Cascade / stagger animation for nav items */
+  .gt-nav-list.mobile-open .gt-nav-item {
+    opacity: 0;
+    animation: gtMobileNavItemFade 0.28s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .gt-nav-list.mobile-open .gt-nav-item:nth-child(1) { animation-delay: 0.03s; }
+  .gt-nav-list.mobile-open .gt-nav-item:nth-child(2) { animation-delay: 0.06s; }
+  .gt-nav-list.mobile-open .gt-nav-item:nth-child(3) { animation-delay: 0.09s; }
+  .gt-nav-list.mobile-open .gt-nav-item:nth-child(4) { animation-delay: 0.12s; }
+  .gt-nav-list.mobile-open .gt-nav-item:nth-child(5) { animation-delay: 0.15s; }
+  .gt-nav-list.mobile-open .gt-nav-item:nth-child(6) { animation-delay: 0.18s; }
+  .gt-nav-list.mobile-open .gt-nav-item:nth-child(7) { animation-delay: 0.21s; }
+  .gt-nav-list.mobile-open .gt-nav-item:nth-child(8) { animation-delay: 0.24s; }
+
+  @keyframes gtMobileNavItemFade {
+    0% {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
 
   .gt-nav-item {
@@ -584,6 +657,13 @@
     font-size: 15px !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
     height: auto !important;
+    transition: background-color 0.2s ease, padding-left 0.2s ease !important;
+  }
+
+  .gt-nav-link:hover,
+  .gt-nav-link:active {
+    padding-left: 24px !important;
+    background: rgba(255, 215, 129, 0.16) !important;
   }
 }
 

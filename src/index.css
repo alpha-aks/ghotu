@@ -321,4 +321,36 @@ img {
   }
 }
 
+/* ==========================================================================
+   MINIMALIST ON-ARRIVAL / SCROLL-ENTRANCE ANIMATIONS
+   Subtle, meditative fade & upward glide as sections and divs arrive in viewport
+   ========================================================================== */
+.gt-arrive {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.gt-arrive.is-arrived {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger delay classes for cards / siblings */
+.gt-delay-1 { transition-delay: 0.08s; }
+.gt-delay-2 { transition-delay: 0.16s; }
+.gt-delay-3 { transition-delay: 0.24s; }
+.gt-delay-4 { transition-delay: 0.32s; }
+.gt-delay-5 { transition-delay: 0.40s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gt-arrive {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
 

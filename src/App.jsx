@@ -68,6 +68,82 @@ export default function App() {
     tbHero.src = '/images/home-hero-tb.jpg';
   }, []);
 
+  // Minimalist on-arrival scroll reveal animation for sections and key content blocks
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) return;
+
+    const selector = [
+      'section',
+      '.gt-dept-card',
+      '.gt-event-card',
+      '.gt-stat-item',
+      '.gt-news-item',
+      '.gt-news-featured-card',
+      '.gt-legacy-story-row',
+      '.gt-leader-card',
+      '.gt-past-abbot-card',
+      '.gt-programme-card',
+      '.gt-pcard',
+      '.gt-gallery-item',
+      '.gt-contact-card',
+      '.gt-support-card',
+      '.gt-calendar-shell',
+      '.gt-org-diagram-wrapper'
+    ].join(', ');
+
+    const timer = setTimeout(() => {
+      const elements = document.querySelectorAll(selector);
+      if (!elements.length) return;
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-arrived');
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        {
+          root: null,
+          rootMargin: '0px 0px -40px 0px',
+          threshold: 0.08
+        }
+      );
+
+      elements.forEach((el) => {
+        // Exclude top-level header and primary hero containers from delay
+        if (
+          el.closest('.gt-top-header') ||
+          el.closest('.gt-navbar') ||
+          el.classList.contains('gt-hero-section') ||
+          el.classList.contains('gt-programmes-hero') ||
+          el.classList.contains('gt-about-hero')
+        ) {
+          return;
+        }
+
+        if (!el.classList.contains('gt-arrive')) {
+          el.classList.add('gt-arrive');
+
+          // Subtle stagger delay for child items in grids
+          const parent = el.parentElement;
+          if (parent && parent.children.length > 1) {
+            const childIndex = Array.prototype.indexOf.call(parent.children, el);
+            if (childIndex > 0 && childIndex <= 5) {
+              el.classList.add(`gt-delay-${childIndex}`);
+            }
+          }
+        }
+        observer.observe(el);
+      });
+
+      return () => observer.disconnect();
+    }, 60);
+
+    return () => clearTimeout(timer);
+  }, [currentPage, currentLang]);
+
   const switchLanguage = (lang) => {
     setCurrentLang(lang);
     window.scrollTo({ top: 0, behavior: 'smooth' });

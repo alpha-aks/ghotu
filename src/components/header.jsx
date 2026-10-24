@@ -125,13 +125,17 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
 
           {/* Mobile Hamburger Menu Toggle on RIGHT */}
           <button
-            className="gt-mobile-toggle"
+            className={`gt-mobile-toggle ${mobileMenuOpen ? 'is-active' : ''}`}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle navigation"
+            aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             type="button"
             aria-expanded={mobileMenuOpen}
           >
-            {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            <span className="gt-hamburger-box" aria-hidden="true">
+              <span className="gt-hamburger-line gt-line-1" />
+              <span className="gt-hamburger-line gt-line-2" />
+              <span className="gt-hamburger-line gt-line-3" />
+            </span>
           </button>
 
           <ul className={`gt-nav-list ${mobileMenuOpen ? 'mobile-open' : ''}`}>
