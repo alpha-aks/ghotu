@@ -64,11 +64,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
 
         {/* 4 Feature Badges Bar (Figma: Frame 625795: #FFFAF1) */}
         <div className="gt-hero-stats-bar">
-          <div
-            className="gt-stats-grid"
-            ref={statsGridRef}
-            onScroll={handleStatsScroll}
-          >
+          <div className="gt-stats-grid">
             <div className="gt-stat-item">
               <div className="gt-stat-icon">
                 <img src="/images/stats/stupa.svg" alt="Founded" width={60} height={60} />
@@ -108,21 +104,6 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 <span className="gt-stat-value">དྷར་མ་ཤ་ལ། ཧི་མ་ཅལ། རྒྱ་གར།</span>
               </div>
             </div>
-          </div>
-
-          {/* Mobile carousel dots (only visible on narrow screens where carousel mode activates) */}
-          <div className="gt-stats-dots-wrap" role="tablist" aria-label="Stats pagination">
-            {[0, 1, 2, 3].map((idx) => (
-              <button
-                key={idx}
-                type="button"
-                className={`gt-stats-dot ${activeStatDot === idx ? 'active' : ''}`}
-                onClick={() => scrollToStat(idx)}
-                aria-label={`Go to item ${idx + 1}`}
-                role="tab"
-                aria-selected={activeStatDot === idx}
-              />
-            ))}
           </div>
         </div>
       </section>
