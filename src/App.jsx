@@ -74,21 +74,50 @@ export default function App() {
 
     const selector = [
       'section',
+      'article',
       '.gt-dept-card',
+      '.gt-dept-item',
+      '.gt-dept-sidebar',
+      '.gt-dept-event-card',
       '.gt-event-card',
+      '.gt-event-card-item',
       '.gt-stat-item',
+      '.gt-stat-box',
       '.gt-news-item',
+      '.gt-news-card',
+      '.gt-update-card',
       '.gt-news-featured-card',
       '.gt-legacy-story-row',
+      '.gt-legacy-text-content',
+      '.gt-legacy-img-col',
       '.gt-leader-card',
+      '.gt-leader-content-box',
       '.gt-past-abbot-card',
+      '.gt-past-abbots-grid',
+      '.gt-about-dept-card',
       '.gt-programme-card',
       '.gt-pcard',
       '.gt-gallery-item',
-      '.gt-contact-card',
+      '.gt-gallery-card',
+      '.gt-contact-grid',
+      '.gt-contact-block',
+      '.gt-contact-map-card',
+      '.gt-support-pledge-col',
+      '.gt-donation-card',
       '.gt-support-card',
+      '.gt-tier-card',
+      '.gt-bank-card',
       '.gt-calendar-shell',
-      '.gt-org-diagram-wrapper'
+      '.gt-org-diagram-wrapper',
+      '.gt-org-table-box',
+      '.gt-notices-container',
+      '.gt-notice-card',
+      '.gt-library-content-col',
+      '.gt-library-img-col',
+      '.gt-footer-brand-wrap',
+      '.gt-footer-col',
+      '.gt-footer-bottom',
+      '.gt-support-inner'
     ].join(', ');
 
     const timer = setTimeout(() => {
@@ -106,8 +135,8 @@ export default function App() {
         },
         {
           root: null,
-          rootMargin: '0px 0px -40px 0px',
-          threshold: 0.08
+          rootMargin: '0px 0px -25px 0px',
+          threshold: 0.05
         }
       );
 
@@ -118,7 +147,12 @@ export default function App() {
           el.closest('.gt-navbar') ||
           el.classList.contains('gt-hero-section') ||
           el.classList.contains('gt-programmes-hero') ||
-          el.classList.contains('gt-about-hero')
+          el.classList.contains('gt-about-hero') ||
+          el.classList.contains('gt-dept-hero') ||
+          el.classList.contains('gt-updates-hero') ||
+          el.classList.contains('gt-gallery-hero') ||
+          el.classList.contains('gt-contact-hero') ||
+          el.classList.contains('gt-support-hero')
         ) {
           return;
         }
@@ -126,11 +160,11 @@ export default function App() {
         if (!el.classList.contains('gt-arrive')) {
           el.classList.add('gt-arrive');
 
-          // Subtle stagger delay for child items in grids
+          // Subtle stagger delay for child items in grids and card groups
           const parent = el.parentElement;
           if (parent && parent.children.length > 1) {
             const childIndex = Array.prototype.indexOf.call(parent.children, el);
-            if (childIndex > 0 && childIndex <= 5) {
+            if (childIndex > 0 && childIndex <= 8) {
               el.classList.add(`gt-delay-${childIndex}`);
             }
           }

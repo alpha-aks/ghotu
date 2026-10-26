@@ -322,14 +322,40 @@ img {
 }
 
 /* ==========================================================================
-   MINIMALIST ON-ARRIVAL / SCROLL-ENTRANCE ANIMATIONS
-   Subtle, meditative fade & upward glide as sections and divs arrive in viewport
+   MINIMALIST SACRED MONASTIC ANIMATIONS & ON-ARRIVAL REVEALS
+   Subtle, meditative fade, gentle elevation & warm golden luminescence
    ========================================================================== */
+
+/* 1. HERO CONTENT ENTRANCE (Serene meditative fade & rise on page arrival) */
+@keyframes gtHeroFadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gt-hero-content,
+.gt-about-hero-content,
+.gt-dept-hero-content,
+.gt-updates-hero-content,
+.gt-programmes-hero-content,
+.gt-gallery-hero-content,
+.gt-contact-grid,
+.gt-support-pledge-col,
+.gt-donation-card {
+  animation: gtHeroFadeInUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. UNIVERSAL ON-ARRIVAL SCROLL REVEAL (Every section, card, and content div) */
 .gt-arrive {
   opacity: 0;
-  transform: translateY(22px);
-  transition: opacity 0.72s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.72s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(20px);
+  transition: opacity 0.68s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.68s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -338,19 +364,199 @@ img {
   transform: translateY(0);
 }
 
-/* Stagger delay classes for cards / siblings */
-.gt-delay-1 { transition-delay: 0.08s; }
-.gt-delay-2 { transition-delay: 0.16s; }
-.gt-delay-3 { transition-delay: 0.24s; }
-.gt-delay-4 { transition-delay: 0.32s; }
-.gt-delay-5 { transition-delay: 0.40s; }
+/* Stagger delay classes for cascading grid items and sibling cards */
+.gt-delay-1 { transition-delay: 0.06s; }
+.gt-delay-2 { transition-delay: 0.12s; }
+.gt-delay-3 { transition-delay: 0.18s; }
+.gt-delay-4 { transition-delay: 0.24s; }
+.gt-delay-5 { transition-delay: 0.30s; }
+.gt-delay-6 { transition-delay: 0.36s; }
+.gt-delay-7 { transition-delay: 0.42s; }
+.gt-delay-8 { transition-delay: 0.48s; }
 
+/* 3. UNIVERSAL MINIMAL CARD HOVER ELEVATION & SOFT WARM GLOW */
+.gt-dept-card,
+.gt-dept-item,
+.gt-news-card,
+.gt-news-item,
+.gt-update-card,
+.gt-programme-card,
+.gt-pcard,
+.gt-event-card,
+.gt-event-card-item,
+.gt-dept-event-card,
+.gt-leader-card,
+.gt-past-abbot-card,
+.gt-about-dept-card,
+.gt-contact-block,
+.gt-contact-map-card,
+.gt-support-card,
+.gt-tier-card,
+.gt-bank-card,
+.gt-gallery-item,
+.gt-gallery-card,
+.gt-notice-card,
+.gt-stat-item,
+.gt-stat-box,
+.gt-about-intro-card,
+.gt-calendar-shell {
+  transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.32s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.32s ease !important;
+}
+
+.gt-dept-card:hover,
+.gt-news-card:hover,
+.gt-update-card:hover,
+.gt-programme-card:hover,
+.gt-pcard:hover,
+.gt-event-card:hover,
+.gt-event-card-item:hover,
+.gt-dept-event-card:hover,
+.gt-leader-card:hover,
+.gt-past-abbot-card:hover,
+.gt-about-dept-card:hover,
+.gt-contact-block:hover,
+.gt-contact-map-card:hover,
+.gt-support-card:hover,
+.gt-gallery-item:hover,
+.gt-gallery-card:hover,
+.gt-stat-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(45, 42, 40, 0.07), 0 2px 8px rgba(250, 199, 88, 0.12);
+}
+
+/* 4. UNIVERSAL SUBTLE IMAGE ZOOM ON CARD HOVER */
+.gt-dept-media img,
+.gt-news-img-wrap img,
+.gt-update-card-img img,
+.gt-gallery-item img,
+.gt-gallery-card img,
+.gt-legacy-img-col img,
+.gt-library-img-col img,
+.gt-about-story-img-col img,
+.gt-leader-photo,
+.gt-past-abbot-img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.gt-dept-card:hover .gt-dept-media img,
+.gt-news-card:hover .gt-news-img-wrap img,
+.gt-update-card:hover .gt-update-card-img img,
+.gt-gallery-item:hover img,
+.gt-gallery-card:hover img,
+.gt-legacy-story-row:hover .gt-legacy-img-col img,
+.gt-library-sec:hover .gt-library-img-col img,
+.gt-leader-card:hover .gt-leader-photo,
+.gt-past-abbot-card:hover .gt-past-abbot-img {
+  transform: scale(1.025);
+}
+
+/* 5. SACRED BUDDHIST MOTIFS MEDITATIVE PULSE & HOVER HALO */
+.gt-support-knot,
+.gt-legacy-conch-wrap,
+.gt-footer-emblem,
+.gt-dept-divider-row svg {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.35s ease !important;
+}
+
+.gt-support-knot:hover,
+.gt-legacy-conch-wrap:hover,
+.gt-footer-emblem:hover,
+.gt-dept-divider-row:hover svg {
+  transform: scale(1.06);
+  filter: drop-shadow(0 4px 14px rgba(250, 199, 88, 0.45));
+}
+
+/* 6. INTERACTIVE BUTTONS & PILLS MICRO-ANIMATIONS */
+.gt-notice-tab-btn,
+.gt-gallery-pill,
+.gt-prog-filter-btn,
+.gt-dept-tab-btn,
+.gt-freq-btn,
+.gt-amount-pill,
+.gt-dept-readmore-btn {
+  transition: transform 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.22s ease,
+              color 0.22s ease,
+              box-shadow 0.22s ease !important;
+}
+
+.gt-notice-tab-btn:hover,
+.gt-gallery-pill:hover,
+.gt-prog-filter-btn:hover,
+.gt-dept-tab-btn:hover,
+.gt-freq-btn:hover,
+.gt-amount-pill:hover {
+  transform: translateY(-1.5px);
+}
+
+.gt-notice-tab-btn:active,
+.gt-gallery-pill:active,
+.gt-prog-filter-btn:active,
+.gt-dept-tab-btn:active,
+.gt-freq-btn:active,
+.gt-amount-pill:active {
+  transform: translateY(0);
+}
+
+/* 7. CALENDAR CELLS & EVENT TILES */
+.gt-cal-day,
+.gt-cal-day-cell {
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background-color 0.2s ease,
+              box-shadow 0.2s ease !important;
+}
+
+.gt-cal-day:hover,
+.gt-cal-day-cell:hover {
+  transform: translateY(-1.5px);
+}
+
+/* 8. ACCESSIBILITY: RESPECT PREFERS-REDUCED-MOTION */
 @media (prefers-reduced-motion: reduce) {
-  .gt-arrive {
+  .gt-hero-content,
+  .gt-about-hero-content,
+  .gt-dept-hero-content,
+  .gt-updates-hero-content,
+  .gt-programmes-hero-content,
+  .gt-gallery-hero-content,
+  .gt-contact-grid,
+  .gt-support-pledge-col,
+  .gt-donation-card,
+  .gt-arrive,
+  .gt-dept-card,
+  .gt-dept-item,
+  .gt-news-card,
+  .gt-news-item,
+  .gt-update-card,
+  .gt-programme-card,
+  .gt-pcard,
+  .gt-event-card,
+  .gt-event-card-item,
+  .gt-dept-event-card,
+  .gt-leader-card,
+  .gt-past-abbot-card,
+  .gt-about-dept-card,
+  .gt-contact-block,
+  .gt-contact-map-card,
+  .gt-support-card,
+  .gt-tier-card,
+  .gt-bank-card,
+  .gt-gallery-item,
+  .gt-gallery-card,
+  .gt-notice-card,
+  .gt-stat-item,
+  .gt-stat-box,
+  .gt-about-intro-card,
+  .gt-calendar-shell {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
+    animation: none !important;
   }
 }
+
 
 
