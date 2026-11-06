@@ -10,7 +10,7 @@
   background-color: #FFFFFF;
   color: #2B241E;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* ==========================================================================
