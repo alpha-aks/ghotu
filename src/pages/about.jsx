@@ -456,13 +456,14 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                   scholastic commentaries, and tantric practices essential to Gelug study.
                 </p>
               </div>
-              <button
-                type="button"
+              <a
+                href="https://www.gyutolibrary.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="gt-visit-library-btn"
-                onClick={() => handleNav('departments')}
               >
                 VISIT THE LIBRARY
-              </button>
+              </a>
             </div>
           </div>
         </section>

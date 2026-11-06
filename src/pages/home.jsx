@@ -459,14 +459,10 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
               </p>
             </div>
             <a 
-              href="/departments" 
+              href="https://www.gyutolibrary.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="gt-visit-library-btn"
-              onClick={(e) => {
-                if (onNavigate) {
-                  e.preventDefault();
-                  onNavigate('departments');
-                }
-              }}
             >
               VISIT THE LIBRARY
             </a>

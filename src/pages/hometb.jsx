@@ -421,14 +421,10 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
               </p>
             </div>
             <a 
-              href="/departments" 
+              href="https://www.gyutolibrary.com/" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="gt-visit-library-btn"
-              onClick={(e) => {
-                if (onNavigate) {
-                  e.preventDefault();
-                  onNavigate('departments');
-                }
-              }}
             >
               དཔེ་མཛོད་དང་ཡིག་ཚགས།
             </a>

@@ -55,6 +55,15 @@ export default function Footer({ lang = 'en', onNavigate }) {
               <li>
                 <a href="/gallery" onClick={(e) => handleLinkClick('gallery', e)}>{isTibetan ? 'པར་མཛོད།' : 'Gallery'}</a>
               </li>
+              <li>
+                <a 
+                  href="https://www.gyutolibrary.com/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                >
+                  {isTibetan ? 'དཔེ་མཛོད་ཁང་།' : 'Gyuto Library'} ↗
+                </a>
+              </li>
             </ul>
           </div>
 

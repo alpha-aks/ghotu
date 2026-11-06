@@ -382,13 +382,14 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                   དགོན་པའི་དཔེ་མཛོད་ཁང་དང་། ཕྱག་དཔེ་གློག་རྡུལ་ཅན་དུ་བསྒྱུར་བའི་ལས་གཞི། ཆོས་བརྒྱུད་མི་ཉམས་རྒྱུན་འཛིན་ལ་རྒྱབ་སྐྱོར་ཞུ་ཕྱོགས་བཅས་ཀྱི་སྐོར།
                 </p>
               </div>
-              <button
-                type="button"
+              <a
+                href="https://www.gyutolibrary.com/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="gt-visit-library-btn"
-                onClick={() => handleNav('departments')}
               >
                 དཔེ་མཛོད་ལ་གཟིགས་རྒྱུ།
-              </button>
+              </a>
             </div>
           </div>
         </section>

@@ -379,6 +379,27 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                           <li>Geshe Ngawang Gyaltsen (Website Editor)</li>
                           <li>Mr. Jigmey Gyatso (Supervisor)</li>
                         </ul>
+                        <div style={{ marginTop: '16px', marginBottom: '8px' }}>
+                          <a 
+                            href="https://www.gyutolibrary.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '6px',
+                              padding: '8px 18px',
+                              background: '#92060F',
+                              color: '#FFFFFF',
+                              borderRadius: '4px',
+                              textDecoration: 'none',
+                              fontSize: '14px',
+                              fontWeight: '600'
+                            }}
+                          >
+                            Visit Official Gyuto Library Website (gyutolibrary.com) →
+                          </a>
+                        </div>
                         <button 
                           type="button" 
                           className="gt-dept-readmore-btn"

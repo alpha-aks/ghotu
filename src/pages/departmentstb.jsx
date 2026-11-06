@@ -311,6 +311,28 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                           <li>དགེ་བཤེས་ངག་དབང་རྒྱལ་མཚན། (དྲ་ཚིགས་རྩོམ་སྒྲིག་པ།)</li>
                           <li>སྐུ་ཞབས་འཇིགས་མེད་རྒྱ་མཚོ། (ལྟ་རྟོག་པ།)</li>
                         </ul>
+                        <div style={{ marginTop: '16px', marginBottom: '8px' }}>
+                          <a 
+                            href="https://www.gyutolibrary.com/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '6px',
+                              padding: '8px 18px',
+                              background: '#92060F',
+                              color: '#FFFFFF',
+                              borderRadius: '4px',
+                              textDecoration: 'none',
+                              fontSize: '14px',
+                              fontWeight: '600',
+                              fontFamily: 'Noto Serif Tibetan, serif'
+                            }}
+                          >
+                            རྒྱུད་སྟོད་དཔེ་མཛོད་ཁང་གི་གཞུང་འབྲེལ་དྲ་ཚིགས་ལ་གཟིགས་རྒྱུ། (gyutolibrary.com) →
+                          </a>
+                        </div>
                         <button 
                           type="button" 
                           className="gt-dept-readmore-btn"
