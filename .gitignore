@@ -54,3 +54,8 @@ Thumbs.db
 desktop.ini
 
 faltuimg/
+
+# Raw downloaded font folders in root (served from public/fonts/)
+/Cormorant_Garamond/
+/Noto_Serif_Tibetan/
+/Source_Sans_3/
