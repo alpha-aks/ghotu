@@ -830,7 +830,7 @@
 .gt-dept-cta-blue {
   background-color: #6B9EBD;
   position: relative;
-  padding: 80px 0;
+  padding: 0;
   color: #FFFAF1;
   overflow: hidden;
 }
@@ -845,14 +845,25 @@
 }
 
 @media (max-width: 800px) {
+  .gt-dept-cta-blue {
+    padding: 0;
+  }
+
   .gt-dept-cta-blue-inner {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 20px;
   }
 }
 
 .gt-dept-cta-blue-text {
   max-width: 528px;
+  padding: 40px 0;
+}
+
+@media (max-width: 800px) {
+  .gt-dept-cta-blue-text {
+    padding: 48px 0 16px 0;
+  }
 }
 
 .gt-dept-cta-blue-title {
@@ -928,12 +939,15 @@
 .gt-dept-cta-blue-visual {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
+  align-items: flex-end;
+  line-height: 0;
+  margin-bottom: 0;
 }
 
 @media (max-width: 800px) {
   .gt-dept-cta-blue-visual {
     justify-content: center;
+    align-items: flex-end;
   }
 }
 
@@ -942,6 +956,7 @@
   width: 100%;
   height: auto;
   display: block;
+  margin-bottom: 0;
   user-select: none;
   pointer-events: none;
 }
