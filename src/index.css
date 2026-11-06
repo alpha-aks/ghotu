@@ -396,8 +396,6 @@ img {
 .gt-gallery-item,
 .gt-gallery-card,
 .gt-notice-card,
-.gt-stat-item,
-.gt-stat-box,
 .gt-about-intro-card,
 .gt-calendar-shell {
   transition: transform 0.32s cubic-bezier(0.16, 1, 0.3, 1),
@@ -420,8 +418,7 @@ img {
 .gt-contact-map-card:hover,
 .gt-support-card:hover,
 .gt-gallery-item:hover,
-.gt-gallery-card:hover,
-.gt-stat-item:hover {
+.gt-gallery-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 26px rgba(45, 42, 40, 0.07), 0 2px 8px rgba(250, 199, 88, 0.12);
 }
@@ -547,8 +544,6 @@ img {
   .gt-gallery-item,
   .gt-gallery-card,
   .gt-notice-card,
-  .gt-stat-item,
-  .gt-stat-box,
   .gt-about-intro-card,
   .gt-calendar-shell {
     opacity: 1 !important;

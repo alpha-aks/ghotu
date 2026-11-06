@@ -598,15 +598,172 @@
 }
 
 /* ==========================================================================
-   7. SERVING EVERY ASPECT OF MONASTIC LIFE (DEPARTMENTS)
-   Figma: Frame 625783: padding: 112px 80px; gap: 88px;
+   7. SERVING EVERY ASPECT OF MONASTIC LIFE (DEPARTMENTS PREVIEW)
+   Synchronized with About Page styling
    ========================================================================== */
+.gt-about-depts-section,
 .gt-departments-sec {
+  padding: 95px 0 105px 0;
   background: #FFFFFF;
-  padding: 100px 80px;
+}
+
+.gt-about-depts-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 30px;
+  margin-bottom: 45px;
+}
+
+.gt-about-depts-text {
+  max-width: 820px;
+}
+
+.gt-about-depts-title {
+  font-family: var(--figma-font-serif);
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: #111111;
+  margin: 0 0 14px 0;
+  letter-spacing: -0.01em;
+}
+
+.tibetan-text .gt-about-depts-title {
+  font-family: var(--figma-font-tibetan);
+  font-size: 40px;
+}
+
+.gt-about-depts-desc {
+  font-size: 16.5px;
+  line-height: 1.75;
+  color: #444444;
+  margin: 0;
+}
+
+.tibetan-text .gt-about-depts-desc {
+  font-family: var(--figma-font-tibetan);
+  font-size: 17px;
+  line-height: 2.0;
+}
+
+.gt-view-depts-btn {
+  background: var(--figma-maroon, #92060F);
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.25s ease;
+}
+
+.gt-view-depts-btn:hover {
+  background: var(--figma-maroon-hover, #7A050D);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(146, 6, 15, 0.3);
+}
+
+.gt-about-depts-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.gt-about-dept-card {
+  background: #FFFFFF;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
+  border: 1px solid #ECECEC;
   display: flex;
   flex-direction: column;
-  gap: 64px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gt-about-dept-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.1);
+}
+
+.gt-about-dept-img-wrap {
+  width: 100%;
+  height: 240px;
+  overflow: hidden;
+  background: #EDE8DE;
+}
+
+.gt-about-dept-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease;
+}
+
+.gt-about-dept-card:hover .gt-about-dept-img {
+  transform: scale(1.05);
+}
+
+.gt-about-dept-body {
+  padding: 24px 22px 28px 22px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.gt-about-dept-name {
+  font-family: var(--figma-font-serif);
+  font-size: 26px;
+  font-weight: 600;
+  color: #111111;
+  margin: 0 0 12px 0;
+}
+
+.tibetan-text .gt-about-dept-name {
+  font-family: var(--figma-font-tibetan);
+  font-size: 22px;
+}
+
+.gt-about-dept-snippet {
+  font-size: 15px;
+  line-height: 1.65;
+  color: #555555;
+  margin: 0 0 20px 0;
+  flex-grow: 1;
+}
+
+.tibetan-text .gt-about-dept-snippet {
+  font-family: var(--figma-font-tibetan);
+  font-size: 15.5px;
+  line-height: 1.85;
+}
+
+.gt-about-dept-link {
+  color: var(--figma-maroon, #92060F);
+  font-size: 13.5px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: gap 0.25s ease, color 0.25s ease;
+  margin-top: auto;
+}
+
+.gt-about-dept-link:hover {
+  gap: 10px;
+  color: var(--figma-maroon-hover, #7A050D);
 }
 
 .gt-dept-header-row {
@@ -1519,11 +1676,19 @@
     min-width: 0 !important;
   }
   .gt-news-section,
+  .gt-about-depts-section,
   .gt-departments-sec,
   .gt-programmes-sec,
   .gt-contact-sec,
   .gt-footer {
     padding: 60px 24px;
+  }
+  .gt-about-depts-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gt-about-depts-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
   .gt-dept-cards-grid {
     grid-template-columns: 1fr;
@@ -1708,6 +1873,16 @@
 
   .gt-news-content-grid {
     grid-template-columns: 1fr;
+  }
+  .gt-about-depts-head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .gt-about-depts-title {
+    font-size: 32px !important;
+  }
+  .gt-about-depts-cards-grid {
+    grid-template-columns: 1fr !important;
   }
   .gt-dept-header-row {
     flex-direction: column;
@@ -1943,27 +2118,13 @@
    Zero layout or UI element alterations.
    ========================================================================== */
 
-/* 1. Sacred Butterlamp (Karme) Warm Breathing Glow */
-@keyframes tibetanButterLampGlow {
-  0%, 100% {
-    filter: drop-shadow(0 0 3px rgba(217, 193, 140, 0.35)) drop-shadow(0 0 8px rgba(251, 199, 88, 0.15));
-    transform: translateY(0);
-  }
-  50% {
-    filter: drop-shadow(0 0 7px rgba(217, 193, 140, 0.7)) drop-shadow(0 0 14px rgba(251, 199, 88, 0.35));
-    transform: translateY(-1px);
-  }
-}
-
 .gt-vajra-icon {
-  animation: tibetanButterLampGlow 5.5s ease-in-out infinite;
-  transition: filter 0.4s ease, transform 0.4s ease;
-  will-change: filter, transform;
+  filter: none !important;
 }
 
 .gt-vajra-icon:hover {
-  filter: drop-shadow(0 0 10px rgba(251, 199, 88, 0.85)) drop-shadow(0 0 18px rgba(217, 193, 140, 0.55));
-  transform: scale(1.08);
+  filter: none !important;
+  transform: none;
 }
 
 /* 2. Sacred Ashtamangala Conch (Dungkar) Breath */
@@ -2013,9 +2174,9 @@
 .gt-stat-item:nth-child(3) .gt-stat-icon img { animation-delay: 2.5s; }
 .gt-stat-item:nth-child(4) .gt-stat-icon img { animation-delay: 3.75s; }
 
-.gt-stat-item:hover .gt-stat-icon img {
-  transform: translateY(-5px) scale(1.06);
-  filter: drop-shadow(0 8px 16px rgba(251, 199, 88, 0.55));
+.gt-stat-item:hover {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* 4. Tantric Chordal Chanting Overtone Resonance (Play Button on Chant Preview) */
@@ -2120,7 +2281,6 @@
 
 /* 10. Respect User Preference for Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  .gt-vajra-icon,
   .gt-conch-badge svg,
   .gt-stat-icon img,
   .gt-play-btn,

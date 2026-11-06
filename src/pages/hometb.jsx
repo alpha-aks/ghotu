@@ -229,88 +229,117 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
       </section>
 
       {/* ====================================================================
-          7. SERVING EVERY ASPECT OF MONASTIC LIFE (Figma: Frame 625783)
+          7. SERVING EVERY ASPECT OF MONASTIC LIFE (Departments Preview)
           ==================================================================== */}
-      <section id="departments" className="gt-departments-sec">
+      <section id="departments" className="gt-about-depts-section">
         <div className="gyuto-container">
-          <div className="gt-dept-header-row">
-            <div className="gt-dept-header-left">
-              <h3>དགོན་པའི་སྐུ་ཞིང་ཡོངས་སུ་འཛུགས་པ།</h3>
-              <p>
-                དགོན་པའི་ཁུལ་སྐོར་རྣམས་ཉིན་རེའི་ལས་གཞི། སློབ་གཉེར། ཞིབ་དཔྱད། སྨན་དང་ཞབས་ཏོགས། ཞུགས་མི་ལ་ཞབས་ཞུ། ཆོས་གཞུང་ཉར་ཚགས་བཅས་རྒྱུན་འཛིན་བྱེད་བཞིན་ཡོད།
+          <div className="gt-about-depts-head">
+            <div className="gt-about-depts-text">
+              <h2 className="gt-about-depts-title">དགོན་པའི་བློ་ཞིང་ཡོངས་སུ་འཛུགས་པ།</h2>
+              <p className="gt-about-depts-desc">
+                དགོན་པའི་ལས་སྣེ་རྣམས་ཀྱིས་རིམ་པས་དགོན་པའི་སྒྲིག་འཛུགས་དང་། ཆོས་སྤྱོད་ཀྱི་ཞབས་ཞུ། སྨན་དང་ཞབས་ཏོག་སོགས་ཞལ་འདེབས་བསྒྲུབས་བཞིན་ཡོད། དེ་དག་གིས་ཆོས་ཀྱི་བརྒྱུད་པ་སྲུང་སྐྱོབ་ལ་ཕན་ཐོགས་ཆེན་པོ་བྱུང་ཡོད།
               </p>
             </div>
-            <a 
-              href="#departments" 
-              className="gt-figma-btn"
-              onClick={(e) => {
+            <button
+              type="button"
+              className="gt-view-depts-btn"
+              onClick={() => {
                 if (onNavigate) {
-                  e.preventDefault();
                   onNavigate('departments');
                 }
               }}
             >
-              ཁུལ་སྐོར་ཡོངས་སུ་ལྟ།
-            </a>
+              རྒྱས་སྐོར་གཟིགས་རྒྱུ།
+            </button>
           </div>
 
-          <div className="gt-dept-cards-grid">
-            {/* Card 1: General Administration */}
-            <div className="gt-dept-card">
-              <div className="gt-dept-img-wrap">
-                <img 
-                  src="/images/dept-admin.jpg" 
-                  alt="General Administration" 
-                  className="gt-dept-img"
+          <div className="gt-about-depts-cards-grid">
+            {/* Administration */}
+            <div className="gt-about-dept-card">
+              <div className="gt-about-dept-img-wrap">
+                <img
+                  src="/images/about/dept-admin.jpg"
+                  alt="Monastery Administration"
+                  className="gt-about-dept-img"
+                  loading="lazy"
                 />
               </div>
-              <div className="gt-dept-card-body">
-                <h4 className="gt-dept-card-title">འཛིན་སྐྱོང་སྡེ་ཚན།</h4>
-                <p className="gt-dept-card-text">
-                  དགོན་པའི་ཉིན་རེའི་ལས་གཞི་སྒེར་སྒྲིག་དང་ཞབས་ཀྱི་དངོས་ཡོད་འཛིན་སྐྱོང་བྱེད་པ། དགོན་པའི་གཞི་རིམ་དང་ཕུལ་བྱུང་ཉར་ཚགས་བྱེད་པ་ཡིན།
+              <div className="gt-about-dept-body">
+                <h3 className="gt-about-dept-name">འཛིན་སྐྱོང་།</h3>
+                <p className="gt-about-dept-snippet">
+                  དགོན་པའི་ཉིན་རེའི་འཛིན་སྐྱོང་དང་ལས་དོན་གཉེར་བའི་གཞི་རྟེན་ཡིན།
                 </p>
-                <a href="#admin-dept" className="gt-dept-card-link">
-                  Learn more <span className="gt-dept-arrow-line" />
+                <a
+                  href="#departments"
+                  className="gt-about-dept-link"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('departments');
+                    }
+                  }}
+                >
+                  རྒྱས་པར་གཟིགས། <span>→</span>
                 </a>
               </div>
             </div>
 
-            {/* Card 2: Education */}
-            <div className="gt-dept-card">
-              <div className="gt-dept-img-wrap">
-                <img 
-                  src="/images/dept-education.jpg" 
-                  alt="Monastic Education" 
-                  className="gt-dept-img"
+            {/* Education */}
+            <div className="gt-about-dept-card">
+              <div className="gt-about-dept-img-wrap">
+                <img
+                  src="/images/about/dept-edu.jpg"
+                  alt="Monastic Education"
+                  className="gt-about-dept-img"
+                  loading="lazy"
                 />
               </div>
-              <div className="gt-dept-card-body">
-                <h4 className="gt-dept-card-title">ཤེས་ཡོན།</h4>
-                <p className="gt-dept-card-text">
-                  དགེ་ལུགས་ཞིང་ལ་རིག་པ་དང་སྐུ་དགེ་མཚན་གཏོང་བ་ལ་དགེ་མཚན་གཏོང་བའི་ལས་རིམ་དང་། རྔོག་སྐུར་གི་དུས་ཚོད་གཙོ་བོའི་ལས་ཡིན།
+              <div className="gt-about-dept-body">
+                <h3 className="gt-about-dept-name">སློབ་གཉེར།</h3>
+                <p className="gt-about-dept-snippet">
+                  ནང་དོན་རིག་པའི་གཞུང་ལུགས་དང་རྩོད་པ། རྒྱུད་ཀྱི་སློབ་གཉེར་བཅས་ལ་དམིགས་པའི་སློབ་ཚན།
                 </p>
-                <a href="#education-dept" className="gt-dept-card-link">
-                  Learn more <span className="gt-dept-arrow-line" />
+                <a
+                  href="#departments"
+                  className="gt-about-dept-link"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('departments');
+                    }
+                  }}
+                >
+                  རྒྱས་པར་གཟིགས། <span>→</span>
                 </a>
               </div>
             </div>
 
-            {/* Card 3: Healthcare & Social Services */}
-            <div className="gt-dept-card">
-              <div className="gt-dept-img-wrap">
-                <img 
-                  src="/images/dept-healthcare.jpg" 
-                  alt="Healthcare and Social Services" 
-                  className="gt-dept-img"
+            {/* Healthcare */}
+            <div className="gt-about-dept-card">
+              <div className="gt-about-dept-img-wrap">
+                <img
+                  src="/images/about/dept-health.jpg"
+                  alt="Healthcare Services"
+                  className="gt-about-dept-img"
+                  loading="lazy"
                 />
               </div>
-              <div className="gt-dept-card-body">
-                <h4 className="gt-dept-card-title">འཕྲོད་བསྟེན་ཞབས་ཞུ།</h4>
-                <p className="gt-dept-card-text">
-                  དགེ་སྦྱོང་རྣམས་ཀྱི་སྐུ་གཞི་དང་སེམས་ཞི་བའི་དོན་དུ་སྨན་དང་ཞབས་ཏོགས་གཏོང་བའི་ལས་ཡིན།
+              <div className="gt-about-dept-body">
+                <h3 className="gt-about-dept-name">འཕྲོད་བསྟེན།</h3>
+                <p className="gt-about-dept-snippet">
+                  དགེ་འདུན་པ་རྣམས་ཀྱི་ལུས་སེམས་བདེ་ཐང་དང་འབྲེལ་བའི་སྨན་བཅོས་ཞབས་ཞུ།
                 </p>
-                <a href="#health-dept" className="gt-dept-card-link">
-                  Learn more <span className="gt-dept-arrow-line" />
+                <a
+                  href="#departments"
+                  className="gt-about-dept-link"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('departments');
+                    }
+                  }}
+                >
+                  རྒྱས་པར་གཟིགས། <span>→</span>
                 </a>
               </div>
             </div>

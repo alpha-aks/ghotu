@@ -233,95 +233,119 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
       </section>
 
       {/* ====================================================================
-          7. SERVING EVERY ASPECT OF MONASTIC LIFE (Figma: Frame 625783)
+          7. SERVING EVERY ASPECT OF MONASTIC LIFE (Departments Preview)
           ==================================================================== */}
-      <section id="departments" className="gt-departments-sec">
+      <section id="departments" className="gt-about-depts-section">
         <div className="gyuto-container">
-          <div className="gt-dept-header-row">
-            <div className="gt-dept-header-left">
-              <h3>Serving Every Aspect of Monastic Life</h3>
-              <p>
-                Each department contributes to the daily life of the monastery — from education
-                and administration to healthcare, maintenance, and community service — together
-                they support the preservation of Buddhist teachings and the smooth functioning of the institution.
+          <div className="gt-about-depts-head">
+            <div className="gt-about-depts-text">
+              <h2 className="gt-about-depts-title">Serving Every Aspect of Monastic Life</h2>
+              <p className="gt-about-depts-desc">
+                Each department contributes to the daily life of the monastery—from education and
+                administration to the library, publications, and community services. Together, they
+                support the preservation of Buddhist teachings and the smooth functioning of the institution.
               </p>
             </div>
-            <a
-              href="#departments"
-              className="gt-figma-btn"
-              onClick={(e) => {
+            <button
+              type="button"
+              className="gt-view-depts-btn"
+              onClick={() => {
                 if (onNavigate) {
-                  e.preventDefault();
                   onNavigate('departments');
                 }
               }}
             >
               VIEW DEPARTMENTS
-            </a>
+            </button>
           </div>
 
-          <div className="gt-dept-cards-grid">
-            {/* Card 1: General Administration */}
-            <div className="gt-dept-card">
-              <div className="gt-dept-img-wrap">
+          <div className="gt-about-depts-cards-grid">
+            {/* Administration */}
+            <div className="gt-about-dept-card">
+              <div className="gt-about-dept-img-wrap">
                 <img
-                  src="/images/dept-admin.jpg"
-                  alt="General Administration"
-                  className="gt-dept-img"
+                  src="/images/about/dept-admin.jpg"
+                  alt="Monastery Administration"
+                  className="gt-about-dept-img"
+                  loading="lazy"
                 />
               </div>
-              <div className="gt-dept-card-body">
-                <h4 className="gt-dept-card-title">General Administration</h4>
-                <p className="gt-dept-card-text">
-                  Overseeing the administration and daily operations of the monastery,
-                  responsible for governance, communications, finance, and the day-to-day
-                  affairs of the monastery.
+              <div className="gt-about-dept-body">
+                <h3 className="gt-about-dept-name">Administration</h3>
+                <p className="gt-about-dept-snippet">
+                  Supports the day-to-day governance, operations, and coordination of the monastery.
                 </p>
-                <a href="#admin-dept" className="gt-dept-card-link">
-                  Learn more <span className="gt-dept-arrow-line" />
+                <a
+                  href="#departments"
+                  className="gt-about-dept-link"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('departments');
+                    }
+                  }}
+                >
+                  LEARN MORE <span>→</span>
                 </a>
               </div>
             </div>
 
-            {/* Card 2: Education */}
-            <div className="gt-dept-card">
-              <div className="gt-dept-img-wrap">
+            {/* Education */}
+            <div className="gt-about-dept-card">
+              <div className="gt-about-dept-img-wrap">
                 <img
-                  src="/images/dept-education.jpg"
+                  src="/images/about/dept-edu.jpg"
                   alt="Monastic Education"
-                  className="gt-dept-img"
+                  className="gt-about-dept-img"
+                  loading="lazy"
                 />
               </div>
-              <div className="gt-dept-card-body">
-                <h4 className="gt-dept-card-title">Education</h4>
-                <p className="gt-dept-card-text">
-                  Dedicated to higher Buddhist education and monastic studies, education
-                  programs in philosophy, debate, rituals, tantric studies, and continuing
-                  education for all monk levels.
+              <div className="gt-about-dept-body">
+                <h3 className="gt-about-dept-name">Education</h3>
+                <p className="gt-about-dept-snippet">
+                  Provides structured study in Buddhist philosophy, debate, and tantric traditions.
                 </p>
-                <a href="#education-dept" className="gt-dept-card-link">
-                  Learn more <span className="gt-dept-arrow-line" />
+                <a
+                  href="#departments"
+                  className="gt-about-dept-link"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('departments');
+                    }
+                  }}
+                >
+                  LEARN MORE <span>→</span>
                 </a>
               </div>
             </div>
 
-            {/* Card 3: Healthcare & Social Services */}
-            <div className="gt-dept-card">
-              <div className="gt-dept-img-wrap">
+            {/* Healthcare */}
+            <div className="gt-about-dept-card">
+              <div className="gt-about-dept-img-wrap">
                 <img
-                  src="/images/dept-healthcare.jpg"
-                  alt="Healthcare and Social Services"
-                  className="gt-dept-img"
+                  src="/images/about/dept-health.jpg"
+                  alt="Healthcare Services"
+                  className="gt-about-dept-img"
+                  loading="lazy"
                 />
               </div>
-              <div className="gt-dept-card-body">
-                <h4 className="gt-dept-card-title">Healthcare & Social Services</h4>
-                <p className="gt-dept-card-text">
-                  Gyuto Tantric Monastery continues to provide for health and well-being,
-                  supporting medical care and community outreach, providing clinics and wellness support.
+              <div className="gt-about-dept-body">
+                <h3 className="gt-about-dept-name">Healthcare</h3>
+                <p className="gt-about-dept-snippet">
+                  Medical services supporting the physical and mental well-being of the monastic community.
                 </p>
-                <a href="#health-dept" className="gt-dept-card-link">
-                  Learn more <span className="gt-dept-arrow-line" />
+                <a
+                  href="#departments"
+                  className="gt-about-dept-link"
+                  onClick={(e) => {
+                    if (onNavigate) {
+                      e.preventDefault();
+                      onNavigate('departments');
+                    }
+                  }}
+                >
+                  LEARN MORE <span>→</span>
                 </a>
               </div>
             </div>
