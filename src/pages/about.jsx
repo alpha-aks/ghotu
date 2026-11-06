@@ -219,7 +219,7 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                     His father is Mr. Lobsang Dorjee and his mother Kalsang Yangzom.
                   </p>
                   <p>
-                    He was recognised as the reincarnation of the previous Yangteng Rinpoche at
+                    He was recognised as the reincarnation of the previous Yangten Rinpoche at
                     the age of 10. After living in Tibet under the Chinese rule for 12 years he left
                     his homeland for India, the Land of Noble Beings, in pursuit of traditional
                     Tibetan monastic education in south India. In 1990 he came to India and joined

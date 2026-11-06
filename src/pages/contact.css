@@ -52,7 +52,7 @@
 }
 
 .tibetan-page .gt-contact-page-title {
-  font-family: var(--figma-font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
   font-size: 52px;
   line-height: 60px;
   color: #2D2A28;
@@ -178,6 +178,13 @@
   margin-bottom: 22px;
 }
 
+.tibetan-page .gt-support-title {
+  font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
+  font-size: 44px;
+  line-height: 1.35;
+  color: #111111;
+}
+
 .tibetan-page .gt-support-pledge-text {
   font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
   font-size: 18.5px;
@@ -189,6 +196,30 @@
   margin-top: 32px;
   font-weight: 500;
   color: #111111;
+}
+
+.tibetan-page .gt-donation-card,
+.tibetan-page .gt-donation-field-label,
+.tibetan-page .gt-freq-btn,
+.tibetan-page .gt-amount-btn,
+.tibetan-page .gt-fee-label-text,
+.tibetan-page .gt-name-input,
+.tibetan-page .gt-donate-submit-btn,
+.tibetan-page .gt-donation-success-banner,
+.tibetan-page .gt-attend-title,
+.tibetan-page .gt-attend-body,
+.tibetan-page .gt-attend-contact-btn {
+  font-family: var(--figma-font-tibetan, 'Noto Serif Tibetan', serif);
+}
+
+.tibetan-page .gt-donate-submit-btn {
+  font-size: 20px;
+  letter-spacing: 0.05em;
+}
+
+.tibetan-page .gt-fee-label-text {
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 /* Interactive Donation Card */

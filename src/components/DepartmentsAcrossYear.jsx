@@ -13,7 +13,7 @@ export default function DepartmentsAcrossYear({ lang = 'en', className = '' }) {
       <div className="container">
         <div className="gt-timeline-header">
           <h2 className="gt-timeline-title">
-            {isTibetan ? 'ལོ་འཁོར་གྱི་ལས་རིམ།' : 'Departments Across the Year'}
+            {isTibetan ? 'ལོ་འཁོར་མོའི་མཛད་རིམ་སྙིང་བསྡུས།' : 'Departments Across the Year'}
           </h2>
           <p className="gt-timeline-subtitle">
             {isTibetan 
@@ -27,15 +27,15 @@ export default function DepartmentsAcrossYear({ lang = 'en', className = '' }) {
           <div className="gt-timeline-pill-track">
             <div className="gt-timeline-node-circle" />
             <div className="gt-timeline-segment">
-              <span>{isTibetan ? 'ཕྱི་ཟླ་༢-༥' : 'Feb  -  MAY'}</span>
+              <span>{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'Feb  -  MAY'}</span>
             </div>
             <div className="gt-timeline-node-circle" />
             <div className="gt-timeline-segment">
-              <span>{isTibetan ? 'ཕྱི་ཟླ་༢-༥' : 'Feb  -  MAY'}</span>
+              <span>{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'Feb  -  MAY'}</span>
             </div>
             <div className="gt-timeline-node-circle" />
             <div className="gt-timeline-segment">
-              <span>{isTibetan ? 'ཕྱི་ཟླ་༢-༥' : 'Feb  -  MAY'}</span>
+              <span>{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'Feb  -  MAY'}</span>
             </div>
             <div className="gt-timeline-node-circle" />
           </div>
@@ -45,32 +45,32 @@ export default function DepartmentsAcrossYear({ lang = 'en', className = '' }) {
             <div className="gt-timeline-col">
               <div className="gt-timeline-stalk" />
               <div className="gt-timeline-labels">
-                <span className="gt-timeline-season">{isTibetan ? 'དབྱར་དུས།' : 'summer'}</span>
-                <span className="gt-timeline-activity">{isTibetan ? 'སྦྱོར་བ་དང་སྒོམ་སྒྲུབ།' : 'Retreat & Practice'}</span>
+                <span className="gt-timeline-season">{isTibetan ? 'དཔྱིད་ཀ' : 'Spring'}</span>
+                <span className="gt-timeline-activity">{isTibetan ? 'དཔེ་ཁྲིད་དང་ཆོས་རྩོད།' : 'Teaching & Debate'}</span>
               </div>
             </div>
 
             <div className="gt-timeline-col">
               <div className="gt-timeline-stalk" />
               <div className="gt-timeline-labels">
-                <span className="gt-timeline-season">{isTibetan ? 'དཔེ་དུས།' : 'Spring'}</span>
-                <span className="gt-timeline-activity">{isTibetan ? 'གདམས་ངག་དང་དཔྱད་རྩོད།' : 'Teaching & Debate'}</span>
+                <span className="gt-timeline-season">{isTibetan ? 'དབྱར་ཀ' : 'Summer'}</span>
+                <span className="gt-timeline-activity">{isTibetan ? 'བསྙེན་མཚམས་དང་ཉམས་ལེན།' : 'Retreat & Practice'}</span>
               </div>
             </div>
 
             <div className="gt-timeline-col">
               <div className="gt-timeline-stalk" />
               <div className="gt-timeline-labels">
-                <span className="gt-timeline-season">{isTibetan ? 'སྟོད་དུས།' : 'autumn'}</span>
-                <span className="gt-timeline-activity">{isTibetan ? 'ཤེས་རབ་སྐུར།' : 'Examinations'}</span>
+                <span className="gt-timeline-season">{isTibetan ? 'སྟོན་ཀ' : 'Autumn'}</span>
+                <span className="gt-timeline-activity">{isTibetan ? 'རྒྱུགས་སྤྲོད།' : 'Examinations'}</span>
               </div>
             </div>
 
             <div className="gt-timeline-col">
               <div className="gt-timeline-stalk" />
               <div className="gt-timeline-labels">
-                <span className="gt-timeline-season">{isTibetan ? 'དགུན་དུས།' : 'winter'}</span>
-                <span className="gt-timeline-activity">{isTibetan ? 'ཆོས་སྐུད་དང་གཙོ་བོའི་ཆེ་རིས།' : 'Rituals & Observances'}</span>
+                <span className="gt-timeline-season">{isTibetan ? 'དགུན་ཀ' : 'Winter'}</span>
+                <span className="gt-timeline-activity">{isTibetan ? 'ཆོ་ག་ཕྱག་ལེན་དང་སྲུང་བརྟི།' : 'Rituals & Observances'}</span>
               </div>
             </div>
           </div>
@@ -80,27 +80,27 @@ export default function DepartmentsAcrossYear({ lang = 'en', className = '' }) {
             <div className="gt-timeline-mobile-line" />
             <div className="gt-timeline-mobile-card">
               <div className="gt-timeline-mobile-dot" />
-              <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་༢-༥' : 'FEB – MAY'}</span>
-              <div className="gt-timeline-mobile-season">{isTibetan ? 'དབྱར་དུས།' : 'summer'}</div>
-              <div className="gt-timeline-mobile-activity">{isTibetan ? 'སྦྱོར་བ་དང་སྒོམ་སྒྲུབ།' : 'Retreat & Practice'}</div>
+              <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'FEB – MAY'}</span>
+              <div className="gt-timeline-mobile-season">{isTibetan ? 'དཔྱིད་ཀ' : 'Spring'}</div>
+              <div className="gt-timeline-mobile-activity">{isTibetan ? 'དཔེ་ཁྲིད་དང་ཆོས་རྩོད།' : 'Teaching & Debate'}</div>
             </div>
             <div className="gt-timeline-mobile-card">
               <div className="gt-timeline-mobile-dot" />
-              <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་༢-༥' : 'FEB – MAY'}</span>
-              <div className="gt-timeline-mobile-season">{isTibetan ? 'དཔེ་དུས།' : 'Spring'}</div>
-              <div className="gt-timeline-mobile-activity">{isTibetan ? 'གདམས་ངག་དང་དཔྱད་རྩོད།' : 'Teaching & Debate'}</div>
+              <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'FEB – MAY'}</span>
+              <div className="gt-timeline-mobile-season">{isTibetan ? 'དབྱར་ཀ' : 'Summer'}</div>
+              <div className="gt-timeline-mobile-activity">{isTibetan ? 'བསྙེན་མཚམས་དང་ཉམས་ལེན།' : 'Retreat & Practice'}</div>
             </div>
             <div className="gt-timeline-mobile-card">
               <div className="gt-timeline-mobile-dot" />
-              <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་༢-༥' : 'FEB – MAY'}</span>
-              <div className="gt-timeline-mobile-season">{isTibetan ? 'སྟོད་དུས།' : 'autumn'}</div>
-              <div className="gt-timeline-mobile-activity">{isTibetan ? 'ཤེས་རབ་སྐུར།' : 'Examinations'}</div>
+              <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'FEB – MAY'}</span>
+              <div className="gt-timeline-mobile-season">{isTibetan ? 'སྟོན་ཀ' : 'Autumn'}</div>
+              <div className="gt-timeline-mobile-activity">{isTibetan ? 'རྒྱུགས་སྤྲོད།' : 'Examinations'}</div>
             </div>
             <div className="gt-timeline-mobile-card">
               <div className="gt-timeline-mobile-dot" />
-              <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་༢-༥' : 'FEB – MAY'}</span>
-              <div className="gt-timeline-mobile-season">{isTibetan ? 'དགུན་དུས།' : 'winter'}</div>
-              <div className="gt-timeline-mobile-activity">{isTibetan ? 'ཆོས་སྐུད་དང་གཙོ་བོའི་ཆེ་རིས།' : 'Rituals & Observances'}</div>
+              <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'FEB – MAY'}</span>
+              <div className="gt-timeline-mobile-season">{isTibetan ? 'དགུན་ཀ' : 'Winter'}</div>
+              <div className="gt-timeline-mobile-activity">{isTibetan ? 'ཆོ་ག་ཕྱག་ལེན་དང་སྲུང་བརྟི།' : 'Rituals & Observances'}</div>
             </div>
           </div>
         </div>

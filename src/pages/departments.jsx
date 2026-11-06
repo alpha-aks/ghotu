@@ -108,9 +108,9 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                           <li>Venerable Gankar Tulku (President)</li>
                           <li>Ngakrampa Sonam Paljor (Secretary)</li>
                           <li>Ngakrampa Phurbu Tsering (Treasurer)</li>
-                          <li>Ngakrampa Lobsang Phuntso (Member)</li>
-                          <li>Ngakrampa Dakpa Gyaltsen (Member) (Corrected spelling of "Gyalson")</li>
-                          <li>Geshe Ngakrampa Dakpa Genzen Gyana (Member)</li>
+                          <li>Ngakrampa Lobsang Phuntsok (Member)</li>
+                          <li>Ngakrampa Dakpa Gyaltsen (Member)</li>
+                          <li>Geshe Ngakrampa Dakpa Gesen Gyatso (Member)</li>
                           <li>Geshe Ngakrampa Dhondup Tsering (Member)</li>
                         </ul>
 
@@ -123,7 +123,7 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                           <li>Ngakrampa Lobsang Dargey (Administrator)</li>
                           <li>Geshe Ngakrampa Jambey Tshering Bhutia (Administrator)</li>
                           <li>Geshe Ngakrampa Ngawang Tsundue (Administrator)</li>
-                          <li>Geshe Ngakrampa Jamyang Chogyal (Administrator) (Corrected spelling of "Ngakampa")</li>
+                          <li>Geshe Ngakrampa Jamyang Chogyal (Administrator)</li>
                           <li>Geshe Ngakrampa Gelek Gonpo (Administrator)</li>
                           <li>Ven. Yeshi Gyaltsen (Administrator)</li>
                           <li>Geshe Ngakrampa Paksam Gyaltso (Secretary)</li>
@@ -254,7 +254,7 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                           After admission, the Geshes study the ground and path of tantra as an introduction, followed by the General Explanation of the Four Classes of Tantras, the Generation Stage (Ocean of Spiritual Attainment), the Five Stages of Completion, and the Great Commentary on the root tantra. They also learn the rituals and take a written test in tantra at the end of every annual dharma session to receive certification.
                         </p>
                         <p>
-                          Geshe Lharampa degree holders take a debate examination on tantra after three years and are awarded the Geshe Ngakrampa degree (Corrected spelling of "Ngagrampa").
+                          Geshe Lharampa degree holders take a debate examination on tantra after three years and are awarded the Geshe Ngakrampa degree.
                         </p>
                         <p>
                           Every year, four Geshe Lharampas sit for debate examinations on tantric commentaries lasting five days. After the session, some leave to serve society, while others remain as religious teachers. Meritorious Geshes who complete these examinations may serve first as Abbot of the monastery, then as Sharpa Choeje, and ultimately ascend to the post of Ganden Throne-holder (Regent of Je Tsongkhapa).
@@ -263,7 +263,7 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                         <ul className="gt-dept-list-bulleted">
                           <li>His Eminence Khangser Rinpoche — Ngak Teacher</li>
                           <li>His Eminence Yangten Rinpoche — Ngak Teacher</li>
-                          <li>Geshe Khedrup Norsang — Ngak Teacher (Corrected spelling of "Khedup")</li>
+                          <li>Geshe Khedrup Norsang — Ngak Teacher</li>
                         </ul>
 
                         <h3 className="gt-dept-subheading">2.7 Grading and Certificates</h3>
@@ -323,7 +323,7 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                         </p>
                         <h4 className="gt-dept-subheading-lvl2">Staff:</h4>
                         <ul className="gt-dept-list-bulleted">
-                          <li>Ms. Pema Tsamchoe (Nurse) (Corrected typos "Miss." and "Nruse")</li>
+                          <li>Mrs. Pema Tsamchoe (Nurse)</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
                           Healthcare Administrator: Geshe Ngakrampa Ngawang Tsundue

@@ -70,8 +70,8 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 <img src="/images/stats/stupa.svg" alt="Founded" width={60} height={60} />
               </div>
               <div className="gt-stat-texts">
-                <span className="gt-stat-label">བཙུགས་ལོ</span>
-                <span className="gt-stat-value">༡༤༧༤ (བོད)</span>
+                <span className="gt-stat-label">ཕྱག་བཏབ་ལོ།</span>
+                <span className="gt-stat-value">ཕྱི་ལོ་ ༡༤༧༤ (བོད།)</span>
               </div>
             </div>
 
@@ -80,8 +80,8 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 <img src="/images/stats/monk.svg" alt="Community" width={47} height={60} />
               </div>
               <div className="gt-stat-texts">
-                <span className="gt-stat-label">པར་མཛོད།</span>
-                <span className="gt-stat-value">༢༥༠–༣༠༠</span>
+                <span className="gt-stat-label">དགེ་འདུན་ཞལ་གྲངས།</span>
+                <span className="gt-stat-value">༥༠༠ ནས་ ༥༥༠ བར།</span>
               </div>
             </div>
 
@@ -90,8 +90,8 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 <img src="/images/stats/lotus_buddha.svg" alt="Tradition" width={60} height={60} />
               </div>
               <div className="gt-stat-texts">
-                <span className="gt-stat-label">སྤྱི་ཚོགས།</span>
-                <span className="gt-stat-value">དགེ་ལུགས་གདན་ས།</span>
+                <span className="gt-stat-label">ཆོས་བརྒྱུད།</span>
+                <span className="gt-stat-value">དགེ་ལུགས་པ།</span>
               </div>
             </div>
 
@@ -100,8 +100,8 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 <img src="/images/stats/mountains.svg" alt="Location" width={103} height={55} />
               </div>
               <div className="gt-stat-texts">
-                <span className="gt-stat-label">གནས་ཡུལ།</span>
-                <span className="gt-stat-value">དྷར་མ་ཤ་ལ། ཧི་མ་ཅལ། རྒྱ་གར།</span>
+                <span className="gt-stat-label">ས་གནས།</span>
+                <span className="gt-stat-value">རྒྱ་གར་དྷ་རམ་ས་ལ།</span>
               </div>
             </div>
           </div>
@@ -117,9 +117,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             <div className="gt-conch-badge">
               <RightWhorlConch width={48} height={80} />
             </div>
-            <h2 className="gt-living-title">གཞིག་པའི་དགོན་པ་གཟི་བརྗིད་ཅན།</h2>
+            <h2 className="gt-living-title">གསང་སྔགས་རིག་འཛིན་གྱི་སྡེ་ཆེན་པོ།</h2>
             <p className="gt-living-text">
-              ལོ་ལྔ་བརྒྱ་ལས་མང་པོར་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་དེ་སློབ་གཉེར་དང་སྒོམ་སྒྲུབ། ཆོས་སྐུད་རྒྱུན་པའི་གཞི་རིམ་ལ་བོད་བརྒྱུད་ཆོས་གཞུང་ཉར་ཚགས་བྱེད། དེ་རིང་ཡང་དགེ་སྦྱོང་ལ་སློབ་གཉེར་དང་རིག་གཞུང་ཉར་ཚགས། རྒྱ་ཕལ་གྱི་སྒོམ་རྒྱུགས་པ་དང་ཞུགས་མི་ལ་ཞབས་ཞུ་བྱེད་བཞིན་ཡོད།
+              གསང་ཆེན་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་ནི། ཕྱི་ལོ་ ༡༤༧༤ ལོར་ཕྱག་བཏབ་ཅིང་། བོད་བརྒྱུད་ནང་བསྟན་ཁྲོད་ནས་དགེ་ལྡན་པའི་གསང་སྔགས་ཀྱི་ཆོས་བརྒྱུད་གཙོ་བོ་ཞིག་གྲྭ་ཚང་འདིས་མི་ཉམས་རྒྱུན་འཛིན་གནང་ཡོད། རྒྱ་གར་དུ་བསྐྱར་འཛུགས་གནང་བ་ནས་བཟུང་། དགོན་པ་འདིས་སློབ་གཉེར་དང་། སྒོམ་སྒྲུབ་ཉམས་ལེན། རིག་གཞུང་སྲུང་སྐྱོབ། དེ་བཞིན་སྤྱི་ཚོགས་ཞབས་ཞུའི་ལས་དོན་རྣམས་མུ་མཐུད་སྒྲུབ་བཞིན་ཡོད།
             </p>
             <a 
               href="/about" 
@@ -131,7 +131,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 }
               }}
             >
-              དཔལ་ལྡན་རྒྱུད་སྟོད་སྐོར།
+              དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་སྐོར།
             </a>
           </div>
         </div>
@@ -172,17 +172,17 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
           {/* Body Content: Announcement View matches user screenshot 1:1 */}
           {activeNoticeTab === 'announcement' ? (
             <div className="gt-notices-announcement-view">
-              <h3 className="gt-notices-announcement-title">གྲྭ་ཚང་གི་གནས་ཚུལ།</h3>
+              <h3 className="gt-notices-announcement-title">གྲྭ་ཚང་གི་གསར་འགྱུར་དང་གསལ་བསྒྲགས།</h3>
               <p className="gt-notices-announcement-text">
-                དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཉེ་བའི་མཛད་སྒོ་དང་། ཆོས་ཕྱོགས་ཀྱི་བྱེད་སྒོ། སྡེ་ཚན་ཁག་གི་གནས་ཚུལ་གསར་པ་དང་གལ་ཆེའི་བརྡ་ཐོ་ཁག་ལ་རྒྱུས་ལོན་གནང་རོགས།
+                དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཉེ་བའི་གསར་འགྱུར་དང་། འདུས་སྤྱིའི་བྱེད་སྒོ། གལ་ཆེའི་གསལ་བསྒྲགས། པར་སྐྲུན། དེ་བཞིན་གསར་འགྱུར་གཞན་བཅས་ཀྱི་སྐོར་འདི་ནས་མཁྱེན་རྟོགས་གནང་རོགས།
               </p>
             </div>
           ) : (
             <div className="gt-notices-update-view">
               <div className="gt-news-left">
-                <h3>གྲྭ་ཚང་གི་གནས་ཚུལ།</h3>
+                <h3>གྲྭ་ཚང་གི་གསར་འགྱུར་དང་གསལ་བསྒྲགས།</h3>
                 <p>
-                  དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཉེ་བའི་མཛད་སྒོ་དང་། ཆོས་ཕྱོགས་ཀྱི་བྱེད་སྒོ། སྡེ་ཚན་ཁག་གི་གནས་ཚུལ་གསར་པ་ཁག་ལ་རྒྱུས་ལོན་གནང་རོགས།
+                  དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཉེ་བའི་གསར་འགྱུར་དང་། འདུས་སྤྱིའི་བྱེད་སྒོ། གལ་ཆེའི་གསལ་བསྒྲགས། པར་སྐྲུན། དེ་བཞིན་གསར་འགྱུར་གཞན་བཅས་ཀྱི་སྐོར་འདི་ནས་མཁྱེན་རྟོགས་གནང་རོགས།
                 </p>
                 <a 
                   href="/news" 
@@ -231,13 +231,16 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
       {/* ====================================================================
           7. SERVING EVERY ASPECT OF MONASTIC LIFE (Departments Preview)
           ==================================================================== */}
+      {/* ====================================================================
+          7. SERVING EVERY ASPECT OF MONASTIC LIFE (Departments Preview)
+          ==================================================================== */}
       <section id="departments" className="gt-about-depts-section">
         <div className="gyuto-container">
           <div className="gt-about-depts-head">
             <div className="gt-about-depts-text">
-              <h2 className="gt-about-depts-title">དགོན་པའི་བློ་ཞིང་ཡོངས་སུ་འཛུགས་པ།</h2>
+              <h2 className="gt-about-depts-title">དགོན་པའི་འཚོ་བར་ཞབས་ཞུ།</h2>
               <p className="gt-about-depts-desc">
-                དགོན་པའི་ལས་སྣེ་རྣམས་ཀྱིས་རིམ་པས་དགོན་པའི་སྒྲིག་འཛུགས་དང་། ཆོས་སྤྱོད་ཀྱི་ཞབས་ཞུ། སྨན་དང་ཞབས་ཏོག་སོགས་ཞལ་འདེབས་བསྒྲུབས་བཞིན་ཡོད། དེ་དག་གིས་ཆོས་ཀྱི་བརྒྱུད་པ་སྲུང་སྐྱོབ་ལ་ཕན་ཐོགས་ཆེན་པོ་བྱུང་ཡོད།
+                ཤེས་ཡོན་དང་འཛིན་སྐྱོང་སྡེ་ཚན་ནས་བཟུང་སྟེ་དཔེ་མཛོད་དང་། པར་སྐྲུན། སྤྱི་ཚོགས་ཞབས་ཞུ་བཅས་བར་གྱི་སྡེ་ཚན་གྱིས་དགོན་པའི་ཉིན་རེའི་འཚོ་བའི་ཁྲོད་དུ་ཞབས་འདེགས་ཞུ་བཞིན་ཡོད་ལ། སྡེ་ཚན་དེ་དག་མཉམ་རུབ་ཀྱི་ཐོག་ནས་ནང་བསྟན་རྒྱུན་འཛིན་དང་། དགོན་པའི་ལས་དོན་རྣམས་ཚགས་ཚུད་ཡོང་བར་རབ་འདེགས་བྱེད།
               </p>
             </div>
             <button
@@ -249,7 +252,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 }
               }}
             >
-              རྒྱས་སྐོར་གཟིགས་རྒྱུ།
+              སྡེ་ཚན་ཁག་ཆ་ཚང་གཟིགས།
             </button>
           </div>
 
@@ -265,9 +268,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">འཛིན་སྐྱོང་།</h3>
+                <h3 className="gt-about-dept-name">དབུས་འཛིན་སྐྱོང་སྡེ་ཚན།</h3>
                 <p className="gt-about-dept-snippet">
-                  དགོན་པའི་ཉིན་རེའི་འཛིན་སྐྱོང་དང་ལས་དོན་གཉེར་བའི་གཞི་རྟེན་ཡིན།
+                  དགོན་པའི་སྤྱི་ཡོངས་ཀྱི་འཛིན་སྐྱོང་དང་། དཔལ་འབྱོར། ཉིན་རེའི་ལས་དོན་བཅས་ལ་འགན་འཁུར་བྱེད།
                 </p>
                 <a
                   href="#departments"
@@ -295,9 +298,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">སློབ་གཉེར།</h3>
+                <h3 className="gt-about-dept-name">ཤེས་ཡོན་སྡེ་ཚན།</h3>
                 <p className="gt-about-dept-snippet">
-                  ནང་དོན་རིག་པའི་གཞུང་ལུགས་དང་རྩོད་པ། རྒྱུད་ཀྱི་སློབ་གཉེར་བཅས་ལ་དམིགས་པའི་སློབ་ཚན།
+                  གཞི་རིམ་གྱི་ཤེས་ཡོན་དང་། ནང་པའི་ལྟ་གྲུབ། རྒྱུད་ཀྱི་སློབ་གཉེར། ཆོ་ག་ཕྱག་ལེན། འདུལ་ཁྲིམས་བཅས་ཟུང་འབྲེལ་གྱིས་གོ་རིམ་ལྡན་པའི་དགོན་པའི་སློབ་གཉེར་ལ་མཐུན་རྐྱེན་སྦྱོར།
                 </p>
                 <a
                   href="#departments"
@@ -325,9 +328,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">འཕྲོད་བསྟེན།</h3>
+                <h3 className="gt-about-dept-name">འཕྲོད་བསྟེན་དང་སྤྱི་ཚོགས་ཞབས་ཞུ།</h3>
                 <p className="gt-about-dept-snippet">
-                  དགེ་འདུན་པ་རྣམས་ཀྱི་ལུས་སེམས་བདེ་ཐང་དང་འབྲེལ་བའི་སྨན་བཅོས་ཞབས་ཞུ།
+                  འདིའི་ཁྱབ་ཁོངས་སུ་བཅའ་སྡོད་སྨན་ཞབས་པ་ཡོད་པའི་སྨན་ཁང་ཞིག་ཡོད་པ་དེར་དགེ་འདུན་པ་དང་། ལས་བྱེད། ལྷག་པར་དུ་ནད་པ་དང་བགྲེས་སོང་བཅས་ལ་གཞི་རིམ་སྨན་བཅོས་ཀྱི་ཞབས་ཞུ་སྒྲུབ་བཞིན་ཡོད།
                 </p>
                 <a
                   href="#departments"
@@ -355,9 +358,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
           <div className="gt-prog-grid">
             {/* Left Column */}
             <div className="gt-prog-left">
-              <h3>ལོའི་ལོ་མ་ལ་གི་གདམས་ངག་དང་ལས་འགུལ།</h3>
+              <h3>ལོ་འཁོར་ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།</h3>
               <p>
-                བོད་ཟླ་གི་དུས་བཞི་འོག་ནས་དགོན་པ་དེ་གདམས་ངག་དང་། བར་དུ་སྦྱོར་བ། ཆོས་སྐུད། ཤེས་རབ་སྐུར། ཆེ་ལོའི་སྒོམ་སྦྱོར་བཅས་རྒྱུན་འཆར་ཡོད། དགེ་སྦྱོང་དང་སྒོམ་རྒྱུགས་པ། ཞུགས་མི་ལ་རེ་རེ་བཞིན་ལ་ཞབས་ཞུ་གཏོང་བ་ཡིན།
+                བོད་བརྒྱུད་ནང་བསྟན་གྱི་ལོ་ཐོ་གཞི་རུ་བཟུང་ནས་ལོ་འཁོར་མོར་གྲྭ་ཚང་ནས་གསུང་ཆོས་དང་། མཚམས་བསྟེན་སྒྲུབ། ཆོ་ག་ཕྱག་ལེན། རྒྱུགས་སྤྲོད། དེ་བཞིན་ཆོས་ཐོག་སོ་སོའི་ཉམས་ལེན་བཅས་གོ་སྒྲིག་གནང་ཞིང་། ལས་རིམ་འདི་དག་ཏུ་དགེ་འདུན་པ་དང་། ཉམས་ལེན་པ། མཇལ་སྐོར་བ་བཅས་སྐབས་བསྟུན་གྱིས་མཉམ་ཞུགས་གནང་ཆོག
               </p>
               <a 
                 href="/programmes" 
@@ -369,55 +372,25 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                   }
                 }}
               >
-                ཉིན་ཁྱིམ་ལ་ལྟ
+                མཛད་རིམ་ཆ་ཚང་གཟིགས།
               </a>
             </div>
 
             {/* Right Column: Events Stack */}
             <div className="gt-prog-right">
-              <h4 className="gt-prog-right-title">UPCOMING EVENTS</h4>
+              <h4 className="gt-prog-right-title">འབྱུང་འགྱུར་གྱི་མཛད་རིམ།</h4>
               <div className="gt-events-stack">
                 <div className="gt-event-card">
                   <div className="gt-event-date-box">
                     <span className="gt-event-month">ཕྱི་ཟླ་</span>
                     <span className="gt-event-day">༢ ཚེས་</span>
-                    <span className="gt-event-year">༡༨-༢༠</span>
+                    <span className="gt-event-year">༡༨</span>
                   </div>
                   <div className="gt-event-divider-vert" />
                   <div className="gt-event-info">
-                    <h5 className="gt-event-name">བོད་ལོ་གསར་པ་ (ལོ་སར།)</h5>
+                    <h5 className="gt-event-name">བོད་ཀྱི་ལོ་གསར་དུས་ཆེན་སྲུང་བརྩི།</h5>
                     <p className="gt-event-desc">
-                      བོད་ལོ་གསར་པ་ནི་བོད་ཟླའི་ལོ་གཏོང་ས་ཡིན། དགོན་པ་དེར་ཉིན་གསུམ་རིང་ཆོས་སྐུད་དང་གདམས་ངག། ཆོས་གཞུང་གསར་ཤོག་དང་རིག་གཞུང་གསར་རྒྱུགས་བཅས་འཚོགས་ཡོད།
-                    </p>
-                  </div>
-                </div>
-
-                <div className="gt-event-card">
-                  <div className="gt-event-date-box">
-                    <span className="gt-event-month">ཕྱི་ཟླ་</span>
-                    <span className="gt-event-day">༢ ཚེས་</span>
-                    <span className="gt-event-year">༡༨-༢༠</span>
-                  </div>
-                  <div className="gt-event-divider-vert" />
-                  <div className="gt-event-info">
-                    <h5 className="gt-event-name">བོད་ལོ་གསར་པ་ (ལོ་སར།)</h5>
-                    <p className="gt-event-desc">
-                      བོད་ལོ་གསར་པ་ནི་བོད་ཟླའི་ལོ་གཏོང་ས་ཡིན། དགོན་པ་དེར་ཉིན་གསུམ་རིང་ཆོས་སྐུད་དང་གདམས་ངག། ཆོས་གཞུང་གསར་ཤོག་དང་རིག་གཞུང་གསར་རྒྱུགས་བཅས་འཚོགས་ཡོད།
-                    </p>
-                  </div>
-                </div>
-
-                <div className="gt-event-card">
-                  <div className="gt-event-date-box">
-                    <span className="gt-event-month">ཕྱི་ཟླ་</span>
-                    <span className="gt-event-day">༢ ཚེས་</span>
-                    <span className="gt-event-year">༡༨-༢༠</span>
-                  </div>
-                  <div className="gt-event-divider-vert" />
-                  <div className="gt-event-info">
-                    <h5 className="gt-event-name">བོད་ལོ་གསར་པ་ (ལོ་སར།)</h5>
-                    <p className="gt-event-desc">
-                      བོད་ལོ་གསར་པ་ནི་བོད་ཟླའི་ལོ་གཏོང་ས་ཡིན། དགོན་པ་དེར་ཉིན་གསུམ་རིང་ཆོས་སྐུད་དང་གདམས་ངག། ཆོས་གཞུང་གསར་ཤོག་དང་རིག་གཞུང་གསར་རྒྱུགས་བཅས་འཚོགས་ཡོད།
+                      ལོ་གསར་ནི་བོད་ཀྱི་ལོ་ཐོའི་ལོ་མགོ་མཚོན་བྱེད་ཡིན། གྲྭ་ཚང་འདིར་ཉིན་གསུམ་རིང་ཆོས་ཕྱོགས་ཀྱི་མཛད་སྒོ་དང་སྤྱི་ཚོགས་ཀྱི་མཛད་སྒོ་བཅས་གོ་སྒྲིག་གནང་སྟེ་ནང་པའི་ཆོས་དང་རིག་གཞུང་གསར་གཏོད་ཀྱི་དགའ་སྟོན་རྟེན་འབྲེལ་སྲུང་བརྩི་ཞུ་བར་བྱེད།
                     </p>
                   </div>
                 </div>
@@ -442,9 +415,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
           </div>
           <div className="gt-library-content-col">
             <div className="gt-library-text-block">
-              <h3 className="gt-library-title">ཆོས་གཞུང་ཉར་ཚགས།</h3>
+              <h3 className="gt-library-title">ནང་བསྟན་མི་ཉམས་རྒྱུན་འཛིན།</h3>
               <p className="gt-library-desc">
-                དགོན་པའི་དེབ་མཛོད་དེ་སྔོན་གི་དེབ་དང་བསྟན་འགྱུར། ཆོས་ལུང་དང་དེབ་ལེབ་གསར་པ་བཅས་ཉར་ཚགས་བྱེད། དེབ་གླེང་སྒྲིགས། ཞིབ་དཔྱད། དང་གླེང་ཕུའི་ཆོས་ལུང་སྲུང་སྐྱབ་བྱེད་པ་ཡིན། དགེ་ལུགས་སློབ་གཉེར་ལ་མིའ་གནའི་དེབ་དང་། སྐུ་དགེ་མཚན་གཏོང་བའི་དེབ་ལེབ་སོགས་འདུས་ཡོད།
+                དགོན་པའི་དཔེ་མཛོད་ཁང་གིས་བོད་ཀྱི་དཔེ་རིང་ལག་བྲིས་མ་དང་། ནང་བསྟན་གྱི་འགྲེལ་པ། དེང་རབས་དཔེ་སྐྲུན་བཅས་སྲུང་སྐྱོབ་གནང་བ་དང་ཆབས་ཅིག མ་འོངས་མི་རབས་རྣམས་ཀྱི་ཆེད་དུ་དཀར་ཆག་སྒྲིག་སྦྱོར་དང་། ཉམས་ཞིབ། གློག་རྡུལ་ཅན་དུ་བསྒྱུར་བ་བཅས་ཀྱི་མཐུན་རྐྱེན་སྒྲུབ་བཞིན་ཡོད། དཔེ་ཚོགས་དེ་དག་གི་ཁྲོད་དུ་དགེ་ལུགས་པའི་སློབ་གཉེར་ལ་མེད་དུ་མི་རུང་བའི་གཞུང་ཆེན་གྱི་རྩ་བ་རྣམས་དང་། མཁས་པའི་འགྲེལ་པ། རྒྱུད་ཀྱི་ཉམས་ལེན་སྐོར་བཅས་ཚུད་ཡོད།
               </p>
             </div>
             <a 
@@ -457,7 +430,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 }
               }}
             >
-              དེབ་མཛོད་ལ་ལྟ།
+              དཔེ་མཛོད་དང་ཡིག་ཚགས།
             </a>
           </div>
         </div>
@@ -475,12 +448,12 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
         <div className="gyuto-container">
           <div className="gt-contact-grid">
             <div className="gt-contact-left">
-              <h3>ཞུགས་མི་ལ་ལམ་སྟོན།</h3>
+              <h3>འབྲེལ་གཏུགས།</h3>
               <p className="gt-contact-desc">
-                གྲྭ་ཚང་གི་ཆོས་སྦྱོང་། ཆོས་འདོན་དང་དབེན་གནས་ཀྱི་དུས་ཚོད་ལ་གུས་བཀུར་གྱིས་མགྲོན་པོ་རྣམས་གྲྭ་ཚང་དུ་ཕེབས་ཆོག
+                དགོན་པའི་སློབ་གཉེར་དང་། ཆོས་སྤྱོད། མཚམས་བསྟེན་སྒྲུབ་བཅས་ཀྱི་མཛད་རིམ་ལ་གུས་པ་ལྡན་པའི་ཐོག་ནས། གཟིགས་སྐོར་བ་རྣམས་དགོན་པར་ཕེབས་བསུ་ཞུ།
               </p>
               <div className="gt-visitor-etiquette">
-                གལ་ཏེ་གྲྭ་ཚང་དུ་ཕེབས་པའི་སྐབས་སུ། གྲྭ་ཚང་གི་ས་ཁོངས་ནང་ཁ་རོག་གེར་བཞུགས་ནས། དགེ་འདུན་པ་རྣམས་ཀྱིས་ཉིན་རེའི་ཆོས་སྒྲུབ་དང་སྦྱོང་བ་ལ་བར་ཆད་མི་འབྱུང་བར་གཟབ་རོགས། ད་དུང་གྲྭ་ཚང་གི་ས་ཁོངས་ནང་བཀོད་པའི་ལམ་སྟོན་ཁག་ལ་གུས་བཀུར་གནང་རོགས་དང་། དགེ་འདུན་པའི་ཆོས་སྒྲུབ་དང་སྦྱོང་བའི་ཆེད་དུ་བཀག་འགོག་བྱས་པའི་ས་ཁུལ་ཁག་ཏུ་འཛུལ་ཞུགས་མ་གནང་རོགས།
+                གལ་ཏེ་མཇལ་སྐོར་དུ་ཕེབས་ཚེ། དགོན་པའི་ནང་ཁ་ཁུ་སིམ་པོར་གནས་ཏེ་དགེ་འདུན་པ་རྣམས་ཀྱི་ཉིན་རེའི་ཉམས་ལེན་ལ་བར་ཆད་མི་ཡོང་བ་གནང་རོགས། གཞན་ཡང་གསལ་བསྒྲགས་ནང་གསལ་བའི་ལམ་སྟོན་ཡོངས་ལ་བརྩི་སྲུང་དང་། དགེ་འདུན་པའི་ཉམས་ལེན་ཁོ་ནའི་ཆེད་དུ་བཞག་པའི་དམིགས་གསལ་ས་ཁུལ་ཁག་ཏུ་འཛུལ་ཞུགས་མ་གནང་རོགས་ཞུ།
               </div>
               <a 
                 href="/contact" 
@@ -492,7 +465,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                   }
                 }}
               >
-                གླེང་སྟེགས།
+                འབྲེལ་གཏུགས།
               </a>
             </div>
 

@@ -32,9 +32,9 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
         {/* 2. Hero Banner */}
         <section className="gt-about-hero">
           <div className="gt-about-hero-content">
-            <h1 className="gt-about-hero-title">དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་སྐོར།</h1>
+            <h1 className="gt-about-hero-title">དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།</h1>
             <p className="gt-about-hero-sub">
-              དགེ་ལུགས་སྔགས་ཀྱི་རིག་གནས་དང་སྒོམ་སྒྲུབ་ཀྱི་ལྟེ་གནས།
+              གསང་སྔགས་རིག་འཛིན་གྱི་སྡེ་ཆེན་པོ།
             </p>
           </div>
         </section>
@@ -50,9 +50,9 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                     <RightWhorlConch width={48} height={80} />
                   </div>
                   <div className="gt-legacy-text-content">
-                    <h2 className="gt-legacy-title">བྲག་ཡེར་པའི་རིག་གནས།</h2>
+                    <h2 className="gt-legacy-title">ང་ཚོའི་ལོ་རྒྱུས།</h2>
                     <p className="gt-legacy-para">
-                      དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་ནི་སྤྱི་ལོ་༡༤༧༤ ལོར་བོད་དུ་བཙུགས་ཤིང་། དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་ལོ་ལྔ་བརྒྱ་ལས་མང་པོར་བསྲུང་གི་ཡིན། ལོ་༡༩༥༩ དུ་རྒྱ་གར་དྷར་མ་ཤ་ལར་སླར་གསར་དུ་བཙུགས་ནས་དེ་རིང་ཡང་རིག་པའི་སྦྱོང་བ། ཞི་གནས་བསྒོམ་སྦྱོར། དང་མི་སེར་ལ་ལེགས་སྐུ་གཏོང་བའི་ལས་ཀ་ལ་གཞོལ་བཞིན་ཡོད།
+                      བོད་གངས་ཅན་གྱི་ལྗོངས་སུ་ཕྱི་ལོ་ ༡༤༧༤ ལོར་ཕྱག་བཏབ་པ་ནས་བཟུང་། དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་འདི་ཉིད་ཀྱིས་ལོ་ངོ་ལྔ་བརྒྱ་ལྷག་གི་རིང་ལ་རི་བོ་དགེ་ལྡན་པའི་གསང་སྔགས་ཀྱི་བསྟན་པ་རྨད་དུ་བྱུང་བ་རྣམས་མི་ཉམས་རྒྱུན་འཛིན་གནང་ཡོད། ཐོག་མའི་ཆགས་ཡུལ་གྱི་ས་ཆའི་ཐོག་ནས་ཐོབ་པའི་གྲྭ་ཚང་གི་མཚན་བྱང་འདིས། གྲྭ་ཚང་འདི་ཉིད་བོད་བརྒྱུད་ནང་བསྟན་གྱི་རིག་གཞུང་ཁྲོད་ལོ་རྒྱུས་ཀྱི་རྩ་བ་གཏིང་ཟབ་མོ་ཡོད་པར་མཚོན་ཡོད་ལ། ཕྱི་ལོ་ ༡༩༥༩ ལོར་རྒྱ་གར་དྷ་རམ་ས་ལར་གྲྭ་ཚང་འདི་ཉིད་བསྐྱར་འཛུགས་གནང་བ་ནས་བཟུང་། ཆོས་སྡེ་འདིས་གཞུང་ཆེན་སློབ་གཉེར་དང་། སྒོམ་སྒྲུབ་ཉམས་ལེན། དེ་བཞིན་འཛམ་གླིང་ས་ཕྱོགས་གང་ས་ནས་ཕེབས་པའི་ཆོས་ཞུ་བ་དང་གཟིགས་སྐོར་བ་རྣམས་ལ་ཞབས་ཞུའི་ཕྱག་ལས་མུ་མཐུད་དེ་གནང་བཞིན་ཡོད།
                     </p>
                   </div>
                 </div>
@@ -78,7 +78,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                 </div>
                 <div className="gt-legacy-text-col gt-legacy-text-col-center">
                   <p className="gt-legacy-para">
-                    དགོན་པའི་གཞི་བབ་ནི་དགེ་ལུགས་སྔགས་ཀྱི་དགེ་རྒྱུད་སློབ་གཉེར། ཞི་གནས་བསྒོམ་སྦྱོར། ཆོས་སྐུད། དང་རིག་གཞུང་ཉར་ཚགས་ལ་བརྩེགས་ཏེ་བསྲུང་བའི་ལས་ཡིན། དེ་རིང་གུ་དགེ་སྦྱོང་༢༥༠-༣༠༠ ཀི་ཕྱིས་ཏེ་དགེ་ལུགས་ཞིང་ལ་རིག་པ། སྐུ་དགེ་མཚན་གཏོང་བའི་རིག་པ། དང་སྔགས་ཀྱི་རིག་པ་ལ་སྦྱང་བཞིན་ཡོད། དབུས་བོད་གཞུང་དགེ་རྐྱེན་ཁང་གིས་དགོན་པ་དེ་ཆོས་དང་རིག་གནས་ལ་གཙོ་བོའི་གཞི་རིམ་དུ་ངོ་སྐུར་བྱས་ཡོད།
+                    གྲྭ་ཚང་འདི་ཉིད་ཀྱི་དམིགས་ཡུལ་གཙོ་བོ་ནི། ཤེས་ཡོན་སློབ་གཉེར་དང་། སྒོམ་སྒྲུབ་ཉམས་ལེན། ཆོ་ག་ཕྱག་ལེན། རིག་གཞུང་སྲུང་སྐྱོབ་བཅས་བརྒྱུད་ནས་དགེ་ལུགས་པའི་གསང་སྔགས་ཀྱི་བསྟན་པ་རྣམ་པར་དག་པ་འདི་ཉིད་མི་ཉམས་གོང་འཕེལ་གཏོང་རྒྱུ་དེ་ཡིན། དེང་སྐབས་གྲྭ་ཚང་འདིར་དགེ་འདུན་པ་ཞལ་གྲངས་ ༢༥༠ ནས་ ༣༠༠ ཙམ་གྱིས་ནང་པའི་ལྟ་གྲུབ་དང་། ཚད་མ་རིག་པ། རྒྱུད་ཀྱི་གཞུང་ཟབ་མོ་བཅས་ལ་ལོ་མང་པོའི་རིང་བརྩོན་པ་དྲག་པོས་སློབ་གཉེར་གནང་བཞིན་ཡོད། དབུས་བོད་མིའི་སྒྲིག་འཛུགས་ཀྱིས་ཀྱང་ཆོས་སྡེ་འདི་ཉིད་ཤེས་ཡོན་དང་ཉམས་ལེན་གྱི་བསྟི་གནས་ཁྱད་པར་བ་ཞིག་ཏུ་ངོས་འཛིན་གནང་བར་མ་ཟད། བོད་བརྒྱུད་ནང་བསྟན་གྱི་སྤྱི་ཚོགས་ཁྲོད་ནུས་པ་མཉམ་འདོན་གནང་སའི་ཆོས་སྡེ་གལ་ཆེན་ཞིག་ཀྱང་ཡིན།
                   </p>
                 </div>
               </div>
@@ -87,7 +87,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
               <div className="gt-legacy-story-row">
                 <div className="gt-legacy-text-col gt-legacy-text-col-center">
                   <p className="gt-legacy-para">
-                    དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་རྒྱ་གར་དུ་སླར་གསར་བཙུགས་པ་ནི་བོད་བརྒྱུད་ཆོས་གཞུང་སྲུང་སྐྱབ་ལ་གཙོ་བོའི་ལས་ཡིན། དུས་ཚོད་ཀྱི་དཀའ་ངལ་ལ་བརྟེན་ནས་དགོན་པ་དེ་དགེ་ལུགས་སྔགས་ཀྱི་དགེ་རྒྱུད་ཉར་ཚགས་བྱེད་བཞིན་ཡོད། དགོན་པར་རིག་གནས་འདོད་པའི་དགེ་སྦྱོང་མང་པོ་ཞུགས་ཡོད་ལ། ཆོས་དང་རིག་གནས་ལ་གཏན་ཐུབ་པའི་དགེ་སྦྱོང་དགོ་དེ་སྐུ་ཕོ་གཞོ་བཞིན་ཡོད།
+                    རྒྱ་གར་དུ་གྲྭ་ཚང་འདི་ཉིད་བསྐྱར་འཛུགས་གནང་བ་འདིས། བོད་ཀྱི་ནང་བསྟན་རིག་གཞུང་མི་ཉམས་རྒྱུན་འཛིན་གྱི་ཁྲོད་ནས་གྲུབ་འབྲས་རླབས་ཆེན་ཞིག་མཚོན་ཡོད་ལ། འདི་གའི་འདུས་སྡེ་ཡིས་ལོ་རྒྱུས་ཀྱི་དཀའ་ཚེགས་དུ་མར་གདོང་ལེན་གནང་སྟེ། དགེ་ལྡན་པའི་གསང་སྔགས་ཀྱི་བསྟན་པ་མཚོན་པར་བྱེད་པའི་ཚད་ལྡན་གྱི་བཤད་པ་དང་སྒྲུབ་པ་རྣམས་ལེགས་པར་རྒྱུན་འཛིན་གནང་ཡོད། དེང་གི་ཆར་ཡང་ས་ཕྱོགས་གང་ས་ནས་དགེ་འདུན་པ་མང་དག་ཅིག་ཆོས་སྡེ་འདིར་འདུས་ཤིང་། དེར་བརྟེན་ནས་ནང་བསྟན་གྱི་བཤད་སྒྲུབ་ལ་བརྩོན་པའི་ཆོད་སེམས་ཀྱིས་གཅིག་སྒྲིལ་གྱི་འདུས་སྡེ་ཞིག་གྲུབ་ཡོད། ཤེས་ཡོན་དང་། ཉམས་ཞིབ། ཕྱི་ཕྱོགས་ཀྱི་འཇིག་རྟེན་དང་འབྲེལ་འདྲིས་ཧུར་ཐག་གནང་བ་བཅས་བརྒྱུད་ནས། རྒྱུད་སྟོད་གྲྭ་ཚང་ནི་བོད་ཀྱི་ནང་ཆོས་རྣལ་མ་བརྒྱུད་སྤྲོད་བྱ་སའི་བསྟི་གནས་གལ་ཆེན་ཞིག་ཡིན།
                   </p>
                 </div>
                 <div className="gt-legacy-img-col">
@@ -107,15 +107,9 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
         <section className="gt-leadership-section">
           <div className="gyuto-container">
             <div className="gt-leadership-head">
-              <h2 className="gt-leadership-title">Institutional Leadership</h2>
+              <h2 className="gt-leadership-title">སྒྲིག་འཛུགས་ཀྱི་དབུ་ཁྲིད།</h2>
               <p className="gt-leadership-intro-text">
-                The monastery is led by an Abbot (mkhan po) who serves as both the spiritual
-                and administrative head of the community. The Abbot is supported by department
-                heads who oversee education, spiritual practice, archives, healthcare, and
-                community services. A disciplinarian (dge skos) maintains monastic discipline
-                and conduct, ensuring that the community adheres to the strict ethical standards
-                established by the Gelug tradition. This organizational structure has been refined
-                over centuries to sustain the monastery's mission while adapting to contemporary needs.
+                དགོན་པའི་འཛིན་སྐྱོང་དང་ཆོས་ཕྱོགས་ཀྱི་དབུ་ཁྲིད་སྐྱབས་གནས་མཁན་རིན་པོ་ཆེ་ཡིན། དེ་ལ་སློབ་གཉེར་དང་། ཉམས་ལེན། ཡིག་ཚགས། འཕྲོད་བསྟེན། དེ་བཞིན་སྤྱི་ཚོགས་ཞབས་ཞུ་བཅས་ལ་ལྟ་རྟོག་གནང་མཁན་བཅས་སྡེ་ཚན་ཁག་གི་འགན་འཛིན་རྣམས་ཀྱིས་རྒྱབ་སྐྱོར་གནང་བ་དང་། དགེ་བསྐོས་ཀྱིས་དགོན་པའི་སྒྲིག་དང་ཀུན་སྤྱོད་ལ་ལྟ་རྟོག་གནང་ཞིང་། འདུས་སྡེ་འདི་ཉིད་དགེ་ལུགས་པའི་ཕྱག་སྲོལ་ལྟར་གྱི་འདུལ་ཁྲིམས་ནན་པོ་ལ་གནས་པར་བྱེད། སྒྲིག་འཛུགས་ཀྱི་བཀོད་པ་འདི་ནི། དེང་རབས་ཀྱི་དགོས་མཁོ་དང་བསྟུན་ནས་དགོན་པའི་དམིགས་ཡུལ་རྒྱུན་འཁྱོངས་བྱེད་པའི་སླད་དུ། ལོ་ངོ་བརྒྱ་ཕྲག་མང་པོའི་རིང་ལེགས་བཅོས་རིམ་པར་བྱས་པ་ཞིག་ཡིན།
               </p>
             </div>
 
@@ -126,44 +120,25 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                   <div className="gt-leader-img-box">
                     <img
                       src={ABOUT_DUMMY_IMAGES.abbotKhangser}
-                      alt="His Eminence Khangser Rinpoche"
+                      alt="མཁན་རིན་པོ་ཆེ་ཁང་སེར་མཆོག"
                       className="gt-leader-photo"
                       loading="lazy"
                     />
                   </div>
-                  <h3 className="gt-leader-name">Khangser Rinpoche</h3>
-                  <p className="gt-leader-title">Abbot (2026)</p>
+                  <h3 className="gt-leader-name">ཁང་སེར་རིན་པོ་ཆེ།</h3>
+                  <p className="gt-leader-title">མཁན་པོ། (༢༠༢༦)</p>
                 </div>
 
                 <div className="gt-leader-bio-wrap">
                   <p>
-                    His Eminence Khangser Rinpoche was born in Kathmandu, Nepal, in May 1975.
-                    At five years of age, a search party positively identified him as the
-                    reincarnation of the seventh Khangser Rinpoche. He is one of three high
-                    lamas responsible for recognizing the rebirth of the spiritual leader
-                    of Tibet, His Holiness the Dalai Lama.
+                    ཁང་སེར་རིན་པོ་ཆེ་མཆོག་ནི། ཕྱི་ལོ་ ༡༩༧༥ ལོའི་ཟླ་བ་ ༥ པའི་ནང་བལ་ཡུལ་གྱི་རྒྱལ་ས་ཀཐ་མན་གྲུར་འཁྲུངས། དགུང་ལོ་ལྔའི་ཐོག་ཡང་སྲིད་འཚོལ་ཞིབ་ཚོགས་ཆུང་གིས་ཁོང་ཉིད་ཁང་སེར་རིན་པོ་ཆེ་སྐུ་ཕྲེང་བདུན་པའི་ཡང་སྲིད་དུ་ངོས་འཛིན་ཞུས། ཁོང་ནི་བོད་ཀྱི་དབུ་ཁྲིད་༸སྤྱི་ནོར་༸གོང་ས་༸སྐྱབས་མགོན་ཆེན་པོ་མཆོག་གི་ཡང་སྲིད་ངོས་འཛིན་གནང་མཁན་བླ་ཆེན་གསུམ་གྱི་གྲས་ཤིག་ཡིན། ཁོང་གིས་རྡ་སའི་རིགས་ལམ་སློབ་གཉེར་ཁང་དུ་གཞུང་ཆེན་ཁག་གི་སྔོན་འགྲོའི་གསན་བསམ་རྣམས་གནང་ཞིང་། དེའི་རྗེས་གདན་ས་ཆེན་པོ་སེར་བྱེས་གྲྭ་ཚང་དང་། དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་བཅས་སུ་མདོ་སྔགས་ཀྱི་གཞུང་ཆེན་ཁག་ལ་སློབ་གཉེར་མཐར་ཕྱིན་པར་གནང་། གྲྭ་ཚང་དེ་དག་ནས་རིན་པོ་ཆེ་མཆོག་གིས་དགེ་བཤེས་ལྷ་རམས་པ་དང་སྔགས་རམས་པའི་ཕྱག་འཁྱེར་རྩེད་ཕུད་ཀྱི་གྲུབ་འབྲས་ཀྱང་བཞེས།
                   </p>
                   <p>
-                    Khangser Rinpoche completed his preliminary study of Buddhist philosophy
-                    at the Institute of Buddhist Dialectics in Dharamshala, India. He later went
-                    on to advanced Buddhist studies in sutra and tantra at Sera Jey Monastery
-                    and Gyuto Tantric Monastic University. It was there he earned the Geshe Lharampa
-                    degree and a doctorate degree in tantra, both with the highest honors in the
-                    top division. Khangser Rinpoche presently serves as vice abbot of Gyuto
-                    Monastery and as the founder and administrative head of Thangkar Dechen Choling
-                    Monastic Institute.
-                  </p>
-                  <p>
-                    This institute is both a monastery and a school, and generously provides food,
-                    housing, and education in both Dharma and contemporary Western curricula to over
-                    eighty young monks in Nepal. The entire student population comes from impoverished
-                    conditions, many of whom are orphans. Khangser Rinpoche has established many Dipkar
-                    centers around the globe, spearheading philanthropic efforts such as providing
-                    free food to those in need.
+                    ད་ལྟའི་ཆར་རིན་པོ་ཆེ་མཆོག་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་བླ་མ་དབུ་མཛད་ཡིན་པ་དང་། ཐང་དཀར་བདེ་ཆེན་ཆོས་གླིང་སློབ་གཉེར་ཁང་གསར་འཛུགས་དང་དེའི་ཚོགས་གཙོ་བཅས་ཀྱི་ཐུགས་འགན་བཞེས་བཞིན་ཡོད། བལ་ཡུལ་དུ་ཡོད་པའི་སློབ་གླིང་དེ་ནི་དགོན་པ་དང་སློབ་གྲྭ་གཉིས་ཀ་ཡིན་ཞིང་། དེར་གྲྭ་གཞོན་བརྒྱད་ཅུ་ལྷག་ལ། ཁ་ལག་དང་། སྡོད་གནས། ནང་ཆོས་དང་ནུབ་ཕྱོགས་ཀྱི་དེང་རབས་སློབ་ཚན་གཉིས་ཀའི་ཤེས་ཡོན་བཅས་ཀྱི་མཐུན་རྐྱེན་རིན་མེད་དུ་སྦྱོར་བཞིན་ཡོད། སློབ་ཕྲུག་ཡོངས་རྫོགས་ཉམ་ཐག་དང་། དེའི་ཁྲོད་ཀྱི་མང་པོ་ཞིག་ནི་དྭ་ཕྲུག་ཡིན། ཁང་སེར་རིན་པོ་ཆེ་མཆོག་གིས་འཛམ་གླིང་ཡུལ་གྲུ་གང་སར་དིབ་ཀར་ཆོས་ཚོགས་མང་པོ་གསར་འཛུགས་གནང་ཞིང་། ཉམ་ཐག་རྣམས་ལ་ཞལ་ལག་རིན་མེད་དུ་འབུལ་བ་སོགས་གཞན་ཕན་གྱི་མཛད་འཕྲིན་མང་དུ་སྐྱོང་བཞིན་པ་ལགས་སོ། །
                   </p>
                   <p>
                     <span className="gt-leader-bio-link">
-                      Click here to read Khangser Rinpoche's full bio.
+                      ཁང་སེར་རིན་པོ་ཆེའི་རྣམ་ཐར་རྒྱས་པ་གཟིགས་པར་འདིར་གནོན།
                     </span>
                   </p>
                 </div>
@@ -175,36 +150,25 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                   <div className="gt-leader-img-box">
                     <img
                       src={ABOUT_DUMMY_IMAGES.abbotYangten}
-                      alt="Ven. Yangten Tulku Rinpoche"
+                      alt="ཡང་སྟེང་རིན་པོ་ཆེ།"
                       className="gt-leader-photo"
                       loading="lazy"
                     />
                   </div>
-                  <h3 className="gt-leader-name">Ven. Yangten Tulku Rinpoche</h3>
-                  <p className="gt-leader-title">Abbot (2026)</p>
+                  <h3 className="gt-leader-name">ཡང་སྟེང་རིན་པོ་ཆེ།</h3>
+                  <p className="gt-leader-title">མཁན་པོ། (༢༠༢༦)</p>
                 </div>
 
                 <div className="gt-leader-bio-wrap">
                   <p>
-                    Yangten Rinpoche was born in Dhapa in Kham region of Tibet on 15 December 1978.
-                    His father is Mr. Lobsang Dorjee and his mother Kalsang Yangzom.
+                    ཡང་སྟེང་རིན་པོ་ཆེ་མཆོག་ནི། ཕྱི་ལོ་ ༡༩༧༨ ཟླ་བ་ ༡༢ ཚེས་ ༡༥ ཉིན་བོད་ཁམས་འདབ་པ་རུ་ཡབ་བློ་བཟང་རྡོ་རྗེ་དང་ཡུམ་སྐལ་བཟང་དབྱངས་འཛོམས་གཉིས་ཀྱི་སྲས་སུ་སྐུ་འཁྲུངས། དགུང་ལོ་བཅུའི་ཐོག་ཡང་སྟེང་རིན་པོ་ཆེ་སྐུ་གོང་མའི་ཡང་སྲིད་དུ་ངོས་འཛིན་ཞུས། རྒྱ་ནག་གི་དབང་བསྒྱུར་འོག་བོད་ནང་ལོ་ངོ་ ༡༢ བཞུགས་རྗེས། རང་ཡུལ་བཞག་ནས་རྒྱ་གར་འཕགས་པའི་ཡུལ་དུ་བོད་ཀྱི་སྲོལ་རྒྱུན་གཞུང་ཆེན་ཁག་ལ་སློབ་གཉེར་གནང་བར་ཕེབས།
                   </p>
                   <p>
-                    He was recognised as the reincarnation of the previous Yangteng Rinpoche at
-                    the age of 10. After living in Tibet under the Chinese rule for 12 years he left
-                    his homeland for India, the Land of Noble Beings, in pursuit of traditional
-                    Tibetan monastic education in south India. In 1990 he came to India and joined
-                    Sera Mey College of Sera Monastery in Bylakuppe, Karnataka, in South India.
-                    There Rinpoche carried out the study of traditional Buddhist texts on philosophy,
-                    logic and epistemology, Buddhist Metaphysics and Cosmology (Abhidharma), and
-                    Monastic Code of Conduct (Vinaya). He studied under many illustrious teachers of
-                    Sera Mey monastery such as Gyalrong Khensur Rinpoche and Gosok Rinpoche.
-                    Rinpoche is also a close disciple of His Holiness the Dalai Lama whom he is
-                    serving currently at the Office of His Holiness the Dalai Lama.
+                    ཕྱི་ལོ་ ༡༩༩༠ ལོར་རྒྱ་གར་ལྷོ་ཕྱོགས་ཀ་ན་ཊ་ཀ་མངའ་སྡེའི་བེལ་ཀོབ་ཏུ་ཡོད་པའི་གདན་ས་ཆེན་པོ་སེར་སྨད་ཐོས་བསམ་ནོར་གླིང་དུ་ཆོས་ཞུགས་གནང་། དེར་རིན་པོ་ཆེ་མཆོག་གིས། རྒྱལ་རོང་མཁན་ཟུར་རིན་པོ་ཆེ་མཆོག་དང་སྒོ་སོག་རིན་པོ་ཆེ་ལ་སོགས་པ་མཁས་གྲུབ་གཉིས་ལྡན་གྱི་བླ་མ་མང་པོའི་ཞབས་ལ་གཏུགས་ཏེ་གྲུབ་མཐའ་དང་། ཚད་མ་རིག་པ། མངོན་པ། འདུལ་བ་སོགས་གཞུང་ཆེན་ཁག་ལ་གསན་བསམ་ལེགས་པར་གནང་། གཞན་ཡང་རིན་པོ་ཆེ་མཆོག་ནི་༸གོང་ས་༸སྐྱབས་མགོན་ཆེན་པོ་མཆོག་གི་ཉེ་བའི་ཞལ་སློབ་ཅིག་ཡིན་པ་དང་། ད་ལྟའི་ཆར་༸གོང་ས་༸སྐྱབས་མགོན་ཆེན་པོའི་སྐུ་སྒེར་ཡིག་ཚང་དུ་ཞབས་ཞུ་སྒྲུབ་བཞིན་པ་ལགས་སོ། །
                   </p>
                   <p>
                     <span className="gt-leader-bio-link">
-                      Click here to read Ven. Yangten Tulku Rinpoche's full bio.
+                      ཡང་སྟེང་རིན་པོ་ཆེའི་རྣམ་ཐར་རྒྱས་པ་གཟིགས་པར་འདིར་གནོན།
                     </span>
                   </p>
                 </div>
@@ -217,12 +181,9 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
         <section className="gt-past-abbots-section">
           <div className="gyuto-container">
             <div className="gt-past-abbots-head">
-              <h2 className="gt-past-abbots-title">Past Abbots of Gyuto Monastery</h2>
+              <h2 className="gt-past-abbots-title">གྲྭ་ཚང་གི་མཁན་པོ་རིམ་བྱོན།</h2>
               <p className="gt-past-abbots-desc">
-                The lineage of accomplished masters who have stewarded Gyuto's Gelug tantric
-                tradition, academic excellence, and unbroken transmission of teachings across more
-                than five centuries. Today, the monastery continues to uphold their legacy of rigorous
-                Buddhist education and contemplative practice.
+                མི་ལོ་ལྔ་བརྒྱ་ལྷག་གི་རིང་མཁས་ཤིང་གྲུབ་པ་བརྙེས་པའི་སྐྱེས་བུ་རིམ་བྱོན་དག་གིས། དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་དགེ་ལྡན་པའི་གསང་སྔགས་ཀྱི་ཕྱག་བཞེས་དང་། ཐོས་བསམ་ཟབ་མོ། ཆོས་ཀྱི་བརྒྱུད་པ་བཅས་འཛིན་སྐྱོང་གནང་ཡོད་ལ། དེང་སྐབས་ཀྱང་གྲྭ་ཚང་འདི་ཉིད་ཀྱིས་ཁོང་རྣམ་པས་ནན་ཏན་མཛད་པའི་ཐོས་བསམ་སྒོམ་གསུམ་གྱི་ཤུལ་བཞག་རྣམས་རྒྱུན་འཛིན་གནང་བཞིན་ཡོད།
               </p>
             </div>
 
@@ -246,10 +207,9 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
           <div className="gyuto-container">
             <div className="gt-about-depts-head">
               <div className="gt-about-depts-text">
-                <h2 className="gt-about-depts-title">དགོན་པའི་བློ་ཞིང་ཡོངས་སུ་འཛུགས་པ།</h2>
+                <h2 className="gt-about-depts-title">ཕྱོགས་ཡོངས་ཀྱི་ཞབས་ཞུ་དང་ཆོས་ཕྱོགས་མཛད་རིམ།</h2>
                 <p className="gt-about-depts-desc">
-                  དགོན་པའི་ལས་སྣེ་རྣམས་ཀྱིས་རིམ་པས་དགོན་པའི་སྒྲིག་འཛུགས་དང་། ཆོས་སྤྱོད་ཀྱི་ཞབས་ཞུ།
-                  སྨན་དང་ཞབས་ཏོག་སོགས་ཞལ་འདེབས་བསྒྲུབས་བཞིན་ཡོད། དེ་དག་གིས་ཆོས་ཀྱི་བརྒྱུད་པ་སྲུང་སྐྱོབ་ལ་ཕན་ཐོགས་ཆེན་པོ་བྱུང་ཡོད།
+                  དྲ་ཚིགས་འདིར་འཁོད་པའི་འཛིན་སྐྱོང་དང་། སློབ་གཉེར། འཕྲོད་བསྟེན་ཚན་པ། ལོ་རེའི་ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ་བཅས་ཀྱི་ངོ་སྤྲོད།
                 </p>
               </div>
               <button
@@ -257,7 +217,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                 className="gt-view-depts-btn"
                 onClick={() => handleNav('departments')}
               >
-                རྒྱས་སྐོར་གཟིགས་རྒྱུ།
+                སྡེ་ཚན་ཆ་ཚང་གཟིགས་རྒྱུ།
               </button>
             </div>
 
@@ -282,7 +242,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                     className="gt-about-dept-link"
                     onClick={(e) => handleNav('departments', e)}
                   >
-                    Learn more <span>→</span>
+                    རྒྱས་པ་གཟིགས་རྒྱུ། <span>→</span>
                   </a>
                 </div>
               </div>
@@ -298,7 +258,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                   />
                 </div>
                 <div className="gt-about-dept-body">
-                  <h3 className="gt-about-dept-name">ཤེས་ཡོན།</h3>
+                  <h3 className="gt-about-dept-name">སློབ་གཉེར་ཚན་པ།</h3>
                   <p className="gt-about-dept-snippet">
                     དགེ་ལུགས་ཀྱི་གཞུང་དང་། མཚན་ཉིད་རྩོད་པ། སྔགས་ཀྱི་ཆོ་ག་བཅས་ལ་སློབ་གཉེར་གནང་བཞིན་ཡོད།
                   </p>
@@ -307,7 +267,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                     className="gt-about-dept-link"
                     onClick={(e) => handleNav('departments', e)}
                   >
-                    Learn more <span>→</span>
+                    རྒྱས་པ་གཟིགས་རྒྱུ། <span>→</span>
                   </a>
                 </div>
               </div>
@@ -323,7 +283,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                   />
                 </div>
                 <div className="gt-about-dept-body">
-                  <h3 className="gt-about-dept-name">འཕྲོད་བསྟེན་ཞབས་ཞུ།</h3>
+                  <h3 className="gt-about-dept-name">འཕྲོད་བསྟེན་ཚན་པ།</h3>
                   <p className="gt-about-dept-snippet">
                     དགེ་འདུན་པ་རྣམས་ཀྱི་ལུས་སེམས་བདེ་ཐང་ལ་ཞབས་ཞུ་དང་སྨན་བཅོས་མཐུན་རྐྱེན་སྦྱོར་བཞིན་ཡོད།
                   </p>
@@ -332,7 +292,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                     className="gt-about-dept-link"
                     onClick={(e) => handleNav('departments', e)}
                   >
-                    Learn more <span>→</span>
+                    རྒྱས་པ་གཟིགས་རྒྱུ། <span>→</span>
                   </a>
                 </div>
               </div>
@@ -346,7 +306,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
             <div className="gt-about-progs-grid">
               {/* Left Column: Description & Action */}
               <div className="gt-about-progs-info-col">
-                <h2 className="gt-about-progs-title">ལོ་རེའི་ཆོས་ཀྱི་གདམས་ངག་དང་ལས་འགུལ།</h2>
+                <h2 className="gt-about-progs-title">ལོ་འཁོར་གཅིག་གི་ཆོས་ཕྱོགས་མཛད་རིམ།</h2>
                 <p className="gt-about-progs-body">
                   བོད་ཀྱི་ལོ་ཐོ་ལྟར་དགོན་པས་ལོ་རེའི་ནང་དུ་གསུང་ཆོས་དང་། སྒྲུབ་མཆོད།
                   ཆོས་ཕྱོགས་ཀྱི་རྒྱུགས་སྤྲོད་སོགས་མཛད་རིམ་རྒྱུན་ཆད་མེད་པར་སྤེལ་བཞིན་ཡོད།
@@ -354,49 +314,49 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                 <button
                   type="button"
                   className="gt-view-calendar-btn"
-                  onClick={() => handleNav('home')}
+                  onClick={() => handleNav('programmes')}
                 >
-                  ཟླ་ཐོ་གཟིགས་རྒྱུ།
+                  ལོ་ཐོ་གཟིགས་རྒྱུ།
                 </button>
               </div>
 
               {/* Right Column: Event Cards Stack */}
               <div className="gt-events-stack-col">
-                <h4>UPCOMING EVENTS</h4>
+                <h4>འབྱུང་འགྱུར་གྱི་མཛད་རིམ།</h4>
 
                 <div className="gt-event-card-item">
                   <div className="gt-event-date-badge">
                     <div className="gt-event-date-month">བོད་ཟླ་</div>
                     <div className="gt-event-date-day">༡ ཚེས</div>
-                    <div className="gt-event-date-year">༡༧-༢༠</div>
+                    <div className="gt-event-date-year">༡-༡༥</div>
                   </div>
                   <div className="gt-event-card-details">
-                    <h5>བོད་ཀྱི་ལོ་གསར་ (ལོ་སར)</h5>
-                    <p>བོད་ཀྱི་ལོ་གསར་ནི་བོད་ཀྱི་ལོ་ཐོའི་འགོ་འཛུགས་ཡིན།...</p>
+                    <h5>ཆོ་འཕྲུལ་སྨོན་ལམ་ཆེན་མོ།</h5>
+                    <p>ཆོ་འཕྲུལ་སྨོན་ལམ་ཆེན་མོ་དང་རྒྱུད་སྟོད་སྨོན་ལམ་ཚོགས་པ།</p>
                   </div>
                 </div>
 
                 <div className="gt-event-card-item">
                   <div className="gt-event-date-badge">
                     <div className="gt-event-date-month">བོད་ཟླ་</div>
-                    <div className="gt-event-date-day">༡ ཚེས</div>
-                    <div className="gt-event-date-year">༡༧-༢༠</div>
+                    <div className="gt-event-date-day">༤ ཚེས</div>
+                    <div className="gt-event-date-year">༡༥</div>
                   </div>
                   <div className="gt-event-card-details">
-                    <h5>བོད་ཀྱི་ལོ་གསར་ (ལོ་སར)</h5>
-                    <p>བོད་ཀྱི་ལོ་གསར་ནི་བོད་ཀྱི་ལོ་ཐོའི་འགོ་འཛུགས་ཡིན།...</p>
+                    <h5>ས་ག་ཟླ་བའི་དུས་ཆེན།</h5>
+                    <p>སྟོན་པ་སངས་རྒྱས་ཀྱི་སྐུ་བལྟམས་པ་དང་། སངས་རྒྱས་པ། མྱ་ངན་ལས་འདས་པའི་དུས་ཆེན།</p>
                   </div>
                 </div>
 
                 <div className="gt-event-card-item">
                   <div className="gt-event-date-badge">
                     <div className="gt-event-date-month">བོད་ཟླ་</div>
-                    <div className="gt-event-date-day">༡ ཚེས</div>
-                    <div className="gt-event-date-year">༡༧-༢༠</div>
+                    <div className="gt-event-date-day">༦ ཚེས</div>
+                    <div className="gt-event-date-year">༤</div>
                   </div>
                   <div className="gt-event-card-details">
-                    <h5>བོད་ཀྱི་ལོ་གསར་ (ལོ་སར)</h5>
-                    <p>བོད་ཀྱི་ལོ་གསར་ནི་བོད་ཀྱི་ལོ་ཐོའི་འགོ་འཛུགས་ཡིན།...</p>
+                    <h5>ཆོས་འཁོར་དུས་ཆེན།</h5>
+                    <p>སྟོན་པ་ཤཱཀྱ་ཐུབ་པས་བདེན་བཞིའི་ཆོས་འཁོར་ཐོག་མར་བསྐོར་བའི་དུས་ཆེན།</p>
                   </div>
                 </div>
               </div>
@@ -417,9 +377,9 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
             </div>
             <div className="gt-library-content-col">
               <div className="gt-library-text-block">
-                <h2 className="gt-library-title">ཆོས་གཞུང་ཉར་ཚགས།</h2>
+                <h2 className="gt-library-title">ནང་བསྟན་མི་ཉམས་རྒྱུན་འཛིན་དང་རྒྱབ་སྐྱོར།</h2>
                 <p className="gt-library-desc">
-                  དགོན་པའི་དེབ་མཛོད་དེ་སྔོན་གི་དེབ་དང་བསྟན་འགྱུར། ཆོས་ལུང་དང་དེབ་ལེབ་གསར་པ་བཅས་ཉར་ཚགས་བྱེད། དེབ་གླེང་སྒྲིགས། ཞིབ་དཔྱད། དང་གླེང་ཕུའི་ཆོས་ལུང་སྲུང་སྐྱབ་བྱེད་པ་ཡིན། དགེ་ལུགས་སློབ་གཉེར་ལ་མིའ་གནའི་དེབ་དང་། སྐུ་དགེ་མཚན་གཏོང་བའི་དེབ་ལེབ་སོགས་འདུས་ཡོད།
+                  དགོན་པའི་དཔེ་མཛོད་ཁང་དང་། ཕྱག་དཔེ་གློག་རྡུལ་ཅན་དུ་བསྒྱུར་བའི་ལས་གཞི། ཆོས་བརྒྱུད་མི་ཉམས་རྒྱུན་འཛིན་ལ་རྒྱབ་སྐྱོར་ཞུ་ཕྱོགས་བཅས་ཀྱི་སྐོར།
                 </p>
               </div>
               <button
@@ -427,7 +387,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                 className="gt-visit-library-btn"
                 onClick={() => handleNav('departments')}
               >
-                དེབ་མཛོད་ལ་ལྟ།
+                དཔེ་མཛོད་ལ་གཟིགས་རྒྱུ།
               </button>
             </div>
           </div>

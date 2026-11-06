@@ -19,28 +19,28 @@ export default function ContactTb({ onSwitchLanguage, onNavigate }) {
           <div className="gt-contact-grid">
             {/* Left Column: Heading */}
             <div className="gt-contact-title-col">
-              <h1 className="gt-contact-page-title">Contact us</h1>
+              <h1 className="gt-contact-page-title">ང་ཚོར་འབྲེལ་གཏུག་གནང་ཡུལ།</h1>
             </div>
 
             {/* Right Column: Address and Communication Details in Tibetan */}
             <div className="gt-contact-info-col">
               <div className="gt-contact-block">
-                <p>གླེང་སྟེགས་ཀྱི་གཞི་རིས།</p>
-                <p>དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།</p>
+                <p>འབྲེལ་གཏུགས་བྱ་སའི་ཁ་བྱང་།</p>
+                <p>Gyuto Tantric Monastery</p>
                 <p>P.O. Sidhbari, 176215</p>
-                <p>དྷར་མ་ཤ་ལ། ཀང་ར།</p>
-                <p>ཧི་མ་ཅལ་པ་དེས། རྒྱ་གར།</p>
+                <p>Dharamshala, Kangra</p>
+                <p>Himachal Pradesh, India</p>
               </div>
 
               <div className="gt-contact-block">
                 <p>
-                  གློག་སྡེབ།{' '}
+                  གློག་འཕྲིན་ཁ་བྱང་།{' '}
                   <a href="mailto:info@gyutomonastery.org" className="gt-contact-link">
                     info@gyutomonastery.org
                   </a>
                 </p>
                 <p>
-                  སྐད་ཆ།{' '}
+                  ཁ་པར།{' '}
                   <a href="tel:+911892292835" className="gt-contact-link">
                     +91-1892-292835
                   </a>
@@ -48,33 +48,11 @@ export default function ContactTb({ onSwitchLanguage, onNavigate }) {
               </div>
 
               <div className="gt-contact-block">
-                <p>ང་ཚོ་ལ་ལྟ་བ།</p>
+                <p>ངོ་དེབ་ཐོག་རྒྱབ་སྐྱོར་གནང་རོགས།</p>
                 <p>
                   Facebook:{' '}
                   <a 
                     href="https://facebook.com/GyutoMonastery" 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="gt-social-link"
-                  >
-                    [link]
-                  </a>
-                </p>
-                <p>
-                  YouTube:{' '}
-                  <a 
-                    href="https://youtube.com/@GyutoMonastery" 
-                    target="_blank" 
-                    rel="noreferrer" 
-                    className="gt-social-link"
-                  >
-                    [link]
-                  </a>
-                </p>
-                <p>
-                  Instagram:{' '}
-                  <a 
-                    href="https://instagram.com/GyutoMonastery" 
                     target="_blank" 
                     rel="noreferrer" 
                     className="gt-social-link"

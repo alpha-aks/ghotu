@@ -30,7 +30,7 @@ export default function Footer({ lang = 'en', onNavigate }) {
                 className="gt-footer-support-link"
                 onClick={(e) => handleLinkClick('support', e)}
               >
-                {isTibetan ? 'ང་ཚོ་ལ་རོགས་གླེང་གཏོང་བ།' : 'SUPPORT OUR MISSION'}{' '}
+                {isTibetan ? 'ང་ཚོར་རྒྱབ་སྐྱོར་གནོངས།' : 'SUPPORT OUR MISSION'}{' '}
                 <span style={{ marginLeft: 6 }}>→</span>
               </a>
             </div>
@@ -38,16 +38,16 @@ export default function Footer({ lang = 'en', onNavigate }) {
 
           {/* Column 2: Explore */}
           <div className="gt-footer-col">
-            <h5>{isTibetan ? 'ལ་ལྟ།' : 'EXPLORE'}</h5>
+            <h5>{isTibetan ? 'དཀར་ཆག' : 'EXPLORE'}</h5>
             <ul className="gt-footer-links">
               <li>
                 <a href="/news" onClick={(e) => handleLinkClick('news', e)}>{isTibetan ? 'གསར་འགྱུར།' : 'Updates & News'}</a>
               </li>
               <li>
-                <a href="/about" onClick={(e) => handleLinkClick('about', e)}>{isTibetan ? 'ང་ཚོའི་སྐོར།' : 'About us'}</a>
+                <a href="/about" onClick={(e) => handleLinkClick('about', e)}>{isTibetan ? 'ངོ་སྤྲོད།' : 'About us'}</a>
               </li>
               <li>
-                <a href="/programmes" onClick={(e) => handleLinkClick('programmes', e)}>{isTibetan ? 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།' : 'Spiritual Programmes'}</a>
+                <a href="/programmes" onClick={(e) => handleLinkClick('programmes', e)}>{isTibetan ? 'ལས་རིམ།' : 'Spiritual Programmes'}</a>
               </li>
               <li>
                 <a href="/departments" onClick={(e) => handleLinkClick('departments', e)}>{isTibetan ? 'སྡེ་ཚན་ཁག' : 'Departments'}</a>
@@ -62,12 +62,12 @@ export default function Footer({ lang = 'en', onNavigate }) {
           <div className="gt-footer-col">
             <h5>{isTibetan ? 'འབྲེལ་གཏུགས།' : 'CONTACT'}</h5>
             <div className="gt-footer-contact-info">
-              <p>{isTibetan ? 'སི་དྷ་བ་རི། དྷ་ར་མ་ཤ་ལ།' : 'Sidhbari, Dharamshala,'}</p>
-              <p>{isTibetan ? 'ཧི་མ་ཅལ་པ་དེཤ། ༡༧༦༢༡༥' : 'Himachal Pradesh, 176215'}</p>
-              <p>{isTibetan ? 'རྒྱ་གར།' : 'India'}</p>
+              <p>Sidhbari, Dharamshala,</p>
+              <p>Himachal Pradesh, 176215</p>
+              <p>India</p>
               <p style={{ marginTop: '8px' }}>
                 <a href="mailto:info@gyutomonastery.org" style={{ color: 'inherit', textDecoration: 'none' }}>
-                  info@gyutomonastery.org
+                  {isTibetan ? 'གློག་འཕྲིན། ' : ''}info@gyutomonastery.org
                 </a>
               </p>
             </div>
@@ -79,13 +79,11 @@ export default function Footer({ lang = 'en', onNavigate }) {
         <div className="gt-footer-bottom" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <span>
             {isTibetan
-              ? '@༢༠༢༦ དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་། སྐྱེས་བུ་ཐམས་ཅད་ལ་དབང་ཡོད།'
+              ? 'པར་དབང་། Copyright: @2026 Gyuto Monastery. All rights reserved.'
               : '@2026 Gyuto Monastery. All rights reserved.'}
           </span>
           <span style={{ fontStyle: 'italic', opacity: 0.9 }}>
-            {isTibetan
-              ? 'ཤེས་རབ་ཉར་ཚགས། སྙིང་རྗེ་སྐྱེད་སྲིང་།'
-              : 'Preserving Wisdom. Cultivating Compassion.'}
+            Preserving Wisdom. Cultivating Compassion.
           </span>
         </div>
       </div>

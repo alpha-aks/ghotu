@@ -25,14 +25,14 @@ function SupportSection({
   }, [onNavigate]);
 
   const title = customTitle || (isTibetan 
-    ? 'བརྒྱུད་པའི་རྒྱུན་འཛིན་ལ་རོགས་གླེང་གཏོང་བ།' 
+    ? 'ཆོས་རྒྱུད་ཡུན་གནས་ལ་རྒྱབ་སྐྱོར།' 
     : 'Support the Continuity of the Tradition');
 
   const desc = customDesc || (isTibetan
-    ? 'སྦྱིན་སྲེག་གི་དངོས་ཡོད་དེ་དགེ་སྦྱོང་ལ་སློབ་གཉེར། དེབ་གཞུང་ཉར་ཚགས། དགོན་པའི་གནས་སྐུལ། དང་དགེ་སྦྱོང་རྣམས་ཀྱི་ཉིན་རེའི་སྤྱོ་ལངས་རྒྱུན་འཛིན་བྱེད་དེ། དགེ་ལུགས་སྔགས་ཀྱི་བརྒྱུད་པ་ལོ་རབས་མ་འོངས་པར་ཉར་ཚགས་བྱེད་པ་ལ་ཞབས་ཞུ་རོགས་གླེང་གཏོང་བ་ཡིན།'
+    ? 'སྐུ་ཉིད་ཀྱི་རོགས་རམ་གྱིས་དགོན་པའི་སློབ་གཉེར་རྒྱུན་འཛིན་དང་། རྩ་ཆེའི་གཞུང་ཉར་ཚགས། དགོན་པའི་མཐུན་རྐྱེན་རྒྱུན་འཁོངས་བཅས་ལ་ཕན་པར་མ་ཟད། དགེ་འདུན་གྱི་སྡེའི་ཉིན་རེའི་འཚོ་བར་རམ་འདེགས་བྱེད་ཅིང་། ཉིད་ཀྱི་རྒྱབ་སྐྱོར་ལ་བརྟེན་ནས། མ་འོངས་མི་རབས་ཚོའི་ཆེད་དུ་དགེ་ལྡན་པའི་གསང་སྔགས་ཀྱི་ལམ་སྲོལ་འདི་ཉིད་མི་ཉམས་རྒྱུན་འཛིན་ཐུབ་པར་བྱེད།'
     : 'Contributions help sustain monastic education, preserve sacred texts, maintain monastery facilities, and support the daily life of the monastic community. Your support enables the preservation of the Gelug tantric tradition for future generations.');
 
-  const btnText = customBtnText || (isTibetan ? 'དགོན་པ་ལ་རོགས་གླེང་གཏོང་བ།' : 'SUPPORT US');
+  const btnText = customBtnText || (isTibetan ? 'རྒྱབ་སྐྱོར།' : 'SUPPORT US');
 
   return (
     <section 
