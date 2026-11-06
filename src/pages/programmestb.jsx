@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import SupportSection from '../components/SupportSection';
-import { DepartmentsAcrossYear } from './departmentstb';
+import DepartmentsAcrossYear from '../components/DepartmentsAcrossYear';
 import { 
   EndlessKnot, 
   DharmachakraWatermark,
@@ -27,6 +27,8 @@ const TIBETAN_MONTH_NAMES = [
 const TIBETAN_DAY_NAMES = [
   'ཉི་མ།', 'ཟླ་བ།', 'མིག་དམར།', 'ལྷག་པ།', 'ཕུར་བུ།', 'པ་སངས།', 'སྤེན་པ།'
 ];
+
+const DAY_NAMES = TIBETAN_DAY_NAMES;
 
 // Tibetan Event Data
 const TIBETAN_EVENTS_DATA = {
@@ -248,12 +250,12 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
   };
 
   const calendarDays = generateCalendarDays();
-  const prevMonthLabel = currentMonth === 0 ? 'July' : (currentMonth === 7 ? 'July' : `ཕྱི་ཟླ་ ${currentMonth}`);
-  const nextMonthLabel = currentMonth === 11 ? 'September' : (currentMonth === 7 ? 'September' : `ཕྱི་ཟླ་ ${currentMonth + 2}`);
-  const monthDisplayTitle = `${currentMonth === 7 ? 'August' : TIBETAN_MONTH_NAMES[currentMonth]}, ${currentYear}`;
+  const prevMonthLabel = currentMonth === 0 ? TIBETAN_MONTH_NAMES[11] : TIBETAN_MONTH_NAMES[currentMonth - 1];
+  const nextMonthLabel = currentMonth === 11 ? TIBETAN_MONTH_NAMES[0] : TIBETAN_MONTH_NAMES[currentMonth + 1];
+  const monthDisplayTitle = `${TIBETAN_MONTH_NAMES[currentMonth]} ${currentYear}`;
 
   const [selYear, selMonth, selDay] = selectedDateKey.split('-').map(Number);
-  const formattedSelectedDate = `${String(selDay).padStart(2, '0')} August ${selYear}`;
+  const formattedSelectedDate = `${selYear} ${TIBETAN_MONTH_NAMES[selMonth - 1]} ཚེས་ ${selDay}`;
   const selectedDayEvents = TIBETAN_EVENTS_DATA[selectedDateKey] || [];
 
   return (
@@ -342,14 +344,14 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
                   className="gt-cal-reset-btn"
                   onClick={handleResetToDesign}
                 >
-                  August 2026 ལ་བསྐྱར་ལྡོག
+                  ཕྱི་ལོ་ ༢༠༢༦ ཟླ་ ༨ པར་བསྐྱར་ལྡོག
                 </button>
               </div>
 
               {/* 7-Column Grid */}
               <div className="gt-cal-grid" role="grid">
                 {/* Header Row */}
-                {DAY_NAMES.map((dayName) => (
+                {TIBETAN_DAY_NAMES.map((dayName) => (
                   <div key={dayName} className="gt-cal-header-cell" role="columnheader">
                     {dayName}
                   </div>
