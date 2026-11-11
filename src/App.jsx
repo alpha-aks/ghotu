@@ -183,31 +183,56 @@ export default function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const navigateTo = (page) => {
+  const navigateTo = (page, sectionId) => {
+    let targetPage = page;
+    let hash = '';
+    if (typeof page === 'string' && page.includes('#')) {
+      const parts = page.split('#');
+      targetPage = parts[0];
+      hash = '#' + parts[1];
+    } else if (sectionId) {
+      hash = '#' + sectionId;
+    }
+
     let path = '/';
-    if (page === 'news' || page === 'updates') {
+    if (targetPage === 'news' || targetPage === 'updates') {
       path = '/news';
-    } else if (page === 'about') {
+    } else if (targetPage === 'about') {
       path = '/about';
-    } else if (page === 'programmes' || page === 'programs') {
+    } else if (targetPage === 'programmes' || targetPage === 'programs') {
       path = '/programmes';
-    } else if (page === 'contact') {
+    } else if (targetPage === 'contact') {
       path = '/contact';
-    } else if (page === 'support' || page === 'donate') {
+    } else if (targetPage === 'support' || targetPage === 'donate') {
       path = '/support';
-    } else if (page === 'departments') {
+    } else if (targetPage === 'departments') {
       path = '/departments';
-    } else if (page === 'gallery' || page === 'photo-gallery') {
+    } else if (targetPage === 'gallery' || targetPage === 'photo-gallery') {
       path = '/gallery';
     } else {
       path = '/';
     }
 
-    if (window.location.pathname !== path) {
-      window.history.pushState({}, '', path);
+    const fullPath = path + hash;
+    if (window.location.pathname + window.location.hash !== fullPath) {
+      window.history.pushState({}, '', fullPath);
+      if (hash) {
+        window.dispatchEvent(new Event('hashchange'));
+      }
     }
-    setCurrentPage(page === 'donate' ? 'support' : page);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setCurrentPage(targetPage === 'donate' ? 'support' : targetPage);
+
+    if (hash) {
+      setTimeout(() => {
+        const id = hash.replace('#', '');
+        const elem = document.getElementById(id);
+        if (elem) {
+          elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 150);
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   };
 
   return (

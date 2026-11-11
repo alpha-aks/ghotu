@@ -55,7 +55,7 @@ export default function NewsTb({ onSwitchLanguage, onNavigate }) {
   });
 
   return (
-    <div className="gt-updates-page tibetan-updates-page">
+    <div className="gt-updates-page tibetan-updates-page tibetan-text">
       {/* 1. Header with Tibetan language active */}
       <Header
         lang="tb"

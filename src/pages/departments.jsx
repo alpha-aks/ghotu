@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import SupportSection from '../components/SupportSection';
@@ -27,6 +27,28 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
       [deptKey]: !prev[deptKey],
     }));
   };
+
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = (window.location.hash || '').replace('#', '');
+      if (hash && ['admin', 'education', 'healthcare', 'library', 'kitchen', 'media', 'maintenance'].includes(hash)) {
+        setExpandedDepts((prev) => ({
+          ...prev,
+          [hash]: true,
+        }));
+        setTimeout(() => {
+          const elem = document.getElementById(hash);
+          if (elem) {
+            elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 120);
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
 
   const scrollToDept = (id, e) => {
     e.preventDefault();

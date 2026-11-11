@@ -6,7 +6,7 @@ import './contact.css';
 
 export default function ContactTb({ onSwitchLanguage, onNavigate }) {
   return (
-    <div className="gt-page-wrapper tibetan-page">
+    <div className="gt-page-wrapper tibetan-page tibetan-text">
       <Header 
         lang="tb" 
         active="contact" 

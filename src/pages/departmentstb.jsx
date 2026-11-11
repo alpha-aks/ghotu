@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../components/header';
 import Footer from '../components/footer';
 import SupportSection from '../components/SupportSection';
@@ -27,6 +27,28 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
     }));
   };
 
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = (window.location.hash || '').replace('#', '');
+      if (hash && ['admin', 'education', 'healthcare', 'library', 'kitchen', 'media', 'maintenance'].includes(hash)) {
+        setExpandedDepts((prev) => ({
+          ...prev,
+          [hash]: true,
+        }));
+        setTimeout(() => {
+          const elem = document.getElementById(hash);
+          if (elem) {
+            elem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 120);
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   const scrollToDept = (id, e) => {
     e.preventDefault();
     const elem = document.getElementById(id);
@@ -40,17 +62,17 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
   };
 
   return (
-    <div className="gt-dept-page tibetan-page">
-      <Header 
-        lang="tb" 
-        active="departments" 
-        onSwitchLanguage={onSwitchLanguage} 
-        onNavigate={onNavigate} 
+    <div className="gt-dept-page tibetan-page tibetan-text">
+      <Header
+        lang="tb"
+        active="departments"
+        onSwitchLanguage={onSwitchLanguage}
+        onNavigate={onNavigate}
       />
 
       <main className="gt-dept-main-content">
         {/* 1. HERO SECTION */}
-        <section 
+        <section
           className="gt-dept-hero"
           style={{ backgroundImage: `url(${heroBg})` }}
         >
@@ -83,8 +105,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                     <p>
                       དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་སྤྱི་ཁྱབ་འཛིན་སྐྱོང་གིས་དགོན་པའི་ལས་དོན་སྤྱི་དང་། འཛིན་སྐྱོང་། དཔལ་འབྱོར། དེ་བཞིན་ཉིན་རེའི་བྱེད་སྒོ་བཅས་ལ་འགན་འཁུར་གཙོ་བོ་བཞེས་ཀྱི་ཡོད།
                       {!expandedDepts.admin && (
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('admin')}
                           aria-expanded={expandedDepts.admin}
@@ -126,8 +148,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                           <li>སྐུ་ངོ་ཐུབ་བསྟན་དར་རྒྱས། (རྩིས་པ།)</li>
                         </ul>
 
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('admin')}
                           style={{ marginTop: '14px' }}
@@ -150,8 +172,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                     <p>
                       གྲྭ་ཚང་འདིར་གཞི་རིམ་གྱི་ཤེས་ཡོན་དང་། ནང་བསྟན་མཚན་ཉིད་རིག་པ། གསང་སྔགས་ཀྱི་སློབ་གཉེར། ཆོ་ག་ཕྱག་ལེན་གྱི་སྦྱོང་བརྡར། དགོན་པའི་སྒྲིག་ཁྲིམས་བཅས་ཟུང་འབྲེལ་གྱིས་གོ་རིམ་ལྡན་པའི་སློབ་གཉེར་གནང་གི་ཡོད། སློབ་གཉེར་གྱི་ལས་རིམ་འདིའི་དམིགས་ཡུལ་ནི། དཔེ་འཁྱུར་རྣམས་ལ་ཤེས་ཡོན་དང་། ཆོས་ཕྱོགས། ལག་ལེན་བཅས་ཀྱི་སྦྱོང་བརྡར་སྤྲོད་པ་དང་ཆབས་ཅིག མཁས་པའི་ཡོན་ཏན་དང་སྲོལ་རྒྱུན་གྱི་ཕྱག་ལེན་དངོས་གཉིས་ཀ་གོང་འཕེལ་གཏོང་རྒྱུ་དེ་ཡིན།
                       {!expandedDepts.education && (
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('education')}
                           aria-expanded={expandedDepts.education}
@@ -213,8 +235,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                           སློབ་གཉེར་འགན་འཛིན། — དགེ་བཤེས་སྔགས་རམས་པ་ངག་དབང་བརྩོན་འགྲུས།
                         </p>
 
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('education')}
                           style={{ marginTop: '14px' }}
@@ -237,8 +259,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                     <p>
                       དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གིས་དགོན་པར་གཏན་སྡོད་སྨན་ཞབས་པ་ཡོད་པའི་སྨན་ཁང་ཞིག་གཉེར་བཞིན་ཡོད་ལ། དེས་དགེ་འདུན་པ་དང་ལས་བྱེད་རྣམས་ལ་གཞི་རིམ་སྨན་བཅོས་ཀྱི་ཞབས་ཞུ་སྒྲུབ་ཀྱི་ཡོད།
                       {!expandedDepts.healthcare && (
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('healthcare')}
                           aria-expanded={expandedDepts.healthcare}
@@ -260,8 +282,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
                           འཕྲོད་བསྟེན་འགན་འཛིན། — དགེ་བཤེས་སྔགས་རམས་པ་ངག་དབང་བརྩོན་འགྲུས།
                         </p>
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('healthcare')}
                           style={{ marginTop: '14px' }}
@@ -284,8 +306,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                     <p>
                       རྒྱུད་སྟོད་དཔེ་མཛོད་ཁང་ནི། རྒྱལ་བའི་གསུང་རབ་རྣམས་གཅེས་ཉར་བྱ་བའི་ཆེད་དང༌། བོད་རིགས་དང་བོད་རིགས་མ་ཡིན་པའི་སློབ་གཉེར་བ་དང་མཁས་པ་རྣམས་ལ་ནང་ཆོས་ཀྱི་སློབ་གཉེར་དང་ཞིབ་འཇུག་གི་མཐུན་རྐྱེན་སྦྱོར་བའི་ཆེད་དུ་བཙུགས་པ་ཞིག་ཡིན།
                       {!expandedDepts.library && (
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('library')}
                           aria-expanded={expandedDepts.library}
@@ -312,7 +334,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                           <li>སྐུ་ཞབས་འཇིགས་མེད་རྒྱ་མཚོ། (ལྟ་རྟོག་པ།)</li>
                         </ul>
                         <div style={{ marginTop: '16px', marginBottom: '8px' }}>
-                          <a 
+                          <a
                             href="https://www.gyutolibrary.com/"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -333,8 +355,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                             རྒྱུད་སྟོད་དཔེ་མཛོད་ཁང་གི་གཞུང་འབྲེལ་དྲ་ཚིགས་ལ་གཟིགས་རྒྱུ། (gyutolibrary.com) →
                           </a>
                         </div>
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('library')}
                           style={{ marginTop: '14px' }}
@@ -357,8 +379,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                     <p>
                       རྒྱུད་སྟོད་གྲྭ་ཚང་གིས་སྤྱི་ཐབ་ཁང་ཞིག་གཉེར་བཞིན་ཡོད་པ་དེས་རྒྱུན་དུ་ཚལ་གསོས་པ་དང༌། དམ་དུས་དང་མཐུན་པའི་ཤིང་ཏོག་བཅས་ཀྱིས་དཀར་ཟས་གཙང་མ་དང་བཏུང་བ་བཅས་ཀྱི་མཐུན་རྐྱེན་སྦྱོར་བཞིན་ཡོད།
                       {!expandedDepts.kitchen && (
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('kitchen')}
                           aria-expanded={expandedDepts.kitchen}
@@ -397,8 +419,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                           <li>ལྕམ་སྐུ་གཱི་ཏ་རྟ་མང་། (གཙང་བཟོ་བ།)</li>
                           <li>ལྕམ་སྐུ་པ་སངས་སྒྲེ་མ། (གཙང་བཟོ་བ།)</li>
                         </ul>
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('kitchen')}
                           style={{ marginTop: '14px' }}
@@ -421,8 +443,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                     <p>
                       གྲྭ་ཚང་གིས་པར་ལེན་དང་འབྲེལ་བའི་བརྒྱུད་ལམ་དང་བརྡ་འཕྲིན་གྱི་ཞབས་ཞུ་དང་། ཡིག་ཚགས་བདག་ཉར། དྲ་ཚིགས་ཉར་ཚགས། སྤྱི་ཚོགས་འབྲེལ་མཐུད་དྲ་ལམ་(ངོ་དེབ)། དེ་བཞིན་གནས་ཚུལ་ཁྱབ་སྤེལ་བཅས་གཉེར་བཞིན་ཡོད།
                       {!expandedDepts.media && (
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('media')}
                           aria-expanded={expandedDepts.media}
@@ -441,8 +463,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
                           ཕྱི་འབྲེལ་དང་འབྲེལ་མཐུད་ཞབས་ཞུའི་འགན་འཛིན། — སྔགས་རམས་པ་བློ་བཟང་དར་རྒྱས།
                         </p>
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('media')}
                           style={{ marginTop: '14px' }}
@@ -465,8 +487,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                     <p>
                       ལས་བྱེད་ཚོས་གཙང་སྦྲ་དང་། དགོན་པའི་ས་ཁོངས་སྤྱིའི་བདག་སྐྱོང་། དེ་བཞིན་གཞི་རྩའི་ཆུ་ལས་དང་ཉམས་གསོའི་ལས་དོན་བཅས་ཀྱི་འགན་འཁུར་བཞིན་ཡོད།
                       {!expandedDepts.maintenance && (
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('maintenance')}
                           aria-expanded={expandedDepts.maintenance}
@@ -486,8 +508,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
                           མཐུན་རྐྱེན་དང་རྨང་གཞིའི་འཛུགས་སྐྲུན་གྱི་འགན་འཛིན། — སྔགས་རམས་པ་བློ་བཟང་རྡོ་རྗེ།
                         </p>
-                        <button 
-                          type="button" 
+                        <button
+                          type="button"
                           className="gt-dept-readmore-btn"
                           onClick={() => toggleDept('maintenance')}
                           style={{ marginTop: '14px' }}
@@ -507,8 +529,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                   <h3 className="gt-dept-nav-title">སྡེ་ཚན་ཁག</h3>
                   <ul className="gt-dept-nav-links">
                     <li className="gt-dept-nav-link-item">
-                      <a 
-                        href="#admin" 
+                      <a
+                        href="#admin"
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('admin', e)}
                       >
@@ -516,8 +538,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
-                      <a 
-                        href="#education" 
+                      <a
+                        href="#education"
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('education', e)}
                       >
@@ -525,8 +547,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
-                      <a 
-                        href="#healthcare" 
+                      <a
+                        href="#healthcare"
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('healthcare', e)}
                       >
@@ -534,8 +556,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
-                      <a 
-                        href="#library" 
+                      <a
+                        href="#library"
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('library', e)}
                       >
@@ -543,8 +565,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
-                      <a 
-                        href="#kitchen" 
+                      <a
+                        href="#kitchen"
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('kitchen', e)}
                       >
@@ -552,8 +574,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
-                      <a 
-                        href="#media" 
+                      <a
+                        href="#media"
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('media', e)}
                       >
@@ -561,8 +583,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
-                      <a 
-                        href="#maintenance" 
+                      <a
+                        href="#maintenance"
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('maintenance', e)}
                       >
@@ -587,10 +609,10 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
             </div>
 
             <div className="gt-org-diagram-wrapper">
-              <img 
-                src={orgTableSvgTb} 
-                alt="Gyuto Monastery Organizational Chart (Tibetan)" 
-                className="gt-org-table-img" 
+              <img
+                src={orgTableSvgTb}
+                alt="Gyuto Monastery Organizational Chart (Tibetan)"
+                className="gt-org-table-img"
               />
             </div>
           </div>
@@ -608,8 +630,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                 <p className="gt-dept-cta-blue-desc">
                   དགོན་པའི་མཛད་རིམ་ཁག་དང་། བྱེད་སྒོ། ཞབས་ཞུ་བཅས་ཀྱི་སྐོར་ལ་འདྲི་རྩད་གནང་དགོས་ཚེ། དགོན་པར་ཐད་ཀར་འབྲེལ་བ་གནང་རོགས།
                 </p>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className="gt-dept-cta-white-btn"
                   onClick={() => onNavigate && onNavigate('contact')}
                 >
@@ -617,10 +639,10 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                 </button>
               </div>
               <div className="gt-dept-cta-blue-visual">
-                <img 
-                  src={lungtaImg} 
-                  alt="Tibetan Wind Horse (Lungta)" 
-                  className="gt-dept-lungta-img" 
+                <img
+                  src={lungtaImg}
+                  alt="Tibetan Wind Horse (Lungta)"
+                  className="gt-dept-lungta-img"
                 />
               </div>
             </div>
@@ -638,8 +660,8 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                 <h2 className="gt-dept-events-heading">
                   ལོ་འཁོར་གཅིག་གི་ཆོས་ཕྱོགས་མཛད་རིམ།
                 </h2>
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   className="gt-dept-calendar-btn"
                   onClick={() => onNavigate && onNavigate('programmes')}
                 >
@@ -649,7 +671,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
 
               <div className="gt-dept-events-cards-wrap">
                 <span className="gt-dept-events-top-tag">འབྱུང་འགྱུར་གྱི་མཛད་རིམ།</span>
-                
+
                 <div className="gt-dept-event-card">
                   <div className="gt-event-card-date">
                     <span className="gt-event-month">བོད་ཟླ་</span>

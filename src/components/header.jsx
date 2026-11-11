@@ -107,7 +107,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
   return (
     <>
       {/* 1. TOP HEADER (Frame 2147236869: #FAC758, height: 234px, padding: 0 30px 0 108px) */}
-      <header ref={topHeaderRef} className="gt-top-header">
+      <header ref={topHeaderRef} className={`gt-top-header ${isTibetan ? 'gt-header-tb tibetan-text' : ''}`}>
         <div className="gt-top-header-inner">
           <a
             href="/"
@@ -134,7 +134,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       </header>
 
       {/* 2. MAROON NAVIGATION BAR (Figma: #92060F, height: 64px) */}
-      <nav className={`gt-navbar ${isStuck ? 'is-stuck' : ''}`}>
+      <nav className={`gt-navbar ${isStuck ? 'is-stuck' : ''} ${isTibetan ? 'gt-navbar-tb tibetan-text' : ''}`}>
         <div className="gyuto-container gt-nav-container">
           {/* Mobile Language Switcher on LEFT */}
           <div className="gt-mobile-lang-wrap">

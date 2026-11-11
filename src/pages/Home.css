@@ -59,9 +59,12 @@
   height: auto;
   position: relative;
   background: #1a1412;
-  display: flex;
+  display: grid;
+  grid-template-areas: "hero";
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  animation: gtHeroFadeIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 .gt-hero-img {
@@ -71,9 +74,23 @@
   display: block;
   object-fit: contain;
   aspect-ratio: 4096 / 2732;
-  animation: gtHeroFadeIn 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
-  will-change: opacity, transform, filter;
-  transition: transform 1.2s ease-out, opacity 0.8s ease-in-out;
+  will-change: opacity;
+}
+
+.gt-hero-slide {
+  grid-area: hero;
+  opacity: 0;
+  pointer-events: none;
+  animation: none !important;
+  transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: opacity;
+  z-index: 1;
+}
+
+.gt-hero-slide.active {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
 }
 
 @keyframes gtHeroFadeIn {
@@ -607,6 +624,35 @@
   background: #FFFFFF;
 }
 
+.gt-about-depts-section .gyuto-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+  .gt-about-depts-section .gyuto-container {
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .gt-about-depts-section {
+    padding: 70px 0 !important;
+  }
+  .gt-about-depts-section .gyuto-container {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gt-about-depts-section {
+    padding: 55px 0 !important;
+  }
+}
+
 .gt-about-depts-head {
   display: flex;
   justify-content: space-between;
@@ -687,6 +733,7 @@
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .gt-about-dept-card:hover {
@@ -1676,8 +1723,6 @@
     min-width: 0 !important;
   }
   .gt-news-section,
-  .gt-about-depts-section,
-  .gt-departments-sec,
   .gt-programmes-sec,
   .gt-contact-sec,
   .gt-footer {
@@ -1734,6 +1779,8 @@
     margin: 0 !important;
     padding: 0 !important;
     overflow: hidden !important;
+    display: grid !important;
+    grid-template-areas: "hero" !important;
   }
 
   .gt-hero-img {
@@ -1745,6 +1792,10 @@
     max-width: 100% !important;
     margin: 0 !important;
     padding: 0 !important;
+  }
+
+  .gt-hero-slide {
+    grid-area: hero !important;
   }
 
   /* 4 Information Items - ONE HORIZONTAL ROW ON MOBILE */

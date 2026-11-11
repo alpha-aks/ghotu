@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -18,7 +18,15 @@ import {
 export default function Home({ onSwitchLanguage, onNavigate }) {
   const [activeNoticeTab, setActiveNoticeTab] = useState('announcement');
   const [activeStatDot, setActiveStatDot] = useState(0);
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0); // 0: English, 1: Tibetan
   const statsGridRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleStatsScroll = () => {
     if (!statsGridRef.current) return;
@@ -57,8 +65,15 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
         <div className="gt-hero-image-wrap">
           <img
             src="/images/home-hero.jpg"
-            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains"
-            className="gt-hero-img gt-hero-en"
+            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains (English)"
+            className={`gt-hero-img gt-hero-slide gt-hero-en ${currentHeroSlide === 0 ? 'active' : ''}`}
+            loading="eager"
+          />
+          <img
+            src="/images/home-hero-tb.jpg"
+            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains (Tibetan)"
+            className={`gt-hero-img gt-hero-slide gt-hero-tb ${currentHeroSlide === 1 ? 'active' : ''}`}
+            loading="eager"
           />
         </div>
 
@@ -261,7 +276,15 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
 
           <div className="gt-about-depts-cards-grid">
             {/* Administration */}
-            <div className="gt-about-dept-card">
+            <div
+              className="gt-about-dept-card"
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('departments', 'admin');
+                }
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="gt-about-dept-img-wrap">
                 <img
                   src="/images/about/dept-admin.jpg"
@@ -276,12 +299,13 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                   Supports the day-to-day governance, operations, and coordination of the monastery.
                 </p>
                 <a
-                  href="#departments"
+                  href="/departments#admin"
                   className="gt-about-dept-link"
                   onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     if (onNavigate) {
-                      e.preventDefault();
-                      onNavigate('departments');
+                      onNavigate('departments', 'admin');
                     }
                   }}
                 >
@@ -291,7 +315,15 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             </div>
 
             {/* Education */}
-            <div className="gt-about-dept-card">
+            <div
+              className="gt-about-dept-card"
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('departments', 'education');
+                }
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="gt-about-dept-img-wrap">
                 <img
                   src="/images/about/dept-edu.jpg"
@@ -306,12 +338,13 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                   Provides structured study in Buddhist philosophy, debate, and tantric traditions.
                 </p>
                 <a
-                  href="#departments"
+                  href="/departments#education"
                   className="gt-about-dept-link"
                   onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     if (onNavigate) {
-                      e.preventDefault();
-                      onNavigate('departments');
+                      onNavigate('departments', 'education');
                     }
                   }}
                 >
@@ -321,7 +354,15 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             </div>
 
             {/* Healthcare */}
-            <div className="gt-about-dept-card">
+            <div
+              className="gt-about-dept-card"
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('departments', 'healthcare');
+                }
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="gt-about-dept-img-wrap">
                 <img
                   src="/images/about/dept-health.jpg"
@@ -336,12 +377,13 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                   Medical services supporting the physical and mental well-being of the monastic community.
                 </p>
                 <a
-                  href="#departments"
+                  href="/departments#healthcare"
                   className="gt-about-dept-link"
                   onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     if (onNavigate) {
-                      e.preventDefault();
-                      onNavigate('departments');
+                      onNavigate('departments', 'healthcare');
                     }
                   }}
                 >

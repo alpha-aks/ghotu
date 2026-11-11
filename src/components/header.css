@@ -315,9 +315,30 @@
   box-sizing: border-box;
 }
 
-.tibetan-text .gt-nav-link {
-  font-family: 'Noto Serif Tibetan', serif;
-  font-size: 17px;
+.gt-navbar.gt-navbar-tb .gt-nav-link,
+.gt-navbar-tb .gt-nav-link,
+.gt-header-tb .gt-nav-link,
+.tibetan-text .gt-nav-link,
+.tibetan-page .gt-nav-link,
+.tibetan-about-page .gt-nav-link,
+.tibetan-updates-page .gt-nav-link {
+  font-family: 'Noto Serif Tibetan', 'Sambhota', 'Jomolhari', serif !important;
+  font-size: 17px !important;
+  line-height: 24px !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.gt-navbar.gt-navbar-tb .gt-nav-link.active,
+.gt-navbar-tb .gt-nav-link.active,
+.gt-header-tb .gt-nav-link.active,
+.tibetan-text .gt-nav-link.active,
+.tibetan-page .gt-nav-link.active,
+.tibetan-about-page .gt-nav-link.active,
+.tibetan-updates-page .gt-nav-link.active {
+  background: #FFD781 !important;
+  color: #92060F !important;
+  font-weight: 700 !important;
 }
 
 .gt-nav-link:hover {
@@ -685,6 +706,18 @@
   .gt-nav-link:active {
     padding-left: 24px !important;
     background: rgba(255, 215, 129, 0.16) !important;
+  }
+
+  .gt-navbar.gt-navbar-tb .gt-nav-link,
+  .gt-navbar-tb .gt-nav-link,
+  .gt-header-tb .gt-nav-link,
+  .tibetan-text .gt-nav-link,
+  .tibetan-page .gt-nav-link,
+  .tibetan-about-page .gt-nav-link,
+  .tibetan-updates-page .gt-nav-link {
+    font-family: 'Noto Serif Tibetan', 'Sambhota', 'Jomolhari', serif !important;
+    font-size: 16px !important;
+    line-height: 1.6 !important;
   }
 }
 

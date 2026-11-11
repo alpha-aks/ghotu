@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Home.css';
 import Header from '../components/header';
 import Footer from '../components/footer';
@@ -18,7 +18,15 @@ import {
 export default function HomeTb({ onSwitchLanguage, onNavigate }) {
   const [activeNoticeTab, setActiveNoticeTab] = useState('announcement');
   const [activeStatDot, setActiveStatDot] = useState(0);
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0); // 0: Tibetan, 1: English
   const statsGridRef = useRef(null);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentHeroSlide((prev) => (prev === 0 ? 1 : 0));
+    }, 10000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleStatsScroll = () => {
     if (!statsGridRef.current) return;
@@ -57,8 +65,15 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
         <div className="gt-hero-image-wrap">
           <img 
             src="/images/home-hero-tb.jpg" 
-            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains" 
-            className="gt-hero-img gt-hero-tb"
+            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains (Tibetan)" 
+            className={`gt-hero-img gt-hero-slide gt-hero-tb ${currentHeroSlide === 0 ? 'active' : ''}`}
+            loading="eager"
+          />
+          <img 
+            src="/images/home-hero.jpg" 
+            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains (English)" 
+            className={`gt-hero-img gt-hero-slide gt-hero-en ${currentHeroSlide === 1 ? 'active' : ''}`}
+            loading="eager"
           />
         </div>
 
@@ -238,9 +253,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
         <div className="gyuto-container">
           <div className="gt-about-depts-head">
             <div className="gt-about-depts-text">
-              <h2 className="gt-about-depts-title">དགོན་པའི་འཚོ་བར་ཞབས་ཞུ།</h2>
+              <h2 className="gt-about-depts-title">ཕྱོགས་ཡོངས་ཀྱི་ཞབས་ཞུ་དང་ཆོས་ཕྱོགས་མཛད་རིམ།</h2>
               <p className="gt-about-depts-desc">
-                ཤེས་ཡོན་དང་འཛིན་སྐྱོང་སྡེ་ཚན་ནས་བཟུང་སྟེ་དཔེ་མཛོད་དང་། པར་སྐྲུན། སྤྱི་ཚོགས་ཞབས་ཞུ་བཅས་བར་གྱི་སྡེ་ཚན་གྱིས་དགོན་པའི་ཉིན་རེའི་འཚོ་བའི་ཁྲོད་དུ་ཞབས་འདེགས་ཞུ་བཞིན་ཡོད་ལ། སྡེ་ཚན་དེ་དག་མཉམ་རུབ་ཀྱི་ཐོག་ནས་ནང་བསྟན་རྒྱུན་འཛིན་དང་། དགོན་པའི་ལས་དོན་རྣམས་ཚགས་ཚུད་ཡོང་བར་རབ་འདེགས་བྱེད།
+                དྲ་ཚིགས་འདིར་འཁོད་པའི་འཛིན་སྐྱོང་དང་། སློབ་གཉེར། འཕྲོད་བསྟེན་ཚན་པ། ལོ་རེའི་ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ་བཅས་ཀྱི་ངོ་སྤྲོད།
               </p>
             </div>
             <button
@@ -252,13 +267,21 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 }
               }}
             >
-              སྡེ་ཚན་ཁག་ཆ་ཚང་གཟིགས།
+              སྡེ་ཚན་ཆ་ཚང་གཟིགས་རྒྱུ།
             </button>
           </div>
 
           <div className="gt-about-depts-cards-grid">
             {/* Administration */}
-            <div className="gt-about-dept-card">
+            <div
+              className="gt-about-dept-card"
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('departments', 'admin');
+                }
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="gt-about-dept-img-wrap">
                 <img
                   src="/images/about/dept-admin.jpg"
@@ -268,27 +291,36 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">དབུས་འཛིན་སྐྱོང་སྡེ་ཚན།</h3>
+                <h3 className="gt-about-dept-name">འཛིན་སྐྱོང་ཚན་པ།</h3>
                 <p className="gt-about-dept-snippet">
-                  དགོན་པའི་སྤྱི་ཡོངས་ཀྱི་འཛིན་སྐྱོང་དང་། དཔལ་འབྱོར། ཉིན་རེའི་ལས་དོན་བཅས་ལ་འགན་འཁུར་བྱེད།
+                  དགོན་པའི་ཉིན་རེའི་ལས་དོན་དང་། སྒྲིག་འཛུགས་ཀྱི་ལས་དོན་བཅས་ལ་འགན་ཁུར་གནང་བཞིན་ཡོད།
                 </p>
                 <a
-                  href="#departments"
+                  href="/departments#admin"
                   className="gt-about-dept-link"
                   onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     if (onNavigate) {
-                      e.preventDefault();
-                      onNavigate('departments');
+                      onNavigate('departments', 'admin');
                     }
                   }}
                 >
-                  རྒྱས་པར་གཟིགས། <span>→</span>
+                  རྒྱས་པ་གཟིགས་རྒྱུ། <span>→</span>
                 </a>
               </div>
             </div>
 
             {/* Education */}
-            <div className="gt-about-dept-card">
+            <div
+              className="gt-about-dept-card"
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('departments', 'education');
+                }
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="gt-about-dept-img-wrap">
                 <img
                   src="/images/about/dept-edu.jpg"
@@ -298,27 +330,36 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">ཤེས་ཡོན་སྡེ་ཚན།</h3>
+                <h3 className="gt-about-dept-name">སློབ་གཉེར་ཚན་པ།</h3>
                 <p className="gt-about-dept-snippet">
-                  གཞི་རིམ་གྱི་ཤེས་ཡོན་དང་། ནང་པའི་ལྟ་གྲུབ། རྒྱུད་ཀྱི་སློབ་གཉེར། ཆོ་ག་ཕྱག་ལེན། འདུལ་ཁྲིམས་བཅས་ཟུང་འབྲེལ་གྱིས་གོ་རིམ་ལྡན་པའི་དགོན་པའི་སློབ་གཉེར་ལ་མཐུན་རྐྱེན་སྦྱོར།
+                  དགེ་ལུགས་ཀྱི་གཞུང་དང་། མཚན་ཉིད་རྩོད་པ། སྔགས་ཀྱི་ཆོ་ག་བཅས་ལ་སློབ་གཉེར་གནང་བཞིན་ཡོད།
                 </p>
                 <a
-                  href="#departments"
+                  href="/departments#education"
                   className="gt-about-dept-link"
                   onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     if (onNavigate) {
-                      e.preventDefault();
-                      onNavigate('departments');
+                      onNavigate('departments', 'education');
                     }
                   }}
                 >
-                  རྒྱས་པར་གཟིགས། <span>→</span>
+                  རྒྱས་པ་གཟིགས་རྒྱུ། <span>→</span>
                 </a>
               </div>
             </div>
 
             {/* Healthcare */}
-            <div className="gt-about-dept-card">
+            <div
+              className="gt-about-dept-card"
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('departments', 'healthcare');
+                }
+              }}
+              style={{ cursor: 'pointer' }}
+            >
               <div className="gt-about-dept-img-wrap">
                 <img
                   src="/images/about/dept-health.jpg"
@@ -328,21 +369,22 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">འཕྲོད་བསྟེན་དང་སྤྱི་ཚོགས་ཞབས་ཞུ།</h3>
+                <h3 className="gt-about-dept-name">འཕྲོད་བསྟེན་ཚན་པ།</h3>
                 <p className="gt-about-dept-snippet">
-                  འདིའི་ཁྱབ་ཁོངས་སུ་བཅའ་སྡོད་སྨན་ཞབས་པ་ཡོད་པའི་སྨན་ཁང་ཞིག་ཡོད་པ་དེར་དགེ་འདུན་པ་དང་། ལས་བྱེད། ལྷག་པར་དུ་ནད་པ་དང་བགྲེས་སོང་བཅས་ལ་གཞི་རིམ་སྨན་བཅོས་ཀྱི་ཞབས་ཞུ་སྒྲུབ་བཞིན་ཡོད།
+                  དགེ་འདུན་པ་རྣམས་ཀྱི་ལུས་སེམས་བདེ་ཐང་ལ་ཞབས་ཞུ་དང་སྨན་བཅོས་མཐུན་རྐྱེན་སྦྱོར་བཞིན་ཡོད།
                 </p>
                 <a
-                  href="#departments"
+                  href="/departments#healthcare"
                   className="gt-about-dept-link"
                   onClick={(e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
                     if (onNavigate) {
-                      e.preventDefault();
-                      onNavigate('departments');
+                      onNavigate('departments', 'healthcare');
                     }
                   }}
                 >
-                  རྒྱས་པར་གཟིགས། <span>→</span>
+                  རྒྱས་པ་གཟིགས་རྒྱུ། <span>→</span>
                 </a>
               </div>
             </div>

@@ -40,10 +40,13 @@ export const PAST_ABBOTS = Array.from({ length: 19 }, (_, i) => ({
 }));
 
 export default function About({ onSwitchLanguage, onNavigate }) {
-  const handleNav = (pageKey, e) => {
+  const handleNav = (pageKey, e, sectionId) => {
     if (onNavigate) {
-      if (e) e.preventDefault();
-      onNavigate(pageKey);
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+      onNavigate(pageKey, sectionId);
     }
   };
 
@@ -303,7 +306,11 @@ export default function About({ onSwitchLanguage, onNavigate }) {
 
             <div className="gt-about-depts-cards-grid">
               {/* Administration */}
-              <div className="gt-about-dept-card">
+              <div
+                className="gt-about-dept-card"
+                onClick={(e) => handleNav('departments', e, 'admin')}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="gt-about-dept-img-wrap">
                   <img
                     src={ABOUT_DUMMY_IMAGES.deptAdmin}
@@ -318,9 +325,9 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                     Supports the day-to-day governance, operations, and coordination of the monastery.
                   </p>
                   <a
-                    href="#departments"
+                    href="/departments#admin"
                     className="gt-about-dept-link"
-                    onClick={(e) => handleNav('departments', e)}
+                    onClick={(e) => handleNav('departments', e, 'admin')}
                   >
                     LEARN MORE <span>→</span>
                   </a>
@@ -328,7 +335,11 @@ export default function About({ onSwitchLanguage, onNavigate }) {
               </div>
 
               {/* Education */}
-              <div className="gt-about-dept-card">
+              <div
+                className="gt-about-dept-card"
+                onClick={(e) => handleNav('departments', e, 'education')}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="gt-about-dept-img-wrap">
                   <img
                     src={ABOUT_DUMMY_IMAGES.deptEdu}
@@ -343,9 +354,9 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                     Provides structured study in Buddhist philosophy, debate, and tantric traditions.
                   </p>
                   <a
-                    href="#departments"
+                    href="/departments#education"
                     className="gt-about-dept-link"
-                    onClick={(e) => handleNav('departments', e)}
+                    onClick={(e) => handleNav('departments', e, 'education')}
                   >
                     LEARN MORE <span>→</span>
                   </a>
@@ -353,7 +364,11 @@ export default function About({ onSwitchLanguage, onNavigate }) {
               </div>
 
               {/* Healthcare */}
-              <div className="gt-about-dept-card">
+              <div
+                className="gt-about-dept-card"
+                onClick={(e) => handleNav('departments', e, 'healthcare')}
+                style={{ cursor: 'pointer' }}
+              >
                 <div className="gt-about-dept-img-wrap">
                   <img
                     src={ABOUT_DUMMY_IMAGES.deptHealthcare}
@@ -368,9 +383,9 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                     Medical services supporting the physical and mental well-being of the monastic community.
                   </p>
                   <a
-                    href="#departments"
+                    href="/departments#healthcare"
                     className="gt-about-dept-link"
-                    onClick={(e) => handleNav('departments', e)}
+                    onClick={(e) => handleNav('departments', e, 'healthcare')}
                   >
                     LEARN MORE <span>→</span>
                   </a>

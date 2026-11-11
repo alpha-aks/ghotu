@@ -22,7 +22,7 @@ export default function SupportTb({ onSwitchLanguage, onNavigate }) {
   const finalAmount = selectedAmount === 'other' ? (customAmount || '0') : selectedAmount;
 
   return (
-    <div className="gt-page-wrapper tibetan-page">
+    <div className="gt-page-wrapper tibetan-page tibetan-text">
       <Header 
         lang="tb" 
         active="donate" 
