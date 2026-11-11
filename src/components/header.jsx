@@ -1,10 +1,28 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { GyutoEmblem } from './MonasteryIcons';
 import { Menu, X } from 'lucide-react';
 import './header.css';
 
 export default function Header({ lang = 'en', active = 'home', onSwitchLanguage, onNavigate }) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isStuck, setIsStuck] = useState(false);
+  const topHeaderRef = useRef(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (topHeaderRef.current) {
+        const rect = topHeaderRef.current.getBoundingClientRect();
+        setIsStuck(rect.bottom <= 0);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    setIsStuck(false);
+  }, [active]);
   const isTibetan = lang === 'tb';
 
   const navItems = isTibetan ? [
@@ -89,7 +107,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
   return (
     <>
       {/* 1. TOP HEADER (Frame 2147236869: #FAC758, height: 234px, padding: 0 30px 0 108px) */}
-      <header className="gt-top-header">
+      <header ref={topHeaderRef} className="gt-top-header">
         <div className="gt-top-header-inner">
           <a
             href="/"
@@ -116,7 +134,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
       </header>
 
       {/* 2. MAROON NAVIGATION BAR (Figma: #92060F, height: 64px) */}
-      <nav className="gt-navbar">
+      <nav className={`gt-navbar ${isStuck ? 'is-stuck' : ''}`}>
         <div className="gyuto-container gt-nav-container">
           {/* Mobile Language Switcher on LEFT */}
           <div className="gt-mobile-lang-wrap">
@@ -153,6 +171,7 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
           </ul>
         </div>
       </nav>
+      {isStuck && <div className="gt-navbar-spacer" aria-hidden="true" />}
     </>
   );
 }
