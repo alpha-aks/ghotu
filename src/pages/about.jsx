@@ -191,9 +191,14 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                     free food to those in need.
                   </p>
                   <p>
-                    <span className="gt-leader-bio-link">
+                    <a
+                      href="https://us.dipkar.com/khangser/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="gt-leader-bio-link"
+                    >
                       Click here to read Khangser Rinpoche's full bio.
-                    </span>
+                    </a>
                   </p>
                 </div>
               </div>
@@ -232,9 +237,14 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                     serving currently at the Office of His Holiness the Dalai Lama.
                   </p>
                   <p>
-                    <span className="gt-leader-bio-link">
+                    <a
+                      href="https://jamyangbc.sharepoint.com/:b:/g/EUO-sqSY1llDiNcoqkcIYVcByEVBXHu5RFte5s0CO9N4Tg?e=WyxzWh"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="gt-leader-bio-link"
+                    >
                       Click here to read Ven. Yangten Tulku Rinpoche's full bio.
-                    </span>
+                    </a>
                   </p>
                 </div>
               </div>

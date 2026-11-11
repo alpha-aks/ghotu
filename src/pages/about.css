@@ -292,11 +292,16 @@
   height: 460px;
   object-fit: cover;
   display: block;
-  transition: transform 0.4s ease;
 }
 
+.gt-leader-card:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+.gt-leader-card:hover .gt-leader-photo,
 .gt-leader-img-box:hover .gt-leader-photo {
-  transform: scale(1.025);
+  transform: none !important;
 }
 
 .gt-leader-name {
@@ -348,6 +353,10 @@
   cursor: pointer;
   display: inline-block;
   margin-top: 6px;
+}
+
+.gt-leader-bio-link:visited {
+  color: var(--figma-maroon, #92060F);
 }
 
 .gt-leader-bio-link:hover {

@@ -932,8 +932,8 @@
 
 .gt-dept-cta-white-btn:hover {
   background-color: #FAF4E8;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+  transform: none;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12);
 }
 
 .gt-dept-cta-blue-visual {

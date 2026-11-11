@@ -460,10 +460,8 @@ img {
 .gt-event-card,
 .gt-event-card-item,
 .gt-dept-event-card,
-.gt-leader-card,
 .gt-past-abbot-card,
 .gt-about-dept-card,
-.gt-contact-block,
 .gt-contact-map-card,
 .gt-support-card,
 .gt-tier-card,
@@ -486,16 +484,26 @@ img {
 .gt-event-card:hover,
 .gt-event-card-item:hover,
 .gt-dept-event-card:hover,
-.gt-leader-card:hover,
 .gt-past-abbot-card:hover,
 .gt-about-dept-card:hover,
-.gt-contact-block:hover,
 .gt-contact-map-card:hover,
 .gt-support-card:hover,
 .gt-gallery-item:hover,
 .gt-gallery-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 26px rgba(45, 42, 40, 0.07), 0 2px 8px rgba(250, 199, 88, 0.12);
+}
+
+/* Neutralize hover effect on contact blocks / contact info */
+.gt-contact-block {
+  transform: none !important;
+  box-shadow: none !important;
+  transition: none !important;
+}
+
+.gt-contact-block:hover {
+  transform: none !important;
+  box-shadow: none !important;
 }
 
 /* 4. UNIVERSAL SUBTLE IMAGE ZOOM ON CARD HOVER */
@@ -507,7 +515,6 @@ img {
 .gt-legacy-img-col img,
 .gt-library-img-col img,
 .gt-about-story-img-col img,
-.gt-leader-photo,
 .gt-past-abbot-img {
   transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
@@ -519,7 +526,6 @@ img {
 .gt-gallery-card:hover img,
 .gt-legacy-story-row:hover .gt-legacy-img-col img,
 .gt-library-sec:hover .gt-library-img-col img,
-.gt-leader-card:hover .gt-leader-photo,
 .gt-past-abbot-card:hover .gt-past-abbot-img {
   transform: scale(1.025);
 }
@@ -608,7 +614,6 @@ img {
   .gt-event-card,
   .gt-event-card-item,
   .gt-dept-event-card,
-  .gt-leader-card,
   .gt-past-abbot-card,
   .gt-about-dept-card,
   .gt-contact-block,
