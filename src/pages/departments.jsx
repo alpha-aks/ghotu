@@ -300,8 +300,11 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                           <li>PhD (Geshe Ngakrampa): Upon completion and successful examination of the two-year Ngakram Tantric studies.</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
-                          Education Administrator: Geshe Ngakrampa Ngawang Tsundue
+                          Education Administrator:
                         </p>
+                        <ul className="gt-dept-list-bulleted" style={{ marginTop: '6px', marginBottom: '14px' }}>
+                          <li style={{ color: '#000000' }}>Geshe Ngakrampa Ngawang Tsundue</li>
+                        </ul>
 
                         <button 
                           type="button" 
@@ -348,8 +351,11 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                           <li>Mrs. Pema Tsamchoe (Nurse)</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
-                          Healthcare Administrator: Geshe Ngakrampa Ngawang Tsundue
+                          Healthcare Administrator:
                         </p>
+                        <ul className="gt-dept-list-bulleted" style={{ marginTop: '6px', marginBottom: '14px' }}>
+                          <li style={{ color: '#000000' }}>Geshe Ngakrampa Ngawang Tsundue</li>
+                        </ul>
                         <button 
                           type="button" 
                           className="gt-dept-readmore-btn"
@@ -528,8 +534,11 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                           <li>Ven. Tenzin Gyamtso</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
-                          Public Relations and Liaison Services Administrator: Ngakrampa Lobsang Dargey
+                          Public Relations and Liaison Services Administrator:
                         </p>
+                        <ul className="gt-dept-list-bulleted" style={{ marginTop: '6px', marginBottom: '14px' }}>
+                          <li style={{ color: '#000000' }}>Ngakrampa Lobsang Dargey</li>
+                        </ul>
                         <button 
                           type="button" 
                           className="gt-dept-readmore-btn"
@@ -573,8 +582,11 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                           <li>Mrs. Nancy</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
-                          Facilities and Infrastructure Administrator: Ngakrampa Lobsang Dorjee
+                          Facilities and Infrastructure Administrator:
                         </p>
+                        <ul className="gt-dept-list-bulleted" style={{ marginTop: '6px', marginBottom: '14px' }}>
+                          <li style={{ color: '#000000' }}>Ngakrampa Lobsang Dorjee</li>
+                        </ul>
                         <button 
                           type="button" 
                           className="gt-dept-readmore-btn"

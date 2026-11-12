@@ -1161,6 +1161,7 @@
    9. PRESERVING BUDDHIST KNOWLEDGE (BLUE DHARMA LIBRARY SECTION)
    Figma: Frame 625809: background: #6B9EBD; padding: 112px 138px 144px 642px;
    ========================================================================== */
+.gt-library-section,
 .gt-library-sec {
   background-color: #6B9EBD;
   position: relative;
@@ -1168,6 +1169,7 @@
   width: 100%;
 }
 
+.gt-library-section .gt-library-container,
 .gt-library-sec .gt-library-container {
   position: relative;
   max-width: 1442px;
@@ -1181,6 +1183,7 @@
   padding: 112px 138px 144px 642px;
 }
 
+.gt-library-section .gt-library-texture-wrap,
 .gt-library-sec .gt-library-texture-wrap {
   position: absolute;
   left: -14px;
@@ -1192,6 +1195,7 @@
   z-index: 1;
 }
 
+.gt-library-section .gt-library-texture-img,
 .gt-library-sec .gt-library-texture-img {
   width: 100%;
   height: 100%;
@@ -1200,6 +1204,7 @@
   display: block;
 }
 
+.gt-library-section .gt-library-content-col,
 .gt-library-sec .gt-library-content-col {
   position: relative;
   z-index: 2;
@@ -1211,6 +1216,7 @@
   width: 100%;
 }
 
+.gt-library-section .gt-library-text-block,
 .gt-library-sec .gt-library-text-block {
   display: flex;
   flex-direction: column;
@@ -1218,6 +1224,7 @@
   width: 100%;
 }
 
+.gt-library-section .gt-library-title,
 .gt-library-sec .gt-library-title {
   font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 52px;
@@ -1228,7 +1235,9 @@
   letter-spacing: 0;
 }
 
+.tibetan-home-page .gt-library-section .gt-library-title,
 .tibetan-home-page .gt-library-sec .gt-library-title,
+.tibetan-text .gt-library-section .gt-library-title,
 .tibetan-text .gt-library-sec .gt-library-title {
   font-family: 'Noto Serif Tibetan', 'Uchen', serif;
   font-size: 44px;
@@ -1237,6 +1246,7 @@
   color: #FFFDF1;
 }
 
+.gt-library-section .gt-library-desc,
 .gt-library-sec .gt-library-desc {
   font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, sans-serif;
   font-size: 18px;
@@ -1246,7 +1256,9 @@
   margin: 0;
 }
 
+.tibetan-home-page .gt-library-section .gt-library-desc,
 .tibetan-home-page .gt-library-sec .gt-library-desc,
+.tibetan-text .gt-library-section .gt-library-desc,
 .tibetan-text .gt-library-sec .gt-library-desc {
   font-family: 'Noto Serif Tibetan', 'Uchen', serif;
   font-size: 18px;
@@ -1255,6 +1267,7 @@
   color: #FFFDF1;
 }
 
+.gt-library-section .gt-visit-library-btn,
 .gt-library-sec .gt-visit-library-btn {
   display: inline-flex;
   align-items: center;
@@ -1277,6 +1290,7 @@
   transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.gt-library-section .gt-visit-library-btn:hover,
 .gt-library-sec .gt-visit-library-btn:hover {
   background-color: #FFFFFF;
   color: #7A040B;
@@ -1284,7 +1298,9 @@
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
 }
 
+.tibetan-home-page .gt-library-section .gt-visit-library-btn,
 .tibetan-home-page .gt-library-sec .gt-visit-library-btn,
+.tibetan-text .gt-library-section .gt-visit-library-btn,
 .tibetan-text .gt-library-sec .gt-visit-library-btn {
   font-family: 'Noto Serif Tibetan', 'Uchen', serif;
   font-size: 18px;
@@ -1698,10 +1714,12 @@
    RESPONSIVE DESIGN (TABLET & MOBILE)
    ========================================================================== */
 @media (max-width: 1200px) {
+  .gt-library-section .gt-library-container,
   .gt-library-sec .gt-library-container {
     padding: 90px 40px 100px 420px;
     min-height: auto;
   }
+  .gt-library-section .gt-library-texture-wrap,
   .gt-library-sec .gt-library-texture-wrap {
     width: 480px;
     height: 373px;
@@ -1744,13 +1762,16 @@
     grid-template-columns: 1fr;
     gap: 40px;
   }
+  .gt-library-section,
   .gt-library-sec {
     padding: 0;
   }
+  .gt-library-section .gt-library-container,
   .gt-library-sec .gt-library-container {
     padding: 70px 40px 80px 40px;
     justify-content: flex-start;
   }
+  .gt-library-section .gt-library-texture-wrap,
   .gt-library-sec .gt-library-texture-wrap {
     opacity: 0.25;
     width: 360px;
@@ -1758,6 +1779,7 @@
     left: -40px;
     bottom: -10px;
   }
+  .gt-library-section .gt-library-title,
   .gt-library-sec .gt-library-title {
     font-size: 42px;
     line-height: 50px;
@@ -2059,20 +2081,25 @@
     padding: 36px 0 20px 0;
   }
 
+  .gt-library-section .gt-library-container,
   .gt-library-sec .gt-library-container {
     padding: 50px 20px 60px 20px;
   }
+  .gt-library-section .gt-library-content-col,
   .gt-library-sec .gt-library-content-col {
     gap: 32px;
   }
+  .gt-library-section .gt-library-title,
   .gt-library-sec .gt-library-title {
     font-size: 32px;
     line-height: 40px;
   }
+  .gt-library-section .gt-library-desc,
   .gt-library-sec .gt-library-desc {
     font-size: 16px;
     line-height: 24px;
   }
+  .gt-library-section .gt-visit-library-btn,
   .gt-library-sec .gt-visit-library-btn {
     width: 100%;
   }
@@ -2260,9 +2287,7 @@
 }
 
 .gt-library-sec .gt-library-texture-img {
-  animation: tibetanWatermarkBreathe 12s ease-in-out infinite;
   transform-origin: left bottom;
-  will-change: opacity, transform;
 }
 
 /* 6. Gold-Thread Hairline Shimmer (Illuminated Manuscript Divider Lines) */

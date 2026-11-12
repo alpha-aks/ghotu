@@ -445,7 +445,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
       {/* ====================================================================
           9. PRESERVING BUDDHIST KNOWLEDGE (Figma: Frame 625809: #6B9EBD)
           ==================================================================== */}
-      <section id="archive" className="gt-library-sec">
+      <section id="archive" className="gt-library-section gt-library-sec">
         <div className="gt-library-container">
           <div className="gt-library-texture-wrap" aria-hidden="true">
             <img
@@ -457,9 +457,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
           </div>
           <div className="gt-library-content-col">
             <div className="gt-library-text-block">
-              <h3 className="gt-library-title">ནང་བསྟན་མི་ཉམས་རྒྱུན་འཛིན།</h3>
+              <h2 className="gt-library-title">ནང་བསྟན་མི་ཉམས་རྒྱུན་འཛིན་དང་རྒྱབ་སྐྱོར།</h2>
               <p className="gt-library-desc">
-                དགོན་པའི་དཔེ་མཛོད་ཁང་གིས་བོད་ཀྱི་དཔེ་རིང་ལག་བྲིས་མ་དང་། ནང་བསྟན་གྱི་འགྲེལ་པ། དེང་རབས་དཔེ་སྐྲུན་བཅས་སྲུང་སྐྱོབ་གནང་བ་དང་ཆབས་ཅིག མ་འོངས་མི་རབས་རྣམས་ཀྱི་ཆེད་དུ་དཀར་ཆག་སྒྲིག་སྦྱོར་དང་། ཉམས་ཞིབ། གློག་རྡུལ་ཅན་དུ་བསྒྱུར་བ་བཅས་ཀྱི་མཐུན་རྐྱེན་སྒྲུབ་བཞིན་ཡོད། དཔེ་ཚོགས་དེ་དག་གི་ཁྲོད་དུ་དགེ་ལུགས་པའི་སློབ་གཉེར་ལ་མེད་དུ་མི་རུང་བའི་གཞུང་ཆེན་གྱི་རྩ་བ་རྣམས་དང་། མཁས་པའི་འགྲེལ་པ། རྒྱུད་ཀྱི་ཉམས་ལེན་སྐོར་བཅས་ཚུད་ཡོད།
+                དགོན་པའི་དཔེ་མཛོད་ཁང་དང་། ཕྱག་དཔེ་གློག་རྡུལ་ཅན་དུ་བསྒྱུར་བའི་ལས་གཞི། ཆོས་བརྒྱུད་མི་ཉམས་རྒྱུན་འཛིན་ལ་རྒྱབ་སྐྱོར་ཞུ་ཕྱོགས་བཅས་ཀྱི་སྐོར།
               </p>
             </div>
             <a 
@@ -468,7 +468,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
               rel="noopener noreferrer"
               className="gt-visit-library-btn"
             >
-              དཔེ་མཛོད་དང་ཡིག་ཚགས།
+              དཔེ་མཛོད་ལ་གཟིགས་རྒྱུ།
             </a>
           </div>
         </div>

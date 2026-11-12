@@ -480,7 +480,7 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
       {/* ====================================================================
           9. PRESERVING BUDDHIST KNOWLEDGE (Figma: Frame 625809: #6B9EBD)
           ==================================================================== */}
-      <section id="archive" className="gt-library-sec">
+      <section id="archive" className="gt-library-section gt-library-sec">
         <div className="gt-library-container">
           <div className="gt-library-texture-wrap" aria-hidden="true">
             <img
@@ -492,7 +492,7 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
           </div>
           <div className="gt-library-content-col">
             <div className="gt-library-text-block">
-              <h3 className="gt-library-title">Preserving Buddhist Knowledge</h3>
+              <h2 className="gt-library-title">Preserving Buddhist Knowledge</h2>
               <p className="gt-library-desc">
                 The monastery's library safeguards rare Tibetan manuscripts, Buddhist commentaries,
                 and contemporary publications while supporting cataloguing, research, and

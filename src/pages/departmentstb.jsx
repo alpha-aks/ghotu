@@ -232,8 +232,11 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                           <li>༥༽ དགེ་བཤེས་སྔགས་རམས་པ། (འབུམ་རམས་པ།) — ལོ་གཉིས་ཀྱི་སྔགས་རམས་པའི་སློབ་གཉེར་དང་རྒྱུགས་སྤྲོད་ལེགས་པར་ཐོན་སྐབས།</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
-                          སློབ་གཉེར་འགན་འཛིན། — དགེ་བཤེས་སྔགས་རམས་པ་ངག་དབང་བརྩོན་འགྲུས།
+                          སློབ་གཉེར་འགན་འཛིན།
                         </p>
+                        <ul className="gt-dept-list-bulleted" style={{ marginTop: '6px', marginBottom: '14px' }}>
+                          <li style={{ color: '#000000' }}>དགེ་བཤེས་སྔགས་རམས་པ་ངག་དབང་བརྩོན་འགྲུས།</li>
+                        </ul>
 
                         <button
                           type="button"
@@ -280,8 +283,11 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                           <li>ལྕམ་སྐུ་པདྨ་མཚམས་གཅོད། (སྨན་ཞབས་པ།)</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
-                          འཕྲོད་བསྟེན་འགན་འཛིན། — དགེ་བཤེས་སྔགས་རམས་པ་ངག་དབང་བརྩོན་འགྲུས།
+                          འཕྲོད་བསྟེན་འགན་འཛིན།
                         </p>
+                        <ul className="gt-dept-list-bulleted" style={{ marginTop: '6px', marginBottom: '14px' }}>
+                          <li style={{ color: '#000000' }}>དགེ་བཤེས་སྔགས་རམས་པ་ངག་དབང་བརྩོན་འགྲུས།</li>
+                        </ul>
                         <button
                           type="button"
                           className="gt-dept-readmore-btn"
@@ -461,8 +467,11 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                           <li>བཙུན་པ་བསྟན་འཛིན་རྒྱ་མཚོ།</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
-                          ཕྱི་འབྲེལ་དང་འབྲེལ་མཐུད་ཞབས་ཞུའི་འགན་འཛིན། — སྔགས་རམས་པ་བློ་བཟང་དར་རྒྱས།
+                          ཕྱི་འབྲེལ་དང་འབྲེལ་མཐུད་ཞབས་ཞུའི་འགན་འཛིན།
                         </p>
+                        <ul className="gt-dept-list-bulleted" style={{ marginTop: '6px', marginBottom: '14px' }}>
+                          <li style={{ color: '#000000' }}>སྔགས་རམས་པ་བློ་བཟང་དར་རྒྱས།</li>
+                        </ul>
                         <button
                           type="button"
                           className="gt-dept-readmore-btn"
@@ -506,8 +515,11 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                           <li>ལྕམ་སྐུ་ནན་སི།</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
-                          མཐུན་རྐྱེན་དང་རྨང་གཞིའི་འཛུགས་སྐྲུན་གྱི་འགན་འཛིན། — སྔགས་རམས་པ་བློ་བཟང་རྡོ་རྗེ།
+                          མཐུན་རྐྱེན་དང་རྨང་གཞིའི་འཛུགས་སྐྲུན་གྱི་འགན་འཛིན།
                         </p>
+                        <ul className="gt-dept-list-bulleted" style={{ marginTop: '6px', marginBottom: '14px' }}>
+                          <li style={{ color: '#000000' }}>སྔགས་རམས་པ་བློ་བཟང་རྡོ་རྗེ།</li>
+                        </ul>
                         <button
                           type="button"
                           className="gt-dept-readmore-btn"
