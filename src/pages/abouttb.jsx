@@ -339,7 +339,7 @@ export default function AboutTb({ onSwitchLanguage, onNavigate }) {
                 <button
                   type="button"
                   className="gt-view-calendar-btn"
-                  onClick={() => handleNav('programmes')}
+                  onClick={() => handleNav('programmes#calendar')}
                 >
                   ལོ་ཐོ་གཟིགས་རྒྱུ།
                 </button>

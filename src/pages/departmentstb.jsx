@@ -8,8 +8,10 @@ const heroBg = '/images/departments/departments-hero.jpg';
 import lungtaImg from '../assets/departments-lungta.png';
 import orgTableSvgTb from '../assets/departments-org-table-tb.svg';
 import './departments.css';
+import { getCurrentUpcomingProgrammes } from '../data/monasteryCalendar2026';
 
 export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
+  const upcomingEvents = getCurrentUpcomingProgrammes();
   const [expandedDepts, setExpandedDepts] = useState({
     admin: false,
     education: false,
@@ -675,7 +677,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                 <button
                   type="button"
                   className="gt-dept-calendar-btn"
-                  onClick={() => onNavigate && onNavigate('programmes')}
+                  onClick={() => onNavigate && onNavigate('programmes#calendar')}
                 >
                   ལོ་ཐོ་གཟིགས་རྒྱུ།
                 </button>
@@ -684,44 +686,20 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
               <div className="gt-dept-events-cards-wrap">
                 <span className="gt-dept-events-top-tag">འབྱུང་འགྱུར་གྱི་མཛད་རིམ།</span>
 
-                <div className="gt-dept-event-card">
-                  <div className="gt-event-card-date">
-                    <span className="gt-event-month">བོད་ཟླ་</span>
-                    <span className="gt-event-day">༡ ཚེས</span>
-                    <span className="gt-event-year">༡-༡༥</span>
+                {upcomingEvents.map((item, idx) => (
+                  <div key={`${item.id}-${idx}`} className="gt-dept-event-card">
+                    <div className="gt-event-card-date">
+                      <span className="gt-event-month">{item.monthTb || item.month}</span>
+                      <span className="gt-event-day">{item.dayTb || item.day}</span>
+                      <span className="gt-event-year">{item.yearTb || item.year}</span>
+                    </div>
+                    <div className="gt-event-card-divider" />
+                    <div className="gt-event-card-body">
+                      <h4>{item.titleTb || item.title}</h4>
+                      <p>{item.descTb || item.desc}</p>
+                    </div>
                   </div>
-                  <div className="gt-event-card-divider" />
-                  <div className="gt-event-card-body">
-                    <h4>ཆོ་འཕྲུལ་སྨོན་ལམ་ཆེན་མོ།</h4>
-                    <p>ཆོ་འཕྲུལ་སྨོན་ལམ་ཆེན་མོ་དང་རྒྱུད་སྟོད་སྨོན་ལམ་ཚོགས་པ།</p>
-                  </div>
-                </div>
-
-                <div className="gt-dept-event-card">
-                  <div className="gt-event-card-date">
-                    <span className="gt-event-month">བོད་ཟླ་</span>
-                    <span className="gt-event-day">༤ ཚེས</span>
-                    <span className="gt-event-year">༡༥</span>
-                  </div>
-                  <div className="gt-event-card-divider" />
-                  <div className="gt-event-card-body">
-                    <h4>ས་ག་ཟླ་བའི་དུས་ཆེན།</h4>
-                    <p>སྟོན་པ་སངས་རྒྱས་ཀྱི་སྐུ་བལྟམས་པ་དང་། སངས་རྒྱས་པ། མྱ་ངན་ལས་འདས་པའི་དུས་ཆེན།</p>
-                  </div>
-                </div>
-
-                <div className="gt-dept-event-card">
-                  <div className="gt-event-card-date">
-                    <span className="gt-event-month">བོད་ཟླ་</span>
-                    <span className="gt-event-day">༦ ཚེས</span>
-                    <span className="gt-event-year">༤</span>
-                  </div>
-                  <div className="gt-event-card-divider" />
-                  <div className="gt-event-card-body">
-                    <h4>ཆོས་འཁོར་དུས་ཆེན།</h4>
-                    <p>སྟོན་པ་ཤཱཀྱ་ཐུབ་པས་བདེན་བཞིའི་ཆོས་འཁོར་ཐོག་མར་བསྐོར་བའི་དུས་ཆེན།</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

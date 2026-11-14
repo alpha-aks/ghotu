@@ -629,47 +629,52 @@
   border-color: #6C665D;
 }
 
-/* Date Box (Left Column: 77px x 90px) */
+/* Date Box (Left Column: adaptive width with min-width 86px) */
 .gt-pcard-date-col {
-  width: 77px;
-  height: 90px;
+  min-width: 86px;
+  width: auto;
+  min-height: 90px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  padding: 0;
+  padding: 0 6px;
   background: transparent;
   border: none;
 }
 
 .gt-pdate-month {
   font-family: 'Source Sans 3', system-ui, sans-serif;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 600;
   line-height: 24px;
   color: #A8833D;
   text-transform: uppercase;
   margin: 0;
+  white-space: nowrap;
 }
 
 .tibetan-text .gt-pdate-month {
   font-family: var(--font-tibetan, 'Sambhota', 'Jomolhari', serif);
   font-size: 18px;
+  white-space: nowrap;
 }
 
 .gt-pdate-day {
   font-family: 'Source Sans 3', system-ui, sans-serif;
-  font-size: 40px;
-  font-weight: 500;
-  line-height: 40px;
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 34px;
   color: #2D2A28;
   margin: 0;
+  white-space: nowrap;
 }
 
 .tibetan-text .gt-pdate-day {
-  font-size: 34px;
+  font-size: 26px;
+  white-space: nowrap;
 }
 
 .gt-pdate-year {
@@ -1565,3 +1570,356 @@
     font-size: 11.5px;
   }
 }
+
+/* ==========================================================================
+   AUTHENTIC 12-MONTH MONASTIC CALENDAR ENHANCEMENTS (From 2026 PDF)
+   ========================================================================== */
+.gt-cal-month-ribbon {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 6px 0 14px 0;
+  margin-bottom: 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #D8D0C2 transparent;
+}
+
+.gt-cal-month-pill {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 14px;
+  background: #FDFBF7;
+  border: 1px solid #E2DCD0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 96px;
+  text-align: center;
+}
+
+.gt-cal-month-pill:hover {
+  background: #FFF8E7;
+  border-color: #E5C583;
+}
+
+.gt-cal-month-pill.active {
+  background: #92060F;
+  border-color: #92060F;
+  color: #FFFFFF;
+  box-shadow: 0 3px 10px rgba(146, 6, 15, 0.22);
+}
+
+.gt-cal-month-pill-tb {
+  font-family: var(--figma-font-tibetan, serif);
+  font-size: 13px;
+  font-weight: 600;
+  color: inherit;
+  margin-bottom: 2px;
+}
+
+.gt-cal-month-pill-en {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: inherit;
+  opacity: 0.9;
+}
+
+.gt-cal-cell.empty-slot {
+  background-color: #FAF7F2;
+  cursor: default;
+  border-right: 1px solid #ECE7DE;
+  border-bottom: 1px solid #ECE7DE;
+}
+
+.gt-cal-cell.empty-slot:hover {
+  background-color: #FAF7F2;
+}
+
+/* Day cell dual numbers */
+.gt-cal-cell-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+}
+
+.gt-cal-date-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 4px;
+}
+
+/* English number big & highlighted */
+.gt-cal-greg-num {
+  font-family: var(--figma-font-sans, system-ui, sans-serif);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1;
+  color: #1F2421;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 3px;
+  letter-spacing: -0.02em;
+}
+
+.gt-cal-greg-month-sub {
+  font-size: 11px;
+  font-weight: 700;
+  color: #7A7267;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Tibetan number small & subtle (plain text, no box) */
+.gt-cal-tib-num {
+  font-family: var(--figma-font-tibetan, serif);
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1;
+  color: #8C6A2E;
+  background: transparent;
+  border: none;
+  padding: 0;
+  box-shadow: none;
+}
+
+.gt-cal-cell.selected-day .gt-cal-greg-num {
+  color: #0E354C !important;
+}
+
+.gt-cal-cell.selected-day .gt-cal-greg-month-sub {
+  color: #2778A7 !important;
+}
+
+.gt-cal-cell.selected-day .gt-cal-tib-num {
+  color: #0E354C !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Today Cell Highlight & Badges */
+.gt-cal-cell.is-today {
+  border: 2px solid #92060F !important;
+  background-color: #FFFDF9;
+  box-shadow: 0 0 0 1px #92060F, inset 0 0 0 1px rgba(146, 6, 15, 0.08);
+}
+
+.gt-cal-cell.is-today.selected-day {
+  border-color: #2778A7 !important;
+  box-shadow: 0 0 0 1px #2778A7, inset 0 0 0 1px rgba(39, 120, 167, 0.25);
+}
+
+.gt-cal-today-pill {
+  font-family: var(--figma-font-sans, system-ui, sans-serif);
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: #FFFFFF;
+  background: #92060F;
+  padding: 1px 5px;
+  border-radius: 3px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  display: inline-block;
+}
+
+.tibetan-text .gt-cal-today-pill {
+  font-family: var(--figma-font-tibetan, serif);
+  font-size: 11px;
+  padding: 1px 6px;
+}
+
+.gt-cal-jump-today-btn {
+  background: #92060F;
+  border: 1px solid #92060F;
+  color: #FFFFFF;
+  font-size: 12.5px;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.gt-cal-jump-today-btn:hover {
+  background: #73040B;
+  border-color: #73040B;
+}
+
+.gt-legend-color.today-marker {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #92060F;
+  border-radius: 2px;
+  background-color: #FFFDF9;
+}
+
+.gt-cal-month-select {
+  padding: 5px 12px;
+  border: 1px solid #D2C8BA;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #2D2A28;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.gt-cal-month-select:hover,
+.gt-cal-month-select:focus {
+  border-color: #92060F;
+  box-shadow: 0 0 0 2px rgba(146, 6, 15, 0.1);
+}
+
+/* Badges inside cells */
+.gt-cal-badges-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  margin-top: 2px;
+}
+
+.gt-cal-badge {
+  font-size: 10px;
+  padding: 1px 4px;
+  border-radius: 3px;
+  line-height: 1.2;
+  font-family: var(--figma-font-tibetan, serif);
+}
+
+.gt-cal-badge.astro {
+  background: #F4EFE6;
+  color: #554433;
+}
+
+.gt-cal-badge.sojong {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FCD34D;
+  font-weight: 700;
+}
+
+.gt-cal-badge.naga {
+  background: #E0F2FE;
+  color: #0369A1;
+  border: 1px solid #BAE6FD;
+  font-weight: 700;
+}
+
+.gt-cal-badge.chad {
+  background: #FEE2E2;
+  color: #991B1B;
+  font-weight: 700;
+}
+
+.gt-cal-badge.lhag {
+  background: #DCFCE7;
+  color: #166534;
+  font-weight: 700;
+}
+
+.gt-cal-badge.inauspicious {
+  background: #F3F4F6;
+  color: #4B5563;
+}
+
+.gt-cal-event-banner {
+  font-size: 9.5px;
+  line-height: 1.2;
+  color: #7A050B;
+  background: #FFEBEB;
+  border-left: 2px solid #92060F;
+  padding: 1px 3px;
+  border-radius: 2px;
+  margin-top: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+/* Monthly Observances Section in Programmes */
+.gt-cal-monthly-events-box {
+  background: #FAF7F2;
+  border: 1px solid #E5DFD4;
+  border-radius: 8px;
+  padding: 22px 24px;
+  margin-top: 24px;
+}
+
+.gt-cal-monthly-events-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #92060F;
+  margin: 0 0 16px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gt-cal-monthly-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.gt-cal-monthly-col h4 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #777777;
+  margin: 0 0 10px 0;
+}
+
+.gt-cal-monthly-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gt-cal-monthly-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 6px 10px;
+  background: #FFFFFF;
+  border: 1px solid #ECE7DE;
+  border-radius: 5px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.gt-cal-monthly-item.is-tb {
+  font-family: var(--figma-font-tibetan, serif);
+  font-size: 14px;
+}
+
+.gt-cal-monthly-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #92060F;
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .gt-cal-monthly-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+

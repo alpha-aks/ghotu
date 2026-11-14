@@ -50,6 +50,9 @@ export default function Footer({ lang = 'en', onNavigate }) {
                 <a href="/programmes" onClick={(e) => handleLinkClick('programmes', e)}>{isTibetan ? 'ལས་རིམ།' : 'Spiritual Programmes'}</a>
               </li>
               <li>
+                <a href="/programmes#calendar" onClick={(e) => handleLinkClick('programmes#calendar', e)}>{isTibetan ? 'ལོ་ཐོ།' : 'Monastic Calendar'}</a>
+              </li>
+              <li>
                 <a href="/departments" onClick={(e) => handleLinkClick('departments', e)}>{isTibetan ? 'སྡེ་ཚན་ཁག' : 'Departments'}</a>
               </li>
               <li>

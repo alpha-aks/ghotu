@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Languages } from 'lucide-react';
 import Home from './pages/home';
 import HomeTb from './pages/hometb';
 import Contact from './pages/contact';
@@ -25,7 +26,7 @@ export default function App() {
     // 1. Pathname checks
     if (pathname === '/news' || pathname === '/updates') return 'news';
     if (pathname === '/about') return 'about';
-    if (pathname === '/programmes' || pathname === '/programs') return 'programmes';
+    if (pathname === '/programmes' || pathname === '/programs' || pathname === '/calendar') return 'programmes';
     if (pathname === '/contact') return 'contact';
     if (pathname === '/support' || pathname === '/donate') return 'support';
     if (pathname === '/departments') return 'departments';
@@ -34,7 +35,7 @@ export default function App() {
     // 2. Hash fallback
     if (hash === '#news' || hash === '#updates') return 'news';
     if (hash === '#about') return 'about';
-    if (hash === '#programmes' || hash === '#programs') return 'programmes';
+    if (hash === '#programmes' || hash === '#programs' || hash === '#calendar') return 'programmes';
     if (hash === '#contact') return 'contact';
     if (hash === '#donate' || hash === '#support') return 'support';
     if (hash === '#departments' || hash === '#all-departments') return 'departments';
@@ -45,6 +46,21 @@ export default function App() {
 
   const [currentLang, setCurrentLang] = useState('en'); // 'en' | 'tb'
   const [currentPage, setCurrentPage] = useState(getPageFromLocation);
+  const [showFloatingLang, setShowFloatingLang] = useState(false);
+
+  // Show floating circular language translate button while scrolling down
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowFloatingLang(window.scrollY > 160);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const toggleLanguage = () => {
+    setCurrentLang((prev) => (prev === 'en' ? 'tb' : 'en'));
+  };
 
   // Pathname and history based routing synchronization
   useEffect(() => {
@@ -199,7 +215,7 @@ export default function App() {
       path = '/news';
     } else if (targetPage === 'about') {
       path = '/about';
-    } else if (targetPage === 'programmes' || targetPage === 'programs') {
+    } else if (targetPage === 'programmes' || targetPage === 'programs' || targetPage === 'calendar') {
       path = '/programmes';
     } else if (targetPage === 'contact') {
       path = '/contact';
@@ -286,6 +302,22 @@ export default function App() {
           <HomeTb onSwitchLanguage={switchLanguage} onNavigate={navigateTo} />
         )
       )}
+
+      {/* Floating Circular Language Translation Button (visible while scrolling) */}
+      <button
+        type="button"
+        className={`gt-floating-lang-btn ${showFloatingLang ? 'visible' : ''}`}
+        onClick={toggleLanguage}
+        aria-label={currentLang === 'en' ? 'Translate to Tibetan (བོད་ཡིག་ལ་བརྗེ་བ།)' : 'Translate to English'}
+        title={currentLang === 'en' ? 'Translate to Tibetan (བོད་ཡིག)' : 'Translate to English'}
+      >
+        <div className="gt-floating-lang-icon-wrap">
+          <Languages size={15} strokeWidth={2} />
+        </div>
+        <span className={`gt-floating-lang-text ${currentLang === 'en' ? 'is-tb' : ''}`}>
+          {currentLang === 'en' ? 'བོད་ཡིག' : 'ENG'}
+        </span>
+      </button>
     </div>
   );
 }

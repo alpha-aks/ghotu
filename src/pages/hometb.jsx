@@ -14,12 +14,14 @@ import {
   Play, 
   ExternalLink
 } from 'lucide-react';
+import { getCurrentUpcomingProgrammes } from '../data/monasteryCalendar2026';
 
 export default function HomeTb({ onSwitchLanguage, onNavigate }) {
   const [activeNoticeTab, setActiveNoticeTab] = useState('announcement');
   const [activeStatDot, setActiveStatDot] = useState(0);
   const [currentHeroSlide, setCurrentHeroSlide] = useState(0); // 0: Tibetan, 1: English
   const statsGridRef = useRef(null);
+  const upcomingEvents = getCurrentUpcomingProgrammes();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -422,20 +424,20 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             <div className="gt-prog-right">
               <h4 className="gt-prog-right-title">འབྱུང་འགྱུར་གྱི་མཛད་རིམ།</h4>
               <div className="gt-events-stack">
-                <div className="gt-event-card">
-                  <div className="gt-event-date-box">
-                    <span className="gt-event-month">ཕྱི་ཟླ་</span>
-                    <span className="gt-event-day">༢ ཚེས་</span>
-                    <span className="gt-event-year">༡༨</span>
+                {upcomingEvents.map((item, idx) => (
+                  <div key={`${item.id}-${idx}`} className="gt-event-card">
+                    <div className="gt-event-date-box">
+                      <span className="gt-event-month">{item.monthTb || item.month}</span>
+                      <span className="gt-event-day">{item.dayTb || item.day}</span>
+                      <span className="gt-event-year">{item.yearTb || item.year}</span>
+                    </div>
+                    <div className="gt-event-divider-vert" />
+                    <div className="gt-event-info">
+                      <h5 className="gt-event-name">{item.titleTb || item.title}</h5>
+                      <p className="gt-event-desc">{item.descTb || item.desc}</p>
+                    </div>
                   </div>
-                  <div className="gt-event-divider-vert" />
-                  <div className="gt-event-info">
-                    <h5 className="gt-event-name">བོད་ཀྱི་ལོ་གསར་དུས་ཆེན་སྲུང་བརྩི།</h5>
-                    <p className="gt-event-desc">
-                      ལོ་གསར་ནི་བོད་ཀྱི་ལོ་ཐོའི་ལོ་མགོ་མཚོན་བྱེད་ཡིན། གྲྭ་ཚང་འདིར་ཉིན་གསུམ་རིང་ཆོས་ཕྱོགས་ཀྱི་མཛད་སྒོ་དང་སྤྱི་ཚོགས་ཀྱི་མཛད་སྒོ་བཅས་གོ་སྒྲིག་གནང་སྟེ་ནང་པའི་ཆོས་དང་རིག་གཞུང་གསར་གཏོད་ཀྱི་དགའ་སྟོན་རྟེན་འབྲེལ་སྲུང་བརྩི་ཞུ་བར་བྱེད།
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

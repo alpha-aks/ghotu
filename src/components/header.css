@@ -110,22 +110,22 @@
   display: none;
 }
 
-/* Language switch (Figma node 1:3537 / 1:3550: 139px x 44px, #FFFAF1, radius: 6px, padding: 6px, gap: 2px) */
+/* Language switch (Strictly equal 63px x 32px buttons, both centered, same font size) */
 .gt-lang-switcher-box {
   display: flex !important;
   flex-direction: row !important;
   align-items: center !important;
   justify-content: center !important;
-  padding: 6px !important;
-  gap: 2px !important;
+  padding: 5px !important;
+  gap: 3px !important;
   background: #FFFAF1 !important;
   border-radius: 6px !important;
-  width: 139px !important;
-  min-width: 139px !important;
-  max-width: 139px !important;
-  height: 44px !important;
-  min-height: 44px !important;
-  max-height: 44px !important;
+  width: 138px !important;
+  min-width: 138px !important;
+  max-width: 138px !important;
+  height: 42px !important;
+  min-height: 42px !important;
+  max-height: 42px !important;
   box-sizing: border-box !important;
   border: none !important;
   box-shadow: none !important;
@@ -139,7 +139,7 @@
   flex-direction: row !important;
   justify-content: center !important;
   align-items: center !important;
-  border-radius: 6px !important;
+  border-radius: 5px !important;
   border: none !important;
   cursor: pointer !important;
   height: 32px !important;
@@ -156,9 +156,10 @@
   transform: none !important;
   position: static !important;
   overflow: hidden !important;
+  text-align: center !important;
 }
 
-/* Frame 2147236827 (english, 63px x 32px) */
+/* Strictly equal width: 63px each */
 .gt-lang-btn-en {
   width: 63px !important;
   min-width: 63px !important;
@@ -166,12 +167,11 @@
   flex: 0 0 63px !important;
 }
 
-/* Frame 2147236828 (tibetan, 62px x 32px) */
 .gt-lang-btn-tb {
-  width: 62px !important;
-  min-width: 62px !important;
-  max-width: 62px !important;
-  flex: 0 0 62px !important;
+  width: 63px !important;
+  min-width: 63px !important;
+  max-width: 63px !important;
+  flex: 0 0 63px !important;
 }
 
 .gt-lang-btn.active {
@@ -188,16 +188,18 @@
   background: rgba(146, 6, 15, 0.08) !important;
 }
 
-/* English text: Source Sans 3 Bold (700) 11px, UPPERCASE */
+/* English text: strictly 12px, bold, centered */
 .gt-lang-text-en {
-  font-family: 'Source Sans 3', sans-serif !important;
+  font-family: 'Source Sans 3', system-ui, sans-serif !important;
   font-style: normal !important;
   font-weight: 700 !important;
-  font-size: 11px !important;
+  font-size: 12px !important;
   line-height: 1 !important;
   letter-spacing: 0.02em !important;
   text-transform: uppercase !important;
-  display: block !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   text-align: center !important;
   white-space: nowrap !important;
   margin: 0 !important;
@@ -213,20 +215,22 @@
   color: #92060F !important; /* Exact Figma maroon */
 }
 
-/* Tibetan text: Noto Serif Tibetan Medium (500) 13.5px */
+/* Tibetan text: strictly 12px, bold, perfectly centered */
 .gt-lang-text-tb {
-  font-family: 'Noto Serif Tibetan', serif !important;
+  font-family: 'Noto Serif Tibetan', 'Sambhota', serif !important;
   font-style: normal !important;
-  font-weight: 500 !important;
-  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
   line-height: 1 !important;
   letter-spacing: 0 !important;
-  display: block !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   text-align: center !important;
   white-space: nowrap !important;
   margin: 0 !important;
   padding: 0 !important;
-  transform: translateY(-0.5px) !important;
+  transform: translateY(2.5px) !important; /* Vertically centers Tibetan glyphs with English */
 }
 
 .gt-lang-btn.active .gt-lang-text-tb {
@@ -588,12 +592,13 @@
   }
 
   .gt-lang-switcher-mobile .gt-lang-text-en {
-    font-size: 10.5px !important;
+    font-size: 11px !important;
     letter-spacing: 0.02em !important;
   }
 
   .gt-lang-switcher-mobile .gt-lang-text-tb {
-    font-size: 13px !important;
+    font-size: 11px !important;
+    transform: translateY(2px) !important;
   }
 
   /* Mobile Hamburger Menu on Right */
@@ -782,6 +787,7 @@
   }
 
   .gt-lang-switcher-mobile .gt-lang-text-tb {
-    font-size: 12px !important;
+    font-size: 10px !important;
+    transform: translateY(2px) !important;
   }
 }

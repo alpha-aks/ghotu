@@ -625,11 +625,112 @@ img {
   .gt-gallery-card,
   .gt-notice-card,
   .gt-about-intro-card,
-  .gt-calendar-shell {
+  .gt-calendar-shell,
+  .gt-floating-lang-btn {
     opacity: 1 !important;
     transform: none !important;
     transition: none !important;
     animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   FLOATING CIRCULAR LANGUAGE TRANSLATION BUTTON (While Scrolling)
+   ========================================================================== */
+.gt-floating-lang-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: #92060F;
+  border: 2.5px solid #FAC758;
+  color: #FDF1D7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 6px 22px rgba(146, 6, 15, 0.45), 0 2px 8px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  transform: translateY(24px) scale(0.85);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  outline: none;
+  padding: 0;
+}
+
+.gt-floating-lang-btn.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.gt-floating-lang-btn:hover {
+  background: #78040B;
+  border-color: #FFE599;
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 10px 28px rgba(146, 6, 15, 0.55), 0 4px 12px rgba(0, 0, 0, 0.35);
+}
+
+.gt-floating-lang-btn:active {
+  transform: translateY(0) scale(0.96);
+  box-shadow: 0 4px 14px rgba(146, 6, 15, 0.4);
+}
+
+.gt-floating-lang-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FAC758;
+  line-height: 1;
+  transition: transform 0.2s ease;
+}
+
+.gt-floating-lang-btn:hover .gt-floating-lang-icon-wrap {
+  transform: rotate(-8deg);
+}
+
+.gt-floating-lang-text {
+  font-family: 'Source Sans 3', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: #FFFFFF;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.gt-floating-lang-text.is-tb {
+  font-family: 'Noto Serif Tibetan', 'Sambhota', serif;
+  font-size: 9px !important;
+  font-weight: 700;
+  line-height: 1;
+  margin-top: 1px;
+  transform: none !important;
+}
+
+@media (max-width: 768px) {
+  .gt-floating-lang-btn {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    gap: 2px;
+  }
+
+  .gt-floating-lang-text {
+    font-size: 9.5px;
+  }
+
+  .gt-floating-lang-text.is-tb {
+    font-size: 8.5px !important;
+    margin-top: 1px;
   }
 }
 

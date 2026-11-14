@@ -8,6 +8,7 @@ import {
   DharmachakraWatermark
 } from '../components/MonasteryIcons';
 import './about.css';
+import { getCurrentUpcomingProgrammes } from '../data/monasteryCalendar2026';
 
 /**
  * ONLINE DUMMY IMAGES
@@ -40,6 +41,7 @@ export const PAST_ABBOTS = Array.from({ length: 19 }, (_, i) => ({
 }));
 
 export default function About({ onSwitchLanguage, onNavigate }) {
+  const upcomingEvents = getCurrentUpcomingProgrammes();
   const handleNav = (pageKey, e, sectionId) => {
     if (onNavigate) {
       if (e) {
@@ -410,7 +412,7 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                 <button
                   type="button"
                   className="gt-view-calendar-btn"
-                  onClick={() => handleNav('home')}
+                  onClick={() => handleNav('programmes#calendar')}
                 >
                   VIEW CALENDAR
                 </button>
@@ -420,41 +422,19 @@ export default function About({ onSwitchLanguage, onNavigate }) {
               <div className="gt-events-stack-col">
                 <h4>UPCOMING EVENTS</h4>
 
-                <div className="gt-event-card-item">
-                  <div className="gt-event-date-badge">
-                    <div className="gt-event-date-month">FEB</div>
-                    <div className="gt-event-date-day">18th</div>
-                    <div className="gt-event-date-year">2026</div>
+                {upcomingEvents.map((item, idx) => (
+                  <div key={`${item.id}-${idx}`} className="gt-event-card-item">
+                    <div className="gt-event-date-badge">
+                      <div className="gt-event-date-month">{item.month}</div>
+                      <div className="gt-event-date-day">{item.day}</div>
+                      <div className="gt-event-date-year">{item.year}</div>
+                    </div>
+                    <div className="gt-event-card-details">
+                      <h5>{item.title}</h5>
+                      <p>{item.desc}</p>
+                    </div>
                   </div>
-                  <div className="gt-event-card-details">
-                    <h5>Tibetan New Year Celebration</h5>
-                    <p>Losar marks the beginning of the Tibetan calendar year with special prayers and sacred ceremonies.</p>
-                  </div>
-                </div>
-
-                <div className="gt-event-card-item">
-                  <div className="gt-event-date-badge">
-                    <div className="gt-event-date-month">FEB</div>
-                    <div className="gt-event-date-day">18th</div>
-                    <div className="gt-event-date-year">2026</div>
-                  </div>
-                  <div className="gt-event-card-details">
-                    <h5>Tibetan New Year Celebration</h5>
-                    <p>Losar marks the beginning of the Tibetan calendar year with special prayers and sacred ceremonies.</p>
-                  </div>
-                </div>
-
-                <div className="gt-event-card-item">
-                  <div className="gt-event-date-badge">
-                    <div className="gt-event-date-month">FEB</div>
-                    <div className="gt-event-date-day">18th</div>
-                    <div className="gt-event-date-year">2026</div>
-                  </div>
-                  <div className="gt-event-card-details">
-                    <h5>Tibetan New Year Celebration</h5>
-                    <p>Losar marks the beginning of the Tibetan calendar year with special prayers and sacred ceremonies.</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

@@ -21,6 +21,7 @@ import {
   Sparkles,
   ArrowRight
 } from 'lucide-react';
+import { CALENDAR_METADATA, WEEKDAYS, MONTHS_DATA, getTodayCalendarInfo, MONTHLY_UPCOMING_PROGRAMMES } from '../data/monasteryCalendar2026';
 import './programmes.css';
 
 // Monastic Ceremonies and Events mapped by Date key (YYYY-MM-DD)
@@ -179,106 +180,50 @@ const MONTH_NAMES = [
   'July', 'August', 'September', 'October', 'November', 'December'
 ];
 
-const DAY_NAMES = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
 export default function Programmes({ onSwitchLanguage, onNavigate }) {
-  // Calendar state initialized to August 2026 matching design mockup
-  const [currentYear, setCurrentYear] = useState(2026);
-  const [currentMonth, setCurrentMonth] = useState(7); // 7 = August (0-indexed)
-  const [selectedDateKey, setSelectedDateKey] = useState('2026-08-06'); // August 6, 2026 selected
+  // Determine current day info (defaults to today's date in 2026-2027 calendar)
+  const todayInfo = getTodayCalendarInfo();
+  const [selectedMonthIdx, setSelectedMonthIdx] = useState(todayInfo.monthIdx);
+  const [selectedDay, setSelectedDay] = useState(todayInfo.dayObj);
   const [activeModalEvent, setActiveModalEvent] = useState(null);
 
-  // Handle previous month navigation
+  const currentMonthData = MONTHS_DATA[selectedMonthIdx];
+
   const handlePrevMonth = () => {
-    if (currentMonth === 0) {
-      setCurrentMonth(11);
-      setCurrentYear(prev => prev - 1);
-    } else {
-      setCurrentMonth(prev => prev - 1);
-    }
+    const newIdx = selectedMonthIdx === 0 ? MONTHS_DATA.length - 1 : selectedMonthIdx - 1;
+    setSelectedMonthIdx(newIdx);
+    setSelectedDay(MONTHS_DATA[newIdx].days[0]);
   };
 
-  // Handle next month navigation
   const handleNextMonth = () => {
-    if (currentMonth === 11) {
-      setCurrentMonth(0);
-      setCurrentYear(prev => prev + 1);
-    } else {
-      setCurrentMonth(prev => prev + 1);
-    }
+    const newIdx = selectedMonthIdx === MONTHS_DATA.length - 1 ? 0 : selectedMonthIdx + 1;
+    setSelectedMonthIdx(newIdx);
+    setSelectedDay(MONTHS_DATA[newIdx].days[0]);
   };
 
-  // Reset to default August 2026 (matching design)
-  const handleResetToDesign = () => {
-    setCurrentYear(2026);
-    setCurrentMonth(7);
-    setSelectedDateKey('2026-08-06');
+  const handleSelectMonth = (idx) => {
+    setSelectedMonthIdx(idx);
+    setSelectedDay(MONTHS_DATA[idx].days[0]);
   };
 
-  // Generate 42 calendar grid cells (6 rows x 7 days)
-  const generateCalendarDays = () => {
-    const days = [];
-    const firstDayIndex = new Date(currentYear, currentMonth, 1).getDay(); // 0-6
-    const totalDaysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
-    const prevMonthDays = new Date(currentYear, currentMonth, 0).getDate();
-
-    // 1. Leading days from previous month
-    for (let i = firstDayIndex - 1; i >= 0; i--) {
-      const dayNum = prevMonthDays - i;
-      const prevMonth = currentMonth === 0 ? 11 : currentMonth - 1;
-      const prevYear = currentMonth === 0 ? currentYear - 1 : currentYear;
-      const dateKey = `${prevYear}-${String(prevMonth + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
-      days.push({
-        dayNum,
-        dateKey,
-        isOtherMonth: true,
-        year: prevYear,
-        month: prevMonth,
-        events: MONASTERY_EVENTS_DATA[dateKey] || []
-      });
-    }
-
-    // 2. Days of current month
-    for (let i = 1; i <= totalDaysInMonth; i++) {
-      const dateKey = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
-      days.push({
-        dayNum: i,
-        dateKey,
-        isOtherMonth: false,
-        year: currentYear,
-        month: currentMonth,
-        events: MONASTERY_EVENTS_DATA[dateKey] || []
-      });
-    }
-
-    // 3. Trailing days from next month to fill standard 42 cell grid
-    const remainingSlots = 42 - days.length;
-    for (let i = 1; i <= remainingSlots; i++) {
-      const nextMonth = currentMonth === 11 ? 0 : currentMonth + 1;
-      const nextYear = currentMonth === 11 ? currentYear + 1 : currentYear;
-      const dateKey = `${nextYear}-${String(nextMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
-      days.push({
-        dayNum: i,
-        dateKey,
-        isOtherMonth: true,
-        year: nextYear,
-        month: nextMonth,
-        events: MONASTERY_EVENTS_DATA[dateKey] || []
-      });
-    }
-
-    return days;
+  const handleJumpToToday = () => {
+    setSelectedMonthIdx(todayInfo.monthIdx);
+    setSelectedDay(todayInfo.dayObj);
   };
 
-  const calendarDays = generateCalendarDays();
-  const prevMonthName = MONTH_NAMES[currentMonth === 0 ? 11 : currentMonth - 1];
-  const nextMonthName = MONTH_NAMES[currentMonth === 11 ? 0 : currentMonth + 1];
-  const currentMonthName = MONTH_NAMES[currentMonth];
+  // Trailing empty slots to complete the final 7-day row
+  const startOffset = currentMonthData.startDayOfWeek;
+  const totalDays = currentMonthData.days.length;
+  const remainder = (startOffset + totalDays) % 7;
+  const trailingEmptyCount = remainder === 0 ? 0 : 7 - remainder;
 
-  // Parse currently selected date for formatted display
-  const [selYear, selMonth, selDay] = selectedDateKey.split('-').map(Number);
-  const formattedSelectedDate = `${String(selDay).padStart(2, '0')} ${MONTH_NAMES[selMonth - 1]} ${selYear}`;
-  const selectedDayEvents = MONASTERY_EVENTS_DATA[selectedDateKey] || [];
+  const selectedYear = selectedDay.gregMonth === 'Jan' || (selectedDay.gregMonth === 'Feb' && currentMonthData.monthIndex === 12)
+    ? '2027'
+    : '2026';
+  const formattedSelectedDate = `${selectedDay.gregDay} ${selectedDay.gregMonth} ${selectedYear}`;
+
+  // Derive upcoming events dynamically based on currently active/selected calendar month
+  const upcomingEvents = MONTHLY_UPCOMING_PROGRAMMES[currentMonthData.monthIndex] || UPCOMING_PROGRAMMES;
 
   return (
     <div className="gt-programmes-page">
@@ -307,22 +252,27 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
         </section>
 
         {/* ====================================================================
-            2. ANNUAL CALENDAR SECTION (Working interactive calendar)
+            2. ANNUAL MONASTIC CALENDAR SECTION (Authentic 12 Months from PDF)
             ==================================================================== */}
         <section className="gt-calendar-section" id="calendar">
           <div className="gyuto-container">
             <div className="gt-calendar-header-group">
-              <h2 className="gt-calendar-section-title">Annual Calendar</h2>
+              <h2 className="gt-calendar-section-title">Annual Monastic Calendar</h2>
               <p className="gt-calendar-section-sub">
-                The monastery's programme follows the Tibetan Buddhist calendar, with activities taking place throughout the year. Use the calendar to explore upcoming teachings, ceremonies, retreats, examinations, and other events.
+                Gyuto Tantric Monastery follows the authentic Tibetan lunar calendar (བོད་རྒྱལ་ལོ་ ༢༡༥༣ རབ་བྱུང་ ༡༧ པའི་མེ་རྟ་ལོ། — 17th Rabjung Fire Horse Year 2026–2027). Explore monthly ceremonies, Sojong confession days, Naga days, tantric rituals, and community pujas across all twelve months.
               </p>
             </div>
 
             <div className="gt-calendar-shell">
-              {/* Month & Year Title */}
-              <h3 className="gt-cal-month-title">
-                {currentMonthName}, {currentYear}
-              </h3>
+              {/* Month & Tibetan Year Title */}
+              <div style={{ textAlign: 'center', marginBottom: 12 }}>
+                <h3 className="gt-cal-month-title" style={{ marginBottom: 4 }}>
+                  {currentMonthData.tibetanMonth} {currentMonthData.tibetanMonthSub}
+                </h3>
+                <div style={{ fontSize: '15px', fontWeight: 600, color: '#A8833D', letterSpacing: '0.02em' }}>
+                  {currentMonthData.westernRange} • {CALENDAR_METADATA.tibetanElementYearEn}
+                </div>
+              </div>
 
               {/* Blue Navigation Bar with Center Date Display */}
               <div className="gt-cal-nav-bar">
@@ -330,23 +280,26 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                   type="button"
                   className="gt-cal-nav-btn"
                   onClick={handlePrevMonth}
-                  aria-label={`Previous month, ${prevMonthName}`}
+                  aria-label="Previous Tibetan Month"
                 >
                   <ChevronLeft size={16} />
-                  <span>{prevMonthName}</span>
+                  <span>Prev Month</span>
                 </button>
 
                 <div className="gt-cal-center-box">
-                  {formattedSelectedDate}
+                  <span style={{ fontFamily: 'var(--figma-font-tibetan, serif)', fontSize: '15px', marginRight: 6 }}>
+                    {currentMonthData.tibetanMonth}
+                  </span>
+                  <span>({currentMonthData.westernRange})</span>
                 </div>
 
                 <button
                   type="button"
                   className="gt-cal-nav-btn"
                   onClick={handleNextMonth}
-                  aria-label={`Next month, ${nextMonthName}`}
+                  aria-label="Next Tibetan Month"
                 >
-                  <span>{nextMonthName}</span>
+                  <span>Next Month</span>
                   <ChevronRight size={16} />
                 </button>
               </div>
@@ -356,117 +309,280 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                 <div className="gt-cal-legend">
                   <div className="gt-cal-legend-item">
                     <span className="gt-legend-color selected" />
-                    <span>Selected Date</span>
+                    <span>Selected Day</span>
                   </div>
                   <div className="gt-cal-legend-item">
-                    <span className="gt-legend-color event" />
-                    <span>Special Monastic Ceremony</span>
+                    <span className="gt-legend-color today-marker" />
+                    <span>Today</span>
+                  </div>
+                  <div className="gt-cal-legend-item">
+                    <span className="gt-cal-badge sojong" style={{ fontSize: '10px' }}>གསོ་སྦྱོང༌ Sojong</span>
+                    <span>Purification & Confession</span>
+                  </div>
+                  <div className="gt-cal-legend-item">
+                    <span className="gt-cal-badge naga" style={{ fontSize: '10px' }}>ཀླུ་ཐེབས Naga</span>
+                    <span>Water Spirits Offering Day</span>
+                  </div>
+                  <div className="gt-cal-legend-item">
+                    <span className="gt-cal-event-banner" style={{ margin: 0, padding: '2px 6px' }}>Ceremony</span>
+                    <span>Monastic Event / Holy Day</span>
                   </div>
                 </div>
 
-                <button
-                  type="button"
-                  className="gt-cal-reset-btn"
-                  onClick={handleResetToDesign}
-                  title="Reset to August 2026 design view"
-                >
-                  Reset to August 2026
-                </button>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <button
+                    type="button"
+                    className="gt-cal-jump-today-btn"
+                    onClick={handleJumpToToday}
+                    title="Jump to today's date"
+                  >
+                    <span>Today ({todayInfo.dayObj.gregDay} {todayInfo.dayObj.gregMonth})</span>
+                  </button>
+
+                  <select
+                    value={selectedMonthIdx}
+                    onChange={(e) => handleSelectMonth(Number(e.target.value))}
+                    className="gt-cal-month-select"
+                    aria-label="Select Tibetan Month"
+                  >
+                    {MONTHS_DATA.map((m, idx) => (
+                      <option key={m.monthIndex} value={idx}>
+                        {m.tibetanMonth} ({m.westernRange})
+                      </option>
+                    ))}
+                  </select>
+                </div>
               </div>
 
               {/* 7-Column Grid */}
               <div className="gt-cal-grid" role="grid" aria-label="Monastic Calendar Grid">
                 {/* Header Row */}
-                {DAY_NAMES.map((dayName) => (
-                  <div key={dayName} className="gt-cal-header-cell" role="columnheader">
-                    {dayName}
+                {WEEKDAYS.map((wd) => (
+                  <div key={wd.key} className="gt-cal-header-cell" role="columnheader">
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
+                      <span>{wd.shortEn}</span>
+                      <span style={{ fontFamily: 'var(--figma-font-tibetan, serif)', fontSize: '12px', color: '#888' }}>
+                        {wd.shortTb}
+                      </span>
+                    </div>
                   </div>
                 ))}
 
-                {/* Day Cells */}
-                {calendarDays.map((cell, idx) => {
-                  const isSelected = cell.dateKey === selectedDateKey;
-                  const hasEvents = cell.events.length > 0;
+                {/* Leading empty slots for starting day of week */}
+                {Array.from({ length: startOffset }).map((_, i) => (
+                  <div key={`empty-lead-${i}`} className="gt-cal-cell empty-slot" role="gridcell" aria-hidden="true" />
+                ))}
+
+                {/* Current Month Tibetan Day Cells */}
+                {currentMonthData.days.map((day, idx) => {
+                  const isSelected = selectedDay && 
+                    selectedDay.tibNum === day.tibNum && 
+                    selectedDay.gregDay === day.gregDay && 
+                    selectedDay.gregMonth === day.gregMonth;
+
+                  const isToday = todayInfo.dayObj && 
+                    day.gregDay === todayInfo.dayObj.gregDay && 
+                    day.gregMonth === todayInfo.dayObj.gregMonth && 
+                    currentMonthData.monthIndex === MONTHS_DATA[todayInfo.monthIdx].monthIndex;
 
                   return (
                     <div
-                      key={idx}
+                      key={`day-${idx}-${day.gregDay}`}
                       role="gridcell"
                       tabIndex={0}
-                      className={`gt-cal-cell ${cell.isOtherMonth ? 'other-month' : 'current-month'} ${isSelected ? 'selected-day' : ''}`}
-                      onClick={() => {
-                        setSelectedDateKey(cell.dateKey);
-                        if (cell.isOtherMonth) {
-                          setCurrentMonth(cell.month);
-                          setCurrentYear(cell.year);
-                        }
-                      }}
+                      className={`gt-cal-cell current-month ${isSelected ? 'selected-day' : ''} ${isToday ? 'is-today' : ''}`}
+                      onClick={() => setSelectedDay(day)}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
-                          setSelectedDateKey(cell.dateKey);
+                          setSelectedDay(day);
                         }
                       }}
-                      title={`${cell.dayNum} ${MONTH_NAMES[cell.month]} ${cell.year}${hasEvents ? ` • ${cell.events[0].title}` : ''}`}
+                      title={`${isToday ? '[TODAY] ' : ''}Tibetan ${day.tibNum} • ${day.gregDay} ${day.gregMonth}${day.tag ? ` • ${day.tag}` : ''}`}
                     >
-                      <div className="gt-cal-cell-top">
-                        <span className="gt-cal-day-number">{cell.dayNum}</span>
-                        {hasEvents && (
-                          <div className="gt-cal-event-indicator">
-                            <span className="gt-cal-dot" />
+                      <div className="gt-cal-cell-inner">
+                        <div className="gt-cal-date-row">
+                          <span className="gt-cal-greg-num">
+                            {day.gregDay}
+                            <span className="gt-cal-greg-month-sub">{day.gregMonth}</span>
+                          </span>
+                          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                            {isToday && (
+                              <span className="gt-cal-today-pill" title="Today">
+                                TODAY
+                              </span>
+                            )}
+                            <span className="gt-cal-tib-num" title={`Tibetan lunar date: ${day.tibNum}`}>
+                              {day.tibNum}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="gt-cal-badges-wrap">
+                          {day.sojong && (
+                            <span className="gt-cal-badge sojong" title="Purification & Confession Day (གསོ་སྦྱོང༌)">
+                              གསོ་སྦྱོང༌
+                            </span>
+                          )}
+                          {day.naga && (
+                            <span className="gt-cal-badge naga" title="Naga Day (ཀླུ་ཐེབས)">
+                              ཀླུ་ཐེབས
+                            </span>
+                          )}
+                          {day.chad && (
+                            <span className="gt-cal-badge chad" title={day.note || 'Omitted Day'}>
+                              {day.chad}
+                            </span>
+                          )}
+                          {day.lhag && (
+                            <span className="gt-cal-badge lhag" title={day.note || 'Duplicated Day'}>
+                              {day.lhag}
+                            </span>
+                          )}
+                          {day.inauspicious && (
+                            <span className="gt-cal-badge inauspicious" title="Inauspicious">
+                              {day.inauspicious}
+                            </span>
+                          )}
+                          {day.element && !day.sojong && !day.naga && (
+                            <span className="gt-cal-badge astro">
+                              {day.element}
+                            </span>
+                          )}
+                        </div>
+
+                        {day.tag && (
+                          <div className="gt-cal-event-banner" title={day.tag}>
+                            {day.tag}
                           </div>
                         )}
                       </div>
-
-                      {hasEvents && (
-                        <div className="gt-cal-cell-events">
-                          <span className="gt-cal-micro-tag">
-                            {cell.events[0].category}
-                          </span>
-                        </div>
-                      )}
                     </div>
                   );
                 })}
+
+                {/* Trailing empty slots to fill the final row */}
+                {Array.from({ length: trailingEmptyCount }).map((_, i) => (
+                  <div key={`empty-trail-${i}`} className="gt-cal-cell empty-slot" role="gridcell" aria-hidden="true" />
+                ))}
               </div>
 
               {/* Interactive Selected Day Details Card */}
-              <div className="gt-cal-selected-info-card">
-                <div className="gt-cal-selected-header">
-                  <div className="gt-cal-selected-date-text">
-                    {formattedSelectedDate}
+              {selectedDay && (
+                <div className="gt-cal-selected-info-card">
+                  <div className="gt-cal-selected-header">
+                    <div>
+                      <div className="gt-cal-selected-date-text">
+                        {formattedSelectedDate}
+                      </div>
+                      <div style={{ fontSize: '14px', color: '#6C665D', marginTop: '2px' }}>
+                        Tibetan Lunar Day {selectedDay.tibNum} — {currentMonthData.tibetanMonth} {currentMonthData.tibetanMonthSub}
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+                      {todayInfo.dayObj && 
+                       selectedDay.gregDay === todayInfo.dayObj.gregDay && 
+                       selectedDay.gregMonth === todayInfo.dayObj.gregMonth && 
+                       currentMonthData.monthIndex === MONTHS_DATA[todayInfo.monthIdx].monthIndex && (
+                        <span className="gt-cal-today-pill" style={{ fontSize: '11px', padding: '3px 8px' }}>
+                          TODAY
+                        </span>
+                      )}
+                      {selectedDay.sojong && (
+                        <span className="gt-cal-badge sojong" style={{ fontSize: '12px', padding: '4px 10px' }}>
+                          གསོ་སྦྱོང༌ Sojong Day (Confession & Vows Restoration)
+                        </span>
+                      )}
+                      {selectedDay.naga && (
+                        <span className="gt-cal-badge naga" style={{ fontSize: '12px', padding: '4px 10px' }}>
+                          ཀླུ་ཐེབས Naga Day (Offerings to Water Spirits)
+                        </span>
+                      )}
+                      {selectedDay.chad && (
+                        <span className="gt-cal-badge chad" style={{ fontSize: '12px', padding: '4px 10px' }}>
+                          {selectedDay.chad} (Omitted Lunar Day)
+                        </span>
+                      )}
+                      {selectedDay.lhag && (
+                        <span className="gt-cal-badge lhag" style={{ fontSize: '12px', padding: '4px 10px' }}>
+                          {selectedDay.lhag} (Duplicated Lunar Day)
+                        </span>
+                      )}
+                    </div>
                   </div>
-                  {selectedDayEvents.length > 0 && selectedDayEvents[0].tibetanLunar && (
-                    <span className="gt-cal-tibetan-lunar-badge">
-                      {selectedDayEvents[0].tibetanLunar}
-                    </span>
-                  )}
-                </div>
 
-                {selectedDayEvents.length > 0 ? (
                   <div className="gt-cal-day-events-list">
-                    {selectedDayEvents.map((ev) => (
-                      <div key={ev.id} className="gt-cal-event-row">
+                    {selectedDay.tag ? (
+                      <div className="gt-cal-event-row">
                         <div className="gt-cal-event-time">
-                          <Clock size={14} style={{ display: 'inline', marginRight: 4, verticalAlign: 'middle' }} />
-                          {ev.time.split('&')[0].trim()}
+                          <Sparkles size={14} style={{ display: 'inline', marginRight: 4, verticalAlign: 'middle', color: '#92060F' }} />
+                          Special
                         </div>
                         <div className="gt-cal-event-body">
-                          <h4>{ev.title}</h4>
-                          <p>{ev.description}</p>
-                          <div style={{ marginTop: 8, fontSize: '13px', color: '#2778A7', display: 'flex', gap: 16 }}>
-                            <span><strong>Venue:</strong> {ev.venue}</span>
-                            <span><strong>Access:</strong> {ev.access}</span>
-                          </div>
+                          <h4>{selectedDay.tag}</h4>
+                          <p>
+                            {selectedDay.note || `Auspicious monastic observance and sacred ceremonies held at Gyuto Tantric Monastery for ${selectedDay.tag}.`}
+                          </p>
+                          {selectedDay.element && (
+                            <div style={{ marginTop: 6, fontSize: '13px', color: '#554433' }}>
+                              <strong>Astrological Marker:</strong> {selectedDay.element}
+                            </div>
+                          )}
                         </div>
                       </div>
-                    ))}
+                    ) : (
+                      <div className="gt-cal-event-row" style={{ background: '#FAF9F6', borderLeftColor: '#A8833D' }}>
+                        <div className="gt-cal-event-time" style={{ color: '#A8833D' }}>
+                          <Clock size={14} style={{ display: 'inline', marginRight: 4, verticalAlign: 'middle' }} />
+                          Daily
+                        </div>
+                        <div className="gt-cal-event-body">
+                          <h4 style={{ color: '#2D2A28' }}>Daily Monastic Assembly & Practice</h4>
+                          <p>
+                            Morning prayers and sadhana meditation at 05:30 AM, scripture memorization, and afternoon dialectical debates at 04:00 PM at Main Assembly Tsuklakhang Hall.
+                            {selectedDay.element ? ` Astrological element of the day: ${selectedDay.element}.` : ''}
+                            {selectedDay.note ? ` Note: ${selectedDay.note}.` : ''}
+                          </p>
+                        </div>
+                      </div>
+                    )}
                   </div>
-                ) : (
-                  <p className="gt-cal-no-events">
-                    Daily monastic prayers, morning meditation at 05:30 AM, and afternoon dialectical debates at 04:00 PM are conducted daily at Tsuklakhang. Click on dates marked with red dots (such as August 6th, 15th, 21st, 29th) to view special ceremonies and public pujas.
-                  </p>
-                )}
-              </div>
+                </div>
+              )}
+
+              {/* Monthly Monastic Observances from Official Publication */}
+              {currentMonthData.monthlyEvents && currentMonthData.monthlyEvents.length > 0 && (
+                <div className="gt-cal-monthly-events-box">
+                  <h3 className="gt-cal-monthly-events-title">
+                    <Sparkles size={18} />
+                    <span>Monthly Monastic Observances ({currentMonthData.westernRange})</span>
+                  </h3>
+                  <div className="gt-cal-monthly-grid">
+                    <div className="gt-cal-monthly-col">
+                      <h4>Tibetan Monastic Schedule (ཟླ་རེའི་ཆོས་ཕྱོགས་མཛད་རིམ།)</h4>
+                      <ul className="gt-cal-monthly-list">
+                        {currentMonthData.monthlyEvents.map((ev, i) => (
+                          <li key={`tb-${i}`} className="gt-cal-monthly-item is-tb">
+                            <span className="gt-cal-monthly-dot" />
+                            <span>{ev.tb}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="gt-cal-monthly-col">
+                      <h4>English Description & Observance Details</h4>
+                      <ul className="gt-cal-monthly-list">
+                        {currentMonthData.monthlyEvents.map((ev, i) => (
+                          <li key={`en-${i}`} className="gt-cal-monthly-item">
+                            <span className="gt-cal-monthly-dot" />
+                            <span>{ev.en}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
           </div>
         </section>
@@ -487,15 +603,15 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
           <div className="gyuto-container">
             <div className="gt-upcoming-inner">
               <div className="gt-upcoming-header-group">
-                <h2 className="gt-upcoming-title">Upcoming Programmes</h2>
+                <h2 className="gt-upcoming-title">Upcoming Events</h2>
                 <p className="gt-upcoming-sub">
-                  Explore the monastery's upcoming teachings, ceremonies, retreats, and community events.
+                  Monastic celebrations, ceremonies, and special assemblies for {currentMonthData.westernRange} ({currentMonthData.tibetanMonth}).
                 </p>
               </div>
 
-              {/* 3 Programme Cards Stack */}
+              {/* 3 Programme Cards Stack - Updates automatically per selected month */}
               <div className="gt-upcoming-cards-stack">
-                {UPCOMING_PROGRAMMES.map((item, idx) => (
+                {upcomingEvents.map((item, idx) => (
                   <article key={`${item.id}-${idx}`} className="gt-programme-card">
                     {/* Left Column: Date Badge */}
                     <div className="gt-pcard-date-col">
@@ -518,8 +634,8 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                           const ev = MONASTERY_EVENTS_DATA[item.dateKey]?.[0] || {
                             title: item.title,
                             time: '06:00 AM - 05:00 PM',
-                            venue: item.venue,
-                            category: item.category,
+                            venue: item.venue || 'Main Assembly Tsuklakhang Hall',
+                            category: item.category || 'Monastic Observance',
                             access: 'Open to All Respectful Visitors',
                             description: item.desc,
                             guidelines: 'Please dress conservatively with covered shoulders and knees. Photography inside the inner prayer hall is restricted during active ceremonies.'

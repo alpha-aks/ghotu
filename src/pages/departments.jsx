@@ -8,8 +8,10 @@ const heroBg = '/images/departments/departments-hero.jpg';
 import lungtaImg from '../assets/departments-lungta.png';
 import orgTableSvg from '../assets/departments-org-table.svg';
 import './departments.css';
+import { getCurrentUpcomingProgrammes } from '../data/monasteryCalendar2026';
 
 export default function Departments({ onSwitchLanguage, onNavigate }) {
+  const upcomingEvents = getCurrentUpcomingProgrammes();
   // Track which department sections are expanded
   const [expandedDepts, setExpandedDepts] = useState({
     admin: false,
@@ -743,7 +745,7 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                 <button 
                   type="button"
                   className="gt-dept-calendar-btn"
-                  onClick={() => onNavigate && onNavigate('home')}
+                  onClick={() => onNavigate && onNavigate('programmes#calendar')}
                 >
                   VIEW CALENDAR
                 </button>
@@ -752,44 +754,20 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
               <div className="gt-dept-events-cards-wrap">
                 <span className="gt-dept-events-top-tag">UPCOMING EVENTS</span>
                 
-                <div className="gt-dept-event-card">
-                  <div className="gt-event-card-date">
-                    <span className="gt-event-month">FEB</span>
-                    <span className="gt-event-day">18th</span>
-                    <span className="gt-event-year">2026</span>
+                {upcomingEvents.map((item, idx) => (
+                  <div key={`${item.id}-${idx}`} className="gt-dept-event-card">
+                    <div className="gt-event-card-date">
+                      <span className="gt-event-month">{item.month}</span>
+                      <span className="gt-event-day">{item.day}</span>
+                      <span className="gt-event-year">{item.year}</span>
+                    </div>
+                    <div className="gt-event-card-divider" />
+                    <div className="gt-event-card-body">
+                      <h4>{item.title}</h4>
+                      <p>{item.desc}</p>
+                    </div>
                   </div>
-                  <div className="gt-event-card-divider" />
-                  <div className="gt-event-card-body">
-                    <h4>Tibetan New Year Celebration</h4>
-                    <p>Losar marks the beginning of the Tibetan calendar year....</p>
-                  </div>
-                </div>
-
-                <div className="gt-dept-event-card">
-                  <div className="gt-event-card-date">
-                    <span className="gt-event-month">FEB</span>
-                    <span className="gt-event-day">18th</span>
-                    <span className="gt-event-year">2026</span>
-                  </div>
-                  <div className="gt-event-card-divider" />
-                  <div className="gt-event-card-body">
-                    <h4>Tibetan New Year Celebration</h4>
-                    <p>Losar marks the beginning of the Tibetan calendar year....</p>
-                  </div>
-                </div>
-
-                <div className="gt-dept-event-card">
-                  <div className="gt-event-card-date">
-                    <span className="gt-event-month">FEB</span>
-                    <span className="gt-event-day">18th</span>
-                    <span className="gt-event-year">2026</span>
-                  </div>
-                  <div className="gt-event-card-divider" />
-                  <div className="gt-event-card-body">
-                    <h4>Tibetan New Year Celebration</h4>
-                    <p>Losar marks the beginning of the Tibetan calendar year....</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

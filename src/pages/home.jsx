@@ -14,12 +14,14 @@ import {
   Play,
   ExternalLink
 } from 'lucide-react';
+import { getCurrentUpcomingProgrammes } from '../data/monasteryCalendar2026';
 
 export default function Home({ onSwitchLanguage, onNavigate }) {
   const [activeNoticeTab, setActiveNoticeTab] = useState('announcement');
   const [activeStatDot, setActiveStatDot] = useState(0);
   const [currentHeroSlide, setCurrentHeroSlide] = useState(0); // 0: English, 1: Tibetan
   const statsGridRef = useRef(null);
+  const upcomingEvents = getCurrentUpcomingProgrammes();
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -427,50 +429,20 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             <div className="gt-prog-right">
               <h4 className="gt-prog-right-title">UPCOMING EVENTS</h4>
               <div className="gt-events-stack">
-                <div className="gt-event-card">
-                  <div className="gt-event-date-box">
-                    <span className="gt-event-month">FEB</span>
-                    <span className="gt-event-day">14th</span>
-                    <span className="gt-event-year">2026</span>
+                {upcomingEvents.map((item, idx) => (
+                  <div key={`${item.id}-${idx}`} className="gt-event-card">
+                    <div className="gt-event-date-box">
+                      <span className="gt-event-month">{item.month}</span>
+                      <span className="gt-event-day">{item.day}</span>
+                      <span className="gt-event-year">{item.year}</span>
+                    </div>
+                    <div className="gt-event-divider-vert" />
+                    <div className="gt-event-info">
+                      <h5 className="gt-event-name">{item.title}</h5>
+                      <p className="gt-event-desc">{item.desc}</p>
+                    </div>
                   </div>
-                  <div className="gt-event-divider-vert" />
-                  <div className="gt-event-info">
-                    <h5 className="gt-event-name">Tibetan New Year Celebration</h5>
-                    <p className="gt-event-desc">
-                      Join us to mark the beginning of the Tibetan calendar year with auspicious prayers.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="gt-event-card">
-                  <div className="gt-event-date-box">
-                    <span className="gt-event-month">FEB</span>
-                    <span className="gt-event-day">18-20</span>
-                    <span className="gt-event-year">2026</span>
-                  </div>
-                  <div className="gt-event-divider-vert" />
-                  <div className="gt-event-info">
-                    <h5 className="gt-event-name">Tibetan New Year (Losar)</h5>
-                    <p className="gt-event-desc">
-                      Join us to mark the beginning of the Tibetan calendar year with special tantric pujas.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="gt-event-card">
-                  <div className="gt-event-date-box">
-                    <span className="gt-event-month">FEB</span>
-                    <span className="gt-event-day">24th</span>
-                    <span className="gt-event-year">2026</span>
-                  </div>
-                  <div className="gt-event-divider-vert" />
-                  <div className="gt-event-info">
-                    <h5 className="gt-event-name">Tibetan New Year Celebration</h5>
-                    <p className="gt-event-desc">
-                      Consecration of sand mandala and sacred recited ritual assemblies by the monastic assembly.
-                    </p>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>
