@@ -189,50 +189,41 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             </div>
           </div>
 
-          {/* Body Content: Announcement View matches user screenshot 1:1 */}
-          {activeNoticeTab === 'announcement' ? (
-            <div className="gt-notices-announcement-view">
-              <h3 className="gt-notices-announcement-title">From the Monastery</h3>
-              <p className="gt-notices-announcement-text">
-                Stay informed about recent developments, community activities, important notices, publications, and other updates from Gyuto Tantric Monastery.
+          {/* Body Content: Both Announcement and Update have identical layout with left words and right placeholder */}
+          <div className="gt-notices-update-view">
+            <div className="gt-news-left">
+              <h3>From the Monastery</h3>
+              <p>
+                Stay informed about recent developments, community activities, important notices,
+                publications, and other updates from Gyuto Tantric Monastery.
               </p>
+              <a 
+                href="/news" 
+                className="gt-figma-btn"
+                onClick={(e) => {
+                  if (onNavigate) {
+                    e.preventDefault();
+                    onNavigate('news');
+                  }
+                }}
+              >
+                VIEW ALL
+              </a>
             </div>
-          ) : (
-            <div className="gt-notices-update-view">
-              <div className="gt-news-left">
-                <h3>From the Monastery</h3>
-                <p>
-                  Stay informed about recent developments, community activities, important notices,
-                  publications, and other updates from Gyuto Tantric Monastery.
-                </p>
-                <a 
-                  href="/news" 
-                  className="gt-figma-btn"
-                  onClick={(e) => {
-                    if (onNavigate) {
-                      e.preventDefault();
-                      onNavigate('news');
-                    }
-                  }}
-                >
-                  VIEW ALL
-                </a>
-              </div>
 
-              <div className="gt-news-right">
-                <div className="gt-news-video-card gt-news-placeholder-card">
-                  <div className="gt-news-img-placeholder">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                      <circle cx="8.5" cy="8.5" r="1.5" />
-                      <polyline points="21 15 16 10 5 21" />
-                    </svg>
-                    <span>Media / Photo Placeholder</span>
-                  </div>
+            <div className="gt-news-right">
+              <div className="gt-news-video-card gt-news-placeholder-card">
+                <div className="gt-news-img-placeholder">
+                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                    <circle cx="8.5" cy="8.5" r="1.5" />
+                    <polyline points="21 15 16 10 5 21" />
+                  </svg>
+                  <span>Media / Photo Placeholder</span>
                 </div>
               </div>
             </div>
-          )}
+          </div>
 
           {/* Bottom Bar with Left Golden Vajra, Breathing Gap, and Continuous Hairline */}
           <div className="gt-notices-bottom-bar">
