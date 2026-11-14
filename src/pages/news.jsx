@@ -5,44 +5,7 @@ import SupportSection from '../components/SupportSection';
 import { TibetanVajra, EndlessKnot } from '../components/MonasteryIcons';
 import './news.css';
 
-export const UPDATES_DATA = [
-  {
-    id: 'upd-1',
-    type: 'split',
-    tag: 'UPDATES',
-    date: '8TH NOVEMBER 2026',
-    title: 'From the Monastery',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    image: '/images/monks-education.jpg',
-    imageAlt: 'Monks in traditional Tibetan studies at Gyuto'
-  },
-  {
-    id: 'upd-2',
-    type: 'center',
-    tag: 'ANNOUNCEMENT',
-    date: '8TH NOVEMBER 2026',
-    title: 'From the Monastery',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  },
-  {
-    id: 'upd-3',
-    type: 'split',
-    tag: 'UPDATES',
-    date: '8TH NOVEMBER 2026',
-    title: 'From the Monastery',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
-    image: '/images/chant-preview.jpg',
-    imageAlt: 'Sacred chanting and overtone ritual practice'
-  },
-  {
-    id: 'upd-4',
-    type: 'center',
-    tag: 'ANNOUNCEMENT',
-    date: '8TH NOVEMBER 2026',
-    title: 'From the Monastery',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-  }
-];
+export const UPDATES_DATA = [];
 
 export default function News({ onSwitchLanguage, onNavigate }) {
   const [filter, setFilter] = useState('ALL');
@@ -111,58 +74,90 @@ export default function News({ onSwitchLanguage, onNavigate }) {
             </div>
 
             {/* Feed Items */}
-            {filteredUpdates.map((item, index) => (
-              <React.Fragment key={item.id}>
-                {item.type === 'split' ? (
-                  /* 2-Column Split Layout */
-                  <article className="gt-update-item-split">
-                    <div className="gt-update-split-text">
+            {filteredUpdates.length > 0 ? (
+              filteredUpdates.map((item, index) => (
+                <React.Fragment key={item.id}>
+                  {item.type === 'split' ? (
+                    /* 2-Column Split Layout */
+                    <article className="gt-update-item-split">
+                      <div className="gt-update-split-text">
+                        <div className="gt-update-meta-row">
+                          <span className="gt-badge-tag">{item.tag}</span>
+                          <time className="gt-update-date">{item.date}</time>
+                        </div>
+                        <h2 className="gt-update-title">{item.title}</h2>
+                        <p className="gt-update-body">{item.body}</p>
+                      </div>
+
+                      <div className="gt-update-split-img-box">
+                        {item.image ? (
+                          <img
+                            src={item.image}
+                            alt={item.imageAlt || item.title}
+                            className="gt-update-img"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="gt-update-img-placeholder">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                              <circle cx="8.5" cy="8.5" r="1.5" />
+                              <polyline points="21 15 16 10 5 21" />
+                            </svg>
+                            <span>Photo Placeholder</span>
+                          </div>
+                        )}
+                      </div>
+                    </article>
+                  ) : (
+                    /* Centered Single-Column Layout */
+                    <article className="gt-update-item-center">
                       <div className="gt-update-meta-row">
-                        <span className="gt-badge-tag">{item.tag}</span>
+                        <span className="gt-badge-tag announcement">{item.tag}</span>
                         <time className="gt-update-date">{item.date}</time>
                       </div>
                       <h2 className="gt-update-title">{item.title}</h2>
                       <p className="gt-update-body">{item.body}</p>
-                    </div>
+                    </article>
+                  )}
 
-                    <div className="gt-update-split-img-box">
-                      {item.image ? (
-                        <img
-                          src={item.image}
-                          alt={item.imageAlt || item.title}
-                          className="gt-update-img"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="gt-update-img-placeholder">
-                          <span>Monastery Update</span>
-                        </div>
-                      )}
+                  {/* Divider between items: right vajra */}
+                  {index < filteredUpdates.length - 1 && (
+                    <div className="gt-updates-divider right" aria-hidden="true">
+                      <div className="gt-updates-divider-line"></div>
+                      <div className="gt-updates-vajra-wrap">
+                        <TibetanVajra width={64} height={22} />
+                      </div>
                     </div>
-                  </article>
-                ) : (
-                  /* Centered Single-Column Layout */
-                  <article className="gt-update-item-center">
-                    <div className="gt-update-meta-row">
-                      <span className="gt-badge-tag announcement">{item.tag}</span>
-                      <time className="gt-update-date">{item.date}</time>
-                    </div>
-                    <h2 className="gt-update-title">{item.title}</h2>
-                    <p className="gt-update-body">{item.body}</p>
-                  </article>
-                )}
-
-                {/* Divider between items: right vajra */}
-                {index < filteredUpdates.length - 1 && (
-                  <div className="gt-updates-divider right" aria-hidden="true">
-                    <div className="gt-updates-divider-line"></div>
-                    <div className="gt-updates-vajra-wrap">
-                      <TibetanVajra width={64} height={22} />
-                    </div>
+                  )}
+                </React.Fragment>
+              ))
+            ) : (
+              /* Blank Placeholder */
+              <article className="gt-update-item-split gt-update-placeholder-item">
+                <div className="gt-update-split-text">
+                  <div className="gt-update-meta-row">
+                    <span className="gt-badge-tag">UPDATES & ANNOUNCEMENTS</span>
+                    <time className="gt-update-date">COMING SOON</time>
                   </div>
-                )}
-              </React.Fragment>
-            ))}
+                  <h2 className="gt-update-title">Monastery News & Notices</h2>
+                  <p className="gt-update-body">
+                    Official announcements, ceremonial notices, and publications from Gyuto Tantric Monastery will appear here once published.
+                  </p>
+                </div>
+
+                <div className="gt-update-split-img-box">
+                  <div className="gt-update-img-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    <span>Photo Placeholder</span>
+                  </div>
+                </div>
+              </article>
+            )}
 
             {/* Bottom Divider: Left Vajra with trailing hairline (Exact Figma design) */}
             <div className="gt-updates-divider left" aria-hidden="true">

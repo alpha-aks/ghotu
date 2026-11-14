@@ -220,19 +220,14 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
               </div>
 
               <div className="gt-news-right">
-                <div className="gt-news-video-card">
-                  <img
-                    src="/images/chant-preview.jpg"
-                    alt="Sacred Tantric Chants assembly in monastery hall"
-                    className="gt-news-video-img"
-                  />
-                  <div className="gt-video-overlay">
-                    <button className="gt-play-btn" aria-label="Play recording">
-                      <Play size={20} fill="#ffffff" />
-                    </button>
-                    <span className="gt-video-caption">
-                      Sacred Tantric Chants & Daily Assembly Prayers
-                    </span>
+                <div className="gt-news-video-card gt-news-placeholder-card">
+                  <div className="gt-news-img-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    <span>Media / Photo Placeholder</span>
                   </div>
                 </div>
               </div>

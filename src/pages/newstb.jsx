@@ -5,44 +5,7 @@ import SupportSection from '../components/SupportSection';
 import { TibetanVajra, EndlessKnot } from '../components/MonasteryIcons';
 import './news.css';
 
-export const UPDATES_DATA_TB = [
-  {
-    id: 'upd-tb-1',
-    type: 'split',
-    tag: 'གསར་འགྱུར།',
-    date: '༢༠༢༦ ཕྱི་ཟླ་ ༡༡ ཚེས་ ༨ ཉིན།',
-    title: 'དགོན་པ་ནས།',
-    body: 'ཚོགས་པའི་གསར་འགྱུར། འབྱུང་འགྱུར་གྱི་མཛད་རིམ་ཞིབ་ཕྲ། གཞུང་འབྲེལ་གསལ་བསྒྲགས། དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཆོས་སྤྱོད་ཀྱི་མཛད་རིམ་དང་། དགེ་འདུན་པའི་སློབ་གཉེར། དེ་བཞིན་རྒྱུད་སྡེ་བཞིའི་དཀྱིལ་འཁོར་དང་འབྲེལ་བའི་ཆོ་ག་ཕྱག་ལེན་སོགས་ཀྱི་སྐོར་ལ་རྒྱུན་མཐུད་ནས་སྲི་ཞུ་བསྒྲུབ་བཞིན་པ་ཡིན།',
-    image: '/images/monks-education.jpg',
-    imageAlt: 'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་དགེ་འདུན་པའི་སློབ་གཉེར།'
-  },
-  {
-    id: 'upd-tb-2',
-    type: 'center',
-    tag: 'གསལ་བསྒྲགས།',
-    date: '༢༠༢༦ ཕྱི་ཟླ་ ༡༡ ཚེས་ ༨ ཉིན།',
-    title: 'དགོན་པ་ནས།',
-    body: 'དགོན་པའི་གསལ་བསྒྲགས། མཛད་སྒོའི་གྲ་སྒྲིག མཇལ་སྐོར་བའི་ཉམས་ལེན་པ་ཚོར་ལམ་སྟོན། དགོན་པའི་དུས་ཆེན་ཁག་དང་། གསོ་སྦྱོང་། དེ་བཞིན་དམིགས་བསལ་གྱི་སྨོན་ལམ་ཚོགས་པའི་སྐབས་སུ་དད་ལྡན་མང་ཚོགས་རྣམས་ཀྱིས་ཆོས་ཕྱོགས་ཀྱི་མཛད་སྒོར་མཉམ་ཞུགས་གནང་སྐབས་དགོན་པའི་སྒྲིག་གཞི་དང་མཐུན་པར་གུས་བཀུར་དང་ལྡན་པའི་སྒོ་ནས་ཕེབས་རོགས་གནང་།'
-  },
-  {
-    id: 'upd-tb-3',
-    type: 'split',
-    tag: 'གསར་འགྱུར།',
-    date: '༢༠༢༦ ཕྱི་ཟླ་ ༡༡ ཚེས་ ༨ ཉིན།',
-    title: 'དགོན་པ་ནས།',
-    body: 'ཚོགས་པའི་གསར་འགྱུར། དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་དབྱངས་རྟ་དང་གཏོར་བཟོ། དཀྱིལ་འཁོར་ཐིག་རྩ་སོགས་གསང་ཆེན་རྒྱུད་སྡེའི་ཕྱག་བཞེས་རྨད་དུ་བྱུང་བ་རྣམས་ཉམས་པ་མེད་པར་མི་རབས་ནས་མི་རབས་བར་བརྒྱུད་སྤྲོད་གནང་བཞིན་ཡོད།',
-    image: '/images/chant-preview.jpg',
-    imageAlt: 'རྒྱུད་སྟོད་པའི་གསང་ཆེན་དབྱངས་རྟའི་ཕྱག་བཞེས།'
-  },
-  {
-    id: 'upd-tb-4',
-    type: 'center',
-    tag: 'གསལ་བསྒྲགས།',
-    date: '༢༠༢༦ ཕྱི་ཟླ་ ༡༡ ཚེས་ ༨ ཉིན།',
-    title: 'དགོན་པ་ནས།',
-    body: 'དགོན་པའི་གསལ་བསྒྲགས། མཇལ་སྐོར་བའི་ཉམས་ལེན་པ་ཚོར་ལམ་སྟོན། དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་དུ་ཕེབས་མཁན་སྐུ་མགྲོན་རྣམས་ལ་སྔོན་ཚུད་ནས་དགོན་པའི་འཛིན་སྐྱོང་ཡིག་ཚང་དང་འབྲེལ་བ་གནང་ནས་ཕེབས་རོགས་ཞུ། འདིས་དགེ་འདུན་པའི་སྒོམ་སྒྲུབ་དང་སློབ་གཉེར་ལ་བར་ཆད་མེད་པར་ཕན་རླབས་ཆེན་པོ་ཡོད།'
-  }
-];
+export const UPDATES_DATA_TB = [];
 
 export default function NewsTb({ onSwitchLanguage, onNavigate }) {
   const [filter, setFilter] = useState('ALL');
@@ -111,56 +74,88 @@ export default function NewsTb({ onSwitchLanguage, onNavigate }) {
             </div>
 
             {/* Feed Items */}
-            {filteredUpdates.map((item, index) => (
-              <React.Fragment key={item.id}>
-                {item.type === 'split' ? (
-                  <article className="gt-update-item-split">
-                    <div className="gt-update-split-text">
+            {filteredUpdates.length > 0 ? (
+              filteredUpdates.map((item, index) => (
+                <React.Fragment key={item.id}>
+                  {item.type === 'split' ? (
+                    <article className="gt-update-item-split">
+                      <div className="gt-update-split-text">
+                        <div className="gt-update-meta-row">
+                          <span className="gt-badge-tag">{item.tag}</span>
+                          <time className="gt-update-date">{item.date}</time>
+                        </div>
+                        <h2 className="gt-update-title">{item.title}</h2>
+                        <p className="gt-update-body">{item.body}</p>
+                      </div>
+
+                      <div className="gt-update-split-img-box">
+                        {item.image ? (
+                          <img
+                            src={item.image}
+                            alt={item.imageAlt || item.title}
+                            className="gt-update-img"
+                            loading="lazy"
+                          />
+                        ) : (
+                          <div className="gt-update-img-placeholder">
+                            <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                              <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                              <circle cx="8.5" cy="8.5" r="1.5" />
+                              <polyline points="21 15 16 10 5 21" />
+                            </svg>
+                            <span>པར་རིས་གནས་ཡུལ།</span>
+                          </div>
+                        )}
+                      </div>
+                    </article>
+                  ) : (
+                    <article className="gt-update-item-center">
                       <div className="gt-update-meta-row">
-                        <span className="gt-badge-tag">{item.tag}</span>
+                        <span className="gt-badge-tag announcement">{item.tag}</span>
                         <time className="gt-update-date">{item.date}</time>
                       </div>
                       <h2 className="gt-update-title">{item.title}</h2>
                       <p className="gt-update-body">{item.body}</p>
-                    </div>
+                    </article>
+                  )}
 
-                    <div className="gt-update-split-img-box">
-                      {item.image ? (
-                        <img
-                          src={item.image}
-                          alt={item.imageAlt || item.title}
-                          className="gt-update-img"
-                          loading="lazy"
-                        />
-                      ) : (
-                        <div className="gt-update-img-placeholder">
-                          <span>གྲྭ་ཚང་གི་གསར་འགྱུར།</span>
-                        </div>
-                      )}
+                  {/* Divider between items */}
+                  {index < filteredUpdates.length - 1 && (
+                    <div className="gt-updates-divider right" aria-hidden="true">
+                      <div className="gt-updates-divider-line"></div>
+                      <div className="gt-updates-vajra-wrap">
+                        <TibetanVajra width={64} height={22} />
+                      </div>
                     </div>
-                  </article>
-                ) : (
-                  <article className="gt-update-item-center">
-                    <div className="gt-update-meta-row">
-                      <span className="gt-badge-tag announcement">{item.tag}</span>
-                      <time className="gt-update-date">{item.date}</time>
-                    </div>
-                    <h2 className="gt-update-title">{item.title}</h2>
-                    <p className="gt-update-body">{item.body}</p>
-                  </article>
-                )}
-
-                {/* Divider between items */}
-                {index < filteredUpdates.length - 1 && (
-                  <div className="gt-updates-divider right" aria-hidden="true">
-                    <div className="gt-updates-divider-line"></div>
-                    <div className="gt-updates-vajra-wrap">
-                      <TibetanVajra width={64} height={22} />
-                    </div>
+                  )}
+                </React.Fragment>
+              ))
+            ) : (
+              /* Blank Placeholder */
+              <article className="gt-update-item-split gt-update-placeholder-item">
+                <div className="gt-update-split-text">
+                  <div className="gt-update-meta-row">
+                    <span className="gt-badge-tag">གསལ་བསྒྲགས་དང་གསར་འགྱུར།</span>
+                    <time className="gt-update-date">འབྱུང་འགྱུར།</time>
                   </div>
-                )}
-              </React.Fragment>
-            ))}
+                  <h2 className="gt-update-title">དགོན་པའི་གསལ་བསྒྲགས་དང་གསར་འགྱུར།</h2>
+                  <p className="gt-update-body">
+                    དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་གཞུང་འབྲེལ་གསལ་བསྒྲགས་དང་ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ་རྣམས་འདིར་འགོད་སྤེལ་ཞུ་རྒྱུ་ཡིན།
+                  </p>
+                </div>
+
+                <div className="gt-update-split-img-box">
+                  <div className="gt-update-img-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                      <circle cx="8.5" cy="8.5" r="1.5" />
+                      <polyline points="21 15 16 10 5 21" />
+                    </svg>
+                    <span>པར་རིས་གནས་ཡུལ།</span>
+                  </div>
+                </div>
+              </article>
+            )}
 
             {/* Bottom Divider */}
             <div className="gt-updates-divider left" aria-hidden="true">
