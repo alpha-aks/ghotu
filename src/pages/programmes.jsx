@@ -211,6 +211,18 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
     setSelectedDay(todayInfo.dayObj);
   };
 
+  const handleSelectDay = (day) => {
+    setSelectedDay(day);
+    if (typeof window !== 'undefined' && window.innerWidth <= 768) {
+      setTimeout(() => {
+        const card = document.getElementById('gt-cal-selected-info-card');
+        if (card) {
+          card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        }
+      }, 50);
+    }
+  };
+
   // Trailing empty slots to complete the final 7-day row
   const startOffset = currentMonthData.startDayOfWeek;
   const totalDays = currentMonthData.days.length;
@@ -265,11 +277,11 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
 
             <div className="gt-calendar-shell">
               {/* Month & Tibetan Year Title */}
-              <div style={{ textAlign: 'center', marginBottom: 12 }}>
-                <h3 className="gt-cal-month-title" style={{ marginBottom: 4 }}>
+              <div className="gt-cal-header-block">
+                <h3 className="gt-cal-month-title">
                   {currentMonthData.tibetanMonth} {currentMonthData.tibetanMonthSub}
                 </h3>
-                <div style={{ fontSize: '15px', fontWeight: 600, color: '#A8833D', letterSpacing: '0.02em' }}>
+                <div className="gt-cal-month-sub">
                   {currentMonthData.westernRange} • {CALENDAR_METADATA.tibetanElementYearEn}
                 </div>
               </div>
@@ -329,7 +341,7 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                   </div>
                 </div>
 
-                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                <div className="gt-cal-actions-row">
                   <button
                     type="button"
                     className="gt-cal-jump-today-btn"
@@ -355,15 +367,14 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
               </div>
 
               {/* 7-Column Grid */}
-              <div className="gt-cal-grid" role="grid" aria-label="Monastic Calendar Grid">
+              <div className="gt-cal-grid-wrap">
+                <div className="gt-cal-grid" role="grid" aria-label="Monastic Calendar Grid">
                 {/* Header Row */}
                 {WEEKDAYS.map((wd) => (
                   <div key={wd.key} className="gt-cal-header-cell" role="columnheader">
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline' }}>
-                      <span>{wd.shortEn}</span>
-                      <span style={{ fontFamily: 'var(--figma-font-tibetan, serif)', fontSize: '12px', color: '#888' }}>
-                        {wd.shortTb}
-                      </span>
+                    <div className="gt-cal-header-inner">
+                      <span className="gt-cal-header-en">{wd.shortEn}</span>
+                      <span className="gt-cal-header-tb">{wd.shortTb}</span>
                     </div>
                   </div>
                 ))}
@@ -385,19 +396,21 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                     day.gregMonth === todayInfo.dayObj.gregMonth && 
                     currentMonthData.monthIndex === MONTHS_DATA[todayInfo.monthIdx].monthIndex;
 
+                  const hasEvent = Boolean(day.tag);
+
                   return (
                     <div
                       key={`day-${idx}-${day.gregDay}`}
                       role="gridcell"
                       tabIndex={0}
-                      className={`gt-cal-cell current-month ${isSelected ? 'selected-day' : ''} ${isToday ? 'is-today' : ''}`}
-                      onClick={() => setSelectedDay(day)}
+                      className={`gt-cal-cell current-month ${isSelected ? 'selected-day' : ''} ${isToday ? 'is-today' : ''} ${hasEvent ? 'has-event' : ''}`}
+                      onClick={() => handleSelectDay(day)}
                       onKeyDown={(e) => {
                         if (e.key === 'Enter' || e.key === ' ') {
-                          setSelectedDay(day);
+                          handleSelectDay(day);
                         }
                       }}
-                      title={`${isToday ? '[TODAY] ' : ''}Tibetan ${day.tibNum} • ${day.gregDay} ${day.gregMonth}${day.tag ? ` • ${day.tag}` : ''}`}
+                      title={`${isToday ? '[TODAY] ' : ''}Tibetan ${day.tibNum} • ${day.gregDay} ${day.gregMonth}${day.tag ? ` • Event: ${day.tag}` : ''}`}
                     >
                       <div className="gt-cal-cell-inner">
                         <div className="gt-cal-date-row">
@@ -405,7 +418,7 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                             {day.gregDay}
                             <span className="gt-cal-greg-month-sub">{day.gregMonth}</span>
                           </span>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: 4 }}>
+                          <div className="gt-cal-tib-wrap">
                             {isToday && (
                               <span className="gt-cal-today-pill" title="Today">
                                 TODAY
@@ -450,9 +463,17 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                           )}
                         </div>
 
-                        {day.tag && (
-                          <div className="gt-cal-event-banner" title={day.tag}>
-                            {day.tag}
+                        {hasEvent && (
+                          <div 
+                            className="gt-cal-red-event-indicator" 
+                            title={`Event: ${day.tag}. Click to view details.`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleSelectDay(day);
+                            }}
+                          >
+                            <span className="gt-cal-red-dot" />
+                            <span className="gt-cal-event-text-label">{day.tag}</span>
                           </div>
                         )}
                       </div>
@@ -465,10 +486,11 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                   <div key={`empty-trail-${i}`} className="gt-cal-cell empty-slot" role="gridcell" aria-hidden="true" />
                 ))}
               </div>
+            </div>
 
               {/* Interactive Selected Day Details Card */}
               {selectedDay && (
-                <div className="gt-cal-selected-info-card">
+                <div className="gt-cal-selected-info-card" id="gt-cal-selected-info-card">
                   <div className="gt-cal-selected-header">
                     <div>
                       <div className="gt-cal-selected-date-text">
@@ -479,6 +501,12 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                       </div>
                     </div>
                     <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+                      {selectedDay.tag && (
+                        <span className="gt-cal-event-active-badge">
+                          <Sparkles size={13} style={{ display: 'inline', marginRight: 4, verticalAlign: 'middle' }} />
+                          EVENT: {selectedDay.tag}
+                        </span>
+                      )}
                       {todayInfo.dayObj && 
                        selectedDay.gregDay === todayInfo.dayObj.gregDay && 
                        selectedDay.gregMonth === todayInfo.dayObj.gregMonth && 
