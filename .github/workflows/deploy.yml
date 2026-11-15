@@ -36,6 +36,6 @@ jobs:
           security: loose
           timeout: 300000
           local-dir: ./dist/
-          server-dir: ./gyutotantricmonastery.org/public_html/
+          server-dir: ./public_html/
           dangerous-clean-slate: false
 
