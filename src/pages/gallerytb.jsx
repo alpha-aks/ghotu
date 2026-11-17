@@ -10,121 +10,220 @@ import './gallery.css';
  */
 const GALLERY_ITEMS_TB = [
   {
-    id: 'hero',
+    id: 'gallery-hero',
     isHero: true,
     title: 'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་དང་དྷོ་ལ་དྷར་ཧི་མ་ལ་ཡའི་རི་རྒྱུད།',
     category: 'monastery',
     categoryLabel: 'དགོན་པ་དང་ཁོར་ཡུག',
     description: 'ཧི་མ་ཅལ་མངའ་སྡེའི་སིདྷ་བཱ་རིར་བཞུགས་པའི་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་གཟི་བརྗིད་ལྡན་པའི་བཀོད་པ།',
-    src: '/images/home-hero.jpg',
+    src: '/images/gallery/_DSC3778.jpg',
     aspect: 'wide'
   },
   {
     id: 'photo-1',
-    title: 'འདུ་ཁང་གཙོ་བོའི་སྟོན་པ་ཤཱཀྱ་ཐུབ་པའི་གསེར་སྐུ་དང་མཆོད་གཤམ།',
-    category: 'heritage',
-    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
-    description: 'འདུ་ཁང་གཙོ་བོའི་ནང་བཞུགས་པའི་བྱིན་རླབས་ཅན་གྱི་སྟོན་པའི་སྐུ་བརྙན་དང་རྩ་གསུམ་ལྷ་ཚོགས།',
-    src: '/images/news-hero.jpg',
+    title: 'འདུ་ཁང་ཆེན་མོར་དགེ་འདུན་འདུས་པའི་ཞོགས་ཚོགས།',
+    category: 'rituals',
+    categoryLabel: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།',
+    description: 'འདུ་ཁང་གཙོ་བོའི་ནང་ཞོགས་པའི་སྨོན་ལམ་དང་གསུང་ཆོག་གནང་བཞིན་པའི་དགེ་འདུན་པ་རྣམས།',
+    src: '/images/gallery/761A7260.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-2',
-    title: 'དགེ་འདུན་པ་རྣམས་ཀྱི་གསང་སྔགས་གསུང་ཆོག་དང་སྨོན་ལམ།',
-    category: 'rituals',
-    categoryLabel: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།',
-    description: 'ལོ་ངོ་ ༥༠༠ ལྷག་གི་རིང་མ་ཉམས་པར་གནས་པའི་རྒྱུད་སྟོད་པའི་ཐུན་མོང་མ་ཡིན་པའི་དབྱངས་རྟ།',
-    src: '/images/departments/departments-hero.jpg',
+    title: 'དགེ་ཕྲུག་རྣམས་ཀྱི་གཞུང་ཆེན་སློབ་གཉེར།',
+    category: 'life',
+    categoryLabel: 'དགེ་འདུན་པའི་འཚོ་བ།',
+    description: 'ནང་ཆོས་ཀྱི་གཞུང་ལུགས་ལ་གསན་བསམ་སློབ་གཉེར་གནང་བཞིན་པའི་དགེ་ཕྲུག་རྣམས།',
+    src: '/images/gallery/761A7277.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-3',
-    title: 'དགེ་འདུན་པ་རྣམས་ཀྱི་ཉིན་རེའི་ཞོགས་ཚོགས།',
-    category: 'life',
-    categoryLabel: 'དགེ་འདུན་པའི་འཚོ་བ།',
-    description: 'ཞོགས་པའི་སྨོན་ལམ་དང་གསུང་ཆོག་ལ་ཕེབས་བཞིན་པའི་དགེ་འདུན་པ་རྣམས།',
-    src: '/images/hero-monks.jpg',
-    aspect: 'square'
-  },
-  {
-    id: 'photo-4',
     title: 'ཆོས་སྤྱོད་ཀྱི་རོལ་མོ་དང་དུང་ཆེན་འབུད་པ།',
     category: 'rituals',
     categoryLabel: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།',
     description: 'ཚོགས་དང་སྒྲུབ་མཆོད་ཀྱི་དབུ་འཛུགས་མཚོན་པའི་དུང་ཆེན་གྱི་སྒྲ་དབྱངས།',
-    src: '/images/about/dept-edu.jpg',
+    src: '/images/gallery/761A7320.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-4',
+    title: 'ཆོས་རྭ་ཆེན་མོར་རིགས་ལམ་རྩོད་པ།',
+    category: 'life',
+    categoryLabel: 'དགེ་འདུན་པའི་འཚོ་བ།',
+    description: 'དཔལ་ནཱ་ལེནྡྲའི་བསླབ་པ་སློབ་གཉེར་གྱི་སྲོལ་རྒྱུན་འཛིན་པའི་རིགས་ལམ་རྩོད་པ།',
+    src: '/images/gallery/761A7394.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-5',
-    title: 'དགེ་ཕྲུག་རྣམས་ཀྱི་ནང་ཆོས་དང་རིགས་ལམ་སློབ་གཉེར།',
+    title: 'དགེ་འདུན་པ་རྣམས་ཀྱི་བགྲོ་གླེང་དང་དྲི་བརྡར།',
     category: 'life',
     categoryLabel: 'དགེ་འདུན་པའི་འཚོ་བ།',
-    description: 'དཔལ་ནཱ་ལེནྡྲའི་བསླབ་པ་སློབ་གཉེར་གྱི་སྲོལ་རྒྱུན་འཛིན་པའི་རིགས་ལམ་རྩོད་པ།',
-    src: '/images/monks-education.jpg',
+    description: 'དབུ་ཚད་ཕར་ཕྱིན་གྱི་གཞུང་ལ་བགྲོ་གླེང་གནང་བཞིན་པ།',
+    src: '/images/gallery/761A7401.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-6',
-    title: 'དགོན་པའི་གནའ་བོའི་བཟོ་བཀོད་དང་རྒྱ་ཕིབས།',
-    category: 'monastery',
-    categoryLabel: 'དགོན་པ་དང་ཁོར་ཡུག',
-    description: 'བོད་ཀྱི་ཐུན་མིན་བཟོ་རིག་རྩལ་གྱིས་ཕྱུག་པའི་ཆོས་འཁོར་དང་རི་དྭགས་ཀྱི་མཛེས་རྒྱན།',
-    src: '/images/about/legacy-complex.jpg',
+    title: 'གཞུང་ཆེན་རིགས་པའི་ལམ་ནས་དཔྱད་ཞིབ།',
+    category: 'life',
+    categoryLabel: 'དགེ་འདུན་པའི་འཚོ་བ།',
+    description: 'དྲི་བ་འདེབས་མཁན་དང་ལན་འདེབས་མཁན་གྱི་རྩོད་པའི་རྣམ་པ།',
+    src: '/images/gallery/761A7402.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-7',
-    title: 'ལོ་རེའི་ཚོགས་མཆོད་ཆེན་མོ་དང་སྒྲུབ་མཆོད།',
-    category: 'rituals',
-    categoryLabel: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།',
-    description: 'དཀར་རྒྱན་དང་དམར་རྒྱན་གྱི་གཏོར་མ་གཟབ་གཤོམ་དང་བཅས་པའི་མཆོད་སྤྲིན།',
-    src: '/images/programmes/programmes-hero.jpg',
+    title: 'རྩོད་པའི་ཐལ་མོ་རྡེབ་པའི་ཕྱག་རྒྱ།',
+    category: 'life',
+    categoryLabel: 'དགེ་འདུན་པའི་འཚོ་བ།',
+    description: 'ཐབས་དང་ཤེས་རབ་ཟུང་འབྲེལ་མཚོན་པའི་རྩོད་པའི་ཐལ་མོ།',
+    src: '/images/gallery/761A7411.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-8',
-    title: 'ལྷ་ཁང་ནང་མའི་མཆོད་མེ་དང་ལྡེབས་རིས།',
-    category: 'heritage',
-    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
-    description: 'མ་རིག་མུན་པ་སེལ་བའི་མཚོན་བྱེད་མཆོད་མེའི་འོད་སྣང་རྒྱུན་མི་ཆད་པ།',
-    src: '/images/about/legacy-temple.jpg',
+    title: 'དཔེ་ཀློག་དང་བློ་འཛིན་གྱི་སྦྱོང་བརྡར།',
+    category: 'life',
+    categoryLabel: 'དགེ་འདུན་པའི་འཚོ་བ།',
+    description: 'གསང་སྔགས་ཀྱི་ཆོ་ག་ཕྱག་ལེན་དང་གཞུང་ཆེན་བློ་འཛིན་གནང་བ།',
+    src: '/images/gallery/761A7436.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-9',
-    title: 'བོད་ཀྱི་དཔེ་ཆ་དང་ཤིང་དཔར་ཉར་ཚགས།',
-    category: 'heritage',
-    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
-    description: 'དགེ་ལུགས་སྔགས་ཀྱི་དཔེ་རྙིང་དང་གསུང་འབུམ་ཁག་དཔེ་མཛོད་དུ་ཉར་ཚགས་ལེགས་པར་བྱས་པ།',
-    src: '/images/admin-desk.jpg',
+    title: 'གཙུག་ལག་ཁང་གི་ཁྱམས་རའི་མདུན་ལྗོངས།',
+    category: 'monastery',
+    categoryLabel: 'དགོན་པ་དང་ཁོར་ཡུག',
+    description: 'གཙུག་ལག་ཁང་གི་སྒོ་འགྲམ་དུ་དགེ་འདུན་པ་རྣམས་བཞུགས་པའི་རྣམ་པ།',
+    src: '/images/gallery/761A7445.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-10',
-    title: 'དགོན་པའི་ཁྱམས་ར་དང་ཧི་མ་ལ་ཡའི་མཛེས་ལྗོངས།',
-    category: 'monastery',
-    categoryLabel: 'དགོན་པ་དང་ཁོར་ཡུག',
-    description: 'ཞི་བདེ་དང་སྙིང་རྗེའི་ཉམས་ལེན་གྱི་གནས་མཆོག་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།',
-    src: '/images/about/dept-health.jpg',
+    title: 'དགེ་བཤེས་དང་བླ་མ་རྣམས་ཀྱིས་དབུ་བཞུགས་གནང་བ།',
+    category: 'rituals',
+    categoryLabel: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།',
+    description: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་སྒོ་ཆེན་མོར་དབུ་བཞུགས་གནང་བཞིན་པའི་བླ་སྤྲུལ་རྣམས།',
+    src: '/images/gallery/761A7459.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-11',
-    title: 'དབུ་མཛད་ཀྱིས་གསང་སྔགས་ཀྱི་དབྱངས་རྟ་འདྲེན་པ།',
+    title: 'རྡོ་རྗེ་དྲིལ་བུ་བསྣམས་པའི་གསང་སྔགས་གསུང་ཆོག',
     category: 'rituals',
     categoryLabel: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།',
-    description: 'རྒྱུད་སྟོད་པའི་ཐུན་མོང་མ་ཡིན་པའི་དབྱངས་གདངས་ཀྱིས་ཆོས་དབྱིངས་གསལ་བར་བྱེད་པ།',
-    src: '/images/chant-preview.jpg',
+    description: 'རྒྱུད་སྟོད་པའི་ཐུན་མིན་གསང་བདེ་འཇིགས་གསུམ་གྱི་ཆོ་ག་ཕྱག་ལེན།',
+    src: '/images/gallery/761A7469.jpg',
     aspect: 'square'
   },
   {
     id: 'photo-12',
-    title: 'དགོན་པའི་སྨན་ཁང་དང་སྤྱི་ཚོགས་ཞབས་ཞུ།',
+    title: 'དཀར་རྒྱན་དམར་རྒྱན་གྱི་གཏོར་མ་བཤམས་པ།',
+    category: 'heritage',
+    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
+    description: 'མར་ཚོན་གྱིས་བཟོས་པའི་རྩེ་ཕྲའི་མཆོད་གཏོར་དང་མཆོད་རྫས།',
+    src: '/images/gallery/761A7611.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-13',
+    title: 'དཀྱིལ་འཁོར་དང་མཆོད་གཤོམ་བཀོད་པ།',
+    category: 'heritage',
+    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
+    description: 'དཀྱིལ་འཁོར་གྱི་ཐིག་རྩ་དང་མཆོད་རྫས་སྒྲིག་བཀོད་ལེགས་པར་བྱས་པ།',
+    src: '/images/gallery/761A7636.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-14',
+    title: 'དགོན་པའི་གསོལ་ཇ་བཞེས་བཞིན་པའི་དགེ་འདུན་པ།',
     category: 'life',
     categoryLabel: 'དགེ་འདུན་པའི་འཚོ་བ།',
-    description: 'བྱམས་སྙིང་རྗེའི་ཉམས་ལེན་ལས་བྱུང་བའི་སྤྱི་ཚོགས་ཕན་བདེའི་ཞབས་ཞུ།',
-    src: '/images/dept-healthcare.jpg',
+    description: 'ཆོས་མཚམས་སུ་དགོན་པའི་སྲོལ་རྒྱུན་བོད་ཇ་བཞེས་པའི་རྣམ་པ།',
+    src: '/images/gallery/761A7672.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-15',
+    title: 'དགེ་འདུན་འདུས་པའི་མཐུན་ལམ་དང་མཉམ་གནས།',
+    category: 'life',
+    categoryLabel: 'དགེ་འདུན་པའི་འཚོ་བ།',
+    description: 'དམ་ཚིག་གཙང་མའི་དགེ་འདུན་པའི་ཉིན་རེའི་འཚོ་བའི་རྣམ་པ།',
+    src: '/images/gallery/761A7675.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-16',
+    title: 'འདུ་ཁང་ནང་གི་སྟོན་པ་ཤཱཀྱ་ཐུབ་པའི་གསེར་སྐུ།',
+    category: 'heritage',
+    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
+    description: 'གཙུག་ལག་ཁང་གཙོ་བོའི་ནང་བཞུགས་པའི་བྱིན་རླབས་ཅན་གྱི་སྟོན་པའི་སྐུ་བརྙན།',
+    src: '/images/gallery/761A7705.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-17',
+    title: 'བཀའ་བརྒྱུད་བླ་བརྒྱུད་ཀྱི་ལྡེབས་རིས་དང་ཐང་ག',
+    category: 'heritage',
+    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
+    description: 'འདུ་ཁང་གི་གྱང་ལྡེབས་སུ་བཀོད་པའི་གསང་ཆེན་རྒྱུད་སྡེའི་ལྷ་ཚོགས་ཀྱི་ལྡེབས་རིས།',
+    src: '/images/gallery/761A7724.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-18',
+    title: 'རྒྱ་ཕིབས་ཀྱི་ཆོས་འཁོར་དང་རི་དྭགས་ཕོ་མོ།',
+    category: 'heritage',
+    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
+    description: 'དགོན་པའི་རྒྱ་ཕིབས་སྟེང་གི་གསེར་ཟངས་ཀྱི་ཆོས་འཁོར་དང་རི་དྭགས།',
+    src: '/images/gallery/761A7725.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-19',
+    title: 'དགོང་མོའི་མཆོད་མེ་དང་སྐོར་ལམ།',
+    category: 'rituals',
+    categoryLabel: 'ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ།',
+    description: 'ས་སྲོད་དུས་སུ་མཆོད་མེའི་འོད་སྣང་འབར་བའི་དགོན་པའི་སྐོར་ལམ།',
+    src: '/images/gallery/761A8107.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-20',
+    title: 'གྲྭ་ཤག་དང་མེ་ཏོག་ལྡུམ་རའི་མཛེས་ལྗོངས།',
+    category: 'monastery',
+    categoryLabel: 'དགོན་པ་དང་ཁོར་ཡུག',
+    description: 'དྷ་རམ་ས་ལཱའི་རི་འདབས་ཀྱི་ཞི་བདེ་ལྡན་པའི་གྲྭ་ཤག་དང་ར་བ།',
+    src: '/images/gallery/IMG_6082.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-21',
+    title: 'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཀུན་གཟིགས་མཐོང་སྣང་།',
+    category: 'monastery',
+    categoryLabel: 'དགོན་པ་དང་ཁོར་ཡུག',
+    description: 'སིདྷ་བཱ་རིར་བཞུགས་པའི་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཡུལ་ལྗོངས་ཡོངས་རྫོགས།',
+    src: '/images/gallery/PNT_PHOTOGRAPHY-106.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-22',
+    title: 'ལྷ་ཁང་ནང་མའི་མཆོད་མེ་དང་མཆོད་གཤམ།',
+    category: 'heritage',
+    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
+    description: 'ཏིང་ངེ་འཛིན་སྒྲུབ་པའི་ལྷ་ཁང་ནང་གི་མཆོད་མེའི་འོད་སྣང་།',
+    src: '/images/gallery/PNT_PHOTOGRAPHY-109.jpg',
+    aspect: 'square'
+  },
+  {
+    id: 'photo-23',
+    title: 'དཔེ་མཛོད་ཁང་གི་ཤིང་དཔར་དང་དཔེ་ཆ་ཉར་ཚགས།',
+    category: 'heritage',
+    categoryLabel: 'གསང་སྔགས་ཀྱི་སྒྱུ་རྩལ།',
+    description: 'དགེ་ལྡན་སྔགས་ཀྱི་གཞུང་ལུགས་དང་གསུང་འབུམ་ཉར་ཚགས་གནང་བའི་དཔེ་མཛོད།',
+    src: '/images/gallery/PNT_PHOTOGRAPHY-63.jpg',
     aspect: 'square'
   }
 ];
@@ -303,7 +402,6 @@ export default function GalleryTb({ onSwitchLanguage, onNavigate }) {
                 <div className="gt-gallery-hero-overlay">
                   <span className="gt-gallery-hero-badge">དགོན་པའི་གནས་མཆོག</span>
                   <h2 className="gt-gallery-hero-title">{heroPhoto.title}</h2>
-                  <p className="gt-gallery-hero-desc">{heroPhoto.description}</p>
                 </div>
                 <div className="gt-gallery-hero-action" title="Click to view full photo">
                   <Maximize2 size={20} />
@@ -342,7 +440,6 @@ export default function GalleryTb({ onSwitchLanguage, onNavigate }) {
                       </div>
                       <div className="gt-gallery-item-meta">
                         <h3 className="gt-gallery-item-title">{item.title}</h3>
-                        <p className="gt-gallery-item-caption">{item.description}</p>
                       </div>
                     </div>
                   </div>
@@ -467,7 +564,6 @@ export default function GalleryTb({ onSwitchLanguage, onNavigate }) {
             <div className="gt-lightbox-footer">
               <div className="gt-lightbox-info">
                 <h3 className="gt-lightbox-title">{activePhoto.title}</h3>
-                <p className="gt-lightbox-caption">{activePhoto.description}</p>
               </div>
               <div className="gt-lightbox-counter">
                 {lightboxIndex + 1} / {allPhotos.length}

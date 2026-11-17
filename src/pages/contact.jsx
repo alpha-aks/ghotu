@@ -34,8 +34,8 @@ export default function Contact({ onSwitchLanguage, onNavigate }) {
               <div className="gt-contact-block">
                 <p>
                   Email:{' '}
-                  <a href="mailto:info@gyutomonastery.org" className="gt-contact-link">
-                    info@gyutomonastery.org
+                  <a href="mailto:gyutomonastery@yahoo.com" className="gt-contact-link">
+                    gyutomonastery@yahoo.com
                   </a>
                 </p>
                 <p>
@@ -51,12 +51,12 @@ export default function Contact({ onSwitchLanguage, onNavigate }) {
                 <p>
                   Facebook:{' '}
                   <a 
-                    href="https://facebook.com/GyutoMonastery" 
+                    href="https://www.facebook.com/gyuto.monastery.77" 
                     target="_blank" 
                     rel="noreferrer" 
                     className="gt-social-link"
                   >
-                    [link]
+                    gyuto.monastery.77
                   </a>
                 </p>
               </div>
@@ -79,6 +79,15 @@ export default function Contact({ onSwitchLanguage, onNavigate }) {
                 className="gt-contact-map-img" 
               />
             </a>
+          </div>
+          <div className="gt-contact-map-details" style={{ marginTop: '24px', lineHeight: '1.8' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px', color: '#1B1816' }}>Location Map Details:</h3>
+            <p style={{ margin: '0 0 6px 0', color: '#4A4643' }}>
+              Situated near Sidhbari, Dharamshala, Kangra District, Himachal Pradesh, India.
+            </p>
+            <p style={{ margin: 0, color: '#4A4643' }}>
+              <strong>Landmarks nearby:</strong> Rakkar Rd, Peaceful Playground, Nivi's Bake House, Munish Unisex Salon.
+            </p>
           </div>
         </section>
       </main>

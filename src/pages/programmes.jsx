@@ -109,37 +109,37 @@ export const MONASTERY_EVENTS_DATA = {
 // 3 Highlighted upcoming programmes from Figma mockup (Frame 2147236792)
 export const UPCOMING_PROGRAMMES = [
   {
-    id: 'losar-2026-1',
-    month: 'FEB',
-    day: '18th',
+    id: 'm10-ev-1',
+    month: 'NOV',
+    day: '17th',
     year: '2026',
-    dateKey: '2026-02-18',
-    title: 'Tibetan New Year Celebration',
-    desc: 'Losar marks the beginning of the Tibetan calendar year. The monastery hosts three days of ceremonies, rituals, and community observances celebrating Buddhist teachings and cultural renewal. Open to practitioners and visitors respectful of the sacred atmosphere.',
-    category: 'Major Festival',
-    venue: 'Monastery Courtyard & Main Prayer Hall'
-  },
-  {
-    id: 'losar-2026-2',
-    month: 'FEB',
-    day: '18th',
-    year: '2026',
-    dateKey: '2026-02-18',
-    title: 'Tibetan New Year Celebration',
-    desc: 'Losar marks the beginning of the Tibetan calendar year. The monastery hosts three days of ceremonies, rituals, and community observances celebrating Buddhist teachings and cultural renewal. Open to practitioners and visitors respectful of the sacred atmosphere.',
-    category: 'Scholastic Debate & Ritual',
+    dateKey: '2026-11-17',
+    title: 'Dialectical Discussions on Mantra',
+    desc: '',
+    category: 'Tantric Scholasticism',
     venue: 'Gyuto Debate Courtyard'
   },
   {
-    id: 'losar-2026-3',
-    month: 'FEB',
-    day: '18th',
+    id: 'm10-ev-2',
+    month: 'NOV',
+    day: '26th',
     year: '2026',
-    dateKey: '2026-02-18',
-    title: 'Tibetan New Year Celebration',
-    desc: 'Losar marks the beginning of the Tibetan calendar year. The monastery hosts three days of ceremonies, rituals, and community observances celebrating Buddhist teachings and cultural renewal. Open to practitioners and visitors respectful of the sacred atmosphere.',
-    category: 'Tantric Empowerment',
-    venue: 'Main Assembly Tsuklakhang'
+    dateKey: '2026-11-26',
+    title: 'Mahakala Great Torma Offering',
+    desc: '',
+    category: 'Wrathful Torma Ritual',
+    venue: 'Monastery Summit Sanctuary'
+  },
+  {
+    id: 'm10-ev-3',
+    month: 'DEC',
+    day: '3rd',
+    year: '2026',
+    dateKey: '2026-12-03',
+    title: 'Ganden Ngamchoe (Je Tsongkhapa)',
+    desc: '',
+    category: 'Major Buddhist Festival',
+    venue: 'Tsuklakhang & Monastery Roofs'
   }
 ];
 
@@ -654,7 +654,7 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
                     {/* Right Column: Title, Description & Action */}
                     <div className="gt-pcard-body-col">
                       <h3 className="gt-pcard-title">{item.title}</h3>
-                      <p className="gt-pcard-desc">{item.desc}</p>
+                      {item.desc ? <p className="gt-pcard-desc">{item.desc}</p> : null}
                       <button
                         type="button"
                         className="gt-pcard-learn-btn"

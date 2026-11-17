@@ -12,23 +12,71 @@ import {
 import { 
   MapPin, 
   Play, 
-  ExternalLink
+  ExternalLink,
+  X,
+  ZoomIn,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { getCurrentUpcomingProgrammes } from '../data/monasteryCalendar2026';
+
+const HERO_SLIDES = [
+  {
+    src: '/images/hero-slider/_DSC3552.jpg',
+    alt: 'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་གཙུག་ལག་ཁང་ཆེན་མོ།'
+  },
+  {
+    src: '/images/hero-slider/_DSC4276.jpg',
+    alt: 'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཆོས་ཕྱོགས་མཛད་སྒོ།'
+  },
+  {
+    src: '/images/hero-slider/761A8106.jpg',
+    alt: 'དགེ་འདུན་འདུས་པ་རྒྱ་མཚོའི་ཆོ་ག་ཕྱག་ལེན།'
+  },
+  {
+    src: '/images/hero-slider/unnamed.webp',
+    alt: 'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་མཐོང་སྣང་།'
+  }
+];
 
 export default function HomeTb({ onSwitchLanguage, onNavigate }) {
   const [activeNoticeTab, setActiveNoticeTab] = useState('announcement');
   const [activeStatDot, setActiveStatDot] = useState(0);
-  const [currentHeroSlide, setCurrentHeroSlide] = useState(0); // 0: Tibetan, 1: English
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+  const [isNoticeExpanded, setIsNoticeExpanded] = useState(false);
   const statsGridRef = useRef(null);
   const upcomingEvents = getCurrentUpcomingProgrammes();
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentHeroSlide((prev) => (prev === 0 ? 1 : 0));
-    }, 10000);
+      setCurrentHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
+
+  const handlePrevSlide = () => {
+    setCurrentHeroSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+  };
+
+  const handleNextSlide = () => {
+    setCurrentHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsNoticeExpanded(false);
+    };
+    if (isNoticeExpanded) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isNoticeExpanded]);
 
   const handleStatsScroll = () => {
     if (!statsGridRef.current) return;
@@ -65,18 +113,50 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
           ==================================================================== */}
       <section id="home" className="gt-hero-section">
         <div className="gt-hero-image-wrap">
-          <img 
-            src="/images/home-hero-tb.jpg" 
-            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains (Tibetan)" 
-            className={`gt-hero-img gt-hero-slide gt-hero-tb ${currentHeroSlide === 0 ? 'active' : ''}`}
-            loading="eager"
-          />
-          <img 
-            src="/images/home-hero.jpg" 
-            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains (English)" 
-            className={`gt-hero-img gt-hero-slide gt-hero-en ${currentHeroSlide === 1 ? 'active' : ''}`}
-            loading="eager"
-          />
+          {HERO_SLIDES.map((slide, idx) => (
+            <img 
+              key={slide.src}
+              src={slide.src} 
+              alt={slide.alt} 
+              className={`gt-hero-img gt-hero-slide ${currentHeroSlide === idx ? 'active' : ''}`}
+              loading={idx === 0 ? 'eager' : 'lazy'}
+            />
+          ))}
+
+          {/* Left / Right Slider Navigation Arrows */}
+          <button
+            type="button"
+            className="gt-hero-arrow-btn gt-hero-arrow-prev"
+            onClick={handlePrevSlide}
+            aria-label="Previous Slide"
+            title="Previous slide"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            type="button"
+            className="gt-hero-arrow-btn gt-hero-arrow-next"
+            onClick={handleNextSlide}
+            aria-label="Next Slide"
+            title="Next slide"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          {/* Carousel Indicator Dots */}
+          <div className="gt-hero-dots-wrap" role="tablist" aria-label="Hero carousel pagination">
+            {HERO_SLIDES.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`gt-hero-dot ${currentHeroSlide === idx ? 'active' : ''}`}
+                onClick={() => setCurrentHeroSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                role="tab"
+                aria-selected={currentHeroSlide === idx}
+              />
+            ))}
+          </div>
         </div>
 
         {/* 4 Feature Badges Bar (Figma: Frame 625795: #FFFAF1) */}
@@ -87,7 +167,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 <img src="/images/stats/stupa.svg" alt="Founded" width={60} height={60} />
               </div>
               <div className="gt-stat-texts">
-                <span className="gt-stat-label">ཕྱག་བཏབ་ལོ།</span>
+                <span className="gt-stat-label">ཕྱག་བཏབ་དུས།</span>
                 <span className="gt-stat-value">ཕྱི་ལོ་ ༡༤༧༤ (བོད།)</span>
               </div>
             </div>
@@ -134,9 +214,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             <div className="gt-conch-badge">
               <RightWhorlConch width={48} height={80} />
             </div>
-            <h2 className="gt-living-title">གསང་སྔགས་རིག་འཛིན་གྱི་སྡེ་ཆེན་པོ།</h2>
+            <h2 className="gt-living-title">གསང་སྔགས་རིག་འཛིན་གྱི་སྡེ་ཆེན་པོ་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།</h2>
             <p className="gt-living-text">
-              གསང་ཆེན་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་ནི། ཕྱི་ལོ་ ༡༤༧༤ ལོར་ཕྱག་བཏབ་ཅིང་། བོད་བརྒྱུད་ནང་བསྟན་ཁྲོད་ནས་དགེ་ལྡན་པའི་གསང་སྔགས་ཀྱི་ཆོས་བརྒྱུད་གཙོ་བོ་ཞིག་གྲྭ་ཚང་འདིས་མི་ཉམས་རྒྱུན་འཛིན་གནང་ཡོད། རྒྱ་གར་དུ་བསྐྱར་འཛུགས་གནང་བ་ནས་བཟུང་། དགོན་པ་འདིས་སློབ་གཉེར་དང་། སྒོམ་སྒྲུབ་ཉམས་ལེན། རིག་གཞུང་སྲུང་སྐྱོབ། དེ་བཞིན་སྤྱི་ཚོགས་ཞབས་ཞུའི་ལས་དོན་རྣམས་མུ་མཐུད་སྒྲུབ་བཞིན་ཡོད།
+              གསང་ཆེན་དཔལ་ལྡན་སྟོད་རྒྱུད་གྲྭ་ཚང་ནི།ཕྱི་ལོ་ ༡༤༧༤ ལོར་རྗེ་བཙུན་ཀུན་དགའ་དོན་གྲུབ་དཔལ་བཟང་པོ་མཆོག་གི་ཕྱག་བཏབ་ཅིང་།གྲྭ་ཚང་འདིས་བོད་བརྒྱུད་ནང་བསྟན་ཁྲོད་ནས་དགེ་ལྡན་པའི་གསང་སྔགས་ཀྱི་ཆོས་བརྒྱུད་གཙོ་བོ་ཞིག་མི་ཉམས་རྒྱུན་འཛིན་གནང་ཡོད། རྒྱ་གར་དུ་བསྐྱར་འཛུགས་གནང་བ་ནས་བཟུང་། དགོན་པ་འདིས་སློབ་གཉེར་དང་། སྒོམ་སྒྲུབ་ཉམས་ལེན། རིག་གཞུང་སྲུང་སྐྱོབ། དེ་བཞིན་སྤྱི་ཚོགས་ཞབས་ཞུའི་ལས་དོན་རྣམས་མུ་མཐུད་སྒྲུབ་བཞིན་ཡོད།
             </p>
             <a 
               href="/about" 
@@ -191,7 +271,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             <div className="gt-news-left">
               <h3>གྲྭ་ཚང་གི་གསར་འགྱུར་དང་གསལ་བསྒྲགས།</h3>
               <p>
-                དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཉེ་བའི་གསར་འགྱུར་དང་། འདུས་སྤྱིའི་བྱེད་སྒོ། གལ་ཆེའི་གསལ་བསྒྲགས། པར་སྐྲུན། དེ་བཞིན་གསར་འགྱུར་གཞན་བཅས་ཀྱི་སྐོར་འདི་ནས་མཁྱེན་རྟོགས་གནང་རོགས།
+                དཔལ་ལྡན་སྟོད་རྒྱུད་གྲྭ་ཚང་གི་ཉེ་བའི་གསར་འགྱུར་དང་། འདུས་སྤྱིའི་བྱེད་སྒོ། གལ་ཆེའི་གསལ་བསྒྲགས། པར་སྐྲུན། དེ་བཞིན་གསར་འགྱུར་གཞན་བཅས་ཀྱི་སྐོར་འདི་ནས་མཁྱེན་རྟོགས་གནོངས།
               </p>
               <a 
                 href="/news" 
@@ -208,14 +288,22 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
             </div>
 
             <div className="gt-news-right">
-              <div className="gt-news-video-card gt-news-placeholder-card">
-                <div className="gt-news-img-placeholder">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                  <span>བརྙན་པར་དང་གསར་འགྱུར་གནས་ཡུལ།</span>
+              <div 
+                className="gt-news-video-card gt-announcement-card-clickable" 
+                onClick={() => setIsNoticeExpanded(true)}
+                title="ཆེ་རུ་གཏོང་བ།"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setIsNoticeExpanded(true); }}
+              >
+                <img 
+                  src="/images/announcements/announcement-dalai-lama-visit-tb.jpg" 
+                  alt="དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་གལ་ཆེའི་ཆོས་བརྡ་གསལ་བསྒྲགས།"
+                  className="gt-announcement-thumb"
+                />
+                <div className="gt-announcement-expand-badge">
+                  <ZoomIn size={14} />
+                  <span>ཆེ་རུ་གཏོང་བ།</span>
                 </div>
               </div>
             </div>
@@ -241,9 +329,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
         <div className="gyuto-container">
           <div className="gt-about-depts-head">
             <div className="gt-about-depts-text">
-              <h2 className="gt-about-depts-title">ཕྱོགས་ཡོངས་ཀྱི་ཞབས་ཞུ་དང་ཆོས་ཕྱོགས་མཛད་རིམ།</h2>
+              <h2 className="gt-about-depts-title">དགོན་པའི་འཚོ་བ་ཡོངས་ལ་ཞབས་ཞུ།</h2>
               <p className="gt-about-depts-desc">
-                དྲ་ཚིགས་འདིར་འཁོད་པའི་འཛིན་སྐྱོང་དང་། སློབ་གཉེར། འཕྲོད་བསྟེན་ཚན་པ། ལོ་རེའི་ཆོས་ཕྱོགས་ཀྱི་མཛད་རིམ་བཅས་ཀྱི་ངོ་སྤྲོད།
+                ཤེས་ཡོན་དང་འཛིན་སྐྱོང་སྡེ་ཚན་ནས་དཔེ་མཛོད་དང་། པར་སྐྲུན། སྤྱི་ཚོགས་ཞབས་ཞུ་བཅས་བར་གྱི་སྡེ་ཚན་སོ་སོས་དགོན་པའི་ཉིན་རེའི་འཚོ་བའི་ཁྲོད་དུ་ཞབས་འདེགས་ཞུ་བཞིན་ཡོད་ལ། སྡེ་ཚན་དེ་དག་མཉམ་རུབ་ཀྱི་ཐོག་ནས་ནང་བསྟན་རྒྱུན་འཛིན་དང་། དགོན་པའི་ལས་དོན་རྣམས་ཚགས་ཚུད་ཡོང་བར་རྒྱབ་སྐྱོད་བྱེད་ཀྱི་ཡོད།
               </p>
             </div>
             <button
@@ -279,9 +367,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">འཛིན་སྐྱོང་ཚན་པ།</h3>
+                <h3 className="gt-about-dept-name">དབུས་འཛིན་སྐྱོང་སྡེ་ཚན།</h3>
                 <p className="gt-about-dept-snippet">
-                  དགོན་པའི་ཉིན་རེའི་ལས་དོན་དང་། སྒྲིག་འཛུགས་ཀྱི་ལས་དོན་བཅས་ལ་འགན་ཁུར་གནང་བཞིན་ཡོད།
+                  དགོན་པའི་སྤྱི་ཡོངས་ཀྱི་འཛིན་སྐྱོང་དང་། དཔལ་འབྱོར། ཉིན་རེའི་ལས་དོན་བཅས་ལ་འགན་འཁུར་བྱེད།
                 </p>
                 <a
                   href="/departments#admin"
@@ -318,9 +406,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">སློབ་གཉེར་ཚན་པ།</h3>
+                <h3 className="gt-about-dept-name">ཤེས་ཡོན་སྡེ་ཚན།</h3>
                 <p className="gt-about-dept-snippet">
-                  དགེ་ལུགས་ཀྱི་གཞུང་དང་། མཚན་ཉིད་རྩོད་པ། སྔགས་ཀྱི་ཆོ་ག་བཅས་ལ་སློབ་གཉེར་གནང་བཞིན་ཡོད།
+                  གཞི་རིམ་གྱི་ཤེས་ཡོན་དང་། ནང་པའི་ལྟ་གྲུབ། རྒྱུད་ཀྱི་སློབ་གཉེར། ཆོ་ག་ཕྱག་ལེན། འདུལ་ཁྲིམས་བཅས་ཟུང་འབྲེལ་གྱིས་གོ་རིམ་ལྡན་པའི་དགོན་པའི་སློབ་གཉེར་གྱི་མཐུན་རྐྱེན་སྦྱོར།
                 </p>
                 <a
                   href="/departments#education"
@@ -357,9 +445,9 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">འཕྲོད་བསྟེན་ཚན་པ།</h3>
+                <h3 className="gt-about-dept-name">འཕྲོད་བསྟེན་དང་སྤྱི་ཚོགས་ཞབས་ཞུ།</h3>
                 <p className="gt-about-dept-snippet">
-                  དགེ་འདུན་པ་རྣམས་ཀྱི་ལུས་སེམས་བདེ་ཐང་ལ་ཞབས་ཞུ་དང་སྨན་བཅོས་མཐུན་རྐྱེན་སྦྱོར་བཞིན་ཡོད།
+                  འདིའི་ཁྱབ་ཁོངས་སུ་བཅའ་སྡོད་སྨན་ཞབས་པ་ཡོད་པའི་སྨན་ཁང་ཞིག་ཡོད། དེར་དགེ་འདུན་པ་དང་། ལས་བྱེད་པ།ལྷག་པར་དུ་ནད་པ་དང་བགྲེས་སོང་བཅས་ལ་གཞི་རིམ་སྨན་བཅོས་ཀྱི་ཞབས་ཞུ་སྒྲུབ་བཞིན་ཡོད།
                 </p>
                 <a
                   href="/departments#healthcare"
@@ -420,7 +508,6 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
                     <div className="gt-event-divider-vert" />
                     <div className="gt-event-info">
                       <h5 className="gt-event-name">{item.titleTb || item.title}</h5>
-                      <p className="gt-event-desc">{item.descTb || item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -522,6 +609,63 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
           12. FOOTER (Extracted Component)
           ==================================================================== */}
       <Footer lang="tb" onNavigate={onNavigate} />
+
+      {/* ====================================================================
+          IPHONE-STYLE EXPANDED PHOTO MODAL (Tibetan)
+          ==================================================================== */}
+      {isNoticeExpanded && (
+        <div 
+          className="gt-iphone-photo-backdrop tibetan-text" 
+          onClick={() => setIsNoticeExpanded(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="གལ་ཆེའི་ཆོས་བརྡ་གསལ་བསྒྲགས།"
+        >
+          {/* Top Bar with iPhone style circular blur close button */}
+          <div className="gt-iphone-top-bar" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="gt-iphone-close-btn"
+              onClick={() => setIsNoticeExpanded(false)}
+              aria-label="Close photo"
+              title="Close (Esc)"
+            >
+              <X size={22} />
+            </button>
+            <a
+              href="/news"
+              className="gt-iphone-action-link"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  setIsNoticeExpanded(false);
+                  onNavigate('news');
+                }
+              }}
+            >
+              <span>གསར་འགྱུར་ནང་གཟིགས།</span>
+              <ExternalLink size={14} />
+            </a>
+          </div>
+
+          {/* Center Expanding Image Container */}
+          <div className="gt-iphone-img-stage" onClick={(e) => e.stopPropagation()}>
+            <img
+              src="/images/announcements/announcement-dalai-lama-visit-tb.jpg"
+              alt="དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་གལ་ཆེའི་ཆོས་བརྡ་གསལ་བསྒྲགས།"
+              className="gt-iphone-photo-img"
+              onClick={() => setIsNoticeExpanded(false)}
+              title="གང་རུང་ལ་མནན་ནས་ཁ་རྒྱག་པ།"
+            />
+          </div>
+
+          {/* Bottom Caption Pill */}
+          <div className="gt-iphone-bottom-caption" onClick={(e) => e.stopPropagation()}>
+            <p className="gt-iphone-caption-title">གལ་ཆེའི་ཆོས་བརྡ་གསལ་བསྒྲགས།</p>
+            <p className="gt-iphone-caption-sub">༸གོང་ས་༸སྐྱབས་མགོན་ཆེན་པོ་མཆོག་དཔལ་ལྡན་སྟོད་རྒྱུད་གྲྭ་ཚང་དུ་ཆིབས་བསྒྱུར་བཀའ་དྲིན་བསྐྱང་གནང་མཛད་རྒྱུ། • ཕྱི་ལོ་ ༢༠༢༦ ཟླ་ ༡༡ ཚེས་ ༢༨</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

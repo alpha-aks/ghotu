@@ -716,21 +716,9 @@ img {
 }
 
 @media (max-width: 768px) {
+  /* Remove circle translate button on phone screens */
   .gt-floating-lang-btn {
-    bottom: 20px;
-    right: 20px;
-    width: 50px;
-    height: 50px;
-    gap: 2px;
-  }
-
-  .gt-floating-lang-text {
-    font-size: 9.5px;
-  }
-
-  .gt-floating-lang-text.is-tb {
-    font-size: 8.5px !important;
-    margin-top: 1px;
+    display: none !important;
   }
 }
 

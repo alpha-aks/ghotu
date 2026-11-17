@@ -5,7 +5,28 @@ import SupportSection from '../components/SupportSection';
 import { TibetanVajra, EndlessKnot } from '../components/MonasteryIcons';
 import './news.css';
 
-export const UPDATES_DATA = [];
+export const UPDATES_DATA = [
+  {
+    id: 'hhdls-visit-2026',
+    tag: 'ANNOUNCEMENT',
+    type: 'split',
+    date: 'OCTOBER 28, 2026',
+    title: 'Important Announcement and Invitation',
+    paragraphs: [
+      "We are delighted to announce that His Holiness the Dalai Lama, has graciously consented to visit our Gyuto Tantric Monastery on Saturday, November 28, 2026, to inaugurate our new debating courtyard and to celebrate His Holiness's 90th birthday. This is a most auspicious and deeply meaningful occasion for all of us.",
+      "Due to the time constraints, it is not feasible for us to personally send individual invitations to all our devotees, sponsors, and well-wishers. Therefore, through this public announcement, we invite you to take note of this news and make arrangements to attend this joyous celebration of His Holiness's long life and profound kindness.",
+      "We pray that by attending this sacred event, you will be able to accumulate merit and experience the blessings of His Holiness's presence."
+    ],
+    signoff: [
+      'With utmost reverence and respect,',
+      'Lobsang Dorjee',
+      'Administrator',
+      'Gyuto Tantric Monastery'
+    ],
+    image: '/images/announcements/announcement-dalai-lama-visit-en.jpg',
+    imageAlt: 'Important Announcement and Invitation - His Holiness the Dalai Lama Visit to Gyuto Tantric Monastery'
+  }
+];
 
 export default function News({ onSwitchLanguage, onNavigate }) {
   const [filter, setFilter] = useState('ALL');
@@ -86,17 +107,34 @@ export default function News({ onSwitchLanguage, onNavigate }) {
                           <time className="gt-update-date">{item.date}</time>
                         </div>
                         <h2 className="gt-update-title">{item.title}</h2>
-                        <p className="gt-update-body">{item.body}</p>
+                        {item.paragraphs ? (
+                          <div className="gt-update-body">
+                            {item.paragraphs.map((para, pIdx) => (
+                              <p key={pIdx} style={{ marginBottom: '14px', lineHeight: '1.75' }}>{para}</p>
+                            ))}
+                            {item.signoff && (
+                              <div className="gt-update-signoff" style={{ marginTop: '20px', lineHeight: '1.6', color: '#1B1816' }}>
+                                {item.signoff.map((line, lIdx) => (
+                                  <p key={lIdx} style={{ margin: '2px 0', fontWeight: lIdx === 0 ? 600 : 400 }}>{line}</p>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <p className="gt-update-body">{item.body}</p>
+                        )}
                       </div>
 
                       <div className="gt-update-split-img-box">
                         {item.image ? (
-                          <img
-                            src={item.image}
-                            alt={item.imageAlt || item.title}
-                            className="gt-update-img"
-                            loading="lazy"
-                          />
+                          <a href={item.image} target="_blank" rel="noopener noreferrer" title="Click to view full size official document" style={{ display: 'block', width: '100%', height: '100%' }}>
+                            <img
+                              src={item.image}
+                              alt={item.imageAlt || item.title}
+                              className="gt-update-img"
+                              loading="lazy"
+                            />
+                          </a>
                         ) : (
                           <div className="gt-update-img-placeholder">
                             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

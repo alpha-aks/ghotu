@@ -516,7 +516,7 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                   <h2 className="gt-dept-item-title">6 — Media, Photography &amp; Communication Services</h2>
                   <div className="gt-dept-item-body">
                     <p>
-                      The Monastery maintains media and communication services for photography, documentation, website management, social media platforms (Facebook), and information dissemination.
+                      The Monastery maintains media and communication services for photography, documentation, website management, social media platforms (<a href="https://www.facebook.com/gyuto.monastery.77" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>Facebook</a>), and information dissemination.
                       {!expandedDepts.media && (
                         <button 
                           type="button" 

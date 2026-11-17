@@ -449,7 +449,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                   <h2 className="gt-dept-item-title">༦ — བརྒྱུད་ལམ། བརྙན་པར། འབྲེལ་མཐུད་ཞབས་ཞུ།</h2>
                   <div className="gt-dept-item-body">
                     <p>
-                      གྲྭ་ཚང་གིས་པར་ལེན་དང་འབྲེལ་བའི་བརྒྱུད་ལམ་དང་བརྡ་འཕྲིན་གྱི་ཞབས་ཞུ་དང་། ཡིག་ཚགས་བདག་ཉར། དྲ་ཚིགས་ཉར་ཚགས། སྤྱི་ཚོགས་འབྲེལ་མཐུད་དྲ་ལམ་(ངོ་དེབ)། དེ་བཞིན་གནས་ཚུལ་ཁྱབ་སྤེལ་བཅས་གཉེར་བཞིན་ཡོད།
+                      གྲྭ་ཚང་གིས་པར་ལེན་དང་འབྲེལ་བའི་བརྒྱུད་ལམ་དང་བརྡ་འཕྲིན་གྱི་ཞབས་ཞུ་དང་། ཡིག་ཚགས་བདག་ཉར། དྲ་ཚིགས་ཉར་ཚགས། སྤྱི་ཚོགས་འབྲེལ་མཐུད་དྲ་ལམ་(<a href="https://www.facebook.com/gyuto.monastery.77" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'underline', color: 'inherit' }}>ངོ་དེབ</a>)། དེ་བཞིན་གནས་ཚུལ་ཁྱབ་སྤེལ་བཅས་གཉེར་བཞིན་ཡོད།
                       {!expandedDepts.media && (
                         <button
                           type="button"

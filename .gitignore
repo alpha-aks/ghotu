@@ -20,6 +20,7 @@ build/
 # Large scratch assets & temporary mockups
 scratch/
 Section 1.txt
+Website Photos/
 *.tmp
 
 # Logs

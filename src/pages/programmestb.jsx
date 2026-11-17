@@ -104,37 +104,37 @@ const TIBETAN_EVENTS_DATA = {
 // 3 Highlighted Upcoming Programmes in Tibetan
 const TIBETAN_UPCOMING_PROGRAMMES = [
   {
-    id: 'tb-p1',
-    month: 'ཕྱི་ཟླ་',
-    day: '༢ ཚེས་',
-    year: '༡༨',
-    dateKey: '2026-02-18',
-    title: 'བོད་ཀྱི་ལོ་གསར་སྲུང་བརྩི།',
-    desc: 'ལོ་གསར་ནི་བོད་ཀྱི་ལོ་ཐོའི་ལོ་མགོ་མཚོན་བྱེད་ཡིན་ལ། དགོན་པ་འདིས་ཉིན་གསུམ་གྱི་རིང་ཆོས་ཕྱོགས་ཀྱི་མཛད་སྒོ་དང་སྤྱི་ཚོགས་ཀྱི་མཛད་སྒོ་བཅས་གོ་སྒྲིག་གནང་ཏེ་ནང་པའི་ཆོས་དང་རིག་གཞུང་དར་ཞིང་རྒྱས་པའི་དགའ་སྟོན་རྟེན་འབྲེལ་སྲུང་བརྩི་ཞུ་བར་བྱེད།',
-    category: 'ལོ་གསར་དུས་ཆེན།',
-    venue: 'དགོན་པའི་གཙུག་ལག་ཁང་དང་ཁྱམས་ར།'
-  },
-  {
-    id: 'tb-p2',
-    month: 'ཕྱི་ཟླ་',
-    day: '༥ ཚེས་',
-    year: '༣༡',
-    dateKey: '2026-05-31',
-    title: 'ས་ག་ཟླ་བའི་དུས་ཆེན།',
-    desc: 'སྟོན་པ་སངས་རྒྱས་ཀྱི་སྐུ་བལྟམས་པ་དང་། སངས་རྒྱས་པ། མྱ་ངན་ལས་འདས་པའི་དུས་ཆེན་ཁྱད་པར་ཅན། དགེ་འདུན་འདུས་པ་རྒྱ་མཚོས་སྨོན་ལམ་ཆེན་མོ་དང་མཆོད་འབུལ་རྒྱ་ཆེན་གནང་བ།',
-    category: 'དུས་ཆེན་ཁྱད་པར་ཅན།',
-    venue: 'གཙུག་ལག་ཁང་ཆེན་མོ།'
-  },
-  {
-    id: 'tb-p3',
-    month: 'ཕྱི་ཟླ་',
-    day: '༧ ཚེས་',
-    year: '༡༨',
-    dateKey: '2026-07-18',
-    title: 'ཆོས་འཁོར་དུས་ཆེན།',
-    desc: 'སྟོན་པ་ཤཱཀྱ་ཐུབ་པས་བདེན་བཞིའི་ཆོས་འཁོར་ཐོག་མར་བསྐོར་བའི་དུས་ཆེན་ཁྱད་པར་ཅན། ཆོས་ཕྱོགས་ཀྱི་བགྲོ་གླེང་དང་གསུང་ཆོས་གནང་བ།',
-    category: 'ཆོས་ཕྱོགས་མཛད་སྒོ།',
+    id: 'tb-m10-ev-1',
+    month: 'ཕྱི་ཟླ་ ༡༡',
+    day: 'ཚེས་ ༡༧',
+    year: '༢༠༢༦',
+    dateKey: '2026-11-17',
+    title: 'གསང་སྔགས་ཀྱི་ཆོས་ཐོག་རྩོད་པ།',
+    desc: '',
+    category: 'མཚན་ཉིད་དམ་བཅའ།',
     venue: 'རྒྱུད་སྟོད་རྩོད་རྭ་ཆེན་མོ།'
+  },
+  {
+    id: 'tb-m10-ev-2',
+    month: 'ཕྱི་ཟླ་ ༡༡',
+    day: 'ཚེས་ ༢༦',
+    year: '༢༠༢༦',
+    dateKey: '2026-11-26',
+    title: 'མགོན་པོའི་གཏོར་ཆེན་འཕེན་པའི་ཆོ་ག',
+    desc: '',
+    category: 'གཏོར་རྒྱག་ཆེན་མོ།',
+    venue: 'དགོན་པའི་ཡང་ཐོག་དབུ་རྩེ།'
+  },
+  {
+    id: 'tb-m10-ev-3',
+    month: 'ཕྱི་ཟླ་ ༡༢',
+    day: 'ཚེས་ ༣',
+    year: '༢༠༢༦',
+    dateKey: '2026-12-03',
+    title: 'དགའ་ལྡན་ལྔ་མཆོད་ཆེན་མོ།',
+    desc: '',
+    category: 'དུས་ཆེན་ཆེན་མོ།',
+    venue: 'གཙུག་ལག་ཁང་དང་དགོན་པའི་ཡང་ཐོག'
   }
 ];
 
@@ -643,7 +643,7 @@ export default function ProgrammesTb({ onSwitchLanguage, onNavigate }) {
                     {/* Right Column: Title, Description & Action */}
                     <div className="gt-pcard-body-col">
                       <h3 className="gt-pcard-title">{item.titleTb || item.title}</h3>
-                      <p className="gt-pcard-desc">{item.descTb || item.desc}</p>
+                      {(item.descTb || item.desc) ? <p className="gt-pcard-desc">{item.descTb || item.desc}</p> : null}
                       <button
                         type="button"
                         className="gt-pcard-learn-btn"

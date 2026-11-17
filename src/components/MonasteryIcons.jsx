@@ -7,7 +7,8 @@ export function GyutoEmblem({ size = 190, width, height, className = "gt-emblem-
   return (
     <img
       src="/images/gyuto-logo.png"
-      alt="Gyuto Tantric Monastery Seal"
+      alt="Gyuto Tantric Monastery Official Seal & Logo (Gyuto Monastery, Dharamshala)"
+      title="Gyuto Tantric Monastery Official Logo & Seal"
       width={w}
       height={h}
       className={className}

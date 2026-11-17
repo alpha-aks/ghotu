@@ -35,8 +35,8 @@ export default function ContactTb({ onSwitchLanguage, onNavigate }) {
               <div className="gt-contact-block">
                 <p>
                   གློག་འཕྲིན་ཁ་བྱང་།{' '}
-                  <a href="mailto:info@gyutomonastery.org" className="gt-contact-link">
-                    info@gyutomonastery.org
+                  <a href="mailto:gyutomonastery@yahoo.com" className="gt-contact-link">
+                    gyutomonastery@yahoo.com
                   </a>
                 </p>
                 <p>
@@ -52,12 +52,12 @@ export default function ContactTb({ onSwitchLanguage, onNavigate }) {
                 <p>
                   Facebook:{' '}
                   <a 
-                    href="https://facebook.com/GyutoMonastery" 
+                    href="https://www.facebook.com/gyuto.monastery.77" 
                     target="_blank" 
                     rel="noreferrer" 
                     className="gt-social-link"
                   >
-                    [link]
+                    gyuto.monastery.77
                   </a>
                 </p>
               </div>
@@ -80,6 +80,21 @@ export default function ContactTb({ onSwitchLanguage, onNavigate }) {
                 className="gt-contact-map-img" 
               />
             </a>
+          </div>
+          <div className="gt-contact-map-details" style={{ marginTop: '24px', lineHeight: '1.9' }}>
+            <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px', color: '#1B1816' }}>ཞིབ་ཕྲའི་ས་ཁྲ།</h3>
+            <p style={{ margin: '0 0 6px 0', color: '#4A4643' }}>
+              <strong>གནས་ཡུལ།—</strong>རྒྱ་གར་ཧི་མ་ཅལ་མངའ་སྡེ། ཀང་ར་རྫོང་། དྷ་རམ་ས་ལཱ་སིདྷ་བ་རིའི་ཉེ་འགྲམ་དུ་ཆགས་ཡོད།
+            </p>
+            <p style={{ margin: '0 0 4px 0', color: '#4A4643' }}>
+              <strong>ཉེ་འགྲམ་གྱི་ས་རྟགས་གལ་ཆེན་ཁག</strong>
+            </p>
+            <ul style={{ margin: 0, paddingLeft: '20px', color: '#4A4643' }}>
+              <li>རཱ་ཀར་ལམ། (Rakkar Rd)</li>
+              <li>ཞི་བདེའི་རྩེད་ཐང་། (Peaceful Playground)</li>
+              <li>ནི་ཝིའི་བག་བཟོ་ཁང་། (Nivi's Bake House)</li>
+              <li>མུ་ནིཤ་སྐྲ་ཁང་། (Munish Unisex Salon)</li>
+            </ul>
           </div>
         </section>
       </main>

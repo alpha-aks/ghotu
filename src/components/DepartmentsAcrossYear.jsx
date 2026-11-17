@@ -53,7 +53,7 @@ export default function DepartmentsAcrossYear({ lang = 'en', className = '' }) {
             <div className="gt-timeline-col">
               <div className="gt-timeline-stalk" />
               <div className="gt-timeline-labels">
-                <span className="gt-timeline-season">{isTibetan ? 'དབྱར་ཀ' : 'Summer'}</span>
+                <span className="gt-timeline-season">{isTibetan ? 'དབྱར་ཁ།' : 'Summer'}</span>
                 <span className="gt-timeline-activity">{isTibetan ? 'བསྙེན་མཚམས་དང་ཉམས་ལེན།' : 'Retreat & Practice'}</span>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function DepartmentsAcrossYear({ lang = 'en', className = '' }) {
             <div className="gt-timeline-col">
               <div className="gt-timeline-stalk" />
               <div className="gt-timeline-labels">
-                <span className="gt-timeline-season">{isTibetan ? 'སྟོན་ཀ' : 'Autumn'}</span>
+                <span className="gt-timeline-season">{isTibetan ? 'སྟོན་ཁ།' : 'Autumn'}</span>
                 <span className="gt-timeline-activity">{isTibetan ? 'རྒྱུགས་སྤྲོད།' : 'Examinations'}</span>
               </div>
             </div>
@@ -69,8 +69,8 @@ export default function DepartmentsAcrossYear({ lang = 'en', className = '' }) {
             <div className="gt-timeline-col">
               <div className="gt-timeline-stalk" />
               <div className="gt-timeline-labels">
-                <span className="gt-timeline-season">{isTibetan ? 'དགུན་ཀ' : 'Winter'}</span>
-                <span className="gt-timeline-activity">{isTibetan ? 'ཆོ་ག་ཕྱག་ལེན་དང་སྲུང་བརྟི།' : 'Rituals & Observances'}</span>
+                <span className="gt-timeline-season">{isTibetan ? 'དགུན་ཁ།' : 'Winter'}</span>
+                <span className="gt-timeline-activity">{isTibetan ? 'ཆོ་ག་ཕྱག་ལེན་དང་སྲུང་བརྩི།' : 'Rituals & Observances'}</span>
               </div>
             </div>
           </div>
@@ -87,20 +87,20 @@ export default function DepartmentsAcrossYear({ lang = 'en', className = '' }) {
             <div className="gt-timeline-mobile-card">
               <div className="gt-timeline-mobile-dot" />
               <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'FEB – MAY'}</span>
-              <div className="gt-timeline-mobile-season">{isTibetan ? 'དབྱར་ཀ' : 'Summer'}</div>
+              <div className="gt-timeline-mobile-season">{isTibetan ? 'དབྱར་ཁ།' : 'Summer'}</div>
               <div className="gt-timeline-mobile-activity">{isTibetan ? 'བསྙེན་མཚམས་དང་ཉམས་ལེན།' : 'Retreat & Practice'}</div>
             </div>
             <div className="gt-timeline-mobile-card">
               <div className="gt-timeline-mobile-dot" />
               <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'FEB – MAY'}</span>
-              <div className="gt-timeline-mobile-season">{isTibetan ? 'སྟོན་ཀ' : 'Autumn'}</div>
+              <div className="gt-timeline-mobile-season">{isTibetan ? 'སྟོན་ཁ།' : 'Autumn'}</div>
               <div className="gt-timeline-mobile-activity">{isTibetan ? 'རྒྱུགས་སྤྲོད།' : 'Examinations'}</div>
             </div>
             <div className="gt-timeline-mobile-card">
               <div className="gt-timeline-mobile-dot" />
               <span className="gt-timeline-mobile-date">{isTibetan ? 'ཕྱི་ཟླ་ ༢-༥' : 'FEB – MAY'}</span>
-              <div className="gt-timeline-mobile-season">{isTibetan ? 'དགུན་ཀ' : 'Winter'}</div>
-              <div className="gt-timeline-mobile-activity">{isTibetan ? 'ཆོ་ག་ཕྱག་ལེན་དང་སྲུང་བརྟི།' : 'Rituals & Observances'}</div>
+              <div className="gt-timeline-mobile-season">{isTibetan ? 'དགུན་ཁ།' : 'Winter'}</div>
+              <div className="gt-timeline-mobile-activity">{isTibetan ? 'ཆོ་ག་ཕྱག་ལེན་དང་སྲུང་བརྩི།' : 'Rituals & Observances'}</div>
             </div>
           </div>
         </div>

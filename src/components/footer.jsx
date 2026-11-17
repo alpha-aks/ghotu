@@ -72,14 +72,24 @@ export default function Footer({ lang = 'en', onNavigate }) {
 
           {/* Column 3: Contact */}
           <div className="gt-footer-col">
-            <h5>{isTibetan ? 'འབྲེལ་གཏུགས།' : 'CONTACT'}</h5>
+            <h5>{isTibetan ? 'འབྲེལ་གནས།' : 'CONTACT'}</h5>
             <div className="gt-footer-contact-info">
-              <p>Sidhbari, Dharamshala,</p>
-              <p>Himachal Pradesh, 176215</p>
+              <p>{isTibetan ? 'ཁ་བྱང་། ' : ''}Sidhbari, Dharamshala,</p>
+              <p>Himachal Pradesh, 176215,</p>
               <p>India</p>
               <p style={{ marginTop: '8px' }}>
-                <a href="mailto:info@gyutomonastery.org" style={{ color: 'inherit', textDecoration: 'none' }}>
-                  {isTibetan ? 'གློག་འཕྲིན། ' : ''}info@gyutomonastery.org
+                <a href="mailto:gyutomonastery@yahoo.com" style={{ color: 'inherit', textDecoration: 'none' }}>
+                  {isTibetan ? 'གློག་འཕྲིན། ' : 'Email: '}gyutomonastery@yahoo.com
+                </a>
+              </p>
+              <p style={{ marginTop: '6px' }}>
+                <a 
+                  href="https://www.facebook.com/gyuto.monastery.77" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  style={{ color: 'inherit', textDecoration: 'none' }}
+                >
+                  {isTibetan ? 'ངོ་དེབ། ' : 'Facebook: '}gyuto.monastery.77 ↗
                 </a>
               </p>
             </div>

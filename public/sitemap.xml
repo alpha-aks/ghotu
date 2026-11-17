@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://gyutotantricmonastery.org/</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gyutotantricmonastery.org/images/gyuto-logo.png</image:loc>
+      <image:title>Gyuto Tantric Monastery Official Seal and Logo</image:title>
+      <image:caption>Official sacred seal of Gyuto Tantric Monastery (Gyuto Monastery, Sidhbari, Dharamshala)</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gyutotantricmonastery.org/images/hero-slider/_DSC3552.jpg</image:loc>
+      <image:title>Gyuto Tantric Monastery Assembly &amp; Shrine Hall</image:title>
+      <image:caption>Gyuto Monastery main assembly temple hall with monks in Dharamshala, India</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gyutotantricmonastery.org/images/hero-slider/_DSC4276.jpg</image:loc>
+      <image:title>Gyuto Tantric Monks Sacred Ritual Ceremony</image:title>
+      <image:caption>Monks of Gyuto Tantric Monastery performing sacred tantric ritual and overtone chanting</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gyutotantricmonastery.org/images/hero-slider/761A8106.jpg</image:loc>
+      <image:title>Gyuto Monastic Congregation in Prayer</image:title>
+      <image:caption>Monastic assembly of Gyuto Tantric Monastery gathered in collective prayer</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gyutotantricmonastery.org/images/hero-slider/unnamed.webp</image:loc>
+      <image:title>Gyuto Monastery Campus and Himalayan Foothills</image:title>
+      <image:caption>Scenic view of Gyuto Monastery complex situated in Sidhbari, Dharamshala beneath the Himalayas</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gyutotantricmonastery.org/about</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://gyutotantricmonastery.org/gallery</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://gyutotantricmonastery.org/images/gallery/_DSC3778.jpg</image:loc>
+      <image:title>Gyuto Tantric Monastery Sanctuary and Himalayan Mountain Range</image:title>
+      <image:caption>Overview of Gyuto Monastery in Sidhbari against the snow-capped Dhauladhar peaks</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gyutotantricmonastery.org/images/gallery/761A7260.jpg</image:loc>
+      <image:title>Gyuto Monastic Assembly Morning Prayers</image:title>
+      <image:caption>Morning assembly and tantric meditation in Gyuto Monastery</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gyutotantricmonastery.org/images/gallery/761A7394.jpg</image:loc>
+      <image:title>Buddhist Philosophical Debate at Gyuto Monastery</image:title>
+      <image:caption>Dialectical debate courtyard at Gyuto Tantric Monastery</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://gyutotantricmonastery.org/images/gallery/761A7705.jpg</image:loc>
+      <image:title>Golden Shakyamuni Buddha at Gyuto Monastery</image:title>
+      <image:caption>Main sanctum golden Buddha statue at Gyuto Tantric Monastery</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://gyutotantricmonastery.org/programmes</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://gyutotantricmonastery.org/departments</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gyutotantricmonastery.org/news</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://gyutotantricmonastery.org/contact</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gyutotantricmonastery.org/support</loc>
+    <lastmod>2026-11-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+</urlset>

@@ -5,7 +5,25 @@ import SupportSection from '../components/SupportSection';
 import { TibetanVajra, EndlessKnot } from '../components/MonasteryIcons';
 import './news.css';
 
-export const UPDATES_DATA_TB = [];
+export const UPDATES_DATA_TB = [
+  {
+    id: 'hhdls-visit-2026-tb',
+    tag: 'གསལ་བསྒྲགས།',
+    type: 'split',
+    date: '༢༠༢༦ ཟླ་ ༡༠ ཚེས་ ༢༨',
+    title: 'གལ་ཆེའི་ཆོས་བརྡ་གསལ་བསྒྲགས།',
+    paragraphs: [
+      '༄༅། །འདི་ག་དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཆོས་ར་གསར་པ་དབུ་འབྱེད་དང་བསྟུན་རྒྱལ་བའི་སྐུ་གོ་སྟོན་དང་འབྲེལ་བའི་བཀའ་དྲིན་རྗེས་དྲན་གྱི་བརྟན་བཞུགས་བསྟར་འབུལ་སྐབས། ལྷར་བཅས་སྲིད་ཞིའི་གཙུག་རྒྱན་༸སྤྱི་ནོར་༸གོང་ས་༸སྐྱབས་མགོན་རྒྱལ་བའི་དབང་པོ་མཆོག་གྲྭ་ཚང་འདིར་ཆིབས་བསྒྱུར་བཀའ་དྲིན་བསྐྱང་གནང་ཡོད་པའི་གསོལ་བ་ཕུར་ཚུགས་སུ་ཡང་ཡང་བཏབ་པའི་རེ་འབྲས་དངོས་སུ་སྨིན་ཏེ། རིང་མིན་ཕྱི་ལོ་ ༢༠༢༦ ཕྱི་ཟླ་ ༡༡ ཚེས་ ༢༨ ཉིན་༸མགོན་པོ་མཆོག་ཞབས་པད་གསེར་གྱི་རེ་ཁཱ་གྲྭ་ཚང་དུ་མངོན་པར་འཁོད་རྒྱུའི་བཀའ་བཞེས་རིན་པོ་ཆེ་དངོས་བསྩལ་བྱུང་བ་ལགས་ན།',
+      'ཕྱོགས་མཐའ་གཏུགས་སུ་བཞུགས་པའི་གྲྭ་ཚང་གི་ཁོངས་གཏོགས་སྐུ་སེར་གཉིས་དང་། དད་ལྡན་སྦྱིན་བདག་ཁག དེ་བཞིན་འབྲེལ་ཡོད་གཞན་རྣམས་ལ་དུས་ཀྱིས་གཏུགས་ནས་རེ་རེ་བཞིན་མགྲོན་བརྡ་ཕུལ་ཐབས་མ་མཆིས་པས། གསལ་བརྡ་འདི་བརྒྱུད་ནས་རྣམ་པར་བཀྲ་ཤིས་པའི་བསྐལ་བཟང་གི་དགའ་སྟོན་དེར་རེས་ཟེབས་ཡོད་པའི་གསལ་བསྒྲགས་དང་མགྲོན་བརྡ་ལྷན་དུ་ཕུལ།'
+    ],
+    signoff: [
+      'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་འདུས་སྤྱི་ལས་ཁང་ནས།',
+      'ཕྱི་ལོ་ ༢༠༢༦ ཟླ་ ༡༠ ཚེས་ ༢༨ ལ།'
+    ],
+    image: '/images/announcements/announcement-dalai-lama-visit-tb.jpg',
+    imageAlt: 'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་གལ་ཆེའི་ཆོས་བརྡ་གསལ་བསྒྲགས།'
+  }
+];
 
 export default function NewsTb({ onSwitchLanguage, onNavigate }) {
   const [filter, setFilter] = useState('ALL');
@@ -85,17 +103,34 @@ export default function NewsTb({ onSwitchLanguage, onNavigate }) {
                           <time className="gt-update-date">{item.date}</time>
                         </div>
                         <h2 className="gt-update-title">{item.title}</h2>
-                        <p className="gt-update-body">{item.body}</p>
+                        {item.paragraphs ? (
+                          <div className="gt-update-body">
+                            {item.paragraphs.map((para, pIdx) => (
+                              <p key={pIdx} style={{ marginBottom: '14px', lineHeight: '1.85' }}>{para}</p>
+                            ))}
+                            {item.signoff && (
+                              <div className="gt-update-signoff" style={{ marginTop: '20px', lineHeight: '1.8', color: '#1B1816' }}>
+                                {item.signoff.map((line, lIdx) => (
+                                  <p key={lIdx} style={{ margin: '2px 0', fontWeight: lIdx === 0 ? 600 : 400 }}>{line}</p>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <p className="gt-update-body">{item.body}</p>
+                        )}
                       </div>
 
                       <div className="gt-update-split-img-box">
                         {item.image ? (
-                          <img
-                            src={item.image}
-                            alt={item.imageAlt || item.title}
-                            className="gt-update-img"
-                            loading="lazy"
-                          />
+                          <a href={item.image} target="_blank" rel="noopener noreferrer" title="ཡིག་ཆ་ཆ་ཚང་གཟིགས་རྒྱུ།" style={{ display: 'block', width: '100%', height: '100%' }}>
+                            <img
+                              src={item.image}
+                              alt={item.imageAlt || item.title}
+                              className="gt-update-img"
+                              loading="lazy"
+                            />
+                          </a>
                         ) : (
                           <div className="gt-update-img-placeholder">
                             <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">

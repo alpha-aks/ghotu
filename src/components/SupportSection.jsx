@@ -29,10 +29,10 @@ function SupportSection({
     : 'Support the Continuity of the Tradition');
 
   const desc = customDesc || (isTibetan
-    ? 'སྐུ་ཉིད་ཀྱི་རོགས་རམ་གྱིས་དགོན་པའི་སློབ་གཉེར་རྒྱུན་འཛིན་དང་། རྩ་ཆེའི་གཞུང་ཉར་ཚགས། དགོན་པའི་མཐུན་རྐྱེན་རྒྱུན་འཁོངས་བཅས་ལ་ཕན་པར་མ་ཟད། དགེ་འདུན་གྱི་སྡེའི་ཉིན་རེའི་འཚོ་བར་རམ་འདེགས་བྱེད་ཅིང་། ཉིད་ཀྱི་རྒྱབ་སྐྱོར་ལ་བརྟེན་ནས། མ་འོངས་མི་རབས་ཚོའི་ཆེད་དུ་དགེ་ལྡན་པའི་གསང་སྔགས་ཀྱི་ལམ་སྲོལ་འདི་ཉིད་མི་ཉམས་རྒྱུན་འཛིན་ཐུབ་པར་བྱེད།'
+    ? 'སྐུ་ཉིད་ཀྱིས་ཕུལ་བའི་ཞལ་འདེབས་ཀྱིས་དགོན་པའི་སློབ་གཉེར་རྒྱུན་འཛིན་དང་། རྩ་ཆེའི་གཞུང་ཉར་ཚགས། དགོན་པའི་མཐུན་རྐྱེན་རྒྱུན་འཁྱོངས་བཅས་ལ་ཕན་པར་མ་ཟད། དགེ་འདུན་མང་ཚོགས་ཀྱི་ཉིན་རེའི་འཚོ་བར་རམ་འདེགས་བྱེད། ཉིད་ཀྱི་རྒྱབ་སྐྱོར་ལ་བརྟེན་ནས། མ་འོངས་མི་རབས་ཚོའི་ཆེད་དུ་དགེ་ལྡན་པའི་གསང་སྔགས་ཀྱི་ལམ་སྲོལ་འདི་ཉིད་མི་ཉམས་རྒྱུན་འཛིན་ཐུབ་པར་འབྱུང་བཞིན་ཡོད།'
     : 'Contributions help sustain monastic education, preserve sacred texts, maintain monastery facilities, and support the daily life of the monastic community. Your support enables the preservation of the Gelug tantric tradition for future generations.');
 
-  const btnText = customBtnText || (isTibetan ? 'རྒྱབ་སྐྱོར།' : 'SUPPORT US');
+  const btnText = customBtnText || (isTibetan ? 'ང་ཚོར་རྒྱབ་སྐྱོར་གནོངས།' : 'SUPPORT US');
 
   return (
     <section 

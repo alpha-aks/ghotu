@@ -12,23 +12,71 @@ import {
 import {
   MapPin,
   Play,
-  ExternalLink
+  ExternalLink,
+  X,
+  ZoomIn,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import { getCurrentUpcomingProgrammes } from '../data/monasteryCalendar2026';
+
+const HERO_SLIDES = [
+  {
+    src: '/images/hero-slider/_DSC3552.jpg',
+    alt: 'Gyuto Tantric Monastery Assembly & Shrine Hall'
+  },
+  {
+    src: '/images/hero-slider/_DSC4276.jpg',
+    alt: 'Gyuto Tantric Monks Sacred Ritual Ceremony'
+  },
+  {
+    src: '/images/hero-slider/761A8106.jpg',
+    alt: 'Monastic Assembly in Prayer and Practice'
+  },
+  {
+    src: '/images/hero-slider/unnamed.webp',
+    alt: 'Gyuto Monastery Campus and Himalayan Foothills'
+  }
+];
 
 export default function Home({ onSwitchLanguage, onNavigate }) {
   const [activeNoticeTab, setActiveNoticeTab] = useState('announcement');
   const [activeStatDot, setActiveStatDot] = useState(0);
-  const [currentHeroSlide, setCurrentHeroSlide] = useState(0); // 0: English, 1: Tibetan
+  const [currentHeroSlide, setCurrentHeroSlide] = useState(0);
+  const [isNoticeExpanded, setIsNoticeExpanded] = useState(false);
   const statsGridRef = useRef(null);
   const upcomingEvents = getCurrentUpcomingProgrammes();
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentHeroSlide((prev) => (prev === 0 ? 1 : 0));
-    }, 10000);
+      setCurrentHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
+
+  const handlePrevSlide = () => {
+    setCurrentHeroSlide((prev) => (prev === 0 ? HERO_SLIDES.length - 1 : prev - 1));
+  };
+
+  const handleNextSlide = () => {
+    setCurrentHeroSlide((prev) => (prev + 1) % HERO_SLIDES.length);
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsNoticeExpanded(false);
+    };
+    if (isNoticeExpanded) {
+      document.body.style.overflow = 'hidden';
+      window.addEventListener('keydown', handleKeyDown);
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [isNoticeExpanded]);
 
   const handleStatsScroll = () => {
     if (!statsGridRef.current) return;
@@ -65,18 +113,50 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
           ==================================================================== */}
       <section id="home" className="gt-hero-section">
         <div className="gt-hero-image-wrap">
-          <img
-            src="/images/home-hero.jpg"
-            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains (English)"
-            className={`gt-hero-img gt-hero-slide gt-hero-en ${currentHeroSlide === 0 ? 'active' : ''}`}
-            loading="eager"
-          />
-          <img
-            src="/images/home-hero-tb.jpg"
-            alt="Gyuto Tantric Monastery Assembly of Monks with Himalayan Mountains (Tibetan)"
-            className={`gt-hero-img gt-hero-slide gt-hero-tb ${currentHeroSlide === 1 ? 'active' : ''}`}
-            loading="eager"
-          />
+          {HERO_SLIDES.map((slide, idx) => (
+            <img
+              key={slide.src}
+              src={slide.src}
+              alt={slide.alt}
+              className={`gt-hero-img gt-hero-slide ${currentHeroSlide === idx ? 'active' : ''}`}
+              loading={idx === 0 ? 'eager' : 'lazy'}
+            />
+          ))}
+
+          {/* Left / Right Slider Navigation Arrows */}
+          <button
+            type="button"
+            className="gt-hero-arrow-btn gt-hero-arrow-prev"
+            onClick={handlePrevSlide}
+            aria-label="Previous Slide"
+            title="Previous slide"
+          >
+            <ChevronLeft size={24} />
+          </button>
+          <button
+            type="button"
+            className="gt-hero-arrow-btn gt-hero-arrow-next"
+            onClick={handleNextSlide}
+            aria-label="Next Slide"
+            title="Next slide"
+          >
+            <ChevronRight size={24} />
+          </button>
+
+          {/* Carousel Indicator Dots */}
+          <div className="gt-hero-dots-wrap" role="tablist" aria-label="Hero carousel pagination">
+            {HERO_SLIDES.map((_, idx) => (
+              <button
+                key={idx}
+                type="button"
+                className={`gt-hero-dot ${currentHeroSlide === idx ? 'active' : ''}`}
+                onClick={() => setCurrentHeroSlide(idx)}
+                aria-label={`Go to slide ${idx + 1}`}
+                role="tab"
+                aria-selected={currentHeroSlide === idx}
+              />
+            ))}
+          </div>
         </div>
 
         {/* 4 Feature Badges Bar (Figma: Frame 625795: #FFFAF1) */}
@@ -136,10 +216,8 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             </div>
             <h2 className="gt-living-title">A Living Monastic Institution</h2>
             <p className="gt-living-text">
-              Founded in 1474, Gyuto Tantric Monastery has preserved one of the principal tantric traditions
-              of the Gelug school of Tibetan Buddhism. Following its re-establishment in India,
-              the monastery continues to cultivate learning, spiritual practice, cultural preservation,
-              and service to society.
+              Gyuto Tantric Monastery was founded in 1474 by the great Je Tsong Khapa disciple, Jetsun Kunga Dondup Pelsangpo. The monastery has preserved and continued one of the principal traditions of the Gelug school of Tibetan Buddhism, particularly its esoteric tantric teachings.
+              Since its re-establishment in India, the monastery has continued to dedicate itself to Buddhist education, meditation and spiritual practice, the preservation of Tibetan culture and heritage, as well as various activities aimed at serving society.
             </p>
             <a 
               href="/about" 
@@ -212,14 +290,22 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
             </div>
 
             <div className="gt-news-right">
-              <div className="gt-news-video-card gt-news-placeholder-card">
-                <div className="gt-news-img-placeholder">
-                  <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#9A9286" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                    <circle cx="8.5" cy="8.5" r="1.5" />
-                    <polyline points="21 15 16 10 5 21" />
-                  </svg>
-                  <span>Media / Photo Placeholder</span>
+              <div 
+                className="gt-news-video-card gt-announcement-card-clickable" 
+                onClick={() => setIsNoticeExpanded(true)}
+                title="Tap to expand announcement"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') setIsNoticeExpanded(true); }}
+              >
+                <img 
+                  src="/images/announcements/announcement-dalai-lama-visit-en.jpg" 
+                  alt="Important Announcement and Invitation: His Holiness the Dalai Lama Visit to Gyuto Tantric Monastery"
+                  className="gt-announcement-thumb"
+                />
+                <div className="gt-announcement-expand-badge">
+                  <ZoomIn size={14} />
+                  <span>Tap to expand</span>
                 </div>
               </div>
             </div>
@@ -282,9 +368,9 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">Administration</h3>
+                <h3 className="gt-about-dept-name">Central Administration</h3>
                 <p className="gt-about-dept-snippet">
-                  Supports the day-to-day governance, operations, and coordination of the monastery.
+                  Responsible for the general, administrative, financial, and day-to-day affairs of the Monastery.
                 </p>
                 <a
                   href="/departments#admin"
@@ -323,7 +409,7 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
               <div className="gt-about-dept-body">
                 <h3 className="gt-about-dept-name">Education</h3>
                 <p className="gt-about-dept-snippet">
-                  Provides structured study in Buddhist philosophy, debate, and tantric traditions.
+                  Provides systematic monastic education combining basic education, Buddhist philosophy, Tantric studies, ritual training, and monastic discipline.
                 </p>
                 <a
                   href="/departments#education"
@@ -360,9 +446,9 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                 />
               </div>
               <div className="gt-about-dept-body">
-                <h3 className="gt-about-dept-name">Healthcare</h3>
+                <h3 className="gt-about-dept-name">Healthcare & Social Services</h3>
                 <p className="gt-about-dept-snippet">
-                  Medical services supporting the physical and mental well-being of the monastic community.
+                  Maintains a clinic with a resident nurse to provide basic medical care to monks and staff, particularly the sick and elderly.
                 </p>
                 <a
                   href="/departments#healthcare"
@@ -425,7 +511,6 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
                     <div className="gt-event-divider-vert" />
                     <div className="gt-event-info">
                       <h5 className="gt-event-name">{item.title}</h5>
-                      <p className="gt-event-desc">{item.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -532,6 +617,63 @@ export default function Home({ onSwitchLanguage, onNavigate }) {
           12. FOOTER (Extracted Component)
           ==================================================================== */}
       <Footer lang="en" onNavigate={onNavigate} />
+
+      {/* ====================================================================
+          IPHONE-STYLE EXPANDED PHOTO MODAL
+          ==================================================================== */}
+      {isNoticeExpanded && (
+        <div 
+          className="gt-iphone-photo-backdrop" 
+          onClick={() => setIsNoticeExpanded(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Expanded Announcement"
+        >
+          {/* Top Bar with iPhone style circular blur close button */}
+          <div className="gt-iphone-top-bar" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="gt-iphone-close-btn"
+              onClick={() => setIsNoticeExpanded(false)}
+              aria-label="Close photo"
+              title="Close (Esc)"
+            >
+              <X size={22} />
+            </button>
+            <a
+              href="/news"
+              className="gt-iphone-action-link"
+              onClick={(e) => {
+                if (onNavigate) {
+                  e.preventDefault();
+                  setIsNoticeExpanded(false);
+                  onNavigate('news');
+                }
+              }}
+            >
+              <span>View in News</span>
+              <ExternalLink size={14} />
+            </a>
+          </div>
+
+          {/* Center Expanding Image Container */}
+          <div className="gt-iphone-img-stage" onClick={(e) => e.stopPropagation()}>
+            <img
+              src="/images/announcements/announcement-dalai-lama-visit-en.jpg"
+              alt="Official Announcement: His Holiness the Dalai Lama visit"
+              className="gt-iphone-photo-img"
+              onClick={() => setIsNoticeExpanded(false)}
+              title="Click anywhere to close"
+            />
+          </div>
+
+          {/* Bottom Caption Pill */}
+          <div className="gt-iphone-bottom-caption" onClick={(e) => e.stopPropagation()}>
+            <p className="gt-iphone-caption-title">Important Announcement &amp; Invitation</p>
+            <p className="gt-iphone-caption-sub">His Holiness the Dalai Lama to visit Gyuto Tantric Monastery • Nov 28, 2026</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
