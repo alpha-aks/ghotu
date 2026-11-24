@@ -395,7 +395,7 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
                 role="button"
                 tabIndex={0}
                 onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') openLightbox(heroPhoto.id); }}
-                aria-label={`View photo: ${heroPhoto.title}`}
+                aria-label="View featured photo"
               >
                 <ImageWithSkeleton
                   src={heroPhoto.src}
@@ -404,10 +404,6 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
                   isHero={true}
                   loading="eager"
                 />
-                <div className="gt-gallery-hero-overlay">
-                  <span className="gt-gallery-hero-badge">Featured Sanctuary</span>
-                  <h2 className="gt-gallery-hero-title">{heroPhoto.title}</h2>
-                </div>
                 <div className="gt-gallery-hero-action" title="Click to view full photo">
                   <Maximize2 size={20} />
                 </div>
@@ -428,31 +424,19 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
                     role="button"
                     tabIndex={0}
                     onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') openLightbox(item.id); }}
-                    aria-label={`Open photo: ${item.title}`}
+                    aria-label="Open photo"
                   >
                     <ImageWithSkeleton
                       src={item.src}
-                      alt={item.title}
+                      alt=""
                       imgClassName="gt-gallery-item-img"
                       loading="lazy"
                     />
                     <div className="gt-gallery-item-overlay">
-                      <div className="gt-gallery-item-top">
-                        <span className="gt-gallery-item-tag">{item.categoryLabel}</span>
-                        <div className="gt-gallery-item-zoom-icon">
-                          <Eye size={18} />
-                        </div>
-                      </div>
-                      <div className="gt-gallery-item-meta">
-                        <h3 className="gt-gallery-item-title">{item.title}</h3>
+                      <div className="gt-gallery-item-zoom-icon">
+                        <Eye size={20} />
                       </div>
                     </div>
-                  </div>
-
-                  {/* Caption below image */}
-                  <div className="gt-gallery-caption-below">
-                    <p className="gt-gallery-caption-below-category">{item.categoryLabel}</p>
-                    <h3 className="gt-gallery-caption-below-title">{item.title}</h3>
                   </div>
                 </div>
               ))}
@@ -577,9 +561,6 @@ export default function Gallery({ onSwitchLanguage, onNavigate }) {
               />
             </div>
             <div className="gt-lightbox-footer">
-              <div className="gt-lightbox-info">
-                <h3 className="gt-lightbox-title">{activePhoto.title}</h3>
-              </div>
               <div className="gt-lightbox-counter">
                 {lightboxIndex + 1} / {allPhotos.length}
               </div>

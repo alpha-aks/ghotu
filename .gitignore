@@ -16,6 +16,8 @@ build/
 .env.production.local
 .env.local
 *.env
+config.local.php
+public/api/config.local.php
 
 # Large scratch assets & temporary mockups
 scratch/

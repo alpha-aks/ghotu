@@ -548,7 +548,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('admin', e)}
                       >
-                        <span className="gt-dept-nav-arrow">&gt;</span> ༡༽ སྤྱི་ཁྱབ་འཛིན་སྐྱོང་།
+                        <span className="gt-dept-nav-arrow">&gt;</span> ༡༽ སྤྱི་ཁྱབ་འཛིན་སྐྱོང་། (ཕྱག་མཛོད་ཁང་།)
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
@@ -557,7 +557,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('education', e)}
                       >
-                        <span className="gt-dept-nav-arrow">&gt;</span> ༢༽ སློབ་གཉེར།
+                        <span className="gt-dept-nav-arrow">&gt;</span> ༢༽ སློབ་གཉེར་ལྷན་ཚོགས།
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
@@ -566,7 +566,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('healthcare', e)}
                       >
-                        <span className="gt-dept-nav-arrow">&gt;</span> ༣༽ འཕྲོད་བསྟེན་དང་སྤྱི་ཚོགས།
+                        <span className="gt-dept-nav-arrow">&gt;</span> ༣༽ འཕྲོད་བསྟེན་དང་སྤྱི་ཚོགས་ཞབས་ཞུ།
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
@@ -593,7 +593,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('media', e)}
                       >
-                        <span className="gt-dept-nav-arrow">&gt;</span> ༦༽ བརྒྱུད་ལམ་དང་འབྲེལ་མཐུད།
+                        <span className="gt-dept-nav-arrow">&gt;</span> ༦༽ བརྒྱུད་ལམ། བརྙན་པར། འབྲེལ་མཐུད་ཞབས་ཞུ།
                       </a>
                     </li>
                     <li className="gt-dept-nav-link-item">
@@ -602,7 +602,7 @@ export default function DepartmentsTb({ onSwitchLanguage, onNavigate }) {
                         className="gt-dept-nav-anchor"
                         onClick={(e) => scrollToDept('maintenance', e)}
                       >
-                        <span className="gt-dept-nav-arrow">&gt;</span> ༧༽ ཉམས་གསོ་དང་གཙང་བཟོ།
+                        <span className="gt-dept-nav-arrow">&gt;</span> ༧༽ དགོན་པའི་ཉམས་གསོ་དང་གཙང་བཟོ་ཞབས་ཞུ།
                       </a>
                     </li>
                   </ul>

@@ -349,20 +349,13 @@
 .gt-gallery-item-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(146, 6, 15, 0.1) 0%,
-    rgba(146, 6, 15, 0.45) 50%,
-    rgba(6, 32, 57, 0.9) 100%
-  );
+  background: rgba(0, 0, 0, 0.35);
   opacity: 0;
   transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 24px;
+  align-items: center;
+  justify-content: center;
   box-sizing: border-box;
-  color: #FFFFFF;
 }
 
 .gt-gallery-item-card:hover .gt-gallery-item-overlay {
@@ -688,12 +681,12 @@
 }
 
 .gt-lightbox-footer {
-  margin-top: 16px;
+  margin-top: 12px;
   width: 100%;
   max-width: 1000px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   color: #FFFFFF;
   padding: 0 10px;
 }

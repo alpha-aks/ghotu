@@ -83,18 +83,18 @@ export default function ContactTb({ onSwitchLanguage, onNavigate }) {
           </div>
           <div className="gt-contact-map-details" style={{ marginTop: '24px', lineHeight: '1.9' }}>
             <h3 style={{ fontSize: '18px', fontWeight: 600, marginBottom: '8px', color: '#1B1816' }}>ཞིབ་ཕྲའི་ས་ཁྲ།</h3>
-            <p style={{ margin: '0 0 6px 0', color: '#4A4643' }}>
-              <strong>གནས་ཡུལ།—</strong>རྒྱ་གར་ཧི་མ་ཅལ་མངའ་སྡེ། ཀང་ར་རྫོང་། དྷ་རམ་ས་ལཱ་སིདྷ་བ་རིའི་ཉེ་འགྲམ་དུ་ཆགས་ཡོད།
+            <p style={{ margin: '0 0 4px 0', color: '#4A4643' }}>
+              <strong>གནས་ཡུལ།—</strong> དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་།
             </p>
             <p style={{ margin: '0 0 4px 0', color: '#4A4643' }}>
-              <strong>ཉེ་འགྲམ་གྱི་ས་རྟགས་གལ་ཆེན་ཁག</strong>
+              སིདྷ་བ་རི། ༡༧༦༢༡༥
             </p>
-            <ul style={{ margin: 0, paddingLeft: '20px', color: '#4A4643' }}>
-              <li>རཱ་ཀར་ལམ། (Rakkar Rd)</li>
-              <li>ཞི་བདེའི་རྩེད་ཐང་། (Peaceful Playground)</li>
-              <li>ནི་ཝིའི་བག་བཟོ་ཁང་། (Nivi's Bake House)</li>
-              <li>མུ་ནིཤ་སྐྲ་ཁང་། (Munish Unisex Salon)</li>
-            </ul>
+            <p style={{ margin: '0 0 4px 0', color: '#4A4643' }}>
+              དྷ་རམ་ས་ལ། ཀང་ར།
+            </p>
+            <p style={{ margin: '0 0 4px 0', color: '#4A4643' }}>
+              ཧི་མ་ཅལ་མངའ་སྡེ། རྒྱ་གར།
+            </p>
           </div>
         </section>
       </main>

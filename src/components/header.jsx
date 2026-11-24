@@ -32,8 +32,8 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
     { key: 'programmes', href: '/programmes', label: 'ལས་རིམ།', active: active === 'programmes' },
     { key: 'about', href: '/about', label: 'ངོ་སྤྲོད།', active: active === 'about' },
     { key: 'gallery', href: '/gallery', label: 'པར་མཛོད།', active: active === 'gallery' },
-    { key: 'contact', href: '/contact', label: 'འབྲེལ་གནས།', active: active === 'contact' },
-    { key: 'donate', href: '/support', label: 'ང་ཚོར་རྒྱབ་སྐྱོར་གནོངས།', active: active === 'donate' || active === 'support' }
+    { key: 'contact', href: '/contact', label: 'འབྲེལ་གནས།', active: active === 'contact' }
+    // { key: 'donate', href: '/support', label: 'ང་ཚོར་རྒྱབ་སྐྱོར་གནོངས།', active: active === 'donate' || active === 'support' }
   ] : [
     { key: 'home', href: '/', label: 'HOME', active: active === 'home' },
     { key: 'news', href: '/news', label: 'UPDATES', active: active === 'news' },
@@ -41,8 +41,8 @@ export default function Header({ lang = 'en', active = 'home', onSwitchLanguage,
     { key: 'programmes', href: '/programmes', label: 'PROGRAMMES', active: active === 'programmes' },
     { key: 'about', href: '/about', label: 'ABOUT', active: active === 'about' },
     { key: 'gallery', href: '/gallery', label: 'GALLERY', active: active === 'gallery' },
-    { key: 'contact', href: '/contact', label: 'CONTACT', active: active === 'contact' },
-    { key: 'donate', href: '/support', label: 'SUPPORT US', active: active === 'donate' || active === 'support' }
+    { key: 'contact', href: '/contact', label: 'CONTACT', active: active === 'contact' }
+    // { key: 'donate', href: '/support', label: 'SUPPORT US', active: active === 'donate' || active === 'support' }
   ];
 
   const handleNavClick = (key, href, e) => {

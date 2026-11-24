@@ -22,6 +22,24 @@ export const UPDATES_DATA_TB = [
     ],
     image: '/images/announcements/announcement-dalai-lama-visit-tb.jpg',
     imageAlt: 'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་གལ་ཆེའི་ཆོས་བརྡ་གསལ་བསྒྲགས།'
+  },
+  {
+    id: 'update-nov-8-2026-tb',
+    tag: 'གསར་འགྱུར།',
+    type: 'split',
+    date: '༢༠༢༦ ཕྱི་ཟླ་ ༡༡ ཚེས་ ༨',
+    title: 'དགོན་པ་ནས།',
+    body: 'ཚོགས་པའི་གནས་ཚུལ། འབྱུང་འགྱུར་གྱི་མཛད་རིམ་གསལ་བཤད། གཞུང་འབྲེལ་བརྡ་ཐོ།',
+    image: '/images/gallery/761A7260.jpg',
+    imageAlt: 'དཔལ་ལྡན་རྒྱུད་སྟོད་གྲྭ་ཚང་གི་ཚོགས་པའི་གནས་ཚུལ།'
+  },
+  {
+    id: 'announcement-nov-8-2026-tb',
+    tag: 'གསལ་བསྒྲགས།',
+    type: 'center',
+    date: '༢༠༢༦ ཕྱི་ཟླ་ ༡༡ ཚེས་ ༨',
+    title: 'དགོན་པ་ནས།',
+    body: 'དགོན་པའི་བརྡ་ཐོ། མཛད་སྒོ་གོ་སྒྲིག མཇལ་སྐོར་དུ་ཕེབས་པའི་ཉམས་ལེན་པ་ཚོར་ལམ་སྟོན།'
   }
 ];
 
@@ -51,6 +69,9 @@ export default function NewsTb({ onSwitchLanguage, onNavigate }) {
           <div className="gt-updates-hero-overlay"></div>
           <div className="gt-updates-hero-content">
             <h1 className="gt-updates-hero-title">གསལ་བསྒྲགས་དང་གསར་འགྱུར།</h1>
+            <p className="gt-updates-hero-subtitle">
+              ཉེ་བའི་གནས་ཚུལ་དང་། ཚོགས་པའི་བྱེད་སྒོ་ཁག །གལ་ཆེའི་གསལ་བརྡ། དཔར་སྐྲུན། དེ་མིན་གྱི་གསར་འགྱུར་བཅས་ཀྱི་སྐོར་རྒྱུད་སྟོད་གྲྭ་ཚང་ནས་མཁྱེན་རྟོགས་གནང་རོགས།
+            </p>
           </div>
         </section>
 

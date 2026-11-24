@@ -86,7 +86,10 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                   <div className="gt-legacy-text-content">
                     <h2 className="gt-legacy-title">Our Legacy</h2>
                     <p className="gt-legacy-para">
-                      Founded in Tibet in 1474, Gyuto Monastery has preserved one of the principal tantric traditions of the Gelug school for more than five centuries. The monastery's name, derived from the region of its original location, reflects its deep historical roots in Tibetan Buddhist culture. Following the reestablishment of the monastery in Dharamshala, India, in 1959, the community continues to engage in rigorous scholarly study, contemplative practice, and service to practitioners and visitors from around the world.
+                      Since its establishment in 1474 in the Land of Snows, Tibet, by the revered Jetsun Kunga Dondup Pelsangpo, Gyuto Tantric Monastery has preserved and upheld the extraordinary tantric teachings of the Gelug tradition for more than five centuries. Its name, derived from its original location, reflects the monastery's deep historical roots and significant place within the heritage of Tibetan Buddhism.
+                    </p>
+                    <p className="gt-legacy-para" style={{ marginTop: '12px' }}>
+                      Following its relocation and re-establishment in India, the monastery continued its journey through different locations: Dalhousie in 1959, Tenzin Gang, Bomdila in the 1970s, and Dharamsala in 2004. Since its re-establishment in Dharamsala, the monastery has continued its activities in advanced Buddhist studies, meditation and spiritual practice, while also welcoming and serving Dharma practitioners and visitors from around the world.
                     </p>
                   </div>
                 </div>
@@ -111,8 +114,15 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                   />
                 </div>
                 <div className="gt-legacy-text-col gt-legacy-text-col-center">
+                  <h3 className="gt-legacy-heading">Main Objectives and Activities</h3>
                   <p className="gt-legacy-para">
-                    The monastery's mission is to maintain the integrity of the Gelug tantric teachings through education, meditation, ritual practice, and cultural preservation. Today, approximately 250–300 monks live and study at the monastery, following a rigorous multi-year curriculum that spans Buddhist philosophy, logic, epistemology, and advanced tantric practices. The community is recognized by the Central Tibetan Administration as a center of learning and spiritual practice, and it remains an active participant in the broader Tibetan Buddhist community.
+                    The monastery's principal objective is to preserve, promote, and advance the pure tantric teachings of the Gelug tradition through Buddhist education, meditation and spiritual practice, ritual ceremonies, and the preservation of Tibetan religious and cultural heritage.
+                  </p>
+                  <p className="gt-legacy-para" style={{ marginTop: '12px' }}>
+                    At present, approximately 250–300 monks reside at the monastery, dedicating many years to the intensive study of Buddhist philosophy, logic and epistemology, and profound tantric texts.
+                  </p>
+                  <p className="gt-legacy-para" style={{ marginTop: '12px' }}>
+                    The Central Tibetan Administration also recognises the monastery as an important centre of education and spiritual practice, as well as a significant institution contributing to the wider Tibetan Buddhist community.
                   </p>
                 </div>
               </div>
@@ -120,8 +130,12 @@ export default function About({ onSwitchLanguage, onNavigate }) {
               {/* Row 3 (Frame 2147236734): Reestablishment Text on Left, Yerpa Image on Right */}
               <div className="gt-legacy-story-row">
                 <div className="gt-legacy-text-col gt-legacy-text-col-center">
+                  <h3 className="gt-legacy-heading">Preservation of the Tibetan Buddhist Tradition</h3>
                   <p className="gt-legacy-para">
-                    The reestablishment of Gyuto Monastery in India represents a significant achievement in the preservation of Tibetan Buddhist heritage. In the face of historical challenges, the monastic community has successfully maintained the scholarly standards and spiritual practices that define the Gelug tantric tradition. The monastery continues to attract monks from diverse backgrounds, creating a community united by their commitment to Buddhist learning and practice. Through education, research, and active engagement with the broader world, Gyuto Monastery remains a vital center for the transmission of authentic Tibetan Buddhist teachings.
+                    The re-establishment of Gyuto Tantric Monastery in India represents a remarkable achievement in preserving and continuing Tibet's Buddhist heritage. Despite facing numerous historical challenges, the monastic community has successfully maintained the authentic traditions of scriptural study and contemplative practice that embody the tantric teachings of the Gelug school.
+                  </p>
+                  <p className="gt-legacy-para" style={{ marginTop: '12px' }}>
+                    Today, monks from different regions come together at the monastery, forming a united community committed to the study and practice of Buddhism. Through education, research, and active engagement with the wider world, Gyuto Tantric Monastery continues to serve as an important centre for preserving and transmitting the authentic teachings of Tibetan Buddhism to future generations.
                   </p>
                 </div>
                 <div className="gt-legacy-img-col">
@@ -220,7 +234,7 @@ export default function About({ onSwitchLanguage, onNavigate }) {
                     />
                   </div>
                   <h3 className="gt-leader-name">Ven. Yangten Tulku Rinpoche</h3>
-                  <p className="gt-leader-title">Abbot (2026)</p>
+                  <p className="gt-leader-title">Vice Abbot (2026)</p>
                 </div>
 
                 <div className="gt-leader-bio-wrap">

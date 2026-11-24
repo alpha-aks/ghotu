@@ -25,6 +25,24 @@ export const UPDATES_DATA = [
     ],
     image: '/images/announcements/announcement-dalai-lama-visit-en.jpg',
     imageAlt: 'Important Announcement and Invitation - His Holiness the Dalai Lama Visit to Gyuto Tantric Monastery'
+  },
+  {
+    id: 'update-nov-8-2026',
+    tag: 'UPDATES',
+    type: 'split',
+    date: 'NOVEMBER 8, 2026',
+    title: 'From the Monastery - Community Updates',
+    body: 'Community updates, upcoming schedule details, and official notifications from Gyuto Tantric Monastery.',
+    image: '/images/gallery/761A7260.jpg',
+    imageAlt: 'Gyuto Tantric Monastery Community Updates'
+  },
+  {
+    id: 'announcement-nov-8-2026',
+    tag: 'ANNOUNCEMENT',
+    type: 'center',
+    date: 'NOVEMBER 8, 2026',
+    title: 'From the Monastery - Monastic Notices & Guidelines',
+    body: 'Monastic notices, ceremony arrangements, and guidelines for visiting practitioners.'
   }
 ];
 
@@ -54,6 +72,9 @@ export default function News({ onSwitchLanguage, onNavigate }) {
           <div className="gt-updates-hero-overlay"></div>
           <div className="gt-updates-hero-content">
             <h1 className="gt-updates-hero-title">Announcements & Updates</h1>
+            <p className="gt-updates-hero-subtitle">
+              Stay informed about recent developments, community activities, important notices, publications, and other updates from Gyuto Tantric Monastery.
+            </p>
           </div>
         </section>
 
@@ -219,10 +240,10 @@ export default function News({ onSwitchLanguage, onNavigate }) {
                 <div className="gt-attend-text-block">
                   <h2 className="gt-attend-title">Before You Attend</h2>
                   <p className="gt-attend-para">
-                    Some programmes are intended exclusively for the monastic community, while others may be open to practitioners, visitors, or the wider public.
+                    Guidelines on event participation, photography rules, and monastic practice respect.
                   </p>
                   <p className="gt-attend-para">
-                    Please check the individual programme details before attending. Access, timings, photography, participation, and visitor requirements may vary between events.
+                    Some programmes are intended exclusively for the monastic community, while others may be open to practitioners, visitors, or the wider public. Please check individual programme details before attending.
                   </p>
                 </div>
                 <button
