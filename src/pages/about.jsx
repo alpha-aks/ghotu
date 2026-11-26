@@ -458,7 +458,12 @@ export default function About({ onSwitchLanguage, onNavigate }) {
         <section className="gt-library-section">
           <div className="gt-library-container">
             <div className="gt-library-texture-wrap" aria-hidden="true">
-              <DharmachakraWatermark width="100%" height="100%" />
+              <img
+                src={ABOUT_DUMMY_IMAGES.dharmachakraWatermark}
+                alt=""
+                className="gt-library-texture-img"
+                loading="lazy"
+              />
             </div>
             <div className="gt-library-content-col">
               <div className="gt-library-text-block">
