@@ -132,9 +132,9 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                           <li>Venerable Gankar Tulku (President)</li>
                           <li>Ngakrampa Sonam Paljor (Secretary)</li>
                           <li>Ngakrampa Phurbu Tsering (Treasurer)</li>
-                          <li>Ngakrampa Lobsang Phuntsok (Member)</li>
-                          <li>Ngakrampa Dakpa Gyaltsen (Member)</li>
-                          <li>Geshe Ngakrampa Dakpa Gesen Gyatso (Member)</li>
+                          <li>Ngakrampa Lobsang Phuntso (Member)</li>
+                          <li>Ngakrampa Dakpa Gyalson (Member)</li>
+                          <li>Geshe Ngakrampa Dakpa Genzen Gyana (Member)</li>
                           <li>Geshe Ngakrampa Dhondup Tsering (Member)</li>
                         </ul>
 
@@ -533,7 +533,7 @@ export default function Departments({ onSwitchLanguage, onNavigate }) {
                       <div className="gt-dept-expanded-content">
                         <h4 className="gt-dept-subheading-lvl2">Staff:</h4>
                         <ul className="gt-dept-list-bulleted">
-                          <li>Ven. Tenzin Gyamtso</li>
+                          <li>Ven. Tenzin Gyatso</li>
                         </ul>
                         <p style={{ marginTop: '16px', fontWeight: '600', color: '#92060F' }}>
                           Public Relations and Liaison Services Administrator:
