@@ -271,7 +271,7 @@ export default function Programmes({ onSwitchLanguage, onNavigate }) {
             <div className="gt-calendar-header-group">
               <h2 className="gt-calendar-section-title">Annual Monastic Calendar</h2>
               <p className="gt-calendar-section-sub">
-                Gyuto Tantric Monastery follows the authentic Tibetan lunar calendar (བོད་རྒྱལ་ལོ་ ༢༡༥༣ རབ་བྱུང་ ༡༧ པའི་མེ་རྟ་ལོ། — 17th Rabjung Fire Horse Year 2026–2027). Explore monthly ceremonies, Sojong confession days, Naga days, tantric rituals, and community pujas across all twelve months.
+                The monastery's programme follows the Tibetan Buddhist calendar, with activities taking place throughout the year. Use the calendar to explore upcoming teachings, ceremonies, retreats, examinations, and other events.
               </p>
             </div>
 
