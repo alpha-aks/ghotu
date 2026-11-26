@@ -36,7 +36,8 @@ jobs:
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           python3 -c '
-          import os, textwrap
+          import os, sys, ssl, textwrap
+          from ftplib import FTP, FTP_TLS
 
           server = os.environ.get("FTP_SERVER", "")
           user = os.environ.get("FTP_USERNAME", "")
@@ -49,6 +50,64 @@ jobs:
           safe_user = user.replace("\\", "\\\\").replace("\"", "\\\"")
           safe_password = password.replace("\\", "\\\\").replace("\"", "\\\"")
 
+          target_dir = "."
+          try:
+              ctx = ssl.create_default_context()
+              ctx.check_hostname = False
+              ctx.verify_mode = ssl.CERT_NONE
+
+              ftp = None
+              try:
+                  ftp = FTP_TLS(context=ctx, timeout=30)
+                  ftp.connect(server, 21)
+                  ftp.login(user, password)
+                  ftp.prot_p()
+                  ftp.set_pasv(True)
+              except Exception:
+                  ftp = FTP(timeout=30)
+                  ftp.connect(server, 21)
+                  ftp.login(user, password)
+                  ftp.set_pasv(True)
+
+              pwd = ftp.pwd()
+              items = ftp.nlst()
+              print(f"[FTP Inspect] Connected successfully.")
+              print(f"[FTP Inspect] Remote working directory: {pwd}")
+              print(f"[FTP Inspect] Remote items found: {items}")
+
+              # Case 1: public_html exists as a subfolder
+              if any(i.strip().rstrip("/").endswith("public_html") or i.strip() == "public_html" for i in items):
+                  target_dir = "public_html"
+                  print("[FTP Inspect] Detected '\''public_html'\'' folder -> target_dir = public_html")
+              # Case 2: domains folder exists (Hostinger multi-domain root)
+              elif any(i.strip() == "domains" for i in items):
+                  try:
+                      ftp.cwd("domains")
+                      domains = ftp.nlst()
+                      print(f"[FTP Inspect] Domains found: {domains}")
+                      for d in domains:
+                          d_name = d.strip().rstrip("/")
+                          try:
+                              ftp.cwd(f"/domains/{d_name}/public_html")
+                              target_dir = f"domains/{d_name}/public_html"
+                              print(f"[FTP Inspect] Found website public_html -> target_dir = {target_dir}")
+                              break
+                          except Exception:
+                              pass
+                  except Exception as e:
+                      print(f"[FTP Inspect] Could not traverse domains: {e}")
+              else:
+                  # Case 3: Already chrooted inside public_html
+                  target_dir = "."
+                  print("[FTP Inspect] No '\''public_html'\'' subfolder found. This FTP account is already chrooted directly to public_html -> target_dir = .")
+
+              ftp.quit()
+          except Exception as e:
+              print(f"[FTP Inspect] Note: Automatic directory inspection skipped ({e}). Defaulting to target_dir = .")
+              target_dir = "."
+
+          cd_command = f"cd {target_dir}" if target_dir != "." else "pwd"
+
           script = textwrap.dedent(f"""\
           set cmd:fail-exit true
           set ftp:ssl-allow true
@@ -59,7 +118,7 @@ jobs:
           set ftp:passive-mode true
           set ftp:list-options -a
           open -u "{safe_user}","{safe_password}" "{server}"
-          cd public_html
+          {cd_command}
           mirror --reverse --verbose --only-newer --parallel=3 ./dist .
           bye
           """)
