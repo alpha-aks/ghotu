@@ -523,12 +523,7 @@ export default function HomeTb({ onSwitchLanguage, onNavigate }) {
       <section id="archive" className="gt-library-section gt-library-sec">
         <div className="gt-library-container">
           <div className="gt-library-texture-wrap" aria-hidden="true">
-            <img
-              src="/images/about/dharmachakra-watermark.png"
-              alt=""
-              className="gt-library-texture-img"
-              loading="lazy"
-            />
+            <DharmachakraWatermark width="100%" height="100%" />
           </div>
           <div className="gt-library-content-col">
             <div className="gt-library-text-block">
